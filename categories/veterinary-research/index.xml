@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Veterinary Research on Muhammad Yaseen</title>
+    <link>https://myaseen208.com/categories/veterinary-research/</link>
+    <description>Recent content in Veterinary Research on Muhammad Yaseen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 23 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://myaseen208.com/categories/veterinary-research/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VetResearchLMM v1.0.0 on CRAN</title>
+      <link>https://myaseen208.com/blogs/vetresearchlmm/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://myaseen208.com/blogs/vetresearchlmm/</guid>
+      <description>&lt;p&gt;The latest version of the VetResearchLMM package for R is now on &lt;a href=&#34;https://cran.r-project.org/package=VetResearchLMM&#34;&gt;CRAN&lt;/a&gt;. This package provides R Codes and Datasets for Duchateau, L. and Janssen, P. and Rowlands, G. J. (1998). Linear Mixed Models. An Introduction with applications in Veterinary Research. International Livestock Research Institute. The latest version of the package is prepare for new version of &lt;a href=&#34;https://cran.r-project.org/package=lmerTest&#34;&gt;lmerTest&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

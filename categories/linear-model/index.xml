@@ -1,0 +1,1029 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linear Model on Muhammad Yaseen</title>
+    <link>https://myaseen208.com/categories/linear-model/</link>
+    <description>Recent content in Linear Model on Muhammad Yaseen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://myaseen208.com/categories/linear-model/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linear Model using Python</title>
+      <link>https://myaseen208.com/blogs/2019-pythonlmbzu/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://myaseen208.com/blogs/2019-pythonlmbzu/</guid>
+      <description>
+
+
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#Basics&#34;&gt;Python Basics&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#variables-and-data-types&#34;&gt;Variables and Data Types&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#variable-assignment&#34;&gt;Variable Assignment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#calculations-with-variables&#34;&gt;Calculations With Variables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#types-and-type-conversion&#34;&gt;Types and Type Conversion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#logical-operators&#34;&gt;Logical Operators&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#comparison&#34;&gt;Comparison&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#if-else&#34;&gt;If-Else&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#function&#34;&gt;Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#help&#34;&gt;Help&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#SLR&#34;&gt;Simple Linear Regression&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#MLR&#34;&gt;Multiple Linear Regression&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#PolyReg&#34;&gt;Polynomial Regression&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#RegDummy&#34;&gt;Regression with Dummy Variables&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#example-1&#34;&gt;Example 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#example-2&#34;&gt;Example 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#example-3&#34;&gt;Example 3&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#regression-with-same-slopes-and-different-intercepts&#34;&gt;Regression with same slopes and different intercepts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#regression-with-different-slopes-and-different-intercepts&#34;&gt;Regression with different slopes and different intercepts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;Basics&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Python Basics&lt;/h1&gt;
+&lt;div id=&#34;variables-and-data-types&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Variables and Data Types&lt;/h2&gt;
+&lt;div id=&#34;variable-assignment&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Variable Assignment&lt;/h3&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x = 5
+x
+# dir(x)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;5&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;calculations-with-variables&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Calculations With Variables&lt;/h3&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x + 2      # Sum of two variables&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;7&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x - 2      # Subtraction of two variables&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x*2        # Multiplication of two variables&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;10&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x**2       # Exponentiation of a variable&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;25&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x%2        # Remainder of a variable&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x/float(2) # Division of a variable&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2.5&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;types-and-type-conversion&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Types and Type Conversion&lt;/h3&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;type(5)        # Integer&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &amp;#39;int&amp;#39;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;type(5.)       # Float&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &amp;#39;float&amp;#39;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;type(&amp;#39;5&amp;#39;)      # Strings&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &amp;#39;str&amp;#39;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;type(5 + 3j)   # Complex Number&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &amp;#39;complex&amp;#39;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;type(True)     # Boolean&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &amp;#39;bool&amp;#39;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;logical-operators&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Logical Operators&lt;/h2&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;a1 = True
+print(a1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;type(a1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &amp;#39;bool&amp;#39;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;b1 = False
+print(b1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;type(b1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &amp;#39;bool&amp;#39;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;True  and True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;True  and False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;False and True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;False and False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;True or False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;not True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;not False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;True and not False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;comparison&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Comparison&lt;/h2&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x1 = 30
+x1 &amp;gt; 30&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x1 == 30&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x1 &amp;gt;= 30&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x1 &amp;gt; 15&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;not x1 == 42&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x1 != 42&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;if-else&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;If-Else&lt;/h2&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;x2 = 30                # assign 30 to x2
+if x2 &amp;gt; 30:            # predicate: is x2 &amp;gt; 30
+    print(&amp;quot;Yes&amp;quot;)       # if True, do this
+else:
+    print(&amp;quot;No&amp;quot;)        # if False, do this&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;No&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;function&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Function&lt;/h2&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;def slength1(s):
+    &amp;quot;&amp;quot;&amp;quot;Returns a string describing the
+    length of the sequences&amp;quot;&amp;quot;&amp;quot;
+    if len(s) &amp;gt; 10:
+        ans = &amp;#39;very long&amp;#39;
+    else:
+        ans = &amp;#39;normal&amp;#39;
+    return ans
+
+
+help(slength1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Help on function slength1 in module __main__:
+
+slength1(s)
+    Returns a string describing the
+    length of the sequences&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;slength1(&amp;quot;Hello&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#39;normal&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;slength1(&amp;quot;HelloHello&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#39;normal&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;slength1(&amp;quot;Hello again&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#39;very long&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;help(dir)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Help on built-in function dir in module builtins:
+
+dir(...)
+    dir([object]) -&amp;gt; list of strings
+    
+    If called without an argument, return the names in the current scope.
+    Else, return an alphabetized list of names comprising (some of) the attributes
+    of the given object, and of attributes reachable from it.
+    If the object supplies a method named __dir__, it will be used; otherwise
+    the default dir() logic is used and returns:
+      for a module object: the module&amp;#39;s attributes.
+      for a class object:  its attributes, and recursively the attributes
+        of its bases.
+      for any other object: its attributes, its class&amp;#39;s attributes, and
+        recursively the attributes of its class&amp;#39;s base classes.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;dir(slength1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&amp;#39;__annotations__&amp;#39;, &amp;#39;__call__&amp;#39;, &amp;#39;__class__&amp;#39;, &amp;#39;__closure__&amp;#39;, &amp;#39;__code__&amp;#39;, &amp;#39;__defaults__&amp;#39;, &amp;#39;__delattr__&amp;#39;, &amp;#39;__dict__&amp;#39;, &amp;#39;__dir__&amp;#39;, &amp;#39;__doc__&amp;#39;, &amp;#39;__eq__&amp;#39;, &amp;#39;__format__&amp;#39;, &amp;#39;__ge__&amp;#39;, &amp;#39;__get__&amp;#39;, &amp;#39;__getattribute__&amp;#39;, &amp;#39;__globals__&amp;#39;, &amp;#39;__gt__&amp;#39;, &amp;#39;__hash__&amp;#39;, &amp;#39;__init__&amp;#39;, &amp;#39;__init_subclass__&amp;#39;, &amp;#39;__kwdefaults__&amp;#39;, &amp;#39;__le__&amp;#39;, &amp;#39;__lt__&amp;#39;, &amp;#39;__module__&amp;#39;, &amp;#39;__name__&amp;#39;, &amp;#39;__ne__&amp;#39;, &amp;#39;__new__&amp;#39;, &amp;#39;__qualname__&amp;#39;, &amp;#39;__reduce__&amp;#39;, &amp;#39;__reduce_ex__&amp;#39;, &amp;#39;__repr__&amp;#39;, &amp;#39;__setattr__&amp;#39;, &amp;#39;__sizeof__&amp;#39;, &amp;#39;__str__&amp;#39;, &amp;#39;__subclasshook__&amp;#39;]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;def slength2(s):
+    &amp;quot;&amp;quot;&amp;quot;Returns a string describing the
+    length of the sequences into 
+    empty, very long, normal and short&amp;quot;&amp;quot;&amp;quot;
+    if len(s) == 0:
+        ans = &amp;#39;empty&amp;#39;
+    elif len(s) &amp;gt; 10:
+        ans = &amp;#39;very long&amp;#39;
+    elif len(s) &amp;gt; 7:
+        ans = &amp;#39;normal&amp;#39;
+    else:
+        ans = &amp;#39;short&amp;#39;
+    return ans
+
+
+help(slength2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Help on function slength2 in module __main__:
+
+slength2(s)
+    Returns a string describing the
+    length of the sequences into 
+    empty, very long, normal and short&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;slength2(&amp;quot;&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#39;empty&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;slength2(&amp;quot;Good Morning&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#39;very long&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;slength2(&amp;quot;Greetings&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#39;normal&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;slength2(&amp;quot;Hi&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#39;short&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;help&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Help&lt;/h2&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# help(str)
+# dir(str) 
+# help(str.__add__)
+# help(str.capitalize)
+# dir(str.capitalize)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;SLR&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Simple Linear Regression&lt;/h1&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;Income = [80, 100, 120, 140, 160, 180, 200, 220, 240, 260]
+Expend = [70, 65, 90, 95, 110, 115, 120, 140, 155, 150]
+
+import pandas as pd
+# dir(pd)
+# help(pd)
+# help(pd.DataFrame)
+# dir(pd.DataFrame)
+
+df1 = pd.DataFrame(
+ {
+   &amp;quot;Income&amp;quot;: Income
+ , &amp;quot;Expend&amp;quot;: Expend
+ }
+ )
+
+print(df1)
+# dir(df1)
+# df1.to_html()
+# df1.to_latex()
+# help(df1.kurt)
+# df1.kurt()
+# help(df1.kurtosis)
+# df1.kurtosis()
+# help(df1.mean)
+# df1.mean()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   Income  Expend
+0      80      70
+1     100      65
+2     120      90
+3     140      95
+4     160     110
+5     180     115
+6     200     120
+7     220     140
+8     240     155
+9     260     150&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;from matplotlib import pyplot as plt
+fig = plt.figure()
+plt.scatter(
+  x      = &amp;quot;Income&amp;quot;
+, y      = &amp;quot;Expend&amp;quot;
+, color  = &amp;quot;green&amp;quot;
+, marker = &amp;quot;o&amp;quot;
+, data   = df1
+)
+plt.title(&amp;quot;Scatter plot of Weekly Income (\$) and Weekly Expenditures (\$)&amp;quot;)
+plt.xlabel(&amp;quot;Weekly Income (\$)&amp;quot;)
+plt.ylabel(&amp;quot;Weekly Expenditures (\$)&amp;quot;)
+plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2019-02-18_PythonLM_files/figure-html/unnamed-chunk-12-1.svg&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg1 = ols(formula = &amp;quot;Expend ~ Income&amp;quot;, data = df1)
+Fit1 = Reg1.fit()
+
+print(Fit1.summary())&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 Expend   R-squared:                       0.962
+Model:                            OLS   Adj. R-squared:                  0.957
+Method:                 Least Squares   F-statistic:                     202.9
+Date:                Tue, 16 Apr 2019   Prob (F-statistic):           5.75e-07
+Time:                        10:31:38   Log-Likelihood:                -31.781
+No. Observations:                  10   AIC:                             67.56
+Df Residuals:                       8   BIC:                             68.17
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&amp;gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     24.4545      6.414      3.813      0.005       9.664      39.245
+Income         0.5091      0.036     14.243      0.000       0.427       0.592
+==============================================================================
+Omnibus:                        1.060   Durbin-Watson:                   2.680
+Prob(Omnibus):                  0.589   Jarque-Bera (JB):                0.777
+Skew:                          -0.398   Prob(JB):                        0.678
+Kurtosis:                       1.891   Cond. No.                         561.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+/home/myaseen/.local/lib/python3.6/site-packages/scipy/stats/stats.py:1416: UserWarning: kurtosistest only valid for n&amp;gt;=20 ... continuing anyway, n=10
+  &amp;quot;anyway, n=%i&amp;quot; % int(n))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit1.params)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept    24.454545
+Income        0.509091
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit1.fittedvalues)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0     65.181818
+1     75.363636
+2     85.545455
+3     95.727273
+4    105.909091
+5    116.090909
+6    126.272727
+7    136.454545
+8    146.636364
+9    156.818182
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit1.resid)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0     4.818182
+1   -10.363636
+2     4.454545
+3    -0.727273
+4     4.090909
+5    -1.090909
+6    -6.272727
+7     3.545455
+8     8.363636
+9    -6.818182
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit1.bse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept    6.413817
+Income       0.035743
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit1.centered_tss)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;8890.0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(anova_lm(Fit1))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           df       sum_sq      mean_sq           F        PR(&amp;gt;F)
+Income    1.0  8552.727273  8552.727273  202.867925  5.752746e-07
+Residual  8.0   337.272727    42.159091         NaN           NaN&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;fig = plt.figure()
+plt.scatter(
+  x      = &amp;quot;Income&amp;quot;
+, y      = &amp;quot;Expend&amp;quot;
+, color  = &amp;quot;green&amp;quot;
+, marker = &amp;quot;o&amp;quot; 
+, data   = df1
+)
+plt.plot(df1[&amp;quot;Income&amp;quot;], Fit1.fittedvalues)
+plt.title(&amp;quot;Regression plot of Weekly Income (\$) and Weekly Expenditures (\$)&amp;quot;)
+plt.xlabel(&amp;quot;Weekly Income (\$)&amp;quot;)
+plt.ylabel(&amp;quot;Weekly Expenditures (\$)&amp;quot;)
+plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2019-02-18_PythonLM_files/figure-html/unnamed-chunk-14-1.svg&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;MLR&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Multiple Linear Regression&lt;/h1&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import numpy as np
+Fertilizer = np.arange(100, 800, 100)
+Rainfall   = [10, 20, 10, 30, 20, 20, 30]
+Yield      = [40, 50, 50, 70, 65, 65, 80]
+
+import pandas as pd
+
+df2 = pd.DataFrame(
+ {
+   &amp;quot;Fertilizer&amp;quot;: Fertilizer
+ , &amp;quot;Rainfall&amp;quot;: Rainfall
+ , &amp;quot;Yield&amp;quot;: Yield
+ }
+ )
+
+print(df2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   Fertilizer  Rainfall  Yield
+0         100        10     40
+1         200        20     50
+2         300        10     50
+3         400        30     70
+4         500        20     65
+5         600        20     65
+6         700        30     80&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import pyplot as plt
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection = &amp;quot;3d&amp;quot;)
+ax.scatter(
+  df2[&amp;quot;Fertilizer&amp;quot;]
+, df2[&amp;quot;Rainfall&amp;quot;]
+, df2[&amp;quot;Yield&amp;quot;]
+, color = &amp;quot;green&amp;quot;
+, marker = &amp;quot;o&amp;quot;
+, alpha  = 1
+)
+ax.set_xlabel(&amp;quot;Fertilizer&amp;quot;)
+ax.set_ylabel(&amp;quot;Rainfall&amp;quot;)
+ax.set_zlabel(&amp;quot;Yield&amp;quot;)
+plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2019-02-18_PythonLM_files/figure-html/unnamed-chunk-16-1.svg&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg2 = ols(formula = &amp;quot;Yield ~ Fertilizer + Rainfall&amp;quot;, data = df2)
+Fit2 = Reg2.fit()
+print(Fit2.summary())&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  Yield   R-squared:                       0.981
+Model:                            OLS   Adj. R-squared:                  0.972
+Method:                 Least Squares   F-statistic:                     105.3
+Date:                Tue, 16 Apr 2019   Prob (F-statistic):           0.000347
+Time:                        10:31:39   Log-Likelihood:                -13.848
+No. Observations:                   7   AIC:                             33.70
+Df Residuals:                       4   BIC:                             33.53
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&amp;gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     28.0952      2.491     11.277      0.000      21.178      35.013
+Fertilizer     0.0381      0.006      6.532      0.003       0.022       0.054
+Rainfall       0.8333      0.154      5.401      0.006       0.405       1.262
+==============================================================================
+Omnibus:                          nan   Durbin-Watson:                   2.249
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.705
+Skew:                          -0.408   Prob(JB):                        0.703
+Kurtosis:                       1.677   Cond. No.                     1.28e+03
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.28e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+/home/myaseen/.local/lib/python3.6/site-packages/statsmodels/stats/stattools.py:72: ValueWarning: omni_normtest is not valid with less than 8 observations; 7 samples were given.
+  &amp;quot;samples were given.&amp;quot; % int(n), ValueWarning)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit2.params)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept     28.095238
+Fertilizer     0.038095
+Rainfall       0.833333
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit2.fittedvalues)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0    40.238095
+1    52.380952
+2    47.857143
+3    68.333333
+4    63.809524
+5    67.619048
+6    79.761905
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit2.resid)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0   -0.238095
+1   -2.380952
+2    2.142857
+3    1.666667
+4    1.190476
+5   -2.619048
+6    0.238095
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit2.bse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept     2.491482
+Fertilizer    0.005832
+Rainfall      0.154303
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit2.centered_tss)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1150.0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(anova_lm(Fit2))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;             df      sum_sq     mean_sq           F    PR(&amp;gt;F)
+Fertilizer  1.0  972.321429  972.321429  181.500000  0.000176
+Rainfall    1.0  156.250000  156.250000   29.166667  0.005690
+Residual    4.0   21.428571    5.357143         NaN       NaN&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import pyplot as plt
+import numpy as np
+import pandas as pd
+from matplotlib import cm
+fig = plt.figure()
+ax = fig.add_subplot(111, projection = &amp;quot;3d&amp;quot;)
+ax.scatter(
+  df2[&amp;quot;Fertilizer&amp;quot;]
+, df2[&amp;quot;Rainfall&amp;quot;]
+, df2[&amp;quot;Yield&amp;quot;]
+, color = &amp;quot;green&amp;quot;
+, marker = &amp;quot;o&amp;quot;
+, alpha  = 1
+)
+ax.set_xlabel(&amp;quot;Fertilizer&amp;quot;)
+ax.set_ylabel(&amp;quot;Rainfall&amp;quot;)
+ax.set_zlabel(&amp;quot;Yield&amp;quot;)
+x_surf = np.arange(100, 720, 20)
+y_surf = np.arange(10, 32, 2)
+x_surf, y_surf = np.meshgrid(x_surf, y_surf)
+
+exog = pd.core.frame.DataFrame({
+   &amp;quot;Fertilizer&amp;quot;: x_surf.ravel()
+ , &amp;quot;Rainfall&amp;quot;: y_surf.ravel()
+ })
+out = Fit2.predict(exog = exog)
+ax.plot_surface(
+           x_surf
+         , y_surf
+         , out.values.reshape(x_surf.shape)
+         , rstride=1
+         , cstride=1
+         , color=&amp;quot;None&amp;quot;
+         , alpha = 0.4
+         )
+plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2019-02-18_PythonLM_files/figure-html/unnamed-chunk-18-1.svg&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;PolyReg&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Polynomial Regression&lt;/h1&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;Nitrogen = [0, 0, 10, 10, 20, 20]
+Yield    = [5, 7, 15, 17,  9, 11]
+
+import pandas as pd
+df3 = pd.DataFrame(
+ {
+   &amp;quot;Nitrogen&amp;quot;: Nitrogen
+ , &amp;quot;Yield&amp;quot;: Yield
+ }
+ )
+
+print(df3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   Nitrogen  Yield
+0         0      5
+1         0      7
+2        10     15
+3        10     17
+4        20      9
+5        20     11&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;from matplotlib import pyplot as plt
+fig = plt.figure()
+plt.scatter(
+  df3[&amp;quot;Nitrogen&amp;quot;]
+, df3[&amp;quot;Yield&amp;quot;]
+, color = &amp;quot;green&amp;quot;
+, marker = &amp;quot;o&amp;quot;
+)
+plt.title(&amp;quot;Scatter plot of Nitrogen and Yield&amp;quot;)
+plt.xlabel(&amp;quot;Nitrogen&amp;quot;)
+plt.ylabel(&amp;quot;Yield&amp;quot;)
+plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2019-02-18_PythonLM_files/figure-html/unnamed-chunk-20-1.svg&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg3 = ols(formula = &amp;quot;Yield ~ Nitrogen + I(Nitrogen**2)&amp;quot;, data = df3)
+Fit3 = Reg3.fit()
+print(Fit3.summary())&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  Yield   R-squared:                       0.944
+Model:                            OLS   Adj. R-squared:                  0.907
+Method:                 Least Squares   F-statistic:                     25.33
+Date:                Tue, 16 Apr 2019   Prob (F-statistic):             0.0132
+Time:                        10:31:40   Log-Likelihood:                -8.5136
+No. Observations:                   6   AIC:                             23.03
+Df Residuals:                       3   BIC:                             22.40
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+====================================================================================
+                       coef    std err          t      P&amp;gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept            6.0000      1.000      6.000      0.009       2.818       9.182
+Nitrogen             1.8000      0.255      7.060      0.006       0.989       2.611
+I(Nitrogen ** 2)    -0.0800      0.012     -6.532      0.007      -0.119      -0.041
+==============================================================================
+Omnibus:                          nan   Durbin-Watson:                   3.333
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                1.000
+Skew:                           0.000   Prob(JB):                        0.607
+Kurtosis:                       1.000   Cond. No.                         418.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+/home/myaseen/.local/lib/python3.6/site-packages/statsmodels/stats/stattools.py:72: ValueWarning: omni_normtest is not valid with less than 8 observations; 6 samples were given.
+  &amp;quot;samples were given.&amp;quot; % int(n), ValueWarning)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit3.params)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept           6.00
+Nitrogen            1.80
+I(Nitrogen ** 2)   -0.08
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit3.fittedvalues)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0     6.0
+1     6.0
+2    16.0
+3    16.0
+4    10.0
+5    10.0
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit3.resid)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0   -1.0
+1    1.0
+2   -1.0
+3    1.0
+4   -1.0
+5    1.0
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit3.bse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept           1.000000
+Nitrogen            0.254951
+I(Nitrogen ** 2)    0.012247
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit3.centered_tss)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;107.33333333333334&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(anova_lm(Fit3))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                   df     sum_sq    mean_sq          F    PR(&amp;gt;F)
+Nitrogen          1.0  16.000000  16.000000   8.000000  0.066276
+I(Nitrogen ** 2)  1.0  85.333333  85.333333  42.666667  0.007292
+Residual          3.0   6.000000   2.000000        NaN       NaN&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;fig = plt.figure()
+plt.scatter(
+  df3[&amp;quot;Nitrogen&amp;quot;]
+, df3[&amp;quot;Yield&amp;quot;]
+, color = &amp;quot;green&amp;quot;
+, marker = &amp;quot;o&amp;quot;
+)
+plt.plot(df3[&amp;quot;Nitrogen&amp;quot;], Fit3.fittedvalues)
+plt.title(&amp;quot;Regression plot of Nitrogen and Yield&amp;quot;)
+plt.xlabel(&amp;quot;Nitrogen&amp;quot;)
+plt.ylabel(&amp;quot;Yield&amp;quot;)
+plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2019-02-18_PythonLM_files/figure-html/unnamed-chunk-22-1.svg&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;RegDummy&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Regression with Dummy Variables&lt;/h1&gt;
+&lt;div id=&#34;example-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example 1&lt;/h2&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;Consumption = [5, 6, 7, 15, 16, 17]
+Gender = [&amp;quot;Male&amp;quot;, &amp;quot;Male&amp;quot;,&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Female&amp;quot;]
+
+import pandas as pd
+df4 = pd.DataFrame(
+ {
+   &amp;quot;Consumption&amp;quot;: Consumption
+ , &amp;quot;Gender&amp;quot;: Gender
+ }
+ )
+
+print(df4)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   Consumption  Gender
+0            5    Male
+1            6    Male
+2            7    Male
+3           15  Female
+4           16  Female
+5           17  Female&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import pandas as pd
+fig = plt.figure()
+df4.boxplot(
+    &amp;quot;Consumption&amp;quot;
+  , by = &amp;quot;Gender&amp;quot;
+  )
+plt.title(&amp;quot;Boxplot&amp;quot;)
+plt.xlabel(&amp;quot;Gender&amp;quot;)
+plt.ylabel(&amp;quot;Consumption&amp;quot;)
+plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2019-02-18_PythonLM_files/figure-html/unnamed-chunk-24-1.svg&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+fm4 = ols(formula = &amp;quot;Consumption ~ Gender&amp;quot;, data = df4)
+Fit4 = fm4.fit()
+
+print(dir(Fit4))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&amp;#39;HC0_se&amp;#39;, &amp;#39;HC1_se&amp;#39;, &amp;#39;HC2_se&amp;#39;, &amp;#39;HC3_se&amp;#39;, &amp;#39;_HCCM&amp;#39;, &amp;#39;__class__&amp;#39;, &amp;#39;__delattr__&amp;#39;, &amp;#39;__dict__&amp;#39;, &amp;#39;__dir__&amp;#39;, &amp;#39;__doc__&amp;#39;, &amp;#39;__eq__&amp;#39;, &amp;#39;__format__&amp;#39;, &amp;#39;__ge__&amp;#39;, &amp;#39;__getattribute__&amp;#39;, &amp;#39;__gt__&amp;#39;, &amp;#39;__hash__&amp;#39;, &amp;#39;__init__&amp;#39;, &amp;#39;__init_subclass__&amp;#39;, &amp;#39;__le__&amp;#39;, &amp;#39;__lt__&amp;#39;, &amp;#39;__module__&amp;#39;, &amp;#39;__ne__&amp;#39;, &amp;#39;__new__&amp;#39;, &amp;#39;__reduce__&amp;#39;, &amp;#39;__reduce_ex__&amp;#39;, &amp;#39;__repr__&amp;#39;, &amp;#39;__setattr__&amp;#39;, &amp;#39;__sizeof__&amp;#39;, &amp;#39;__str__&amp;#39;, &amp;#39;__subclasshook__&amp;#39;, &amp;#39;__weakref__&amp;#39;, &amp;#39;_cache&amp;#39;, &amp;#39;_data_attr&amp;#39;, &amp;#39;_get_robustcov_results&amp;#39;, &amp;#39;_is_nested&amp;#39;, &amp;#39;_wexog_singular_values&amp;#39;, &amp;#39;aic&amp;#39;, &amp;#39;bic&amp;#39;, &amp;#39;bse&amp;#39;, &amp;#39;centered_tss&amp;#39;, &amp;#39;compare_f_test&amp;#39;, &amp;#39;compare_lm_test&amp;#39;, &amp;#39;compare_lr_test&amp;#39;, &amp;#39;condition_number&amp;#39;, &amp;#39;conf_int&amp;#39;, &amp;#39;conf_int_el&amp;#39;, &amp;#39;cov_HC0&amp;#39;, &amp;#39;cov_HC1&amp;#39;, &amp;#39;cov_HC2&amp;#39;, &amp;#39;cov_HC3&amp;#39;, &amp;#39;cov_kwds&amp;#39;, &amp;#39;cov_params&amp;#39;, &amp;#39;cov_type&amp;#39;, &amp;#39;df_model&amp;#39;, &amp;#39;df_resid&amp;#39;, &amp;#39;eigenvals&amp;#39;, &amp;#39;el_test&amp;#39;, &amp;#39;ess&amp;#39;, &amp;#39;f_pvalue&amp;#39;, &amp;#39;f_test&amp;#39;, &amp;#39;fittedvalues&amp;#39;, &amp;#39;fvalue&amp;#39;, &amp;#39;get_influence&amp;#39;, &amp;#39;get_prediction&amp;#39;, &amp;#39;get_robustcov_results&amp;#39;, &amp;#39;initialize&amp;#39;, &amp;#39;k_constant&amp;#39;, &amp;#39;llf&amp;#39;, &amp;#39;load&amp;#39;, &amp;#39;model&amp;#39;, &amp;#39;mse_model&amp;#39;, &amp;#39;mse_resid&amp;#39;, &amp;#39;mse_total&amp;#39;, &amp;#39;nobs&amp;#39;, &amp;#39;normalized_cov_params&amp;#39;, &amp;#39;outlier_test&amp;#39;, &amp;#39;params&amp;#39;, &amp;#39;predict&amp;#39;, &amp;#39;pvalues&amp;#39;, &amp;#39;remove_data&amp;#39;, &amp;#39;resid&amp;#39;, &amp;#39;resid_pearson&amp;#39;, &amp;#39;rsquared&amp;#39;, &amp;#39;rsquared_adj&amp;#39;, &amp;#39;save&amp;#39;, &amp;#39;scale&amp;#39;, &amp;#39;ssr&amp;#39;, &amp;#39;summary&amp;#39;, &amp;#39;summary2&amp;#39;, &amp;#39;t_test&amp;#39;, &amp;#39;t_test_pairwise&amp;#39;, &amp;#39;tvalues&amp;#39;, &amp;#39;uncentered_tss&amp;#39;, &amp;#39;use_t&amp;#39;, &amp;#39;wald_test&amp;#39;, &amp;#39;wald_test_terms&amp;#39;, &amp;#39;wresid&amp;#39;]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit4.summary())&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            Consumption   R-squared:                       0.974
+Model:                            OLS   Adj. R-squared:                  0.968
+Method:                 Least Squares   F-statistic:                     150.0
+Date:                Tue, 16 Apr 2019   Prob (F-statistic):           0.000255
+Time:                        10:31:40   Log-Likelihood:                -7.2972
+No. Observations:                   6   AIC:                             18.59
+Df Residuals:                       4   BIC:                             18.18
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P&amp;gt;|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept         16.0000      0.577     27.713      0.000      14.397      17.603
+Gender[T.Male]   -10.0000      0.816    -12.247      0.000     -12.267      -7.733
+==============================================================================
+Omnibus:                          nan   Durbin-Watson:                   2.000
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.562
+Skew:                           0.000   Prob(JB):                        0.755
+Kurtosis:                       1.500   Cond. No.                         2.62
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+/home/myaseen/.local/lib/python3.6/site-packages/statsmodels/stats/stattools.py:72: ValueWarning: omni_normtest is not valid with less than 8 observations; 6 samples were given.
+  &amp;quot;samples were given.&amp;quot; % int(n), ValueWarning)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit4.params)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept         16.0
+Gender[T.Male]   -10.0
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit4.centered_tss)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;154.0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(anova_lm(Fit4))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           df  sum_sq  mean_sq      F    PR(&amp;gt;F)
+Gender    1.0   150.0    150.0  150.0  0.000255
+Residual  4.0     4.0      1.0    NaN       NaN&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example 2&lt;/h2&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;Consumption = [5, 7, 15, 17, 17, 19]
+EduGroup = [&amp;quot;NoEdu&amp;quot;, &amp;quot;NoEdu&amp;quot;, &amp;quot;SchoolEdu&amp;quot;, &amp;quot;SchoolEdu&amp;quot;, &amp;quot;CollegeEdu&amp;quot;, &amp;quot;CollegeEdu&amp;quot;]
+
+import pandas as pd
+df5 = pd.DataFrame(
+ {
+   &amp;quot;Consumption&amp;quot;: Consumption
+ , &amp;quot;EduGroup&amp;quot;: EduGroup
+ }
+ )
+
+print(df5)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   Consumption    EduGroup
+0            5       NoEdu
+1            7       NoEdu
+2           15   SchoolEdu
+3           17   SchoolEdu
+4           17  CollegeEdu
+5           19  CollegeEdu&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;fig = plt.figure()
+df5.boxplot(
+    &amp;quot;Consumption&amp;quot;
+  , by = &amp;quot;EduGroup&amp;quot;
+  )
+plt.title(&amp;quot;Boxplot&amp;quot;)
+plt.xlabel(&amp;quot;EduGroup&amp;quot;)
+plt.ylabel(&amp;quot;Consumption&amp;quot;)
+plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2019-02-18_PythonLM_files/figure-html/unnamed-chunk-27-1.svg&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;fm5 = ols(formula = &amp;quot;Consumption ~ EduGroup&amp;quot;, data = df5)
+Fit5 = fm5.fit()
+
+print(Fit5.summary())&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            Consumption   R-squared:                       0.965
+Model:                            OLS   Adj. R-squared:                  0.942
+Method:                 Least Squares   F-statistic:                     41.33
+Date:                Tue, 16 Apr 2019   Prob (F-statistic):            0.00655
+Time:                        10:31:40   Log-Likelihood:                -8.5136
+No. Observations:                   6   AIC:                             23.03
+Df Residuals:                       3   BIC:                             22.40
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+=========================================================================================
+                            coef    std err          t      P&amp;gt;|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+Intercept                18.0000      1.000     18.000      0.000      14.818      21.182
+EduGroup[T.NoEdu]       -12.0000      1.414     -8.485      0.003     -16.501      -7.499
+EduGroup[T.SchoolEdu]    -2.0000      1.414     -1.414      0.252      -6.501       2.501
+==============================================================================
+Omnibus:                          nan   Durbin-Watson:                   3.333
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                1.000
+Skew:                           0.000   Prob(JB):                        0.607
+Kurtosis:                       1.000   Cond. No.                         3.73
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+/home/myaseen/.local/lib/python3.6/site-packages/statsmodels/stats/stattools.py:72: ValueWarning: omni_normtest is not valid with less than 8 observations; 6 samples were given.
+  &amp;quot;samples were given.&amp;quot; % int(n), ValueWarning)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit5.params)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept                18.0
+EduGroup[T.NoEdu]       -12.0
+EduGroup[T.SchoolEdu]    -2.0
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit5.centered_tss)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;171.33333333333334&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(anova_lm(Fit5))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           df      sum_sq    mean_sq          F    PR(&amp;gt;F)
+EduGroup  2.0  165.333333  82.666667  41.333333  0.006553
+Residual  3.0    6.000000   2.000000        NaN       NaN&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example-3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example 3&lt;/h2&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;Consumption = [51, 52, 53, 54, 56, 57, 55, 56, 58, 59, 62, 63]
+Gender  = [&amp;quot;Male&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Female&amp;quot;]
+Income = [80, 80, 90, 90, 100, 100, 80, 80, 90, 90, 100, 100]
+
+import pandas as pd
+df6 = pd.DataFrame(
+ {
+   &amp;quot;Consumption&amp;quot;: Consumption
+ , &amp;quot;Gender&amp;quot;: Gender
+ , &amp;quot;Income&amp;quot;: Income
+ }
+ )
+
+print(df6)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;    Consumption  Gender  Income
+0            51    Male      80
+1            52    Male      80
+2            53    Male      90
+3            54    Male      90
+4            56    Male     100
+5            57    Male     100
+6            55  Female      80
+7            56  Female      80
+8            58  Female      90
+9            59  Female      90
+10           62  Female     100
+11           63  Female     100&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;regression-with-same-slopes-and-different-intercepts&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Regression with same slopes and different intercepts&lt;/h3&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg6 = ols(formula = &amp;quot;Consumption ~ Gender + Income&amp;quot;, data = df6)
+Fit6 = Reg6.fit()
+
+print(Fit6.summary())&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            Consumption   R-squared:                       0.963
+Model:                            OLS   Adj. R-squared:                  0.955
+Method:                 Least Squares   F-statistic:                     116.7
+Date:                Tue, 16 Apr 2019   Prob (F-statistic):           3.66e-07
+Time:                        10:31:40   Log-Likelihood:                -12.525
+No. Observations:                  12   AIC:                             31.05
+Df Residuals:                       9   BIC:                             32.51
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P&amp;gt;|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept         31.8333      2.546     12.505      0.000      26.075      37.592
+Gender[T.Male]    -5.0000      0.458    -10.914      0.000      -6.036      -3.964
+Income             0.3000      0.028     10.694      0.000       0.237       0.363
+==============================================================================
+Omnibus:                        0.407   Durbin-Watson:                   2.294
+Prob(Omnibus):                  0.816   Jarque-Bera (JB):                0.503
+Skew:                           0.228   Prob(JB):                        0.778
+Kurtosis:                       2.107   Cond. No.                     1.00e+03
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large,  1e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+/home/myaseen/.local/lib/python3.6/site-packages/scipy/stats/stats.py:1416: UserWarning: kurtosistest only valid for n&amp;gt;=20 ... continuing anyway, n=12
+  &amp;quot;anyway, n=%i&amp;quot; % int(n))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit6.params)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept         31.833333
+Gender[T.Male]    -5.000000
+Income             0.300000
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit6.fittedvalues)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0     50.833333
+1     50.833333
+2     53.833333
+3     53.833333
+4     56.833333
+5     56.833333
+6     55.833333
+7     55.833333
+8     58.833333
+9     58.833333
+10    61.833333
+11    61.833333
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit6.resid)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0     0.166667
+1     1.166667
+2    -0.833333
+3     0.166667
+4    -0.833333
+5     0.166667
+6    -0.833333
+7     0.166667
+8    -0.833333
+9     0.166667
+10    0.166667
+11    1.166667
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit6.bse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept         2.545572
+Gender[T.Male]    0.458123
+Income            0.028054
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit6.centered_tss)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;152.66666666666669&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(anova_lm(Fit6))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           df     sum_sq   mean_sq           F    PR(&amp;gt;F)
+Gender    1.0  75.000000  75.00000  119.117647  0.000002
+Income    1.0  72.000000  72.00000  114.352941  0.000002
+Residual  9.0   5.666667   0.62963         NaN       NaN&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import matplotlib.pyplot as plt
+from statsmodels.graphics.factorplots import interaction_plot
+fig = plt.figure()
+fig = interaction_plot(
+    x        = Income
+  , trace    = Gender
+  , response = Fit6.fittedvalues
+  , colors   = [&amp;#39;red&amp;#39;,&amp;#39;blue&amp;#39;]
+  , markers  = [&amp;#39;D&amp;#39;,&amp;#39;^&amp;#39;]
+  , xlabel   =&amp;#39;Income&amp;#39;
+  , ylabel   = &amp;#39;Consumption&amp;#39;
+  )
+plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2019-02-18_PythonLM_files/figure-html/unnamed-chunk-31-1.svg&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;regression-with-different-slopes-and-different-intercepts&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Regression with different slopes and different intercepts&lt;/h3&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg7 = ols(formula = &amp;quot;Consumption ~ Gender*Income&amp;quot;, data = df6)
+Fit7 = Reg7.fit()
+
+print(Fit7.summary())&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            Consumption   R-squared:                       0.976
+Model:                            OLS   Adj. R-squared:                  0.967
+Method:                 Least Squares   F-statistic:                     108.4
+Date:                Tue, 16 Apr 2019   Prob (F-statistic):           8.11e-07
+Time:                        10:31:41   Log-Likelihood:                -9.9135
+No. Observations:                  12   AIC:                             27.83
+Df Residuals:                       8   BIC:                             29.77
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=========================================================================================
+                            coef    std err          t      P&amp;gt;|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+Intercept                27.3333      3.059      8.935      0.000      20.279      34.387
+Gender[T.Male]            4.0000      4.326      0.925      0.382      -5.976      13.976
+Income                    0.3500      0.034     10.340      0.000       0.272       0.428
+Gender[T.Male]:Income    -0.1000      0.048     -2.089      0.070      -0.210       0.010
+==============================================================================
+Omnibus:                        2.522   Durbin-Watson:                   3.273
+Prob(Omnibus):                  0.283   Jarque-Bera (JB):                0.970
+Skew:                          -0.055   Prob(JB):                        0.616
+Kurtosis:                       1.612   Cond. No.                     2.62e+03
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 2.62e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+/home/myaseen/.local/lib/python3.6/site-packages/scipy/stats/stats.py:1416: UserWarning: kurtosistest only valid for n&amp;gt;=20 ... continuing anyway, n=12
+  &amp;quot;anyway, n=%i&amp;quot; % int(n))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit7.params)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept                27.333333
+Gender[T.Male]            4.000000
+Income                    0.350000
+Gender[T.Male]:Income    -0.100000
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit7.fittedvalues)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0     51.333333
+1     51.333333
+2     53.833333
+3     53.833333
+4     56.333333
+5     56.333333
+6     55.333333
+7     55.333333
+8     58.833333
+9     58.833333
+10    62.333333
+11    62.333333
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit7.resid)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0    -0.333333
+1     0.666667
+2    -0.833333
+3     0.166667
+4    -0.333333
+5     0.666667
+6    -0.333333
+7     0.666667
+8    -0.833333
+9     0.166667
+10   -0.333333
+11    0.666667
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit7.bse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Intercept                3.059026
+Gender[T.Male]           4.326116
+Income                   0.033850
+Gender[T.Male]:Income    0.047871
+dtype: float64&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(Fit7.centered_tss)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;152.66666666666669&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(anova_lm(Fit7))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                df     sum_sq    mean_sq           F    PR(&amp;gt;F)
+Gender         1.0  75.000000  75.000000  163.636364  0.000001
+Income         1.0  72.000000  72.000000  157.090909  0.000002
+Gender:Income  1.0   2.000000   2.000000    4.363636  0.070134
+Residual       8.0   3.666667   0.458333         NaN       NaN&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import matplotlib.pyplot as plt
+from statsmodels.graphics.factorplots import interaction_plot
+fig = plt.figure()
+fig = interaction_plot(
+    x        = Income
+  , trace    = Gender
+  , response = Fit7.fittedvalues
+  , colors   = [&amp;#39;red&amp;#39;,&amp;#39;blue&amp;#39;]
+  , markers  = [&amp;#39;D&amp;#39;,&amp;#39;^&amp;#39;]
+  , xlabel   =&amp;#39;Income&amp;#39;
+  , ylabel   = &amp;#39;Consumption&amp;#39;
+  )
+plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2019-02-18_PythonLM_files/figure-html/unnamed-chunk-33-1.svg&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

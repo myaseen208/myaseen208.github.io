@@ -1,0 +1,38 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaTeX on Muhammad Yaseen</title>
+    <link>https://myaseen208.com/categories/latex/</link>
+    <description>Recent content in LaTeX on Muhammad Yaseen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 20 Apr 2018 22:13:31 +0000</lastBuildDate>
+    
+        <atom:link href="https://myaseen208.com/categories/latex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Help</title>
+      <link>https://myaseen208.com/blogs/help/</link>
+      <pubDate>Fri, 20 Apr 2018 22:13:31 +0000</pubDate>
+      
+      <guid>https://myaseen208.com/blogs/help/</guid>
+      <description>&lt;p&gt;This is not a help service for all your Statistics, R, Python and/or LaTeX questions, so please don&amp;rsquo;t post questions in the comments, or send them to me by email.&lt;/p&gt;
+&lt;p&gt;If you have questions about Statistics and/or data analysis, ask for help on &lt;a href=&#34;http://crossvalidated.com&#34;&gt;crossvalidated.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have questions about R, ask for help on &lt;a href=&#34;https://stackoverflow.com/questions/tagged/r&#34;&gt;stackoverflow.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have questions about Python, ask for help on &lt;a href=&#34;https://stackoverflow.com/questions/tagged/python&#34;&gt;stackoverflow.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have questions about LaTeX, ask for help on &lt;a href=&#34;https://tex.stackexchange.com/&#34;&gt;stackoverflow.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you think you have found a bug in one of my R packages, report it on &lt;a href=&#34;https://github.com/myaseen208&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About myaseen208</title>
+      <link>https://myaseen208.com/blogs/about/</link>
+      <pubDate>Fri, 20 Apr 2018 16:17:53 +0000</pubDate>
+      
+      <guid>https://myaseen208.com/blogs/about/</guid>
+      <description>&lt;p&gt;This is my blog site where I will put my thoughts about Statistics, R, Python, LaTeX and Research.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

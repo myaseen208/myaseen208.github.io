@@ -1,0 +1,268 @@
+---
+title: "Teaching"
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+```{r, label = setup, include = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(
+              #  fig.path   = 'figure/'
+                cache.path = 'cache/'
+               , cache      = FALSE
+               , dev        = c("svg", "tikz", "pdf", "png")[1]
+               , fig.align  = 'center'
+              # , fig.show   = 'asis'
+              # , fig.width  = 6
+              # , fig.height = 6
+              # , out.width  = '0.9\\linewidth'
+               , par        = TRUE
+               , echo       = TRUE
+               , results    = 'markup'
+               , warning    = FALSE
+               , message    = FALSE
+               , comment    = NA
+               )
+options(
+          replace.assign = TRUE
+        , width          = 80
+        , knitr.kable.NA = ''
+        )
+
+knit_hooks$set(par = function(before, options, envir){
+if (before && options$fig.show!='none')
+ par(mar=c(4, 4, 0.1, 0.1), cex.lab = 0.95, cex.axis =0.9, mgp = c(2, 0.7, 0), tcl = -0.3)
+}, crop = hook_pdfcrop)
+
+# Suppressing Error Messages in knitr
+muffleError <- function(x,options) {}
+knit_hooks$set(error=muffleError)
+```
+
+&nbsp;
+
+# Winter Semester 2018-2019
+
+
+## Stat-610: Experimental Design-II
+
+
+<h4><a href="https://github.com/myaseen208/Teaching/raw/master/2018-08-28_Winter_2018-2019_Stat-610_Syllabus.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;pdf</a> <a href="https://github.com/myaseen208/Teaching/raw/master/2018-08-28_Winter_2018-2019_Stat-610_Syllabus.pdf">Syllabus</a> &nbsp; </h4>
+
+
+
+**Learning Objectives**
+
+* To provide basic and advanced learning of investigation for conclusions through planning and designing of experiments. To train students through innovative instruction in design theory and methodology that will help them in addressing the significance of experimental design in statistics and across the universal disciplines
+
+&nbsp;
+
+
+**Contents**
+
+
+Introduction to factorial experiments, simple, main and interaction effects. Hidden replication. $2^k$ & $3^k$ series and mixed level factorial experiments and their analysis. Analysis of Covariance (ANCOVA). Confounding in factorial experiments, complete and partial confounding; Single replication of factorial experiments. Fractional factorial experiments. Introduction of response surface methods; first and second order designs, central composite designs, fitting of response surface models and estimation of optimum response
+
+&nbsp;
+
+**Recommended Books**
+
+1. Gomez, K. A. and Gomez, A. A. (1984). *Statistical Procedures for Agricultural Research*
+2. Kuehl, R. O. (1999). *Design of Experiments: Statistical Principles of Research Design and Analysis*
+3. Montgomery, D. C. (2012). *Design and Analysis of Experiments*
+4. Steel, R.G.D, J.H. Torrie and D. A. Dickey. (2008). *Principles and Procedures of Statistics: A Biometrical Approach*
+5. Stroup, W.W., (2012). *Generalized Linear Mixed Models: Modern Concepts, Methods and Applications*
+
+
+&nbsp;
+
+
+
+## Stat-703: Design and Analysis of Experiments for Researchers
+
+
+<h4><a href="https://github.com/myaseen208/Teaching/raw/master/2018-08-28_Winter_2018-2019_Stat-703_Syllabus.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;pdf</a> <a href="https://github.com/myaseen208/Teaching/raw/master/2018-08-28_Winter_2018-2019_Stat-703_Syllabus.pdf">Syllabus</a> &nbsp; </h4>
+
+
+
+**Learning Objectives**
+
+* To impart knowledge of the design of experiments as applied in many areas of biological & experimental sciences
+* To impart practical skills through problem solving using manual as well as computer skills
+
+&nbsp;
+
+
+**Contents**
+
+Factorial experiments, main effects & interactions, ANOVA model, fixed, random & mixed models, treatment structure, contrasts, orthogonal contrasts, & polynomials for quantitative treatment factors, single replicated trials, split plot design & its variants, hierarchical classification, combining experiments over locations, seasons & years, confounding in $2^n$ & $3^n$ factorial experiments & their analysis, Fractional factorials, crossover designs, response surface designs for optimal response
+
+&nbsp;
+
+**Recommended Books**
+
+1. Damon, R. A. and Harvey, W. R. (1997). *Experimental Design, ANOVA, and Regression*
+2. Gomez, K. A. and Gomez, A. A. (1984). *Statistical Procedures for Agricultural Research*
+3. Kuehl, R. O. (1999). *Design of Experiments: Statistical Principles of Research Design and Analysis*
+4. Montgomery, D. C. (2012). *Design and Analysis of Experiments*
+
+
+&nbsp;
+
+## Stat-712: Theory of Experimental Design
+
+
+<h4><a href="https://github.com/myaseen208/Teaching/raw/master/2018-08-28_Winter_2018-2019_Stat-712_Syllabus.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;pdf</a> <a href="https://github.com/myaseen208/Teaching/raw/master/2018-08-28_Winter_2018-2019_Stat-712_Syllabus.pdf">Syllabus</a> &nbsp; </h4>
+
+
+
+**Learning Objectives**
+
+* To train students through innovative instruction in design theory and methodology that will help them in addressing the significance of experimental design in Statistics and across the universal disciplines
+
+&nbsp;
+
+
+**Contents**
+
+**Block Designs**: Introduction, Balanced Incomplete Block Designs (BIBD), Intra-Block Model, Least Squares Analysis, Estimability, Analysis of Variance, Intra-Block Analysis of a BIBD, Connectedness, Orthogonality; **Cyclic Designs**: Introduction, Efficiency factors of Cyclic Designs, Construction of Efficient Designs, n-Cyclic Designs, Generalized Cyclic Designs; **Resolvable Block Designs**: Introduction, Square Lattice Designs, Rectangular Lattice Designs, $\alpha$-Designs, Latinized Block Designs, Two-Replicate Designs; **Row-Column Designs**: Model and Information Matrix, Latin Square Designs, Row-Orthogonal Designs, Non-Orthogonal Row-Column Designs; **Recovery of Inter-Block Information**: Orthogonal Block Structure, Generalized Least Squares Analysis; **Factorial Experiments**: Introduction, Single Replicate and Fractional Factorials; Response Surface Methodology; Design Optimality Criteria; Mathematical and Computer-Aided Design Theory
+
+&nbsp;
+
+**Recommended Books**
+
+1. Cox, D.R. and N. Reid. (2006). *The Theory of the Design of Experiments*
+2. Giesbrecht, F.G. and M.L. Gumpertz. (2004). *Planning, Construction, and Statistical Analysis of Comparative Experiments*
+3. John, J.A. and E.R. Williams. (2013). *Cyclic and Computer Generated Designs*
+4. Lawson, J. (2014). *Design and Analysis of Experiments with R*
+5. Mead, R., S.G. Gilmour and A. Mead. (2012). *Statistical Principles for the Design of Experiments: Applications to Real Experiments*
+
+
+&nbsp;
+&nbsp;
+
+
+# Summer Semester 2017-2018
+
+
+## Stat-703: Design and Analysis of Experiments for Researchers
+
+
+<h4><a href="https://github.com/myaseen208/Teaching/raw/master/2018-06-04_Summer_2017-18_Stat-703_Syllabus.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;pdf</a> <a href="https://github.com/myaseen208/Teaching/raw/master/2018-06-04_Summer_2017-18_Stat-703_Syllabus.pdf">Syllabus</a> &nbsp; </h4>
+
+
+
+**Learning Objectives**
+
+* To impart knowledge of the design of experiments as applied in many areas of biological & experimental sciences
+* To impart practical skills through problem solving using manual as well as computer skills
+
+&nbsp;
+
+
+**Contents**
+
+Factorial experiments, main effects & interactions, ANOVA model, fixed, random & mixed models, treatment structure, contrasts, orthogonal contrasts, & polynomials for quantitative treatment factors, single replicated trials, split plot design & its variants, hierarchical classification, combining experiments over locations, seasons & years, confounding in $2^n$ & $3^n$ factorial experiments & their analysis, Fractional factorials, crossover designs, response surface designs for optimal response
+
+&nbsp;
+
+**Recommended Books**
+
+1. Damon, R. A. and Harvey, W. R. (1997). *Experimental Design, ANOVA, and Regression*
+2. Gomez, K. A. and Gomez, A. A. (1984). *Statistical Procedures for Agricultural Research*
+3. Kuehl, R. O. (1999). *Design of Experiments: Statistical Principles of Research Design and Analysis*
+4. Montgomery, D. C. (2012). *Design and Analysis of Experiments*
+
+
+&nbsp;
+
+
+# Spring Semester 2017-2018
+
+## Stat-705: Advanced Design of Experiments
+
+<h4><a href="https://github.com/myaseen208/Teaching/raw/master/2018-01-23_Spring_2017-18_Stat-705_Syllabus.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;pdf</a> <a href="https://github.com/myaseen208/Teaching/raw/master/2018-01-23_Spring_2017-18_Stat-705_Syllabus.pdf">Syllabus</a> &nbsp; </h4>
+
+
+**Learning Objectives**
+
+* To impart knowledge of advanced topics in the design of experiments
+* To impart practical skills through problem solving using manual as well as computer skills. This course shall help to enhance both these skills in students through assignments which would be solved manually as well as through computers
+
+&nbsp;
+
+
+**Contents**
+
+Incomplete block designs, two dimensional lattices, rectangular lattices, balanced incomplete and partial balanced incomplete block designs, generalized lattice designs, alpha designs, Fractional replication, design resolution, blocking in fractional replication, First and second order response surface designs, Taguchi methods, Quasi, magic and super
+magic latin squares and weighting designs. Latin square type crossover designs. Optimal designs (A optimal, D optimal)
+
+&nbsp;
+
+**Recommended Books**
+
+1. Atkinson, A. C. and Donev, A. N. (1992). *Optimum Experimental Designs*
+2. Cox, D. R. and Reid, N. (2000). *The Theory of the Design of Experiments*
+3. Hinkelmann, K. and Kempthorne, O. (2005). *Design and Analysis of Experiments: Volume 2: Advanced Experimental Design*
+4. Mead, R. (1990). *The Design of Experiments: Statistical Principles for Practical Applications*
+5. Mead, R., Gilmour, S. G. and Mead, A. (2012). *Statistical Principles for the Design of Experiments: Applications to Real Experiments*
+6. Myers, R. H., Montgomery, D. C. and Anderson-Cook, C. M. (2009). *Response Surface Methodology: Process and Product Optimization Using Designed Experiments*
+
+&nbsp;
+
+## Stat-703: Design and Analysis of Experiments for Researchers
+
+
+<h4><a href="https://github.com/myaseen208/Teaching/raw/master/2018-01-23_Spring_2017-18_Stat-703_Syllabus.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;pdf</a> <a href="https://github.com/myaseen208/Teaching/raw/master/2018-01-23_Spring_2017-18_Stat-703_Syllabus.pdf">Syllabus</a> &nbsp; </h4>
+
+
+
+**Learning Objectives**
+
+* To impart knowledge of the design of experiments as applied in many areas of biological & experimental sciences
+* To impart practical skills through problem solving using manual as well as computer skills
+
+&nbsp;
+
+
+**Contents**
+
+Factorial experiments, main effects & interactions, ANOVA model, fixed, random & mixed models, treatment structure, contrasts, orthogonal contrasts, & polynomials for quantitative treatment factors, single replicated trials, split plot design & its variants, hierarchical classification, combining experiments over locations, seasons & years, confounding in $2^n$ & $3^n$ factorial experiments & their analysis. Fractional factorials, crossover designs, response surface designs for optimal response
+
+&nbsp;
+
+**Recommended Books**
+
+1. Damon, R. A. and Harvey, W. R. (1997). *Experimental Design, ANOVA, and Regression*
+2. Gomez, K. A. and Gomez, A. A. (1984). *Statistical Procedures for Agricultural Research*
+3. Kuehl, R. O. (1999). *Design of Experiments: Statistical Principles of Research Design and Analysis*
+4. Montgomery, D. C. (2012). *Design and Analysis of Experiments*
+
+
+&nbsp;
+
+## Stat-609: Experimental Design-I
+
+**Learning Objectives**
+
+To provide basic and advanced learning of investigation for conclusions through planning and designing of experiments. To train students through innovative instruction in design theory and methodology that will help
+them in addressing the significance of experimental design in statistics and across the universal disciplines
+
+&nbsp;
+
+
+**Contents**
+
+Introduction to experimental design and its terminology; Planning and designing of experiment and research; Aspects of experimental design, basic principles of experimental design, fixed and random effects. Analysis of variance, estimation of model parameters. Checking model adequacy, Inference beyond ANOVA multiple comparisons, Contrast analysis, orthogonal polynomial contrasts and trend analysis. Basic experimental designs; completely randomized design (CRD), randomized complete block design (RCBD) and Latin square design (LSD). Relative efficiency of these designs. Incomplete block designs (IBD), balanced incomplete block designs (BIBD) and partially balanced incomplete block designs (PBIBD). Intra-block and Inter-block analysis of IBD
+
+&nbsp;
+
+**Recommended Books**
+
+1. Gomez, K.A. and Gomez, A.A. (1984). *Statistical Procedures for Agricultural Research*
+2. Kehul, R.O. (2000). *Design of Experiments: Statistical Principles of Research Design and Analysis*
+3. Montgomery, D.C. (2012). *Design and Analysis of Experiments*
+4. Steel, R.G.D, Torrie, J.H.  and Dickey, D.A.  (2008). *Principles and Procedures of Statistics: A Biometrical Approach*
+5. Stroup, W.W. (2012). *Generalized Linear Mixed Models: Modern Concepts, Methods and Applications*

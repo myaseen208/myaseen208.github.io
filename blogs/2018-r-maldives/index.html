@@ -1,0 +1,1161 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Data Analysis with R: Introduction of R Language | Muhammad Yaseen</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="https://myaseen208.com/fonts/academicons.ttf?v=1.7.0" as="font">
+    <link rel="preload" href="https://myaseen208.com/fonts/fontawesome-webfont.woff2?v=4.6.34Cas" as="font">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/foundation.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/stackoverflow-light.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/academicons.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/finite.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/kube.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/robjhyndman.min.css">
+    
+<script>
+(function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+_.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+var ml_account = ml('accounts', '3217732', 'q9y4a1d8i3', 'load');
+</script>
+
+</head>
+  <body>
+    <header>
+      <nav class="nav-bar">
+	
+	  <div class="title-bar" data-responsive-toggle="site-menu" data-hide-for="medium">
+	    <button class="site-hamburger" type="button" data-toggle>
+	      <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+	    </button>
+	    <div class="title-bar-title site-title">
+	      <a href="https://myaseen208.com/"  style="color: #b3cde0">Muhammad Yaseen</a>
+	    </div>
+	    <div class="title-bar-right pull-right">
+	      
+
+
+	    </div>
+	  </div>
+
+	  
+	    <div class="top-bar" id="site-menu" >
+	      <div class="top-bar-title show-for-medium site-title">
+		<a href="https://myaseen208.com/"  style="color: #b3cde0;">Muhammad Yaseen</a>
+	      </div>
+	      <div class="top-bar-left">
+		<ul class="menu vertical medium-horizontal">
+		  
+		  
+		  <li><a href="https://myaseen208.com/blogs/">Blogs</a></li>
+		  
+		  <li><a href="https://myaseen208.com/publications/">Publications</a></li>
+		  
+		  <li><a href="https://myaseen208.com/software/">Software</a></li>
+		  
+		  <li><a href="https://myaseen208.com/seminars/">Seminars</a></li>
+		  
+		  <li><a href="https://myaseen208.com/teaching/">Teaching</a></li>
+		  
+		  <li><a href="https://myaseen208.com/about/">About</a></li>
+		  
+		</ul>
+	      </div>
+	      <div class="top-bar-right show-for-medium">
+		
+
+
+	      </div>
+	    </div>
+	  
+	</nav>
+    </header>
+    <main>
+      
+
+<div class="wrapper">
+<div class="units-row" style='margin-bottom: 0px;'>
+<div class="unit-20">&nbsp;</div>
+<div class="unit-60"><h1>Data Analysis with R: Introduction of R Language</h1></div>
+</div>
+<div class="units-row">
+  <div class="unit-20 dateblock" style='text-align: right;'><h4 style='padding: .8ex 0px .8ex 0px;'><a href="https://myaseen208.com/blogs">Blogs</a></h4>
+      <div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2018-03-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">25 March 2018</time>
+  </span>
+  
+  
+  
+  <span class="post-tags">
+    <p><i class="fa fa-tags"></i>
+    
+    <a class="post-tag" href="https://myaseen208.com/categories/r">R</a>,
+     
+    
+    
+    <a class="post-tag" href="https://myaseen208.com/categories/statistics">Statistics</a>, 
+    
+    
+    <a class="post-tag" href="https://myaseen208.com/categories/research">Research</a>
+    
+  </span>
+  
+  
+</div>
+
+    </div>
+<div class="unit-60">
+
+  
+<script src="https://myaseen208.com/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://myaseen208.com/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="https://myaseen208.com/rmarkdown-libs/dygraphs/dygraph.css" rel="stylesheet" />
+<script src="https://myaseen208.com/rmarkdown-libs/dygraphs/dygraph-combined.js"></script>
+<script src="https://myaseen208.com/rmarkdown-libs/moment/moment.js"></script>
+<script src="https://myaseen208.com/rmarkdown-libs/moment-timezone/moment-timezone-with-data.js"></script>
+<script src="https://myaseen208.com/rmarkdown-libs/moment-fquarter/moment-fquarter.min.js"></script>
+<script src="https://myaseen208.com/rmarkdown-libs/dygraphs-binding/dygraphs.js"></script>
+<script src="https://myaseen208.com/rmarkdown-libs/plotly-binding/plotly.js"></script>
+<script src="https://myaseen208.com/rmarkdown-libs/typedarray/typedarray.min.js"></script>
+<link href="https://myaseen208.com/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="https://myaseen208.com/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
+<link href="https://myaseen208.com/rmarkdown-libs/plotlyjs/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="https://myaseen208.com/rmarkdown-libs/plotlyjs/plotly-latest.min.js"></script>
+
+<div id="TOC">
+<ul>
+<li><a href="#the-workspace">The Workspace</a></li>
+<li><a href="#data-types">Data types</a></li>
+<li><a href="#vectors">Vectors</a></li>
+<li><a href="#matrices">Matrices</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#data-frames">Data Frames</a></li>
+<li><a href="#readingwriting-data-fromto-files-importexport-data">Reading/writing data from/to files (Import/Export Data)</a></li>
+<li><a href="#connecting-to-the-database">Connecting to the database</a></li>
+<li><a href="#numerical-or-graphical-summaries-of-data.">Numerical or Graphical Summaries of data.</a></li>
+<li><a href="#summarize-data">Summarize Data</a></li>
+<li><a href="#bar-charts-and-dot-charts">Bar charts and Dot charts</a><ul>
+<li><a href="#ggplot2-package">ggplot2 package</a></li>
+</ul></li>
+<li><a href="#the-mpg-data-frame">The mpg Data Frame</a></li>
+<li><a href="#data-transformation">Data Transformation</a></li>
+<li><a href="#filter-rows-with-filter">Filter Rows with filter()</a></li>
+<li><a href="#comparisons">Comparisons</a></li>
+<li><a href="#logical-operators">Logical Operators</a></li>
+<li><a href="#missing-values">Missing Values</a></li>
+<li><a href="#arrange-rows-with-arrange">Arrange Rows with arrange()</a></li>
+<li><a href="#select-columns-with-select">Select Columns with select()</a></li>
+<li><a href="#add-new-variables-with-mutate">Add New Variables with mutate()</a></li>
+<li><a href="#pakpc2017tehsil-data-frame">PakPC2017Tehsil Data Frame</a></li>
+<li><a href="#scatter-plot">Scatter Plot</a></li>
+<li><a href="#dygraphs">dygraphs</a></li>
+<li><a href="#plotly">plotly</a></li>
+<li><a href="#datatable">datatable</a></li>
+</ul>
+</div>
+
+<div id="the-workspace" class="section level2">
+<h2>The Workspace</h2>
+<p>The workspace is your current R working environment and includes any user-defined objects (vectors, matrices, data frames, lists, functions). At the end of an R session, the user can save an image of the current workspace that is automatically reloaded the next time R is started.</p>
+<pre class="r"><code>getwd()</code></pre>
+<pre><code>## [1] &quot;/media/myaseen/Documents/MYaseen208/Consultancy_at_UAF/Mr._M._Yaseen/2018-04-20_Website/MYaseen208/content/myaseen208&quot;</code></pre>
+<pre class="r"><code>#setwd(&quot;C:/Users/PBS FAISALABAD/Documents/R/Training&quot;)#use forward slash instead of back slash in windows.
+save.image() # To save workspace image.
+x&lt;-c(1:4)
+x</code></pre>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<pre class="r"><code>save(x, file = &quot;mydat.RData&quot;)
+rm(list = ls())
+load(&quot;mydat.RData&quot;)
+x</code></pre>
+<pre><code>## [1] 1 2 3 4</code></pre>
+</div>
+<div id="data-types" class="section level2">
+<h2>Data types</h2>
+<pre class="r"><code>x&lt;-2.56
+class(x)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>x</code></pre>
+<pre><code>## [1] 2.56</code></pre>
+<pre class="r"><code>y&lt;-as.integer(x)
+class(y)</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>y</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>z&lt;-as.integer(2.56)
+z</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>is.integer(z)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>as.integer(is.integer(z))</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>as.integer(!is.integer(z))</code></pre>
+<pre><code>## [1] 0</code></pre>
+<pre class="r"><code>as.integer(is.integer(x))</code></pre>
+<pre><code>## [1] 0</code></pre>
+<pre class="r"><code>x&lt;-round(x,digits = 1)
+x</code></pre>
+<pre><code>## [1] 2.6</code></pre>
+<pre class="r"><code>y&lt;-&quot;Male&quot;
+class(y)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+</div>
+<div id="vectors" class="section level2">
+<h2>Vectors</h2>
+<p>A vector is a sequence of data elements of the same basic type. A combine function c() is used to form the vector. Here are examples of each type of vector:</p>
+<pre class="r"><code>x&lt;-c(1,2,3,4)
+x</code></pre>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<pre class="r"><code>y&lt;-c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;)
+y</code></pre>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<pre class="r"><code>c(x,y)</code></pre>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<pre class="r"><code>length(y)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>y[c(2,4)]</code></pre>
+<pre><code>## [1] &quot;b&quot; &quot;d&quot;</code></pre>
+<pre class="r"><code>y[c(2:4)]</code></pre>
+<pre><code>## [1] &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<pre class="r"><code>y[-3]</code></pre>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;d&quot;</code></pre>
+<pre class="r"><code>names(x)&lt;-c(&quot;first&quot;,&quot;second&quot;,&quot;third&quot;,&quot;fourth&quot;)
+x</code></pre>
+<pre><code>##  first second  third fourth 
+##      1      2      3      4</code></pre>
+<pre class="r"><code>x[c(&quot;second&quot;,&quot;fourth&quot;)]</code></pre>
+<pre><code>## second fourth 
+##      2      4</code></pre>
+<pre class="r"><code>x[2]&lt;-5
+x</code></pre>
+<pre><code>##  first second  third fourth 
+##      1      5      3      4</code></pre>
+<pre class="r"><code>x&lt;-x*2
+x</code></pre>
+<pre><code>##  first second  third fourth 
+##      2     10      6      8</code></pre>
+<pre class="r"><code>seq(from = 1, to = 10, by = 2)</code></pre>
+<pre><code>## [1] 1 3 5 7 9</code></pre>
+<pre class="r"><code>rep(5, time = 10)</code></pre>
+<pre><code>##  [1] 5 5 5 5 5 5 5 5 5 5</code></pre>
+<pre class="r"><code>rep(c(&quot;Male&quot;,&quot;Female&quot;),time = 10)</code></pre>
+<pre><code>##  [1] &quot;Male&quot;   &quot;Female&quot; &quot;Male&quot;   &quot;Female&quot; &quot;Male&quot;   &quot;Female&quot; &quot;Male&quot;  
+##  [8] &quot;Female&quot; &quot;Male&quot;   &quot;Female&quot; &quot;Male&quot;   &quot;Female&quot; &quot;Male&quot;   &quot;Female&quot;
+## [15] &quot;Male&quot;   &quot;Female&quot; &quot;Male&quot;   &quot;Female&quot; &quot;Male&quot;   &quot;Female&quot;</code></pre>
+<pre class="r"><code>rep(c(&quot;Male&quot;,&quot;Female&quot;), each = 10)</code></pre>
+<pre><code>##  [1] &quot;Male&quot;   &quot;Male&quot;   &quot;Male&quot;   &quot;Male&quot;   &quot;Male&quot;   &quot;Male&quot;   &quot;Male&quot;  
+##  [8] &quot;Male&quot;   &quot;Male&quot;   &quot;Male&quot;   &quot;Female&quot; &quot;Female&quot; &quot;Female&quot; &quot;Female&quot;
+## [15] &quot;Female&quot; &quot;Female&quot; &quot;Female&quot; &quot;Female&quot; &quot;Female&quot; &quot;Female&quot;</code></pre>
+<pre class="r"><code>rep(seq(from = 2, to = 9, by = .25), time = 5)</code></pre>
+<pre><code>##   [1] 2.00 2.25 2.50 2.75 3.00 3.25 3.50 3.75 4.00 4.25 4.50 4.75 5.00 5.25
+##  [15] 5.50 5.75 6.00 6.25 6.50 6.75 7.00 7.25 7.50 7.75 8.00 8.25 8.50 8.75
+##  [29] 9.00 2.00 2.25 2.50 2.75 3.00 3.25 3.50 3.75 4.00 4.25 4.50 4.75 5.00
+##  [43] 5.25 5.50 5.75 6.00 6.25 6.50 6.75 7.00 7.25 7.50 7.75 8.00 8.25 8.50
+##  [57] 8.75 9.00 2.00 2.25 2.50 2.75 3.00 3.25 3.50 3.75 4.00 4.25 4.50 4.75
+##  [71] 5.00 5.25 5.50 5.75 6.00 6.25 6.50 6.75 7.00 7.25 7.50 7.75 8.00 8.25
+##  [85] 8.50 8.75 9.00 2.00 2.25 2.50 2.75 3.00 3.25 3.50 3.75 4.00 4.25 4.50
+##  [99] 4.75 5.00 5.25 5.50 5.75 6.00 6.25 6.50 6.75 7.00 7.25 7.50 7.75 8.00
+## [113] 8.25 8.50 8.75 9.00 2.00 2.25 2.50 2.75 3.00 3.25 3.50 3.75 4.00 4.25
+## [127] 4.50 4.75 5.00 5.25 5.50 5.75 6.00 6.25 6.50 6.75 7.00 7.25 7.50 7.75
+## [141] 8.00 8.25 8.50 8.75 9.00</code></pre>
+</div>
+<div id="matrices" class="section level2">
+<h2>Matrices</h2>
+<p>A matrix is a collection of data elements arranged in a two dimensional rectangular layout. Matrices are created with the matrix function.</p>
+<pre class="r"><code>A &lt;- matrix(
+  c(1,2,3,4),
+  nrow = 2,
+  ncol = 2,
+  byrow = TRUE)
+B &lt;- matrix(
+  c(1,2,3,4,5,6,7,8,9),
+  nrow = 3,
+  ncol = 3,
+  byrow = FALSE)
+B</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<pre class="r"><code>A</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4</code></pre>
+<pre class="r"><code>A[2,]</code></pre>
+<pre><code>## [1] 3 4</code></pre>
+<pre class="r"><code>A[,2]</code></pre>
+<pre><code>## [1] 2 4</code></pre>
+<pre class="r"><code>A[2,2]</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>t(A)</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4</code></pre>
+<pre class="r"><code>det(A)</code></pre>
+<pre><code>## [1] -2</code></pre>
+<pre class="r"><code>diag(A)</code></pre>
+<pre><code>## [1] 1 4</code></pre>
+<pre class="r"><code>B&lt;-A + A
+B</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    2    4
+## [2,]    6    8</code></pre>
+<pre class="r"><code>Asquared&lt;- A %*% A
+Asquared</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    7   10
+## [2,]   15   22</code></pre>
+<pre class="r"><code>Ainv&lt;- solve(A)
+Ainv</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,] -2.0  1.0
+## [2,]  1.5 -0.5</code></pre>
+<pre class="r"><code>Aev&lt;- eigen(A)
+Aev</code></pre>
+<pre><code>## eigen() decomposition
+## $values
+## [1]  5.3722813 -0.3722813
+## 
+## $vectors
+##            [,1]       [,2]
+## [1,] -0.4159736 -0.8245648
+## [2,] -0.9093767  0.5657675</code></pre>
+<pre class="r"><code>Aev$values</code></pre>
+<pre><code>## [1]  5.3722813 -0.3722813</code></pre>
+<pre class="r"><code>Aev$vectors</code></pre>
+<pre><code>##            [,1]       [,2]
+## [1,] -0.4159736 -0.8245648
+## [2,] -0.9093767  0.5657675</code></pre>
+</div>
+<div id="lists" class="section level2">
+<h2>Lists</h2>
+<p>Lists are the most complex of the R data types. Basically, a list is an ordered collection of objects (components). A list allows you to gather a variety of (possibly unrelated) objects under one name. For example, a list may contain a combination of vectors, matrices, data frames, and even other lists. A list is created with the list() function.</p>
+<pre class="r"><code>g&lt;-&quot;My First List&quot;
+h&lt;-c(25,26,18,39)
+j&lt;-matrix(1:10, nrow = 5)
+k&lt;-c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;)
+mylist&lt;-list(title = g, ages = h, j,k)
+mylist</code></pre>
+<pre><code>## $title
+## [1] &quot;My First List&quot;
+## 
+## $ages
+## [1] 25 26 18 39
+## 
+## [[3]]
+##      [,1] [,2]
+## [1,]    1    6
+## [2,]    2    7
+## [3,]    3    8
+## [4,]    4    9
+## [5,]    5   10
+## 
+## [[4]]
+## [1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot;</code></pre>
+</div>
+<div id="data-frames" class="section level2">
+<h2>Data Frames</h2>
+<p>A Data Frame is used for storing data tables. It is a list of vectors of equal length. Different columns can contain different type of data (numeric,character, etc.). A data frame is created with the data.frame() function:</p>
+<pre class="r"><code>df&lt;-data.frame(x,y)
+df</code></pre>
+<pre><code>##         x y
+## first   2 a
+## second 10 b
+## third   6 c
+## fourth  8 d</code></pre>
+<pre class="r"><code>nrow(df)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>ncol(df)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>df1&lt;-df[df$y %in% c(&quot;a&quot;,&quot;d&quot;),]
+df1</code></pre>
+<pre><code>##        x y
+## first  2 a
+## fourth 8 d</code></pre>
+<pre class="r"><code>df1&lt;-df[df[,2] %in% c(&quot;b&quot;,&quot;c&quot;),]
+df1</code></pre>
+<pre><code>##         x y
+## second 10 b
+## third   6 c</code></pre>
+<pre class="r"><code>library(PakPC2017)
+data(PakPC2017Tehsil)
+head(PakPC2017Tehsil)</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##   Province Division   District   Tehsil            Pop1998 Pop2017
+##   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;               &lt;dbl&gt;   &lt;dbl&gt;
+## 1 Punjab   Bahawalpur Bahawalpur Hasilpur           317513  456006
+## 2 Punjab   Bahawalpur Bahawalpur Khairpur Tamewali  183903  262628
+## 3 Punjab   Bahawalpur Bahawalpur Yazman             168950  262175
+## 4 Punjab   Bahawalpur Bahawalpur Ahmadpur East      718297 1078683
+## 5 Punjab   Bahawalpur Bahawalpur Bahawalpur City    419542  681696
+## 6 Punjab   Bahawalpur Bahawalpur Bahawalpur Saddar  387038  574950</code></pre>
+</div>
+<div id="readingwriting-data-fromto-files-importexport-data" class="section level2">
+<h2>Reading/writing data from/to files (Import/Export Data)</h2>
+<pre class="r"><code>library(readxl)
+spi &lt;- read_excel(&quot;C:/Users/PBS FAISALABAD/Desktop/spi.xls&quot;)
+DT::datatable(spi,fillContainer = TRUE, editable = TRUE)
+write.csv(PakPC2017Tehsil,&quot;Population.csv&quot;)</code></pre>
+</div>
+<div id="connecting-to-the-database" class="section level2">
+<h2>Connecting to the database</h2>
+<pre class="r"><code>library(dplyr)
+con &lt;- DBI::dbConnect(odbc::odbc(),
+                      dsn = &quot;mydata&quot;)
+table13&lt;-tbl(con, &quot;RPI&quot;)
+table13
+#tehsil&lt;-PakPC2017::PakPC2017Tehsil
+#copy_to(con,tehsil,&quot;tehsil&quot;,
+#        temporary = FALSE
+#      )
+DBI::dbDisconnect(con)</code></pre>
+</div>
+<div id="numerical-or-graphical-summaries-of-data." class="section level2">
+<h2>Numerical or Graphical Summaries of data.</h2>
+<pre class="r"><code>library(PakPC2017)
+summary(PakPC2017Tehsil)</code></pre>
+<pre><code>##    Province           Division           District        
+##  Length:543         Length:543         Length:543        
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+##                                                          
+##     Tehsil             Pop1998           Pop2017       
+##  Length:543         Min.   :   3024   Min.   :   2665  
+##  Class :character   1st Qu.:  57502   1st Qu.:  89801  
+##  Mode  :character   Median : 157142   Median : 254647  
+##                     Mean   : 240553   Mean   : 377084  
+##                     3rd Qu.: 298074   3rd Qu.: 447854  
+##                     Max.   :2219399   Max.   :4269079  
+##                                       NA&#39;s   :1</code></pre>
+<pre class="r"><code>pairs(PakPC2017Tehsil[,5:6])</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/summary1-1.png" width="672" /></p>
+<pre class="r"><code>cor(PakPC2017Tehsil[,5:6], use = &quot;complete&quot;)</code></pre>
+<pre><code>##           Pop1998   Pop2017
+## Pop1998 1.0000000 0.9788354
+## Pop2017 0.9788354 1.0000000</code></pre>
+<pre class="r"><code>popLm&lt;-lm(formula = Pop2017 ~ Pop1998, data = PakPC2017Tehsil)
+popLm</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Pop2017 ~ Pop1998, data = PakPC2017Tehsil)
+## 
+## Coefficients:
+## (Intercept)      Pop1998  
+##   -3445.895        1.579</code></pre>
+<pre class="r"><code>head(resid(popLm),10)</code></pre>
+<pre><code>##          1          2          3          4          5          6 
+## -42044.030 -24391.708  -1227.192 -52385.341  22496.260 -32911.295 
+##          7          8          9         10 
+## -36767.021 -92325.684 -73938.014  10353.258</code></pre>
+<pre class="r"><code>head(fitted(popLm),10)</code></pre>
+<pre><code>##         1         2         3         4         5         6         7 
+##  498050.0  287019.7  263402.2 1131068.3  659199.7  607861.3  851910.0 
+##         8         9        10 
+##  783546.7  599536.0  143090.7</code></pre>
+<pre class="r"><code>summary(popLm)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Pop2017 ~ Pop1998, data = PakPC2017Tehsil)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -299426  -29128    -355   18117 1071215 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -3.446e+03  5.391e+03  -0.639    0.523    
+## Pop1998      1.579e+00  1.421e-02 111.147   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 96960 on 540 degrees of freedom
+##   (1 observation deleted due to missingness)
+## Multiple R-squared:  0.9581, Adjusted R-squared:  0.958 
+## F-statistic: 1.235e+04 on 1 and 540 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>par(mfrow = c(2,2))
+plot(popLm)</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/summary1-2.png" width="672" /></p>
+</div>
+<div id="summarize-data" class="section level2">
+<h2>Summarize Data</h2>
+<pre class="r"><code>library(PakPC2017)
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+</div>
+<div id="bar-charts-and-dot-charts" class="section level2">
+<h2>Bar charts and Dot charts</h2>
+<pre class="r"><code>library(PakPC2017)
+data(&quot;PakPC2017Tehsil&quot;)
+head(PakPC2017Tehsil)</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##   Province Division   District   Tehsil            Pop1998 Pop2017
+##   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;               &lt;dbl&gt;   &lt;dbl&gt;
+## 1 Punjab   Bahawalpur Bahawalpur Hasilpur           317513  456006
+## 2 Punjab   Bahawalpur Bahawalpur Khairpur Tamewali  183903  262628
+## 3 Punjab   Bahawalpur Bahawalpur Yazman             168950  262175
+## 4 Punjab   Bahawalpur Bahawalpur Ahmadpur East      718297 1078683
+## 5 Punjab   Bahawalpur Bahawalpur Bahawalpur City    419542  681696
+## 6 Punjab   Bahawalpur Bahawalpur Bahawalpur Saddar  387038  574950</code></pre>
+<pre class="r"><code>province&lt;-tapply(PakPC2017Tehsil$Pop2017,PakPC2017Tehsil$Province,sum,na.rm=TRUE)
+par(mfrow = c(3,2))
+dotchart(province)</code></pre>
+<pre><code>## Warning in dotchart(province): &#39;x&#39; is neither a vector nor a matrix: using
+## as.numeric(x)</code></pre>
+<pre class="r"><code>barplot(province)
+boxplot(Pop2017~Province,data = PakPC2017Tehsil)
+pie(province, col = rainbow(length(province)))
+plot(province, type = &quot;o&quot;)
+pop&lt;-PakPC2017Tehsil$Pop2017
+hist(pop)</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/dataFrame1-1.png" width="672" /></p>
+<pre class="r"><code>hist(pop, breaks = seq(min(pop,na.rm = TRUE),max(pop,na.rm = TRUE), length.out = 31))</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/dataFrame1-2.png" width="672" /></p>
+<div id="ggplot2-package" class="section level3">
+<h3>ggplot2 package</h3>
+</div>
+</div>
+<div id="the-mpg-data-frame" class="section level2">
+<h2>The mpg Data Frame</h2>
+<p>A data frame is a rectangular collection of variables (in the columns) and observations (in the rows). mpg contains observations collected by the US Environment Protection Agency on 38 models of cars;
+To learn more about mpg, open its help page by running ?mpg.</p>
+<pre class="r"><code>library(ggplot2)
+ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy))</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/mpg-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy, color = class))</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/mpg1-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy, size = class))</code></pre>
+<pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/mpg2-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy, shape = class))</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/mpg3-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy), color = &quot;blue&quot;)</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/mpg4-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg)+
+  geom_smooth(mapping = aes(x = displ, y = hwy))</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/mpg5-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg)+
+  geom_smooth(mapping = aes(x = displ, y = hwy, linetype = drv))</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/mpg6-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy, color = drv))+
+  geom_smooth(mapping = aes(x = displ, y = hwy, linetype = drv))</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/mpg7-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv))+
+  geom_point()+
+  geom_smooth()</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/mpg8-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg, mapping = aes(x = displ, y = hwy))+
+  geom_point(mapping = aes(color = drv))+
+  geom_smooth(mapping = aes(linetype = drv))</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/mpg9-1.png" width="672" /></p>
+</div>
+<div id="data-transformation" class="section level2">
+<h2>Data Transformation</h2>
+<p>To explore the basic data manipulation we’ll use PakPC2017::PakPC2017Tehsil. This data frame contains the popualtion of all 543 tehsils of Pakistan. The data comes from Pakistan Bureau of Statistics, Population Census 2017, and is documented in ?PakPc2017Tehsil.</p>
+<pre class="r"><code>library(PakPC2017)
+library(dplyr)
+tehsil&lt;-as_tibble(PakPC2017Tehsil)
+tehsil</code></pre>
+<pre><code>## # A tibble: 543 x 6
+##    Province Division   District     Tehsil            Pop1998 Pop2017
+##    &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;               &lt;dbl&gt;   &lt;dbl&gt;
+##  1 Punjab   Bahawalpur Bahawalpur   Hasilpur           317513  456006
+##  2 Punjab   Bahawalpur Bahawalpur   Khairpur Tamewali  183903  262628
+##  3 Punjab   Bahawalpur Bahawalpur   Yazman             168950  262175
+##  4 Punjab   Bahawalpur Bahawalpur   Ahmadpur East      718297 1078683
+##  5 Punjab   Bahawalpur Bahawalpur   Bahawalpur City    419542  681696
+##  6 Punjab   Bahawalpur Bahawalpur   Bahawalpur Saddar  387038  574950
+##  7 Punjab   Bahawalpur Bahawalnagar Bahawalnagar       541553  815143
+##  8 Punjab   Bahawalpur Bahawalnagar Chishtian          498270  691221
+##  9 Punjab   Bahawalpur Bahawalnagar Haroonabad         381767  525598
+## 10 Punjab   Bahawalpur Bahawalnagar Fort Abbas          92777  153444
+## # ... with 533 more rows</code></pre>
+</div>
+<div id="filter-rows-with-filter" class="section level2">
+<h2>Filter Rows with filter()</h2>
+<p>filter() allows you to subset observations based on their vaues.
+The first argument is the name of the data frame. The second and subsequent arguments are the expressions that filter the data frame.
+For example, we can select all tehsils of Division Faisalabad:</p>
+<pre class="r"><code>filter(tehsil, Division == &quot;Faisalabad&quot;)</code></pre>
+<pre><code>## # A tibble: 17 x 6
+##    Province Division   District       Tehsil            Pop1998 Pop2017
+##    &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;          &lt;chr&gt;               &lt;dbl&gt;   &lt;dbl&gt;
+##  1 Punjab   Faisalabad Faisalabad     Faisalabad City   2140346 3237961
+##  2 Punjab   Faisalabad Faisalabad     Faisalabad Saddar  924110 1465411
+##  3 Punjab   Faisalabad Faisalabad     Chak Jhumra        253806  332461
+##  4 Punjab   Faisalabad Faisalabad     Sammundri          508637  643068
+##  5 Punjab   Faisalabad Faisalabad     Tandlianwala       540802  702733
+##  6 Punjab   Faisalabad Faisalabad     Jaranwala         1061846 1492276
+##  7 Punjab   Faisalabad Jhang          Jhang              999130 1465472
+##  8 Punjab   Faisalabad Jhang          18 Hazari          200036  295801
+##  9 Punjab   Faisalabad Jhang          Shorkot            373790  548626
+## 10 Punjab   Faisalabad Jhang          Ahmadpur Sial      296465  433517
+## 11 Punjab   Faisalabad Chiniot        Chiniot            382876  556147
+## 12 Punjab   Faisalabad Chiniot        Lalian             309494  439323
+## 13 Punjab   Faisalabad Chiniot        Bhawana            272754  374270
+## 14 Punjab   Faisalabad Toba Tek Singh Toba Tek Singh     554231  739826
+## 15 Punjab   Faisalabad Toba Tek Singh Gojra              495096  656007
+## 16 Punjab   Faisalabad Toba Tek Singh Kamalia            283674  371851
+## 17 Punjab   Faisalabad Toba Tek Singh Pir Mahal          288592  422331</code></pre>
+<pre class="r"><code>newD&lt;-filter(tehsil, grepl(&quot;F&quot;, tehsil$Division))
+newd2&lt;-filter(tehsil, grepl(&quot;abad&quot;, tehsil$Division))</code></pre>
+<p>If you want to save the result, you’ll need to use the assignment operator, &lt;-:
+fsdDivision&lt;-filter(tehsil, Division == “Faisalabad”)</p>
+</div>
+<div id="comparisons" class="section level2">
+<h2>Comparisons</h2>
+<p>To use filtering effectively, you have to know how to select the observations that you want using the comparison operators. R provides the standard suite: &gt;, &gt;=, &lt;, &lt;=, != (not equal), and == (equal).</p>
+<pre class="r"><code>filter(tehsil, Pop2017 &gt;= 1000000)</code></pre>
+<pre><code>## # A tibble: 35 x 6
+##    Province Division   District       Tehsil            Pop1998 Pop2017
+##    &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;          &lt;chr&gt;               &lt;dbl&gt;   &lt;dbl&gt;
+##  1 Punjab   Bahawalpur Bahawalpur     Ahmadpur East      718297 1078683
+##  2 Punjab   Bahawalpur Rahim Yar Khan Rahim Yar Khan     986614 1530330
+##  3 Punjab   Bahawalpur Rahim Yar Khan Sadiqabad          771511 1264752
+##  4 Punjab   Faisalabad Faisalabad     Faisalabad City   2140346 3237961
+##  5 Punjab   Faisalabad Faisalabad     Faisalabad Saddar  924110 1465411
+##  6 Punjab   Faisalabad Faisalabad     Jaranwala         1061846 1492276
+##  7 Punjab   Faisalabad Jhang          Jhang              999130 1465472
+##  8 Punjab   Sahiwal    Sahiwal        Sahiwal           1056132 1491553
+##  9 Punjab   Sahiwal    Sahiwal        Chichawatni        787062 1026007
+## 10 Punjab   Sahiwal    Okara          Okara              862364 1205655
+## # ... with 25 more rows</code></pre>
+</div>
+<div id="logical-operators" class="section level2">
+<h2>Logical Operators</h2>
+<p>Multiple arguments to filter() are combined with “and”: every experessio must be true in order for a row to be included in the output. For other types of combinations, you’ll need to use Boolean operators yourself: &amp; is “and”, | is “or”, and ! is “not”.</p>
+<pre class="r"><code>filter(tehsil, Pop2017 &gt;= 2000000 | Pop1998 &gt;= 1000000)</code></pre>
+<pre><code>## # A tibble: 15 x 6
+##    Province           Division   District    Tehsil        Pop1998 Pop2017
+##    &lt;chr&gt;              &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;   &lt;dbl&gt;
+##  1 Punjab             Faisalabad Faisalabad  Faisalabad C… 2140346 3237961
+##  2 Punjab             Faisalabad Faisalabad  Jaranwala     1061846 1492276
+##  3 Punjab             Sahiwal    Sahiwal     Sahiwal       1056132 1491553
+##  4 Punjab             Sahiwal    Okara       Depalpur      1030836 1374912
+##  5 Punjab             Multan     Multan      Multan City   1381478 2258570
+##  6 Punjab             Sargodha   Sargodha    Sargodha      1081459 1537866
+##  7 Punjab             Lahore     Lahore      Lahore City   2219399 3655774
+##  8 Punjab             Lahore     Lahore      Model Town    1409228 2698235
+##  9 Punjab             Lahore     Lahore      Shalimar      1434823 2280308
+## 10 Punjab             Lahore     Sheikhupura Sheikhupura   1049264 1555424
+## 11 Punjab             Gujranwala Gujranwala  Gujranwal Sa… 1812137 2807054
+## 12 Punjab             Gujranwala Gujrat      Gujrat        1093088 1497865
+## 13 Punjab             Gujranwala Sialkot     Sialkot       1207744 1794658
+## 14 Punjab             Rawalpindi Rawalpindi  Rawalpindi    1927612 3258547
+## 15 Khyber Pakhtunkhwa Peshawar   Peshawar    Peshawar      2026851 4269079</code></pre>
+<pre class="r"><code>filter(tehsil, Pop2017 &gt;= 1000000 &amp; Pop1998 &gt;= 1000000)</code></pre>
+<pre><code>## # A tibble: 15 x 6
+##    Province           Division   District    Tehsil        Pop1998 Pop2017
+##    &lt;chr&gt;              &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;   &lt;dbl&gt;
+##  1 Punjab             Faisalabad Faisalabad  Faisalabad C… 2140346 3237961
+##  2 Punjab             Faisalabad Faisalabad  Jaranwala     1061846 1492276
+##  3 Punjab             Sahiwal    Sahiwal     Sahiwal       1056132 1491553
+##  4 Punjab             Sahiwal    Okara       Depalpur      1030836 1374912
+##  5 Punjab             Multan     Multan      Multan City   1381478 2258570
+##  6 Punjab             Sargodha   Sargodha    Sargodha      1081459 1537866
+##  7 Punjab             Lahore     Lahore      Lahore City   2219399 3655774
+##  8 Punjab             Lahore     Lahore      Model Town    1409228 2698235
+##  9 Punjab             Lahore     Lahore      Shalimar      1434823 2280308
+## 10 Punjab             Lahore     Sheikhupura Sheikhupura   1049264 1555424
+## 11 Punjab             Gujranwala Gujranwala  Gujranwal Sa… 1812137 2807054
+## 12 Punjab             Gujranwala Gujrat      Gujrat        1093088 1497865
+## 13 Punjab             Gujranwala Sialkot     Sialkot       1207744 1794658
+## 14 Punjab             Rawalpindi Rawalpindi  Rawalpindi    1927612 3258547
+## 15 Khyber Pakhtunkhwa Peshawar   Peshawar    Peshawar      2026851 4269079</code></pre>
+<pre class="r"><code>filter(tehsil, Pop2017 &gt;= 2000000 &amp; !Pop1998 &gt;= 1000000)</code></pre>
+<pre><code>## # A tibble: 0 x 6
+## # ... with 6 variables: Province &lt;chr&gt;, Division &lt;chr&gt;, District &lt;chr&gt;,
+## #   Tehsil &lt;chr&gt;, Pop1998 &lt;dbl&gt;, Pop2017 &lt;dbl&gt;</code></pre>
+</div>
+<div id="missing-values" class="section level2">
+<h2>Missing Values</h2>
+<p>One important feature of R that can make comparison tricky is missing values, or NAs (“not available”). NA represents an unknown value so missing values are “contagious”; almost any operation involving an unknown value will also be unknown:
+is.na() is used to determine the missing value.</p>
+<pre class="r"><code>NA + 5</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>NA/2</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>NA*5</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>x&lt;-c(NA,5,10)
+is.na(x)</code></pre>
+<pre><code>## [1]  TRUE FALSE FALSE</code></pre>
+</div>
+<div id="arrange-rows-with-arrange" class="section level2">
+<h2>Arrange Rows with arrange()</h2>
+<p>The vale of x is NA
+arrange() works similarly to filter() except that instead of selecting rows, it changes their order. It takes a data frame and a set of column names to order by.</p>
+<pre class="r"><code>arrange(tehsil, Pop2017)</code></pre>
+<pre><code>## # A tibble: 543 x 6
+##    Province    Division  District      Tehsil            Pop1998 Pop2017
+##    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;               &lt;dbl&gt;   &lt;dbl&gt;
+##  1 Balochistan Sibi      Sibi          Sangan               3024    2665
+##  2 Fata        Fata      Bajaur Agency Bar Chamer Kand      3247    2868
+##  3 Balochistan Zhob      Zhob          Kashatoo             5165    5180
+##  4 Balochistan Kalat     Kalat         Gazg                 3979    5726
+##  5 Sindh       Karachi   Karachi West  Manora Cantonment   10008    5874
+##  6 Balochistan Sibi      Sibi          Kotmandai            8057    7587
+##  7 Balochistan Nasirabad Jhal Magsi    Mirpur              11562    9444
+##  8 Balochistan Sibi      Harnai        Shahrig             17170    9454
+##  9 Sindh       Hyderabad Sujawal       Kharo Chan Taluka    9956   10235
+## 10 Balochistan Sibi      Dera Bugti    Sangsillah          13700   10265
+## # ... with 533 more rows</code></pre>
+<p>Use desc() to reorder by a column in descending order.</p>
+</div>
+<div id="select-columns-with-select" class="section level2">
+<h2>Select Columns with select()</h2>
+<p>It’s not uncommon to get datasets with hundreds or even thousands of variables. In this case, the first challenge is often narrowing in on the variables you’re actually interested in. select() allows you to rapidly zoom in on a useful subset using operations based on the names of the variables.</p>
+<pre class="r"><code>select(tehsil,Province, Tehsil, Pop2017)</code></pre>
+<pre><code>## # A tibble: 543 x 3
+##    Province Tehsil            Pop2017
+##    &lt;chr&gt;    &lt;chr&gt;               &lt;dbl&gt;
+##  1 Punjab   Hasilpur           456006
+##  2 Punjab   Khairpur Tamewali  262628
+##  3 Punjab   Yazman             262175
+##  4 Punjab   Ahmadpur East     1078683
+##  5 Punjab   Bahawalpur City    681696
+##  6 Punjab   Bahawalpur Saddar  574950
+##  7 Punjab   Bahawalnagar       815143
+##  8 Punjab   Chishtian          691221
+##  9 Punjab   Haroonabad         525598
+## 10 Punjab   Fort Abbas         153444
+## # ... with 533 more rows</code></pre>
+<pre class="r"><code>select(tehsil,-Province, -Tehsil, -Pop2017)</code></pre>
+<pre><code>## # A tibble: 543 x 3
+##    Division   District     Pop1998
+##    &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt;
+##  1 Bahawalpur Bahawalpur    317513
+##  2 Bahawalpur Bahawalpur    183903
+##  3 Bahawalpur Bahawalpur    168950
+##  4 Bahawalpur Bahawalpur    718297
+##  5 Bahawalpur Bahawalpur    419542
+##  6 Bahawalpur Bahawalpur    387038
+##  7 Bahawalpur Bahawalnagar  541553
+##  8 Bahawalpur Bahawalnagar  498270
+##  9 Bahawalpur Bahawalnagar  381767
+## 10 Bahawalpur Bahawalnagar   92777
+## # ... with 533 more rows</code></pre>
+<pre class="r"><code>select(tehsil,Pop2017, everything())</code></pre>
+<pre><code>## # A tibble: 543 x 6
+##    Pop2017 Province Division   District     Tehsil            Pop1998
+##      &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;               &lt;dbl&gt;
+##  1  456006 Punjab   Bahawalpur Bahawalpur   Hasilpur           317513
+##  2  262628 Punjab   Bahawalpur Bahawalpur   Khairpur Tamewali  183903
+##  3  262175 Punjab   Bahawalpur Bahawalpur   Yazman             168950
+##  4 1078683 Punjab   Bahawalpur Bahawalpur   Ahmadpur East      718297
+##  5  681696 Punjab   Bahawalpur Bahawalpur   Bahawalpur City    419542
+##  6  574950 Punjab   Bahawalpur Bahawalpur   Bahawalpur Saddar  387038
+##  7  815143 Punjab   Bahawalpur Bahawalnagar Bahawalnagar       541553
+##  8  691221 Punjab   Bahawalpur Bahawalnagar Chishtian          498270
+##  9  525598 Punjab   Bahawalpur Bahawalnagar Haroonabad         381767
+## 10  153444 Punjab   Bahawalpur Bahawalnagar Fort Abbas          92777
+## # ... with 533 more rows</code></pre>
+</div>
+<div id="add-new-variables-with-mutate" class="section level2">
+<h2>Add New Variables with mutate()</h2>
+<p>Besides selecting sets of existing columns, it’s often useful to add new columns that are functions of existing columns. That’s the job of mutate().
+mutate() always adds new columns at the end of your dataset. When you’re in RStudio use View() to see all columns.</p>
+<pre class="r"><code>dplyr::mutate(tehsil, diff = Pop2017-Pop1998)</code></pre>
+<pre><code>## # A tibble: 543 x 7
+##    Province Division   District     Tehsil          Pop1998 Pop2017   diff
+##    &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;             &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+##  1 Punjab   Bahawalpur Bahawalpur   Hasilpur         317513  456006 138493
+##  2 Punjab   Bahawalpur Bahawalpur   Khairpur Tamew…  183903  262628  78725
+##  3 Punjab   Bahawalpur Bahawalpur   Yazman           168950  262175  93225
+##  4 Punjab   Bahawalpur Bahawalpur   Ahmadpur East    718297 1078683 360386
+##  5 Punjab   Bahawalpur Bahawalpur   Bahawalpur City  419542  681696 262154
+##  6 Punjab   Bahawalpur Bahawalpur   Bahawalpur Sad…  387038  574950 187912
+##  7 Punjab   Bahawalpur Bahawalnagar Bahawalnagar     541553  815143 273590
+##  8 Punjab   Bahawalpur Bahawalnagar Chishtian        498270  691221 192951
+##  9 Punjab   Bahawalpur Bahawalnagar Haroonabad       381767  525598 143831
+## 10 Punjab   Bahawalpur Bahawalnagar Fort Abbas        92777  153444  60667
+## # ... with 533 more rows</code></pre>
+<pre class="r"><code>dplyr::mutate(tehsil, diff = Pop2017-Pop1998, add = Pop2017+Pop1998)</code></pre>
+<pre><code>## # A tibble: 543 x 8
+##    Province Division   District     Tehsil   Pop1998 Pop2017   diff    add
+##    &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##  1 Punjab   Bahawalpur Bahawalpur   Hasilpur  317513  456006 138493 7.74e5
+##  2 Punjab   Bahawalpur Bahawalpur   Khairpu…  183903  262628  78725 4.47e5
+##  3 Punjab   Bahawalpur Bahawalpur   Yazman    168950  262175  93225 4.31e5
+##  4 Punjab   Bahawalpur Bahawalpur   Ahmadpu…  718297 1078683 360386 1.80e6
+##  5 Punjab   Bahawalpur Bahawalpur   Bahawal…  419542  681696 262154 1.10e6
+##  6 Punjab   Bahawalpur Bahawalpur   Bahawal…  387038  574950 187912 9.62e5
+##  7 Punjab   Bahawalpur Bahawalnagar Bahawal…  541553  815143 273590 1.36e6
+##  8 Punjab   Bahawalpur Bahawalnagar Chishti…  498270  691221 192951 1.19e6
+##  9 Punjab   Bahawalpur Bahawalnagar Haroona…  381767  525598 143831 9.07e5
+## 10 Punjab   Bahawalpur Bahawalnagar Fort Ab…   92777  153444  60667 2.46e5
+## # ... with 533 more rows</code></pre>
+<pre class="r"><code>newData&lt;-dplyr::mutate(tehsil, new = ifelse(Province == &quot;Punjab&quot;, 1,
+                            ifelse(Province == &quot;Sindh&quot;,2,3)))
+newData</code></pre>
+<pre><code>## # A tibble: 543 x 7
+##    Province Division   District     Tehsil           Pop1998 Pop2017   new
+##    &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 Punjab   Bahawalpur Bahawalpur   Hasilpur          317513  456006     1
+##  2 Punjab   Bahawalpur Bahawalpur   Khairpur Tamewa…  183903  262628     1
+##  3 Punjab   Bahawalpur Bahawalpur   Yazman            168950  262175     1
+##  4 Punjab   Bahawalpur Bahawalpur   Ahmadpur East     718297 1078683     1
+##  5 Punjab   Bahawalpur Bahawalpur   Bahawalpur City   419542  681696     1
+##  6 Punjab   Bahawalpur Bahawalpur   Bahawalpur Sadd…  387038  574950     1
+##  7 Punjab   Bahawalpur Bahawalnagar Bahawalnagar      541553  815143     1
+##  8 Punjab   Bahawalpur Bahawalnagar Chishtian         498270  691221     1
+##  9 Punjab   Bahawalpur Bahawalnagar Haroonabad        381767  525598     1
+## 10 Punjab   Bahawalpur Bahawalnagar Fort Abbas         92777  153444     1
+## # ... with 533 more rows</code></pre>
+</div>
+<div id="pakpc2017tehsil-data-frame" class="section level2">
+<h2>PakPC2017Tehsil Data Frame</h2>
+<pre class="r"><code>plotUnit &lt;-
+  PakPC2017Tehsil %&gt;%
+  dplyr::group_by(Province, Division) %&gt;%
+  dplyr::summarize(
+    Pop2017 = sum(Pop2017, na.rm = TRUE)
+    , Pop1998 = sum(Pop1998, na.rm = TRUE)
+  ) %&gt;%
+  dplyr::filter(Division %in% c(&quot;Faisalabad&quot;,&quot;Lahore&quot;)) %&gt;%
+  tidyr::gather(
+    key   = &quot;Census&quot;
+    , value = &quot;Population&quot;
+    , c(&quot;Pop2017&quot;,&quot;Pop1998&quot;)
+  )
+
+head(plotUnit)</code></pre>
+<pre><code>## # A tibble: 4 x 4
+## # Groups:   Province [1]
+##   Province Division   Census  Population
+##   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;
+## 1 Punjab   Faisalabad Pop2017   14177081
+## 2 Punjab   Lahore     Pop2017   19398081
+## 3 Punjab   Faisalabad Pop1998    9885685
+## 4 Punjab   Lahore     Pop1998   12015649</code></pre>
+<pre class="r"><code>g&lt;-ggplot(data = plotUnit, mapping = aes(x = Division, y = Population))
+g</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/PakPC2017-1.png" width="672" /></p>
+<pre class="r"><code>g&lt;-ggplot(data = plotUnit, mapping = aes(x = Division, y = Population))+
+  geom_col()
+g</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/PakPC2017-2.png" width="672" /></p>
+<pre class="r"><code>g&lt;-ggplot(data = plotUnit, mapping = aes(x = Division, y = Population))+
+  geom_col()+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))
+g</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/PakPC2017-3.png" width="672" /></p>
+<pre class="r"><code>g&lt;-ggplot(data = plotUnit, mapping = aes(x = Division, y = Population))+
+  geom_bar(stat = &quot;identity&quot;, position = position_dodge(width = .9))+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))
+g</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/PakPC2017-4.png" width="672" /></p>
+<pre class="r"><code>g&lt;-ggplot(data = plotUnit,
+          mapping = aes(x = Division, y = Population, fill = Census))+
+  geom_bar(stat = &quot;identity&quot;, position = position_dodge(width = .9))+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))
+g</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/PakPC2017-5.png" width="672" /></p>
+<pre class="r"><code>g&lt;-ggplot(data = plotUnit,
+          mapping = aes(x = Division, y = Population, fill = Census))+
+  geom_bar(stat = &quot;identity&quot;, position = position_dodge(width = .9))+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))+
+  geom_text(aes(label=scales::comma(Population)),
+            position=position_dodge(width = 0.9), vjust = 0.8)
+g</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/PakPC2017-6.png" width="672" /></p>
+<pre class="r"><code>g&lt;-ggplot(data = plotUnit,
+          mapping = aes(x = Division, y = Population, fill = Census))+
+  geom_bar(stat = &quot;identity&quot;, position = position_dodge(width = .9))+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))+
+  geom_text(aes(label=scales::comma(Population)),
+            position=position_dodge(width = 0.9), vjust = 0.8)+
+  facet_wrap(~Province, scales = &quot;free_x&quot;)
+g</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/PakPC2017-7.png" width="672" /></p>
+<pre class="r"><code>plotUnit &lt;-
+  PakPC2017Tehsil %&gt;%
+  dplyr::group_by(Province, Division) %&gt;%
+  dplyr::summarize(
+    Pop2017 = sum(Pop2017, na.rm = TRUE)
+    , Pop1998 = sum(Pop1998, na.rm = TRUE)
+  ) %&gt;%
+  dplyr::filter(Division %in% c(&quot;Faisalabad&quot;,&quot;Lahore&quot;, &quot;Karachi&quot;, &quot;Quetta&quot;)) %&gt;%
+  tidyr::gather(
+    key   = &quot;Census&quot;
+    , value = &quot;Population&quot;
+    , -Province, - Division
+  )
+
+g&lt;-ggplot(data = plotUnit,
+          mapping = aes(x = Division, y = Population, fill = Census))+
+  geom_bar(stat = &quot;identity&quot;, position = position_dodge(width = .9))+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))+
+  geom_text(aes(label=scales::comma(Population)),
+            position=position_dodge(width = 0.9), vjust = 0.8)+
+  facet_wrap(~Province, scales = &quot;free_x&quot;)
+g</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/PakPC2017-8.png" width="672" /></p>
+<pre class="r"><code>g&lt;-ggplot(data = PakPC2017Pakistan, mapping = aes(x = Province, y = Pop2017))
+g+geom_point(aes(color = ResStatus))+theme(legend.position = &quot;top&quot;)</code></pre>
+<pre><code>## Warning: Removed 20 rows containing missing values (geom_point).</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/PakPC2017-9.png" width="672" /></p>
+</div>
+<div id="scatter-plot" class="section level2">
+<h2>Scatter Plot</h2>
+<pre class="r"><code>ggplot(PakPC2017Tehsil, aes(Pop1998,Pop2017))+geom_point()+geom_smooth(method = lm)</code></pre>
+<pre><code>## Warning: Removed 1 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
+<p><img src="https://myaseen208.com/myaseen208/2018-03-25_Maldives_R_files/figure-html/scatter-1.png" width="672" /></p>
+</div>
+<div id="dygraphs" class="section level2">
+<h2>dygraphs</h2>
+<p>The dygraphs package is an R interface to the dygraphs JavaScript charting library. It provides rich facilities for charting time-series data in R</p>
+<pre class="r"><code>library(dygraphs)
+dygraph(nhtemp, main = &quot;New Haven Temperatures&quot;, ylab = &quot;Temp (F)&quot;)</code></pre>
+<div id="htmlwidget-1" style="width:576px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"attrs":{"title":"New Haven Temperatures","ylabel":"Temp (F)","labels":["year","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}}},"scale":"yearly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1912-01-01T00:00:00.000Z","1913-01-01T00:00:00.000Z","1914-01-01T00:00:00.000Z","1915-01-01T00:00:00.000Z","1916-01-01T00:00:00.000Z","1917-01-01T00:00:00.000Z","1918-01-01T00:00:00.000Z","1919-01-01T00:00:00.000Z","1920-01-01T00:00:00.000Z","1921-01-01T00:00:00.000Z","1922-01-01T00:00:00.000Z","1923-01-01T00:00:00.000Z","1924-01-01T00:00:00.000Z","1925-01-01T00:00:00.000Z","1926-01-01T00:00:00.000Z","1927-01-01T00:00:00.000Z","1928-01-01T00:00:00.000Z","1929-01-01T00:00:00.000Z","1930-01-01T00:00:00.000Z","1931-01-01T00:00:00.000Z","1932-01-01T00:00:00.000Z","1933-01-01T00:00:00.000Z","1934-01-01T00:00:00.000Z","1935-01-01T00:00:00.000Z","1936-01-01T00:00:00.000Z","1937-01-01T00:00:00.000Z","1938-01-01T00:00:00.000Z","1939-01-01T00:00:00.000Z","1940-01-01T00:00:00.000Z","1941-01-01T00:00:00.000Z","1942-01-01T00:00:00.000Z","1943-01-01T00:00:00.000Z","1944-01-01T00:00:00.000Z","1945-01-01T00:00:00.000Z","1946-01-01T00:00:00.000Z","1947-01-01T00:00:00.000Z","1948-01-01T00:00:00.000Z","1949-01-01T00:00:00.000Z","1950-01-01T00:00:00.000Z","1951-01-01T00:00:00.000Z","1952-01-01T00:00:00.000Z","1953-01-01T00:00:00.000Z","1954-01-01T00:00:00.000Z","1955-01-01T00:00:00.000Z","1956-01-01T00:00:00.000Z","1957-01-01T00:00:00.000Z","1958-01-01T00:00:00.000Z","1959-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z","1961-01-01T00:00:00.000Z","1962-01-01T00:00:00.000Z","1963-01-01T00:00:00.000Z","1964-01-01T00:00:00.000Z","1965-01-01T00:00:00.000Z","1966-01-01T00:00:00.000Z","1967-01-01T00:00:00.000Z","1968-01-01T00:00:00.000Z","1969-01-01T00:00:00.000Z","1970-01-01T00:00:00.000Z","1971-01-01T00:00:00.000Z"],[49.9,52.3,49.4,51.1,49.4,47.9,49.8,50.9,49.3,51.9,50.8,49.6,49.3,50.6,48.4,50.7,50.9,50.6,51.5,52.8,51.8,51.1,49.8,50.2,50.4,51.6,51.8,50.9,48.8,51.7,51,50.6,51.7,51.5,52.1,51.3,51,54,51.4,52.7,53.1,54.6,52,52,50.9,52.6,50.2,52.6,51.6,51.9,50.5,50.9,51.7,51.4,51.7,50.8,51.9,51.8,51.9,53]]},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>lungDeaths &lt;- cbind(mdeaths, fdeaths)
+dygraph(lungDeaths)</code></pre>
+<div id="htmlwidget-2" style="width:576px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"attrs":{"labels":["month","mdeaths","fdeaths"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}}},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[2134,1863,1877,1877,1492,1249,1280,1131,1209,1492,1621,1846,2103,2137,2153,1833,1403,1288,1186,1133,1053,1347,1545,2066,2020,2750,2283,1479,1189,1160,1113,970,999,1208,1467,2059,2240,1634,1722,1801,1246,1162,1087,1013,959,1179,1229,1655,2019,2284,1942,1423,1340,1187,1098,1004,970,1140,1110,1812,2263,1820,1846,1531,1215,1075,1056,975,940,1081,1294,1341],[901,689,827,677,522,406,441,393,387,582,578,666,830,752,785,664,467,438,421,412,343,440,531,771,767,1141,896,532,447,420,376,330,357,445,546,764,862,660,663,643,502,392,411,348,387,385,411,638,796,853,737,546,530,446,431,362,387,430,425,679,821,785,727,612,478,429,405,379,393,411,487,574]]},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>dygraph(lungDeaths) %&gt;% dyRangeSelector()</code></pre>
+<div id="htmlwidget-3" style="width:576px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"attrs":{"labels":["month","mdeaths","fdeaths"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[2134,1863,1877,1877,1492,1249,1280,1131,1209,1492,1621,1846,2103,2137,2153,1833,1403,1288,1186,1133,1053,1347,1545,2066,2020,2750,2283,1479,1189,1160,1113,970,999,1208,1467,2059,2240,1634,1722,1801,1246,1162,1087,1013,959,1179,1229,1655,2019,2284,1942,1423,1340,1187,1098,1004,970,1140,1110,1812,2263,1820,1846,1531,1215,1075,1056,975,940,1081,1294,1341],[901,689,827,677,522,406,441,393,387,582,578,666,830,752,785,664,467,438,421,412,343,440,531,771,767,1141,896,532,447,420,376,330,357,445,546,764,862,660,663,643,502,392,411,348,387,385,411,638,796,853,737,546,530,446,431,362,387,430,425,679,821,785,727,612,478,429,405,379,393,411,487,574]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<pre class="r"><code>dygraph(lungDeaths) %&gt;%
+  dySeries(&quot;mdeaths&quot;, label = &quot;Male&quot;) %&gt;%
+  dySeries(&quot;fdeaths&quot;, label = &quot;Female&quot;) %&gt;%
+  dyOptions(stackedGraph = TRUE) %&gt;%
+  dyRangeSelector(height = 10)</code></pre>
+<div id="htmlwidget-4" style="width:576px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"attrs":{"labels":["month","Male","Female"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"series":{"Male":{"axis":"y"},"Female":{"axis":"y"}},"stackedGraph":true,"fillGraph":false,"fillAlpha":0.15,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"showRangeSelector":true,"rangeSelectorHeight":10,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[2134,1863,1877,1877,1492,1249,1280,1131,1209,1492,1621,1846,2103,2137,2153,1833,1403,1288,1186,1133,1053,1347,1545,2066,2020,2750,2283,1479,1189,1160,1113,970,999,1208,1467,2059,2240,1634,1722,1801,1246,1162,1087,1013,959,1179,1229,1655,2019,2284,1942,1423,1340,1187,1098,1004,970,1140,1110,1812,2263,1820,1846,1531,1215,1075,1056,975,940,1081,1294,1341],[901,689,827,677,522,406,441,393,387,582,578,666,830,752,785,664,467,438,421,412,343,440,531,771,767,1141,896,532,447,420,376,330,357,445,546,764,862,660,663,643,502,392,411,348,387,385,411,638,796,853,737,546,530,446,431,362,387,430,425,679,821,785,727,612,478,429,405,379,393,411,487,574]],"fixedtz":false,"tzone":""},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<pre class="r"><code>Year&lt;-seq(from = as.Date(&quot;1990/1/1&quot;), to = as.Date(&quot;2018/1/1&quot;), by = &quot;years&quot;)
+prod&lt;-rnorm(29,0,1)
+timeSeries&lt;-xts::xts(prod,Year)
+dygraph(timeSeries)</code></pre>
+<div id="htmlwidget-5" style="width:576px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5">{"x":{"attrs":{"labels":["year","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}}},"scale":"yearly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1990-01-01T00:00:00.000Z","1991-01-01T00:00:00.000Z","1992-01-01T00:00:00.000Z","1993-01-01T00:00:00.000Z","1994-01-01T00:00:00.000Z","1995-01-01T00:00:00.000Z","1996-01-01T00:00:00.000Z","1997-01-01T00:00:00.000Z","1998-01-01T00:00:00.000Z","1999-01-01T00:00:00.000Z","2000-01-01T00:00:00.000Z","2001-01-01T00:00:00.000Z","2002-01-01T00:00:00.000Z","2003-01-01T00:00:00.000Z","2004-01-01T00:00:00.000Z","2005-01-01T00:00:00.000Z","2006-01-01T00:00:00.000Z","2007-01-01T00:00:00.000Z","2008-01-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2018-01-01T00:00:00.000Z"],[-0.338011104638146,-0.941975947772624,1.66233885133678,0.728484214063915,-0.761271554113535,1.52225228692355,-0.325932749334248,0.802840757578017,-1.23191674967691,-0.726609979112666,1.36666420374197,0.69999006866321,1.02786693885225,0.395329546631286,0.696857816713367,-1.21971256022743,-0.835798124477112,-1.91376731844953,0.599179487606384,0.13369994406277,0.374481464356798,1.39277600846009,-0.234938168320632,-0.309938890634555,-0.388841088188156,-0.32266503820708,-0.54910439986264,-1.24577604803197,0.280309131377508]]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="plotly" class="section level2">
+<h2>plotly</h2>
+<pre class="r"><code>library(ggplot2)
+library(plotly)
+myPlot&lt;-ggplot(data = mpg, mapping = aes(x = displ, y = hwy))+
+  geom_point(mapping = aes(color = drv))+
+  geom_smooth(mapping = aes(linetype = drv))
+ggplotly(myPlot)</code></pre>
+<div id="186c12e3e8ce" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="186c12e3e8ce">{"x":{"data":[{"x":[1.8,1.8,2,2,2.8,2.8,3.1,3.1,2.8,3.1,4.2,5.3,5.3,5.7,6.5,3.7,3.7,3.9,3.9,4.7,4.7,4.7,5.2,5.2,3.9,4.7,4.7,4.7,5.2,5.7,5.9,4.7,4.7,4.7,4.7,4.7,4.7,5.2,5.2,5.7,5.9,4,4,4,4,4.6,5,4.2,4.2,4.6,4.6,4.6,5.4,5.4,3,3.7,4,4.7,4.7,4.7,5.7,6.1,4,4.2,4.4,4.6,4,4,4.6,5,3.3,3.3,4,5.6,2.5,2.5,2.5,2.5,2.5,2.5,2.2,2.2,2.5,2.5,2.5,2.5,2.5,2.5,2.7,2.7,3.4,3.4,4,4.7,4.7,5.7,2.7,2.7,2.7,3.4,3.4,4,4],"y":[26,25,28,27,25,25,25,25,24,25,23,19,14,15,17,19,18,17,17,19,19,12,17,15,17,17,12,17,16,18,15,16,12,17,17,16,12,15,16,17,15,17,19,17,19,19,17,17,17,16,16,17,15,17,22,19,20,17,12,19,18,14,15,18,18,15,17,19,19,17,17,17,20,18,25,24,27,25,26,23,26,26,26,26,25,27,25,27,20,20,19,17,20,17,15,18,20,20,22,17,19,18,20],"text":["~drv: 4<br />~displ: 1.8<br />~hwy: 26","~drv: 4<br />~displ: 1.8<br />~hwy: 25","~drv: 4<br />~displ: 2.0<br />~hwy: 28","~drv: 4<br />~displ: 2.0<br />~hwy: 27","~drv: 4<br />~displ: 2.8<br />~hwy: 25","~drv: 4<br />~displ: 2.8<br />~hwy: 25","~drv: 4<br />~displ: 3.1<br />~hwy: 25","~drv: 4<br />~displ: 3.1<br />~hwy: 25","~drv: 4<br />~displ: 2.8<br />~hwy: 24","~drv: 4<br />~displ: 3.1<br />~hwy: 25","~drv: 4<br />~displ: 4.2<br />~hwy: 23","~drv: 4<br />~displ: 5.3<br />~hwy: 19","~drv: 4<br />~displ: 5.3<br />~hwy: 14","~drv: 4<br />~displ: 5.7<br />~hwy: 15","~drv: 4<br />~displ: 6.5<br />~hwy: 17","~drv: 4<br />~displ: 3.7<br />~hwy: 19","~drv: 4<br />~displ: 3.7<br />~hwy: 18","~drv: 4<br />~displ: 3.9<br />~hwy: 17","~drv: 4<br />~displ: 3.9<br />~hwy: 17","~drv: 4<br />~displ: 4.7<br />~hwy: 19","~drv: 4<br />~displ: 4.7<br />~hwy: 19","~drv: 4<br />~displ: 4.7<br />~hwy: 12","~drv: 4<br />~displ: 5.2<br />~hwy: 17","~drv: 4<br />~displ: 5.2<br />~hwy: 15","~drv: 4<br />~displ: 3.9<br />~hwy: 17","~drv: 4<br />~displ: 4.7<br />~hwy: 17","~drv: 4<br />~displ: 4.7<br />~hwy: 12","~drv: 4<br />~displ: 4.7<br />~hwy: 17","~drv: 4<br />~displ: 5.2<br />~hwy: 16","~drv: 4<br />~displ: 5.7<br />~hwy: 18","~drv: 4<br />~displ: 5.9<br />~hwy: 15","~drv: 4<br />~displ: 4.7<br />~hwy: 16","~drv: 4<br />~displ: 4.7<br />~hwy: 12","~drv: 4<br />~displ: 4.7<br />~hwy: 17","~drv: 4<br />~displ: 4.7<br />~hwy: 17","~drv: 4<br />~displ: 4.7<br />~hwy: 16","~drv: 4<br />~displ: 4.7<br />~hwy: 12","~drv: 4<br />~displ: 5.2<br />~hwy: 15","~drv: 4<br />~displ: 5.2<br />~hwy: 16","~drv: 4<br />~displ: 5.7<br />~hwy: 17","~drv: 4<br />~displ: 5.9<br />~hwy: 15","~drv: 4<br />~displ: 4.0<br />~hwy: 17","~drv: 4<br />~displ: 4.0<br />~hwy: 19","~drv: 4<br />~displ: 4.0<br />~hwy: 17","~drv: 4<br />~displ: 4.0<br />~hwy: 19","~drv: 4<br />~displ: 4.6<br />~hwy: 19","~drv: 4<br />~displ: 5.0<br />~hwy: 17","~drv: 4<br />~displ: 4.2<br />~hwy: 17","~drv: 4<br />~displ: 4.2<br />~hwy: 17","~drv: 4<br />~displ: 4.6<br />~hwy: 16","~drv: 4<br />~displ: 4.6<br />~hwy: 16","~drv: 4<br />~displ: 4.6<br />~hwy: 17","~drv: 4<br />~displ: 5.4<br />~hwy: 15","~drv: 4<br />~displ: 5.4<br />~hwy: 17","~drv: 4<br />~displ: 3.0<br />~hwy: 22","~drv: 4<br />~displ: 3.7<br />~hwy: 19","~drv: 4<br />~displ: 4.0<br />~hwy: 20","~drv: 4<br />~displ: 4.7<br />~hwy: 17","~drv: 4<br />~displ: 4.7<br />~hwy: 12","~drv: 4<br />~displ: 4.7<br />~hwy: 19","~drv: 4<br />~displ: 5.7<br />~hwy: 18","~drv: 4<br />~displ: 6.1<br />~hwy: 14","~drv: 4<br />~displ: 4.0<br />~hwy: 15","~drv: 4<br />~displ: 4.2<br />~hwy: 18","~drv: 4<br />~displ: 4.4<br />~hwy: 18","~drv: 4<br />~displ: 4.6<br />~hwy: 15","~drv: 4<br />~displ: 4.0<br />~hwy: 17","~drv: 4<br />~displ: 4.0<br />~hwy: 19","~drv: 4<br />~displ: 4.6<br />~hwy: 19","~drv: 4<br />~displ: 5.0<br />~hwy: 17","~drv: 4<br />~displ: 3.3<br />~hwy: 17","~drv: 4<br />~displ: 3.3<br />~hwy: 17","~drv: 4<br />~displ: 4.0<br />~hwy: 20","~drv: 4<br />~displ: 5.6<br />~hwy: 18","~drv: 4<br />~displ: 2.5<br />~hwy: 25","~drv: 4<br />~displ: 2.5<br />~hwy: 24","~drv: 4<br />~displ: 2.5<br />~hwy: 27","~drv: 4<br />~displ: 2.5<br />~hwy: 25","~drv: 4<br />~displ: 2.5<br />~hwy: 26","~drv: 4<br />~displ: 2.5<br />~hwy: 23","~drv: 4<br />~displ: 2.2<br />~hwy: 26","~drv: 4<br />~displ: 2.2<br />~hwy: 26","~drv: 4<br />~displ: 2.5<br />~hwy: 26","~drv: 4<br />~displ: 2.5<br />~hwy: 26","~drv: 4<br />~displ: 2.5<br />~hwy: 25","~drv: 4<br />~displ: 2.5<br />~hwy: 27","~drv: 4<br />~displ: 2.5<br />~hwy: 25","~drv: 4<br />~displ: 2.5<br />~hwy: 27","~drv: 4<br />~displ: 2.7<br />~hwy: 20","~drv: 4<br />~displ: 2.7<br />~hwy: 20","~drv: 4<br />~displ: 3.4<br />~hwy: 19","~drv: 4<br />~displ: 3.4<br />~hwy: 17","~drv: 4<br />~displ: 4.0<br />~hwy: 20","~drv: 4<br />~displ: 4.7<br />~hwy: 17","~drv: 4<br />~displ: 4.7<br />~hwy: 15","~drv: 4<br />~displ: 5.7<br />~hwy: 18","~drv: 4<br />~displ: 2.7<br />~hwy: 20","~drv: 4<br />~displ: 2.7<br />~hwy: 20","~drv: 4<br />~displ: 2.7<br />~hwy: 22","~drv: 4<br />~displ: 3.4<br />~hwy: 17","~drv: 4<br />~displ: 3.4<br />~hwy: 19","~drv: 4<br />~displ: 4.0<br />~hwy: 18","~drv: 4<br />~displ: 4.0<br />~hwy: 20"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"(4,1)","legendgroup":"(4,1)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.8,1.8,2,2,2.8,2.8,3.1,2.4,2.4,3.1,3.5,3.6,2.4,3,3.3,3.3,3.3,3.3,3.3,3.8,3.8,3.8,4,1.6,1.6,1.6,1.6,1.6,1.8,1.8,1.8,2,2.4,2.4,2.4,2.4,2.5,2.5,3.3,2,2,2,2,2.7,2.7,2.7,2.4,2.4,2.5,2.5,3.5,3.5,3,3,3.5,3.1,3.8,3.8,3.8,5.3,2.2,2.2,2.4,2.4,3,3,3.5,2.2,2.2,2.4,2.4,3,3,3.3,1.8,1.8,1.8,1.8,1.8,2,2,2,2,2.8,1.9,2,2,2,2,2.5,2.5,2.8,2.8,1.9,1.9,2,2,2.5,2.5,1.8,1.8,2,2,2.8,2.8,3.6],"y":[29,29,31,30,26,26,27,27,30,26,29,26,24,24,22,22,24,24,17,22,21,23,23,33,32,32,29,32,34,36,36,29,26,27,30,31,26,26,28,26,29,28,27,24,24,24,29,27,31,32,27,26,26,25,25,26,26,27,28,25,29,27,31,31,26,26,28,27,29,31,31,26,26,27,30,33,35,37,35,29,26,29,29,24,44,29,26,29,29,29,29,23,24,44,41,29,26,28,29,29,29,28,29,26,26,26],"text":["~drv: f<br />~displ: 1.8<br />~hwy: 29","~drv: f<br />~displ: 1.8<br />~hwy: 29","~drv: f<br />~displ: 2.0<br />~hwy: 31","~drv: f<br />~displ: 2.0<br />~hwy: 30","~drv: f<br />~displ: 2.8<br />~hwy: 26","~drv: f<br />~displ: 2.8<br />~hwy: 26","~drv: f<br />~displ: 3.1<br />~hwy: 27","~drv: f<br />~displ: 2.4<br />~hwy: 27","~drv: f<br />~displ: 2.4<br />~hwy: 30","~drv: f<br />~displ: 3.1<br />~hwy: 26","~drv: f<br />~displ: 3.5<br />~hwy: 29","~drv: f<br />~displ: 3.6<br />~hwy: 26","~drv: f<br />~displ: 2.4<br />~hwy: 24","~drv: f<br />~displ: 3.0<br />~hwy: 24","~drv: f<br />~displ: 3.3<br />~hwy: 22","~drv: f<br />~displ: 3.3<br />~hwy: 22","~drv: f<br />~displ: 3.3<br />~hwy: 24","~drv: f<br />~displ: 3.3<br />~hwy: 24","~drv: f<br />~displ: 3.3<br />~hwy: 17","~drv: f<br />~displ: 3.8<br />~hwy: 22","~drv: f<br />~displ: 3.8<br />~hwy: 21","~drv: f<br />~displ: 3.8<br />~hwy: 23","~drv: f<br />~displ: 4.0<br />~hwy: 23","~drv: f<br />~displ: 1.6<br />~hwy: 33","~drv: f<br />~displ: 1.6<br />~hwy: 32","~drv: f<br />~displ: 1.6<br />~hwy: 32","~drv: f<br />~displ: 1.6<br />~hwy: 29","~drv: f<br />~displ: 1.6<br />~hwy: 32","~drv: f<br />~displ: 1.8<br />~hwy: 34","~drv: f<br />~displ: 1.8<br />~hwy: 36","~drv: f<br />~displ: 1.8<br />~hwy: 36","~drv: f<br />~displ: 2.0<br />~hwy: 29","~drv: f<br />~displ: 2.4<br />~hwy: 26","~drv: f<br />~displ: 2.4<br />~hwy: 27","~drv: f<br />~displ: 2.4<br />~hwy: 30","~drv: f<br />~displ: 2.4<br />~hwy: 31","~drv: f<br />~displ: 2.5<br />~hwy: 26","~drv: f<br />~displ: 2.5<br />~hwy: 26","~drv: f<br />~displ: 3.3<br />~hwy: 28","~drv: f<br />~displ: 2.0<br />~hwy: 26","~drv: f<br />~displ: 2.0<br />~hwy: 29","~drv: f<br />~displ: 2.0<br />~hwy: 28","~drv: f<br />~displ: 2.0<br />~hwy: 27","~drv: f<br />~displ: 2.7<br />~hwy: 24","~drv: f<br />~displ: 2.7<br />~hwy: 24","~drv: f<br />~displ: 2.7<br />~hwy: 24","~drv: f<br />~displ: 2.4<br />~hwy: 29","~drv: f<br />~displ: 2.4<br />~hwy: 27","~drv: f<br />~displ: 2.5<br />~hwy: 31","~drv: f<br />~displ: 2.5<br />~hwy: 32","~drv: f<br />~displ: 3.5<br />~hwy: 27","~drv: f<br />~displ: 3.5<br />~hwy: 26","~drv: f<br />~displ: 3.0<br />~hwy: 26","~drv: f<br />~displ: 3.0<br />~hwy: 25","~drv: f<br />~displ: 3.5<br />~hwy: 25","~drv: f<br />~displ: 3.1<br />~hwy: 26","~drv: f<br />~displ: 3.8<br />~hwy: 26","~drv: f<br />~displ: 3.8<br />~hwy: 27","~drv: f<br />~displ: 3.8<br />~hwy: 28","~drv: f<br />~displ: 5.3<br />~hwy: 25","~drv: f<br />~displ: 2.2<br />~hwy: 29","~drv: f<br />~displ: 2.2<br />~hwy: 27","~drv: f<br />~displ: 2.4<br />~hwy: 31","~drv: f<br />~displ: 2.4<br />~hwy: 31","~drv: f<br />~displ: 3.0<br />~hwy: 26","~drv: f<br />~displ: 3.0<br />~hwy: 26","~drv: f<br />~displ: 3.5<br />~hwy: 28","~drv: f<br />~displ: 2.2<br />~hwy: 27","~drv: f<br />~displ: 2.2<br />~hwy: 29","~drv: f<br />~displ: 2.4<br />~hwy: 31","~drv: f<br />~displ: 2.4<br />~hwy: 31","~drv: f<br />~displ: 3.0<br />~hwy: 26","~drv: f<br />~displ: 3.0<br />~hwy: 26","~drv: f<br />~displ: 3.3<br />~hwy: 27","~drv: f<br />~displ: 1.8<br />~hwy: 30","~drv: f<br />~displ: 1.8<br />~hwy: 33","~drv: f<br />~displ: 1.8<br />~hwy: 35","~drv: f<br />~displ: 1.8<br />~hwy: 37","~drv: f<br />~displ: 1.8<br />~hwy: 35","~drv: f<br />~displ: 2.0<br />~hwy: 29","~drv: f<br />~displ: 2.0<br />~hwy: 26","~drv: f<br />~displ: 2.0<br />~hwy: 29","~drv: f<br />~displ: 2.0<br />~hwy: 29","~drv: f<br />~displ: 2.8<br />~hwy: 24","~drv: f<br />~displ: 1.9<br />~hwy: 44","~drv: f<br />~displ: 2.0<br />~hwy: 29","~drv: f<br />~displ: 2.0<br />~hwy: 26","~drv: f<br />~displ: 2.0<br />~hwy: 29","~drv: f<br />~displ: 2.0<br />~hwy: 29","~drv: f<br />~displ: 2.5<br />~hwy: 29","~drv: f<br />~displ: 2.5<br />~hwy: 29","~drv: f<br />~displ: 2.8<br />~hwy: 23","~drv: f<br />~displ: 2.8<br />~hwy: 24","~drv: f<br />~displ: 1.9<br />~hwy: 44","~drv: f<br />~displ: 1.9<br />~hwy: 41","~drv: f<br />~displ: 2.0<br />~hwy: 29","~drv: f<br />~displ: 2.0<br />~hwy: 26","~drv: f<br />~displ: 2.5<br />~hwy: 28","~drv: f<br />~displ: 2.5<br />~hwy: 29","~drv: f<br />~displ: 1.8<br />~hwy: 29","~drv: f<br />~displ: 1.8<br />~hwy: 29","~drv: f<br />~displ: 2.0<br />~hwy: 28","~drv: f<br />~displ: 2.0<br />~hwy: 29","~drv: f<br />~displ: 2.8<br />~hwy: 26","~drv: f<br />~displ: 2.8<br />~hwy: 26","~drv: f<br />~displ: 3.6<br />~hwy: 26"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,186,56,1)"}},"hoveron":"points","name":"(f,1)","legendgroup":"(f,1)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[5.3,5.3,5.3,5.7,6,5.7,5.7,6.2,6.2,7,4.6,5.4,5.4,3.8,3.8,4,4,4.6,4.6,4.6,4.6,5.4,5.4,5.4,5.4],"y":[20,15,20,17,17,26,23,26,25,24,17,17,18,26,25,26,24,21,22,23,22,20,17,16,18],"text":["~drv: r<br />~displ: 5.3<br />~hwy: 20","~drv: r<br />~displ: 5.3<br />~hwy: 15","~drv: r<br />~displ: 5.3<br />~hwy: 20","~drv: r<br />~displ: 5.7<br />~hwy: 17","~drv: r<br />~displ: 6.0<br />~hwy: 17","~drv: r<br />~displ: 5.7<br />~hwy: 26","~drv: r<br />~displ: 5.7<br />~hwy: 23","~drv: r<br />~displ: 6.2<br />~hwy: 26","~drv: r<br />~displ: 6.2<br />~hwy: 25","~drv: r<br />~displ: 7.0<br />~hwy: 24","~drv: r<br />~displ: 4.6<br />~hwy: 17","~drv: r<br />~displ: 5.4<br />~hwy: 17","~drv: r<br />~displ: 5.4<br />~hwy: 18","~drv: r<br />~displ: 3.8<br />~hwy: 26","~drv: r<br />~displ: 3.8<br />~hwy: 25","~drv: r<br />~displ: 4.0<br />~hwy: 26","~drv: r<br />~displ: 4.0<br />~hwy: 24","~drv: r<br />~displ: 4.6<br />~hwy: 21","~drv: r<br />~displ: 4.6<br />~hwy: 22","~drv: r<br />~displ: 4.6<br />~hwy: 23","~drv: r<br />~displ: 4.6<br />~hwy: 22","~drv: r<br />~displ: 5.4<br />~hwy: 20","~drv: r<br />~displ: 5.4<br />~hwy: 17","~drv: r<br />~displ: 5.4<br />~hwy: 16","~drv: r<br />~displ: 5.4<br />~hwy: 18"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(97,156,255,1)"}},"hoveron":"points","name":"(r,1)","legendgroup":"(r,1)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.8,1.85949367088608,1.91898734177215,1.97848101265823,2.0379746835443,2.09746835443038,2.15696202531646,2.21645569620253,2.27594936708861,2.33544303797468,2.39493670886076,2.45443037974684,2.51392405063291,2.57341772151899,2.63291139240506,2.69240506329114,2.75189873417722,2.81139240506329,2.87088607594937,2.93037974683544,2.98987341772152,3.0493670886076,3.10886075949367,3.16835443037975,3.22784810126582,3.2873417721519,3.34683544303797,3.40632911392405,3.46582278481013,3.5253164556962,3.58481012658228,3.64430379746835,3.70379746835443,3.76329113924051,3.82278481012658,3.88227848101266,3.94177215189873,4.00126582278481,4.06075949367089,4.12025316455696,4.17974683544304,4.23924050632911,4.29873417721519,4.35822784810127,4.41772151898734,4.47721518987342,4.53670886075949,4.59620253164557,4.65569620253165,4.71518987341772,4.7746835443038,4.83417721518987,4.89367088607595,4.95316455696203,5.0126582278481,5.07215189873418,5.13164556962025,5.19113924050633,5.25063291139241,5.31012658227848,5.36962025316456,5.42911392405063,5.48860759493671,5.54810126582279,5.60759493670886,5.66708860759494,5.72658227848101,5.78607594936709,5.84556962025316,5.90506329113924,5.96455696202532,6.02405063291139,6.08354430379747,6.14303797468354,6.20253164556962,6.2620253164557,6.32151898734177,6.38101265822785,6.44050632911392,6.5],"y":[27.4946938139413,27.2467225712554,27.0008531185595,26.754575990095,26.5053817201033,26.2507608428258,25.988203892504,25.7156282509048,25.4389314958625,25.1605233501456,24.8800848518723,24.5972970391607,24.3113532857351,24.0111254512663,23.6956416154254,23.369648431218,23.03789255165,22.7051206297269,22.3760793184545,22.0555152708385,21.7481751398847,21.4554429847866,21.1729887321952,20.9003997964479,20.6373807347702,20.3836361043878,20.138870462526,19.9027883664105,19.6750943732667,19.4554930403203,19.2436889247966,19.0393865839214,18.84229057492,18.652105455018,18.468535781441,18.2912861114145,18.1141577309765,17.9379895991543,17.7740707387745,17.6128222105894,17.4555674906686,17.3036300550817,17.1583333798983,17.0210009411879,16.8929562150202,16.7755226774648,16.6700238045912,16.577783072469,16.4935104297892,16.4163160505846,16.3462352309045,16.2810683591015,16.2210779515069,16.1665265244518,16.1176765942674,16.074790677285,16.0381312898356,16.0079609482505,15.9845421688609,15.968137467998,15.9590093619929,15.9572369325135,15.9618365330268,15.9726190548743,15.989583677408,16.0127295799798,16.0420559419415,16.0775619426451,16.1192467614424,16.1671095776853,16.2211495707257,16.2813659199155,16.3477578046066,16.4203244041509,16.4990648979002,16.5839784652064,16.6750642854215,16.7723215378972,16.8757494019856,16.9853470570385],"text":["~drv: 4<br />~displ: 1.800000<br />~hwy: 27.49469","~drv: 4<br />~displ: 1.859494<br />~hwy: 27.24672","~drv: 4<br />~displ: 1.918987<br />~hwy: 27.00085","~drv: 4<br />~displ: 1.978481<br />~hwy: 26.75458","~drv: 4<br />~displ: 2.037975<br />~hwy: 26.50538","~drv: 4<br />~displ: 2.097468<br />~hwy: 26.25076","~drv: 4<br />~displ: 2.156962<br />~hwy: 25.98820","~drv: 4<br />~displ: 2.216456<br />~hwy: 25.71563","~drv: 4<br />~displ: 2.275949<br />~hwy: 25.43893","~drv: 4<br />~displ: 2.335443<br />~hwy: 25.16052","~drv: 4<br />~displ: 2.394937<br />~hwy: 24.88008","~drv: 4<br />~displ: 2.454430<br />~hwy: 24.59730","~drv: 4<br />~displ: 2.513924<br />~hwy: 24.31135","~drv: 4<br />~displ: 2.573418<br />~hwy: 24.01113","~drv: 4<br />~displ: 2.632911<br />~hwy: 23.69564","~drv: 4<br />~displ: 2.692405<br />~hwy: 23.36965","~drv: 4<br />~displ: 2.751899<br />~hwy: 23.03789","~drv: 4<br />~displ: 2.811392<br />~hwy: 22.70512","~drv: 4<br />~displ: 2.870886<br />~hwy: 22.37608","~drv: 4<br />~displ: 2.930380<br />~hwy: 22.05552","~drv: 4<br />~displ: 2.989873<br />~hwy: 21.74818","~drv: 4<br />~displ: 3.049367<br />~hwy: 21.45544","~drv: 4<br />~displ: 3.108861<br />~hwy: 21.17299","~drv: 4<br />~displ: 3.168354<br />~hwy: 20.90040","~drv: 4<br />~displ: 3.227848<br />~hwy: 20.63738","~drv: 4<br />~displ: 3.287342<br />~hwy: 20.38364","~drv: 4<br />~displ: 3.346835<br />~hwy: 20.13887","~drv: 4<br />~displ: 3.406329<br />~hwy: 19.90279","~drv: 4<br />~displ: 3.465823<br />~hwy: 19.67509","~drv: 4<br />~displ: 3.525316<br />~hwy: 19.45549","~drv: 4<br />~displ: 3.584810<br />~hwy: 19.24369","~drv: 4<br />~displ: 3.644304<br />~hwy: 19.03939","~drv: 4<br />~displ: 3.703797<br />~hwy: 18.84229","~drv: 4<br />~displ: 3.763291<br />~hwy: 18.65211","~drv: 4<br />~displ: 3.822785<br />~hwy: 18.46854","~drv: 4<br />~displ: 3.882278<br />~hwy: 18.29129","~drv: 4<br />~displ: 3.941772<br />~hwy: 18.11416","~drv: 4<br />~displ: 4.001266<br />~hwy: 17.93799","~drv: 4<br />~displ: 4.060759<br />~hwy: 17.77407","~drv: 4<br />~displ: 4.120253<br />~hwy: 17.61282","~drv: 4<br />~displ: 4.179747<br />~hwy: 17.45557","~drv: 4<br />~displ: 4.239241<br />~hwy: 17.30363","~drv: 4<br />~displ: 4.298734<br />~hwy: 17.15833","~drv: 4<br />~displ: 4.358228<br />~hwy: 17.02100","~drv: 4<br />~displ: 4.417722<br />~hwy: 16.89296","~drv: 4<br />~displ: 4.477215<br />~hwy: 16.77552","~drv: 4<br />~displ: 4.536709<br />~hwy: 16.67002","~drv: 4<br />~displ: 4.596203<br />~hwy: 16.57778","~drv: 4<br />~displ: 4.655696<br />~hwy: 16.49351","~drv: 4<br />~displ: 4.715190<br />~hwy: 16.41632","~drv: 4<br />~displ: 4.774684<br />~hwy: 16.34624","~drv: 4<br />~displ: 4.834177<br />~hwy: 16.28107","~drv: 4<br />~displ: 4.893671<br />~hwy: 16.22108","~drv: 4<br />~displ: 4.953165<br />~hwy: 16.16653","~drv: 4<br />~displ: 5.012658<br />~hwy: 16.11768","~drv: 4<br />~displ: 5.072152<br />~hwy: 16.07479","~drv: 4<br />~displ: 5.131646<br />~hwy: 16.03813","~drv: 4<br />~displ: 5.191139<br />~hwy: 16.00796","~drv: 4<br />~displ: 5.250633<br />~hwy: 15.98454","~drv: 4<br />~displ: 5.310127<br />~hwy: 15.96814","~drv: 4<br />~displ: 5.369620<br />~hwy: 15.95901","~drv: 4<br />~displ: 5.429114<br />~hwy: 15.95724","~drv: 4<br />~displ: 5.488608<br />~hwy: 15.96184","~drv: 4<br />~displ: 5.548101<br />~hwy: 15.97262","~drv: 4<br />~displ: 5.607595<br />~hwy: 15.98958","~drv: 4<br />~displ: 5.667089<br />~hwy: 16.01273","~drv: 4<br />~displ: 5.726582<br />~hwy: 16.04206","~drv: 4<br />~displ: 5.786076<br />~hwy: 16.07756","~drv: 4<br />~displ: 5.845570<br />~hwy: 16.11925","~drv: 4<br />~displ: 5.905063<br />~hwy: 16.16711","~drv: 4<br />~displ: 5.964557<br />~hwy: 16.22115","~drv: 4<br />~displ: 6.024051<br />~hwy: 16.28137","~drv: 4<br />~displ: 6.083544<br />~hwy: 16.34776","~drv: 4<br />~displ: 6.143038<br />~hwy: 16.42032","~drv: 4<br />~displ: 6.202532<br />~hwy: 16.49906","~drv: 4<br />~displ: 6.262025<br />~hwy: 16.58398","~drv: 4<br />~displ: 6.321519<br />~hwy: 16.67506","~drv: 4<br />~displ: 6.381013<br />~hwy: 16.77232","~drv: 4<br />~displ: 6.440506<br />~hwy: 16.87575","~drv: 4<br />~displ: 6.500000<br />~hwy: 16.98535"],"type":"scatter","mode":"lines","name":"(4,1)","line":{"width":3.77952755905512,"color":"rgba(51,102,255,1)","dash":"solid"},"hoveron":"points","legendgroup":"(4,1)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.6,1.64683544303797,1.69367088607595,1.74050632911392,1.7873417721519,1.83417721518987,1.88101265822785,1.92784810126582,1.9746835443038,2.02151898734177,2.06835443037975,2.11518987341772,2.1620253164557,2.20886075949367,2.25569620253165,2.30253164556962,2.3493670886076,2.39620253164557,2.44303797468354,2.48987341772152,2.53670886075949,2.58354430379747,2.63037974683544,2.67721518987342,2.72405063291139,2.77088607594937,2.81772151898734,2.86455696202532,2.91139240506329,2.95822784810127,3.00506329113924,3.05189873417722,3.09873417721519,3.14556962025316,3.19240506329114,3.23924050632911,3.28607594936709,3.33291139240506,3.37974683544304,3.42658227848101,3.47341772151899,3.52025316455696,3.56708860759494,3.61392405063291,3.66075949367089,3.70759493670886,3.75443037974684,3.80126582278481,3.84810126582278,3.89493670886076,3.94177215189873,3.98860759493671,4.03544303797468,4.08227848101266,4.12911392405063,4.17594936708861,4.22278481012658,4.26962025316456,4.31645569620253,4.36329113924051,4.41012658227848,4.45696202531646,4.50379746835443,4.55063291139241,4.59746835443038,4.64430379746835,4.69113924050633,4.7379746835443,4.78481012658228,4.83164556962025,4.87848101265823,4.9253164556962,4.97215189873418,5.01898734177215,5.06582278481013,5.1126582278481,5.15949367088608,5.20632911392405,5.25316455696202,5.3],"y":[33.3673997557231,33.001785641151,32.6432337059018,32.29183980077,31.9476997765499,31.6109094840358,31.2815647740221,30.9634143362766,30.6606752860139,30.3474374443755,30.0015037676785,29.6431422342643,29.2979417070842,28.9930560463684,28.7892391699253,28.6578119647145,28.5311356021264,28.3415712535512,28.0833011288006,27.816788409022,27.5464605350944,27.2763421632183,27.0104579495942,26.7528325504227,26.4981395670816,26.2052987866306,25.8902569618101,25.5781876989947,25.2942646045586,25.0636612848763,24.9111345351999,24.8134123587677,24.7422712976836,24.6940317906647,24.6650142764279,24.6515391936901,24.6499269811682,24.6564980775791,24.6675729216398,24.6794719520672,24.6885156075782,24.6917098062218,24.6921577463593,24.6910069340128,24.6884308978149,24.6846031663982,24.6796972683953,24.6738867324389,24.6673450871615,24.6602458611958,24.6527625831743,24.6450687817298,24.6373379854948,24.6297437231018,24.6224595231837,24.6156589143728,24.609515425302,24.6042025846037,24.5998939209106,24.5967629628553,24.5949832390704,24.5947282781886,24.5961716088424,24.5994867596644,24.6048472592873,24.6124266363437,24.6223984194662,24.6349361372874,24.6502133184399,24.6684034915564,24.6896801852694,24.7142169282115,24.7421872490155,24.7737646763138,24.8091227387392,24.8484349649241,24.8918748835013,24.9396160231033,24.9918319123628,25.0486960799123],"text":["~drv: f<br />~displ: 1.600000<br />~hwy: 33.36740","~drv: f<br />~displ: 1.646835<br />~hwy: 33.00179","~drv: f<br />~displ: 1.693671<br />~hwy: 32.64323","~drv: f<br />~displ: 1.740506<br />~hwy: 32.29184","~drv: f<br />~displ: 1.787342<br />~hwy: 31.94770","~drv: f<br />~displ: 1.834177<br />~hwy: 31.61091","~drv: f<br />~displ: 1.881013<br />~hwy: 31.28156","~drv: f<br />~displ: 1.927848<br />~hwy: 30.96341","~drv: f<br />~displ: 1.974684<br />~hwy: 30.66068","~drv: f<br />~displ: 2.021519<br />~hwy: 30.34744","~drv: f<br />~displ: 2.068354<br />~hwy: 30.00150","~drv: f<br />~displ: 2.115190<br />~hwy: 29.64314","~drv: f<br />~displ: 2.162025<br />~hwy: 29.29794","~drv: f<br />~displ: 2.208861<br />~hwy: 28.99306","~drv: f<br />~displ: 2.255696<br />~hwy: 28.78924","~drv: f<br />~displ: 2.302532<br />~hwy: 28.65781","~drv: f<br />~displ: 2.349367<br />~hwy: 28.53114","~drv: f<br />~displ: 2.396203<br />~hwy: 28.34157","~drv: f<br />~displ: 2.443038<br />~hwy: 28.08330","~drv: f<br />~displ: 2.489873<br />~hwy: 27.81679","~drv: f<br />~displ: 2.536709<br />~hwy: 27.54646","~drv: f<br />~displ: 2.583544<br />~hwy: 27.27634","~drv: f<br />~displ: 2.630380<br />~hwy: 27.01046","~drv: f<br />~displ: 2.677215<br />~hwy: 26.75283","~drv: f<br />~displ: 2.724051<br />~hwy: 26.49814","~drv: f<br />~displ: 2.770886<br />~hwy: 26.20530","~drv: f<br />~displ: 2.817722<br />~hwy: 25.89026","~drv: f<br />~displ: 2.864557<br />~hwy: 25.57819","~drv: f<br />~displ: 2.911392<br />~hwy: 25.29426","~drv: f<br />~displ: 2.958228<br />~hwy: 25.06366","~drv: f<br />~displ: 3.005063<br />~hwy: 24.91113","~drv: f<br />~displ: 3.051899<br />~hwy: 24.81341","~drv: f<br />~displ: 3.098734<br />~hwy: 24.74227","~drv: f<br />~displ: 3.145570<br />~hwy: 24.69403","~drv: f<br />~displ: 3.192405<br />~hwy: 24.66501","~drv: f<br />~displ: 3.239241<br />~hwy: 24.65154","~drv: f<br />~displ: 3.286076<br />~hwy: 24.64993","~drv: f<br />~displ: 3.332911<br />~hwy: 24.65650","~drv: f<br />~displ: 3.379747<br />~hwy: 24.66757","~drv: f<br />~displ: 3.426582<br />~hwy: 24.67947","~drv: f<br />~displ: 3.473418<br />~hwy: 24.68852","~drv: f<br />~displ: 3.520253<br />~hwy: 24.69171","~drv: f<br />~displ: 3.567089<br />~hwy: 24.69216","~drv: f<br />~displ: 3.613924<br />~hwy: 24.69101","~drv: f<br />~displ: 3.660759<br />~hwy: 24.68843","~drv: f<br />~displ: 3.707595<br />~hwy: 24.68460","~drv: f<br />~displ: 3.754430<br />~hwy: 24.67970","~drv: f<br />~displ: 3.801266<br />~hwy: 24.67389","~drv: f<br />~displ: 3.848101<br />~hwy: 24.66735","~drv: f<br />~displ: 3.894937<br />~hwy: 24.66025","~drv: f<br />~displ: 3.941772<br />~hwy: 24.65276","~drv: f<br />~displ: 3.988608<br />~hwy: 24.64507","~drv: f<br />~displ: 4.035443<br />~hwy: 24.63734","~drv: f<br />~displ: 4.082278<br />~hwy: 24.62974","~drv: f<br />~displ: 4.129114<br />~hwy: 24.62246","~drv: f<br />~displ: 4.175949<br />~hwy: 24.61566","~drv: f<br />~displ: 4.222785<br />~hwy: 24.60952","~drv: f<br />~displ: 4.269620<br />~hwy: 24.60420","~drv: f<br />~displ: 4.316456<br />~hwy: 24.59989","~drv: f<br />~displ: 4.363291<br />~hwy: 24.59676","~drv: f<br />~displ: 4.410127<br />~hwy: 24.59498","~drv: f<br />~displ: 4.456962<br />~hwy: 24.59473","~drv: f<br />~displ: 4.503797<br />~hwy: 24.59617","~drv: f<br />~displ: 4.550633<br />~hwy: 24.59949","~drv: f<br />~displ: 4.597468<br />~hwy: 24.60485","~drv: f<br />~displ: 4.644304<br />~hwy: 24.61243","~drv: f<br />~displ: 4.691139<br />~hwy: 24.62240","~drv: f<br />~displ: 4.737975<br />~hwy: 24.63494","~drv: f<br />~displ: 4.784810<br />~hwy: 24.65021","~drv: f<br />~displ: 4.831646<br />~hwy: 24.66840","~drv: f<br />~displ: 4.878481<br />~hwy: 24.68968","~drv: f<br />~displ: 4.925316<br />~hwy: 24.71422","~drv: f<br />~displ: 4.972152<br />~hwy: 24.74219","~drv: f<br />~displ: 5.018987<br />~hwy: 24.77376","~drv: f<br />~displ: 5.065823<br />~hwy: 24.80912","~drv: f<br />~displ: 5.112658<br />~hwy: 24.84843","~drv: f<br />~displ: 5.159494<br />~hwy: 24.89187","~drv: f<br />~displ: 5.206329<br />~hwy: 24.93962","~drv: f<br />~displ: 5.253165<br />~hwy: 24.99183","~drv: f<br />~displ: 5.300000<br />~hwy: 25.04870"],"type":"scatter","mode":"lines","name":"(f,1)","line":{"width":3.77952755905512,"color":"rgba(51,102,255,1)","dash":"dash"},"hoveron":"points","legendgroup":"(f,1)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.8,3.84050632911392,3.88101265822785,3.92151898734177,3.9620253164557,4.00253164556962,4.04303797468354,4.08354430379747,4.12405063291139,4.16455696202532,4.20506329113924,4.24556962025316,4.28607594936709,4.32658227848101,4.36708860759494,4.40759493670886,4.44810126582278,4.48860759493671,4.52911392405063,4.56962025316456,4.61012658227848,4.6506329113924,4.69113924050633,4.73164556962025,4.77215189873418,4.8126582278481,4.85316455696203,4.89367088607595,4.93417721518987,4.9746835443038,5.01518987341772,5.05569620253165,5.09620253164557,5.13670886075949,5.17721518987342,5.21772151898734,5.25822784810127,5.29873417721519,5.33924050632911,5.37974683544304,5.42025316455696,5.46075949367089,5.50126582278481,5.54177215189873,5.58227848101266,5.62278481012658,5.66329113924051,5.70379746835443,5.74430379746835,5.78481012658228,5.8253164556962,5.86582278481013,5.90632911392405,5.94683544303797,5.9873417721519,6.02784810126582,6.06835443037975,6.10886075949367,6.14936708860759,6.18987341772152,6.23037974683544,6.27088607594937,6.31139240506329,6.35189873417722,6.39240506329114,6.43291139240506,6.47341772151899,6.51392405063291,6.55443037974683,6.59493670886076,6.63544303797468,6.67594936708861,6.71645569620253,6.75696202531646,6.79746835443038,6.8379746835443,6.87848101265823,6.91898734177215,6.95949367088608,7],"y":[25.6587574702581,25.4855421557523,25.3006443828316,25.1059365845077,24.9032911937925,24.6945593706068,24.4755534950089,24.2434686579919,24.000305120825,23.7480631447773,23.4887429911178,23.2243449211157,22.9568691960401,22.6883160771602,22.4206858257449,22.1559787030635,21.8961949703851,21.6433348889787,21.3993987201134,21.1663867250585,20.9474651833053,20.7677157749613,20.63068590775,20.5285032718543,20.4532955574572,20.3971904547417,20.3523156538907,20.3107988450871,20.264767718514,20.2063499643542,20.1276732727908,20.0208653340067,19.8780538381848,19.6913664755081,19.4529309361595,19.154874910322,18.7893260881786,18.3484121599122,18.1196166484361,18.3291904192762,18.7761943677742,19.1367528669492,19.3964037602562,19.5879477193481,19.7441854158775,19.897917521497,20.0819447078596,20.3288736530689,20.6359864260805,20.9759827005604,21.3330332333893,21.6913087814476,22.0349801016161,22.3482179507753,22.6151930858058,22.8337857643758,23.0371536106988,23.2278834526987,23.4059874115192,23.571477608304,23.7243661641967,23.8646652003411,23.9923868378808,24.1075431979595,24.2101464017208,24.3002085703085,24.3777418248662,24.4427582865376,24.4952700764664,24.5352893157963,24.5628281256709,24.5778986272339,24.580512941629,24.5706831899999,24.5484214934902,24.5137399732436,24.4666507504039,24.4071659461146,24.3352976815195,24.2510580777623],"text":["~drv: r<br />~displ: 3.800000<br />~hwy: 25.65876","~drv: r<br />~displ: 3.840506<br />~hwy: 25.48554","~drv: r<br />~displ: 3.881013<br />~hwy: 25.30064","~drv: r<br />~displ: 3.921519<br />~hwy: 25.10594","~drv: r<br />~displ: 3.962025<br />~hwy: 24.90329","~drv: r<br />~displ: 4.002532<br />~hwy: 24.69456","~drv: r<br />~displ: 4.043038<br />~hwy: 24.47555","~drv: r<br />~displ: 4.083544<br />~hwy: 24.24347","~drv: r<br />~displ: 4.124051<br />~hwy: 24.00031","~drv: r<br />~displ: 4.164557<br />~hwy: 23.74806","~drv: r<br />~displ: 4.205063<br />~hwy: 23.48874","~drv: r<br />~displ: 4.245570<br />~hwy: 23.22434","~drv: r<br />~displ: 4.286076<br />~hwy: 22.95687","~drv: r<br />~displ: 4.326582<br />~hwy: 22.68832","~drv: r<br />~displ: 4.367089<br />~hwy: 22.42069","~drv: r<br />~displ: 4.407595<br />~hwy: 22.15598","~drv: r<br />~displ: 4.448101<br />~hwy: 21.89619","~drv: r<br />~displ: 4.488608<br />~hwy: 21.64333","~drv: r<br />~displ: 4.529114<br />~hwy: 21.39940","~drv: r<br />~displ: 4.569620<br />~hwy: 21.16639","~drv: r<br />~displ: 4.610127<br />~hwy: 20.94747","~drv: r<br />~displ: 4.650633<br />~hwy: 20.76772","~drv: r<br />~displ: 4.691139<br />~hwy: 20.63069","~drv: r<br />~displ: 4.731646<br />~hwy: 20.52850","~drv: r<br />~displ: 4.772152<br />~hwy: 20.45330","~drv: r<br />~displ: 4.812658<br />~hwy: 20.39719","~drv: r<br />~displ: 4.853165<br />~hwy: 20.35232","~drv: r<br />~displ: 4.893671<br />~hwy: 20.31080","~drv: r<br />~displ: 4.934177<br />~hwy: 20.26477","~drv: r<br />~displ: 4.974684<br />~hwy: 20.20635","~drv: r<br />~displ: 5.015190<br />~hwy: 20.12767","~drv: r<br />~displ: 5.055696<br />~hwy: 20.02087","~drv: r<br />~displ: 5.096203<br />~hwy: 19.87805","~drv: r<br />~displ: 5.136709<br />~hwy: 19.69137","~drv: r<br />~displ: 5.177215<br />~hwy: 19.45293","~drv: r<br />~displ: 5.217722<br />~hwy: 19.15487","~drv: r<br />~displ: 5.258228<br />~hwy: 18.78933","~drv: r<br />~displ: 5.298734<br />~hwy: 18.34841","~drv: r<br />~displ: 5.339241<br />~hwy: 18.11962","~drv: r<br />~displ: 5.379747<br />~hwy: 18.32919","~drv: r<br />~displ: 5.420253<br />~hwy: 18.77619","~drv: r<br />~displ: 5.460759<br />~hwy: 19.13675","~drv: r<br />~displ: 5.501266<br />~hwy: 19.39640","~drv: r<br />~displ: 5.541772<br />~hwy: 19.58795","~drv: r<br />~displ: 5.582278<br />~hwy: 19.74419","~drv: r<br />~displ: 5.622785<br />~hwy: 19.89792","~drv: r<br />~displ: 5.663291<br />~hwy: 20.08194","~drv: r<br />~displ: 5.703797<br />~hwy: 20.32887","~drv: r<br />~displ: 5.744304<br />~hwy: 20.63599","~drv: r<br />~displ: 5.784810<br />~hwy: 20.97598","~drv: r<br />~displ: 5.825316<br />~hwy: 21.33303","~drv: r<br />~displ: 5.865823<br />~hwy: 21.69131","~drv: r<br />~displ: 5.906329<br />~hwy: 22.03498","~drv: r<br />~displ: 5.946835<br />~hwy: 22.34822","~drv: r<br />~displ: 5.987342<br />~hwy: 22.61519","~drv: r<br />~displ: 6.027848<br />~hwy: 22.83379","~drv: r<br />~displ: 6.068354<br />~hwy: 23.03715","~drv: r<br />~displ: 6.108861<br />~hwy: 23.22788","~drv: r<br />~displ: 6.149367<br />~hwy: 23.40599","~drv: r<br />~displ: 6.189873<br />~hwy: 23.57148","~drv: r<br />~displ: 6.230380<br />~hwy: 23.72437","~drv: r<br />~displ: 6.270886<br />~hwy: 23.86467","~drv: r<br />~displ: 6.311392<br />~hwy: 23.99239","~drv: r<br />~displ: 6.351899<br />~hwy: 24.10754","~drv: r<br />~displ: 6.392405<br />~hwy: 24.21015","~drv: r<br />~displ: 6.432911<br />~hwy: 24.30021","~drv: r<br />~displ: 6.473418<br />~hwy: 24.37774","~drv: r<br />~displ: 6.513924<br />~hwy: 24.44276","~drv: r<br />~displ: 6.554430<br />~hwy: 24.49527","~drv: r<br />~displ: 6.594937<br />~hwy: 24.53529","~drv: r<br />~displ: 6.635443<br />~hwy: 24.56283","~drv: r<br />~displ: 6.675949<br />~hwy: 24.57790","~drv: r<br />~displ: 6.716456<br />~hwy: 24.58051","~drv: r<br />~displ: 6.756962<br />~hwy: 24.57068","~drv: r<br />~displ: 6.797468<br />~hwy: 24.54842","~drv: r<br />~displ: 6.837975<br />~hwy: 24.51374","~drv: r<br />~displ: 6.878481<br />~hwy: 24.46665","~drv: r<br />~displ: 6.918987<br />~hwy: 24.40717","~drv: r<br />~displ: 6.959494<br />~hwy: 24.33530","~drv: r<br />~displ: 7.000000<br />~hwy: 24.25106"],"type":"scatter","mode":"lines","name":"(r,1)","line":{"width":3.77952755905512,"color":"rgba(51,102,255,1)","dash":"dot"},"hoveron":"points","legendgroup":"(r,1)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.8,1.85949367088608,1.91898734177215,1.97848101265823,2.0379746835443,2.09746835443038,2.15696202531646,2.21645569620253,2.27594936708861,2.33544303797468,2.39493670886076,2.45443037974684,2.51392405063291,2.57341772151899,2.63291139240506,2.69240506329114,2.75189873417722,2.81139240506329,2.87088607594937,2.93037974683544,2.98987341772152,3.0493670886076,3.10886075949367,3.16835443037975,3.22784810126582,3.2873417721519,3.34683544303797,3.40632911392405,3.46582278481013,3.5253164556962,3.58481012658228,3.64430379746835,3.70379746835443,3.76329113924051,3.82278481012658,3.88227848101266,3.94177215189873,4.00126582278481,4.06075949367089,4.12025316455696,4.17974683544304,4.23924050632911,4.29873417721519,4.35822784810127,4.41772151898734,4.47721518987342,4.53670886075949,4.59620253164557,4.65569620253165,4.71518987341772,4.7746835443038,4.83417721518987,4.89367088607595,4.95316455696203,5.0126582278481,5.07215189873418,5.13164556962025,5.19113924050633,5.25063291139241,5.31012658227848,5.36962025316456,5.42911392405063,5.48860759493671,5.54810126582279,5.60759493670886,5.66708860759494,5.72658227848101,5.78607594936709,5.84556962025316,5.90506329113924,5.96455696202532,6.02405063291139,6.08354430379747,6.14303797468354,6.20253164556962,6.2620253164557,6.32151898734177,6.38101265822785,6.44050632911392,6.5,6.5,6.44050632911392,6.38101265822785,6.32151898734177,6.2620253164557,6.20253164556962,6.14303797468354,6.08354430379747,6.02405063291139,5.96455696202532,5.90506329113924,5.84556962025316,5.78607594936709,5.72658227848101,5.66708860759494,5.60759493670886,5.54810126582279,5.48860759493671,5.42911392405063,5.36962025316456,5.31012658227848,5.25063291139241,5.19113924050633,5.13164556962025,5.07215189873418,5.0126582278481,4.95316455696203,4.89367088607595,4.83417721518987,4.7746835443038,4.71518987341772,4.65569620253165,4.59620253164557,4.53670886075949,4.47721518987342,4.41772151898734,4.35822784810127,4.29873417721519,4.23924050632911,4.17974683544304,4.12025316455696,4.06075949367089,4.00126582278481,3.94177215189873,3.88227848101266,3.82278481012658,3.76329113924051,3.70379746835443,3.64430379746835,3.58481012658228,3.5253164556962,3.46582278481013,3.40632911392405,3.34683544303797,3.2873417721519,3.22784810126582,3.16835443037975,3.10886075949367,3.0493670886076,2.98987341772152,2.93037974683544,2.87088607594937,2.81139240506329,2.75189873417722,2.69240506329114,2.63291139240506,2.57341772151899,2.51392405063291,2.45443037974684,2.39493670886076,2.33544303797468,2.27594936708861,2.21645569620253,2.15696202531646,2.09746835443038,2.0379746835443,1.97848101265823,1.91898734177215,1.85949367088608,1.8,1.8],"y":[25.3985645311702,25.350406724824,25.291381957834,25.2177694177161,25.125825507555,25.0118481417945,24.8722703496992,24.7042098923725,24.5130211854715,24.3006274655559,24.0669080238916,23.8127815752029,23.5397862930469,23.2408202660229,22.918251921182,22.5791504162457,22.2301890005693,21.877861989712,21.5286282252308,21.188969805507,20.86537437287,20.563937118741,20.2854380709315,20.0267307208903,19.783974716131,19.5529689763488,19.3294873815949,19.1097169814691,18.8907877244481,18.6712665667113,18.451415721836,18.2330833445823,18.019279503466,17.813626819554,17.6198577271318,17.4414159802038,17.2926661041876,17.1532111394462,17.0059191398493,16.870880039857,16.7436969786603,16.6198476041104,16.4956594583683,16.3694668624166,16.2425065246724,16.1189668414899,16.0050698591907,15.9076515949591,15.8162295252754,15.7317160196786,15.6607330761185,15.5951911333584,15.5345015876572,15.4782114682574,15.4260559627517,15.3779750845855,15.334089803912,15.2946372041491,15.2598691537563,15.2299226060411,15.2046717204843,15.1832001744091,15.162118314312,15.1397746176322,15.1150199929764,15.086896291993,15.0546903736211,15.01794724869,14.9764477088596,14.9301636792642,14.8792058953767,14.8237749542519,14.7641216008797,14.7005177713416,14.6332373274477,14.5625443756391,14.488686980674,14.4118944401429,14.3323767534978,14.2503253434026,19.7203687706745,19.4191220504735,19.1327486356516,18.861441590169,18.6054125547737,18.3648924683526,18.1401310369601,17.9313940083335,17.7389568855792,17.5630932460747,17.4040554761065,17.2620458140252,17.1371766366003,17.029421510262,16.9385628679667,16.8641473618396,16.8054634921164,16.7615547517415,16.7312736906178,16.7133470035014,16.7063523299548,16.7092151839655,16.7212846923519,16.7421727757592,16.7716062699845,16.8092972257831,16.8548415806462,16.9076543153566,16.9669455848446,17.0317373856904,17.1009160814906,17.170791334303,17.2479145499789,17.3349777499917,17.4320785134397,17.543405905368,17.6725350199592,17.8210073014282,17.987412506053,18.1674380026768,18.3547643813218,18.5422223376997,18.7227680588625,18.9356493577655,19.1411562426252,19.3172138357502,19.4905840904821,19.665301646374,19.8456898232605,20.0359621277572,20.2397195139292,20.4594010220853,20.6958597513519,20.9482535434571,21.2143032324267,21.4907867534095,21.7740688720055,22.0605393934589,22.3469488508322,22.6309759068993,22.92206073617,23.2235304116782,23.5323792697417,23.8455961027306,24.1601464461903,24.4730313096687,24.7814306365097,25.0829202784233,25.3818125031186,25.693261679853,26.0204192347353,26.3648418062534,26.7270466094372,27.1041374353088,27.4896735438572,27.8849379326516,28.2913825624738,28.7103242792849,29.1430384176868,29.5908230967124,25.3985645311702],"text":["~drv: 4<br />~displ: 1.800000<br />~hwy: 27.49469","~drv: 4<br />~displ: 1.859494<br />~hwy: 27.24672","~drv: 4<br />~displ: 1.918987<br />~hwy: 27.00085","~drv: 4<br />~displ: 1.978481<br />~hwy: 26.75458","~drv: 4<br />~displ: 2.037975<br />~hwy: 26.50538","~drv: 4<br />~displ: 2.097468<br />~hwy: 26.25076","~drv: 4<br />~displ: 2.156962<br />~hwy: 25.98820","~drv: 4<br />~displ: 2.216456<br />~hwy: 25.71563","~drv: 4<br />~displ: 2.275949<br />~hwy: 25.43893","~drv: 4<br />~displ: 2.335443<br />~hwy: 25.16052","~drv: 4<br />~displ: 2.394937<br />~hwy: 24.88008","~drv: 4<br />~displ: 2.454430<br />~hwy: 24.59730","~drv: 4<br />~displ: 2.513924<br />~hwy: 24.31135","~drv: 4<br />~displ: 2.573418<br />~hwy: 24.01113","~drv: 4<br />~displ: 2.632911<br />~hwy: 23.69564","~drv: 4<br />~displ: 2.692405<br />~hwy: 23.36965","~drv: 4<br />~displ: 2.751899<br />~hwy: 23.03789","~drv: 4<br />~displ: 2.811392<br />~hwy: 22.70512","~drv: 4<br />~displ: 2.870886<br />~hwy: 22.37608","~drv: 4<br />~displ: 2.930380<br />~hwy: 22.05552","~drv: 4<br />~displ: 2.989873<br />~hwy: 21.74818","~drv: 4<br />~displ: 3.049367<br />~hwy: 21.45544","~drv: 4<br />~displ: 3.108861<br />~hwy: 21.17299","~drv: 4<br />~displ: 3.168354<br />~hwy: 20.90040","~drv: 4<br />~displ: 3.227848<br />~hwy: 20.63738","~drv: 4<br />~displ: 3.287342<br />~hwy: 20.38364","~drv: 4<br />~displ: 3.346835<br />~hwy: 20.13887","~drv: 4<br />~displ: 3.406329<br />~hwy: 19.90279","~drv: 4<br />~displ: 3.465823<br />~hwy: 19.67509","~drv: 4<br />~displ: 3.525316<br />~hwy: 19.45549","~drv: 4<br />~displ: 3.584810<br />~hwy: 19.24369","~drv: 4<br />~displ: 3.644304<br />~hwy: 19.03939","~drv: 4<br />~displ: 3.703797<br />~hwy: 18.84229","~drv: 4<br />~displ: 3.763291<br />~hwy: 18.65211","~drv: 4<br />~displ: 3.822785<br />~hwy: 18.46854","~drv: 4<br />~displ: 3.882278<br />~hwy: 18.29129","~drv: 4<br />~displ: 3.941772<br />~hwy: 18.11416","~drv: 4<br />~displ: 4.001266<br />~hwy: 17.93799","~drv: 4<br />~displ: 4.060759<br />~hwy: 17.77407","~drv: 4<br />~displ: 4.120253<br />~hwy: 17.61282","~drv: 4<br />~displ: 4.179747<br />~hwy: 17.45557","~drv: 4<br />~displ: 4.239241<br />~hwy: 17.30363","~drv: 4<br />~displ: 4.298734<br />~hwy: 17.15833","~drv: 4<br />~displ: 4.358228<br />~hwy: 17.02100","~drv: 4<br />~displ: 4.417722<br />~hwy: 16.89296","~drv: 4<br />~displ: 4.477215<br />~hwy: 16.77552","~drv: 4<br />~displ: 4.536709<br />~hwy: 16.67002","~drv: 4<br />~displ: 4.596203<br />~hwy: 16.57778","~drv: 4<br />~displ: 4.655696<br />~hwy: 16.49351","~drv: 4<br />~displ: 4.715190<br />~hwy: 16.41632","~drv: 4<br />~displ: 4.774684<br />~hwy: 16.34624","~drv: 4<br />~displ: 4.834177<br />~hwy: 16.28107","~drv: 4<br />~displ: 4.893671<br />~hwy: 16.22108","~drv: 4<br />~displ: 4.953165<br />~hwy: 16.16653","~drv: 4<br />~displ: 5.012658<br />~hwy: 16.11768","~drv: 4<br />~displ: 5.072152<br />~hwy: 16.07479","~drv: 4<br />~displ: 5.131646<br />~hwy: 16.03813","~drv: 4<br />~displ: 5.191139<br />~hwy: 16.00796","~drv: 4<br />~displ: 5.250633<br />~hwy: 15.98454","~drv: 4<br />~displ: 5.310127<br />~hwy: 15.96814","~drv: 4<br />~displ: 5.369620<br />~hwy: 15.95901","~drv: 4<br />~displ: 5.429114<br />~hwy: 15.95724","~drv: 4<br />~displ: 5.488608<br />~hwy: 15.96184","~drv: 4<br />~displ: 5.548101<br />~hwy: 15.97262","~drv: 4<br />~displ: 5.607595<br />~hwy: 15.98958","~drv: 4<br />~displ: 5.667089<br />~hwy: 16.01273","~drv: 4<br />~displ: 5.726582<br />~hwy: 16.04206","~drv: 4<br />~displ: 5.786076<br />~hwy: 16.07756","~drv: 4<br />~displ: 5.845570<br />~hwy: 16.11925","~drv: 4<br />~displ: 5.905063<br />~hwy: 16.16711","~drv: 4<br />~displ: 5.964557<br />~hwy: 16.22115","~drv: 4<br />~displ: 6.024051<br />~hwy: 16.28137","~drv: 4<br />~displ: 6.083544<br />~hwy: 16.34776","~drv: 4<br />~displ: 6.143038<br />~hwy: 16.42032","~drv: 4<br />~displ: 6.202532<br />~hwy: 16.49906","~drv: 4<br />~displ: 6.262025<br />~hwy: 16.58398","~drv: 4<br />~displ: 6.321519<br />~hwy: 16.67506","~drv: 4<br />~displ: 6.381013<br />~hwy: 16.77232","~drv: 4<br />~displ: 6.440506<br />~hwy: 16.87575","~drv: 4<br />~displ: 6.500000<br />~hwy: 16.98535","~drv: 4<br />~displ: 6.500000<br />~hwy: 16.98535","~drv: 4<br />~displ: 6.440506<br />~hwy: 16.87575","~drv: 4<br />~displ: 6.381013<br />~hwy: 16.77232","~drv: 4<br />~displ: 6.321519<br />~hwy: 16.67506","~drv: 4<br />~displ: 6.262025<br />~hwy: 16.58398","~drv: 4<br />~displ: 6.202532<br />~hwy: 16.49906","~drv: 4<br />~displ: 6.143038<br />~hwy: 16.42032","~drv: 4<br />~displ: 6.083544<br />~hwy: 16.34776","~drv: 4<br />~displ: 6.024051<br />~hwy: 16.28137","~drv: 4<br />~displ: 5.964557<br />~hwy: 16.22115","~drv: 4<br />~displ: 5.905063<br />~hwy: 16.16711","~drv: 4<br />~displ: 5.845570<br />~hwy: 16.11925","~drv: 4<br />~displ: 5.786076<br />~hwy: 16.07756","~drv: 4<br />~displ: 5.726582<br />~hwy: 16.04206","~drv: 4<br />~displ: 5.667089<br />~hwy: 16.01273","~drv: 4<br />~displ: 5.607595<br />~hwy: 15.98958","~drv: 4<br />~displ: 5.548101<br />~hwy: 15.97262","~drv: 4<br />~displ: 5.488608<br />~hwy: 15.96184","~drv: 4<br />~displ: 5.429114<br />~hwy: 15.95724","~drv: 4<br />~displ: 5.369620<br />~hwy: 15.95901","~drv: 4<br />~displ: 5.310127<br />~hwy: 15.96814","~drv: 4<br />~displ: 5.250633<br />~hwy: 15.98454","~drv: 4<br />~displ: 5.191139<br />~hwy: 16.00796","~drv: 4<br />~displ: 5.131646<br />~hwy: 16.03813","~drv: 4<br />~displ: 5.072152<br />~hwy: 16.07479","~drv: 4<br />~displ: 5.012658<br />~hwy: 16.11768","~drv: 4<br />~displ: 4.953165<br />~hwy: 16.16653","~drv: 4<br />~displ: 4.893671<br />~hwy: 16.22108","~drv: 4<br />~displ: 4.834177<br />~hwy: 16.28107","~drv: 4<br />~displ: 4.774684<br />~hwy: 16.34624","~drv: 4<br />~displ: 4.715190<br />~hwy: 16.41632","~drv: 4<br />~displ: 4.655696<br />~hwy: 16.49351","~drv: 4<br />~displ: 4.596203<br />~hwy: 16.57778","~drv: 4<br />~displ: 4.536709<br />~hwy: 16.67002","~drv: 4<br />~displ: 4.477215<br />~hwy: 16.77552","~drv: 4<br />~displ: 4.417722<br />~hwy: 16.89296","~drv: 4<br />~displ: 4.358228<br />~hwy: 17.02100","~drv: 4<br />~displ: 4.298734<br />~hwy: 17.15833","~drv: 4<br />~displ: 4.239241<br />~hwy: 17.30363","~drv: 4<br />~displ: 4.179747<br />~hwy: 17.45557","~drv: 4<br />~displ: 4.120253<br />~hwy: 17.61282","~drv: 4<br />~displ: 4.060759<br />~hwy: 17.77407","~drv: 4<br />~displ: 4.001266<br />~hwy: 17.93799","~drv: 4<br />~displ: 3.941772<br />~hwy: 18.11416","~drv: 4<br />~displ: 3.882278<br />~hwy: 18.29129","~drv: 4<br />~displ: 3.822785<br />~hwy: 18.46854","~drv: 4<br />~displ: 3.763291<br />~hwy: 18.65211","~drv: 4<br />~displ: 3.703797<br />~hwy: 18.84229","~drv: 4<br />~displ: 3.644304<br />~hwy: 19.03939","~drv: 4<br />~displ: 3.584810<br />~hwy: 19.24369","~drv: 4<br />~displ: 3.525316<br />~hwy: 19.45549","~drv: 4<br />~displ: 3.465823<br />~hwy: 19.67509","~drv: 4<br />~displ: 3.406329<br />~hwy: 19.90279","~drv: 4<br />~displ: 3.346835<br />~hwy: 20.13887","~drv: 4<br />~displ: 3.287342<br />~hwy: 20.38364","~drv: 4<br />~displ: 3.227848<br />~hwy: 20.63738","~drv: 4<br />~displ: 3.168354<br />~hwy: 20.90040","~drv: 4<br />~displ: 3.108861<br />~hwy: 21.17299","~drv: 4<br />~displ: 3.049367<br />~hwy: 21.45544","~drv: 4<br />~displ: 2.989873<br />~hwy: 21.74818","~drv: 4<br />~displ: 2.930380<br />~hwy: 22.05552","~drv: 4<br />~displ: 2.870886<br />~hwy: 22.37608","~drv: 4<br />~displ: 2.811392<br />~hwy: 22.70512","~drv: 4<br />~displ: 2.751899<br />~hwy: 23.03789","~drv: 4<br />~displ: 2.692405<br />~hwy: 23.36965","~drv: 4<br />~displ: 2.632911<br />~hwy: 23.69564","~drv: 4<br />~displ: 2.573418<br />~hwy: 24.01113","~drv: 4<br />~displ: 2.513924<br />~hwy: 24.31135","~drv: 4<br />~displ: 2.454430<br />~hwy: 24.59730","~drv: 4<br />~displ: 2.394937<br />~hwy: 24.88008","~drv: 4<br />~displ: 2.335443<br />~hwy: 25.16052","~drv: 4<br />~displ: 2.275949<br />~hwy: 25.43893","~drv: 4<br />~displ: 2.216456<br />~hwy: 25.71563","~drv: 4<br />~displ: 2.156962<br />~hwy: 25.98820","~drv: 4<br />~displ: 2.097468<br />~hwy: 26.25076","~drv: 4<br />~displ: 2.037975<br />~hwy: 26.50538","~drv: 4<br />~displ: 1.978481<br />~hwy: 26.75458","~drv: 4<br />~displ: 1.918987<br />~hwy: 27.00085","~drv: 4<br />~displ: 1.859494<br />~hwy: 27.24672","~drv: 4<br />~displ: 1.800000<br />~hwy: 27.49469","~drv: 4<br />~displ: 1.800000<br />~hwy: 27.49469"],"type":"scatter","mode":"lines","line":{"width":3.77952755905512,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(153,153,153,0.4)","hoveron":"points","hoverinfo":"x+y","name":"(4,1)","legendgroup":"(4,1)","showlegend":false,"xaxis":"x","yaxis":"y","frame":null},{"x":[1.6,1.64683544303797,1.69367088607595,1.74050632911392,1.7873417721519,1.83417721518987,1.88101265822785,1.92784810126582,1.9746835443038,2.02151898734177,2.06835443037975,2.11518987341772,2.1620253164557,2.20886075949367,2.25569620253165,2.30253164556962,2.3493670886076,2.39620253164557,2.44303797468354,2.48987341772152,2.53670886075949,2.58354430379747,2.63037974683544,2.67721518987342,2.72405063291139,2.77088607594937,2.81772151898734,2.86455696202532,2.91139240506329,2.95822784810127,3.00506329113924,3.05189873417722,3.09873417721519,3.14556962025316,3.19240506329114,3.23924050632911,3.28607594936709,3.33291139240506,3.37974683544304,3.42658227848101,3.47341772151899,3.52025316455696,3.56708860759494,3.61392405063291,3.66075949367089,3.70759493670886,3.75443037974684,3.80126582278481,3.84810126582278,3.89493670886076,3.94177215189873,3.98860759493671,4.03544303797468,4.08227848101266,4.12911392405063,4.17594936708861,4.22278481012658,4.26962025316456,4.31645569620253,4.36329113924051,4.41012658227848,4.45696202531646,4.50379746835443,4.55063291139241,4.59746835443038,4.64430379746835,4.69113924050633,4.7379746835443,4.78481012658228,4.83164556962025,4.87848101265823,4.9253164556962,4.97215189873418,5.01898734177215,5.06582278481013,5.1126582278481,5.15949367088608,5.20632911392405,5.25316455696202,5.3,5.3,5.25316455696202,5.20632911392405,5.15949367088608,5.1126582278481,5.06582278481013,5.01898734177215,4.97215189873418,4.9253164556962,4.87848101265823,4.83164556962025,4.78481012658228,4.7379746835443,4.69113924050633,4.64430379746835,4.59746835443038,4.55063291139241,4.50379746835443,4.45696202531646,4.41012658227848,4.36329113924051,4.31645569620253,4.26962025316456,4.22278481012658,4.17594936708861,4.12911392405063,4.08227848101266,4.03544303797468,3.98860759493671,3.94177215189873,3.89493670886076,3.84810126582278,3.80126582278481,3.75443037974684,3.70759493670886,3.66075949367089,3.61392405063291,3.56708860759494,3.52025316455696,3.47341772151899,3.42658227848101,3.37974683544304,3.33291139240506,3.28607594936709,3.23924050632911,3.19240506329114,3.14556962025316,3.09873417721519,3.05189873417722,3.00506329113924,2.95822784810127,2.91139240506329,2.86455696202532,2.81772151898734,2.77088607594937,2.72405063291139,2.67721518987342,2.63037974683544,2.58354430379747,2.53670886075949,2.48987341772152,2.44303797468354,2.39620253164557,2.3493670886076,2.30253164556962,2.25569620253165,2.20886075949367,2.1620253164557,2.11518987341772,2.06835443037975,2.02151898734177,1.9746835443038,1.92784810126582,1.88101265822785,1.83417721518987,1.7873417721519,1.74050632911392,1.69367088607595,1.64683544303797,1.6,1.6],"y":[31.02941587297,31.0466925859046,31.0136962360752,30.9239845352856,30.7712581547998,30.5533817792683,30.2776633807565,29.9668371403237,29.6479207382878,29.3038673439862,28.9344844606892,28.5509563359585,28.1747598184218,27.8476720725863,27.638935221901,27.4810316366676,27.2983995682087,27.0732749284633,26.8373938673286,26.6125786125786,26.3704324549947,26.0956530768998,25.7965495423513,25.5019791029799,25.2368800066339,24.9589890654757,24.6570382417536,24.3368856622723,24.022301107139,23.7550242613076,23.5849116542414,23.4888176063435,23.4269555734394,23.3931782818252,23.3814649153265,23.3860149039423,23.4012485384128,23.4216942730707,23.4417446791118,23.4552807462257,23.4552029728747,23.4334627138381,23.3900363628025,23.3316208014518,23.2637614532291,23.1906106423954,23.1150847098782,23.0391058092891,22.9638310273835,22.8898374369913,22.817261998704,22.7459052792474,22.6753093176756,22.6048184183313,22.533629490346,22.460836522411,22.3854720242594,22.3065467689291,22.2230879235334,22.1341747002007,22.038970064494,21.9367468653856,21.8269069992491,21.7089928064833,21.5826906658165,21.4478275104515,21.3043615802119,21.1523690511124,20.9920282357409,20.823602876854,20.6474257481227,20.4638834170362,20.2734026832842,20.0764389221252,19.8734663521038,19.6649701081363,19.4514399227758,19.2333651853033,19.0112311456002,18.7855160455046,31.3118761143201,30.9724326791254,30.6458668609033,30.3323098442268,30.0318998217119,29.7447791253745,29.4710904305025,29.2109718147467,28.9645504393869,28.731934622416,28.5132041062587,28.3083984011389,28.1175032234624,27.9404352587205,27.7770257622359,27.6270038527581,27.4899807128455,27.3654362184356,27.2527096909915,27.1509964136469,27.0593512255099,26.9766999182878,26.9018584002783,26.8335588263446,26.7704813063347,26.7112895560214,26.6546690278723,26.5993666533139,26.5442322842122,26.4882631676446,26.4306542854002,26.3708591469394,26.3086676555886,26.2443098269124,26.178595690401,26.1131003424007,26.0503930665738,25.9942791299162,25.9499568986056,25.9218282422816,25.9036631579086,25.8934011641678,25.8913018820874,25.8986054239235,25.9170634834378,25.9485636375294,25.9948852995043,26.0575870219279,26.1380071111919,26.2373574161585,26.3722983084449,26.5662281019782,26.8194897357171,27.1234756818667,27.4516085077855,27.7593991275292,28.0036859978655,28.2243663568371,28.4570312495368,28.7224886151942,29.0209982054655,29.3292083902726,29.6098675786392,29.7638716360441,29.8345922927614,29.9395431179495,30.1384400201504,30.4211235957466,30.7353281325701,31.0685230746678,31.3910075447647,31.6734298337401,31.9599915322296,32.2854661672877,32.6684371888034,33.1241413983,33.6596950662544,34.2727711757285,34.9568786963973,35.7053836384762,31.02941587297],"text":["~drv: f<br />~displ: 1.600000<br />~hwy: 33.36740","~drv: f<br />~displ: 1.646835<br />~hwy: 33.00179","~drv: f<br />~displ: 1.693671<br />~hwy: 32.64323","~drv: f<br />~displ: 1.740506<br />~hwy: 32.29184","~drv: f<br />~displ: 1.787342<br />~hwy: 31.94770","~drv: f<br />~displ: 1.834177<br />~hwy: 31.61091","~drv: f<br />~displ: 1.881013<br />~hwy: 31.28156","~drv: f<br />~displ: 1.927848<br />~hwy: 30.96341","~drv: f<br />~displ: 1.974684<br />~hwy: 30.66068","~drv: f<br />~displ: 2.021519<br />~hwy: 30.34744","~drv: f<br />~displ: 2.068354<br />~hwy: 30.00150","~drv: f<br />~displ: 2.115190<br />~hwy: 29.64314","~drv: f<br />~displ: 2.162025<br />~hwy: 29.29794","~drv: f<br />~displ: 2.208861<br />~hwy: 28.99306","~drv: f<br />~displ: 2.255696<br />~hwy: 28.78924","~drv: f<br />~displ: 2.302532<br />~hwy: 28.65781","~drv: f<br />~displ: 2.349367<br />~hwy: 28.53114","~drv: f<br />~displ: 2.396203<br />~hwy: 28.34157","~drv: f<br />~displ: 2.443038<br />~hwy: 28.08330","~drv: f<br />~displ: 2.489873<br />~hwy: 27.81679","~drv: f<br />~displ: 2.536709<br />~hwy: 27.54646","~drv: f<br />~displ: 2.583544<br />~hwy: 27.27634","~drv: f<br />~displ: 2.630380<br />~hwy: 27.01046","~drv: f<br />~displ: 2.677215<br />~hwy: 26.75283","~drv: f<br />~displ: 2.724051<br />~hwy: 26.49814","~drv: f<br />~displ: 2.770886<br />~hwy: 26.20530","~drv: f<br />~displ: 2.817722<br />~hwy: 25.89026","~drv: f<br />~displ: 2.864557<br />~hwy: 25.57819","~drv: f<br />~displ: 2.911392<br />~hwy: 25.29426","~drv: f<br />~displ: 2.958228<br />~hwy: 25.06366","~drv: f<br />~displ: 3.005063<br />~hwy: 24.91113","~drv: f<br />~displ: 3.051899<br />~hwy: 24.81341","~drv: f<br />~displ: 3.098734<br />~hwy: 24.74227","~drv: f<br />~displ: 3.145570<br />~hwy: 24.69403","~drv: f<br />~displ: 3.192405<br />~hwy: 24.66501","~drv: f<br />~displ: 3.239241<br />~hwy: 24.65154","~drv: f<br />~displ: 3.286076<br />~hwy: 24.64993","~drv: f<br />~displ: 3.332911<br />~hwy: 24.65650","~drv: f<br />~displ: 3.379747<br />~hwy: 24.66757","~drv: f<br />~displ: 3.426582<br />~hwy: 24.67947","~drv: f<br />~displ: 3.473418<br />~hwy: 24.68852","~drv: f<br />~displ: 3.520253<br />~hwy: 24.69171","~drv: f<br />~displ: 3.567089<br />~hwy: 24.69216","~drv: f<br />~displ: 3.613924<br />~hwy: 24.69101","~drv: f<br />~displ: 3.660759<br />~hwy: 24.68843","~drv: f<br />~displ: 3.707595<br />~hwy: 24.68460","~drv: f<br />~displ: 3.754430<br />~hwy: 24.67970","~drv: f<br />~displ: 3.801266<br />~hwy: 24.67389","~drv: f<br />~displ: 3.848101<br />~hwy: 24.66735","~drv: f<br />~displ: 3.894937<br />~hwy: 24.66025","~drv: f<br />~displ: 3.941772<br />~hwy: 24.65276","~drv: f<br />~displ: 3.988608<br />~hwy: 24.64507","~drv: f<br />~displ: 4.035443<br />~hwy: 24.63734","~drv: f<br />~displ: 4.082278<br />~hwy: 24.62974","~drv: f<br />~displ: 4.129114<br />~hwy: 24.62246","~drv: f<br />~displ: 4.175949<br />~hwy: 24.61566","~drv: f<br />~displ: 4.222785<br />~hwy: 24.60952","~drv: f<br />~displ: 4.269620<br />~hwy: 24.60420","~drv: f<br />~displ: 4.316456<br />~hwy: 24.59989","~drv: f<br />~displ: 4.363291<br />~hwy: 24.59676","~drv: f<br />~displ: 4.410127<br />~hwy: 24.59498","~drv: f<br />~displ: 4.456962<br />~hwy: 24.59473","~drv: f<br />~displ: 4.503797<br />~hwy: 24.59617","~drv: f<br />~displ: 4.550633<br />~hwy: 24.59949","~drv: f<br />~displ: 4.597468<br />~hwy: 24.60485","~drv: f<br />~displ: 4.644304<br />~hwy: 24.61243","~drv: f<br />~displ: 4.691139<br />~hwy: 24.62240","~drv: f<br />~displ: 4.737975<br />~hwy: 24.63494","~drv: f<br />~displ: 4.784810<br />~hwy: 24.65021","~drv: f<br />~displ: 4.831646<br />~hwy: 24.66840","~drv: f<br />~displ: 4.878481<br />~hwy: 24.68968","~drv: f<br />~displ: 4.925316<br />~hwy: 24.71422","~drv: f<br />~displ: 4.972152<br />~hwy: 24.74219","~drv: f<br />~displ: 5.018987<br />~hwy: 24.77376","~drv: f<br />~displ: 5.065823<br />~hwy: 24.80912","~drv: f<br />~displ: 5.112658<br />~hwy: 24.84843","~drv: f<br />~displ: 5.159494<br />~hwy: 24.89187","~drv: f<br />~displ: 5.206329<br />~hwy: 24.93962","~drv: f<br />~displ: 5.253165<br />~hwy: 24.99183","~drv: f<br />~displ: 5.300000<br />~hwy: 25.04870","~drv: f<br />~displ: 5.300000<br />~hwy: 25.04870","~drv: f<br />~displ: 5.253165<br />~hwy: 24.99183","~drv: f<br />~displ: 5.206329<br />~hwy: 24.93962","~drv: f<br />~displ: 5.159494<br />~hwy: 24.89187","~drv: f<br />~displ: 5.112658<br />~hwy: 24.84843","~drv: f<br />~displ: 5.065823<br />~hwy: 24.80912","~drv: f<br />~displ: 5.018987<br />~hwy: 24.77376","~drv: f<br />~displ: 4.972152<br />~hwy: 24.74219","~drv: f<br />~displ: 4.925316<br />~hwy: 24.71422","~drv: f<br />~displ: 4.878481<br />~hwy: 24.68968","~drv: f<br />~displ: 4.831646<br />~hwy: 24.66840","~drv: f<br />~displ: 4.784810<br />~hwy: 24.65021","~drv: f<br />~displ: 4.737975<br />~hwy: 24.63494","~drv: f<br />~displ: 4.691139<br />~hwy: 24.62240","~drv: f<br />~displ: 4.644304<br />~hwy: 24.61243","~drv: f<br />~displ: 4.597468<br />~hwy: 24.60485","~drv: f<br />~displ: 4.550633<br />~hwy: 24.59949","~drv: f<br />~displ: 4.503797<br />~hwy: 24.59617","~drv: f<br />~displ: 4.456962<br />~hwy: 24.59473","~drv: f<br />~displ: 4.410127<br />~hwy: 24.59498","~drv: f<br />~displ: 4.363291<br />~hwy: 24.59676","~drv: f<br />~displ: 4.316456<br />~hwy: 24.59989","~drv: f<br />~displ: 4.269620<br />~hwy: 24.60420","~drv: f<br />~displ: 4.222785<br />~hwy: 24.60952","~drv: f<br />~displ: 4.175949<br />~hwy: 24.61566","~drv: f<br />~displ: 4.129114<br />~hwy: 24.62246","~drv: f<br />~displ: 4.082278<br />~hwy: 24.62974","~drv: f<br />~displ: 4.035443<br />~hwy: 24.63734","~drv: f<br />~displ: 3.988608<br />~hwy: 24.64507","~drv: f<br />~displ: 3.941772<br />~hwy: 24.65276","~drv: f<br />~displ: 3.894937<br />~hwy: 24.66025","~drv: f<br />~displ: 3.848101<br />~hwy: 24.66735","~drv: f<br />~displ: 3.801266<br />~hwy: 24.67389","~drv: f<br />~displ: 3.754430<br />~hwy: 24.67970","~drv: f<br />~displ: 3.707595<br />~hwy: 24.68460","~drv: f<br />~displ: 3.660759<br />~hwy: 24.68843","~drv: f<br />~displ: 3.613924<br />~hwy: 24.69101","~drv: f<br />~displ: 3.567089<br />~hwy: 24.69216","~drv: f<br />~displ: 3.520253<br />~hwy: 24.69171","~drv: f<br />~displ: 3.473418<br />~hwy: 24.68852","~drv: f<br />~displ: 3.426582<br />~hwy: 24.67947","~drv: f<br />~displ: 3.379747<br />~hwy: 24.66757","~drv: f<br />~displ: 3.332911<br />~hwy: 24.65650","~drv: f<br />~displ: 3.286076<br />~hwy: 24.64993","~drv: f<br />~displ: 3.239241<br />~hwy: 24.65154","~drv: f<br />~displ: 3.192405<br />~hwy: 24.66501","~drv: f<br />~displ: 3.145570<br />~hwy: 24.69403","~drv: f<br />~displ: 3.098734<br />~hwy: 24.74227","~drv: f<br />~displ: 3.051899<br />~hwy: 24.81341","~drv: f<br />~displ: 3.005063<br />~hwy: 24.91113","~drv: f<br />~displ: 2.958228<br />~hwy: 25.06366","~drv: f<br />~displ: 2.911392<br />~hwy: 25.29426","~drv: f<br />~displ: 2.864557<br />~hwy: 25.57819","~drv: f<br />~displ: 2.817722<br />~hwy: 25.89026","~drv: f<br />~displ: 2.770886<br />~hwy: 26.20530","~drv: f<br />~displ: 2.724051<br />~hwy: 26.49814","~drv: f<br />~displ: 2.677215<br />~hwy: 26.75283","~drv: f<br />~displ: 2.630380<br />~hwy: 27.01046","~drv: f<br />~displ: 2.583544<br />~hwy: 27.27634","~drv: f<br />~displ: 2.536709<br />~hwy: 27.54646","~drv: f<br />~displ: 2.489873<br />~hwy: 27.81679","~drv: f<br />~displ: 2.443038<br />~hwy: 28.08330","~drv: f<br />~displ: 2.396203<br />~hwy: 28.34157","~drv: f<br />~displ: 2.349367<br />~hwy: 28.53114","~drv: f<br />~displ: 2.302532<br />~hwy: 28.65781","~drv: f<br />~displ: 2.255696<br />~hwy: 28.78924","~drv: f<br />~displ: 2.208861<br />~hwy: 28.99306","~drv: f<br />~displ: 2.162025<br />~hwy: 29.29794","~drv: f<br />~displ: 2.115190<br />~hwy: 29.64314","~drv: f<br />~displ: 2.068354<br />~hwy: 30.00150","~drv: f<br />~displ: 2.021519<br />~hwy: 30.34744","~drv: f<br />~displ: 1.974684<br />~hwy: 30.66068","~drv: f<br />~displ: 1.927848<br />~hwy: 30.96341","~drv: f<br />~displ: 1.881013<br />~hwy: 31.28156","~drv: f<br />~displ: 1.834177<br />~hwy: 31.61091","~drv: f<br />~displ: 1.787342<br />~hwy: 31.94770","~drv: f<br />~displ: 1.740506<br />~hwy: 32.29184","~drv: f<br />~displ: 1.693671<br />~hwy: 32.64323","~drv: f<br />~displ: 1.646835<br />~hwy: 33.00179","~drv: f<br />~displ: 1.600000<br />~hwy: 33.36740","~drv: f<br />~displ: 1.600000<br />~hwy: 33.36740"],"type":"scatter","mode":"lines","line":{"width":3.77952755905512,"color":"transparent","dash":"dash"},"fill":"toself","fillcolor":"rgba(153,153,153,0.4)","hoveron":"points","hoverinfo":"x+y","name":"(f,1)","legendgroup":"(f,1)","showlegend":false,"xaxis":"x","yaxis":"y","frame":null},{"x":[3.8,3.84050632911392,3.88101265822785,3.92151898734177,3.9620253164557,4.00253164556962,4.04303797468354,4.08354430379747,4.12405063291139,4.16455696202532,4.20506329113924,4.24556962025316,4.28607594936709,4.32658227848101,4.36708860759494,4.40759493670886,4.44810126582278,4.48860759493671,4.52911392405063,4.56962025316456,4.61012658227848,4.6506329113924,4.69113924050633,4.73164556962025,4.77215189873418,4.8126582278481,4.85316455696203,4.89367088607595,4.93417721518987,4.9746835443038,5.01518987341772,5.05569620253165,5.09620253164557,5.13670886075949,5.17721518987342,5.21772151898734,5.25822784810127,5.29873417721519,5.33924050632911,5.37974683544304,5.42025316455696,5.46075949367089,5.50126582278481,5.54177215189873,5.58227848101266,5.62278481012658,5.66329113924051,5.70379746835443,5.74430379746835,5.78481012658228,5.8253164556962,5.86582278481013,5.90632911392405,5.94683544303797,5.9873417721519,6.02784810126582,6.06835443037975,6.10886075949367,6.14936708860759,6.18987341772152,6.23037974683544,6.27088607594937,6.31139240506329,6.35189873417722,6.39240506329114,6.43291139240506,6.47341772151899,6.51392405063291,6.55443037974683,6.59493670886076,6.63544303797468,6.67594936708861,6.71645569620253,6.75696202531646,6.79746835443038,6.8379746835443,6.87848101265823,6.91898734177215,6.95949367088608,7,7,7,6.95949367088608,6.91898734177215,6.87848101265823,6.8379746835443,6.79746835443038,6.75696202531646,6.71645569620253,6.67594936708861,6.63544303797468,6.59493670886076,6.55443037974683,6.51392405063291,6.47341772151899,6.43291139240506,6.39240506329114,6.35189873417722,6.31139240506329,6.27088607594937,6.23037974683544,6.18987341772152,6.14936708860759,6.10886075949367,6.06835443037975,6.02784810126582,5.9873417721519,5.94683544303797,5.90632911392405,5.86582278481013,5.8253164556962,5.78481012658228,5.74430379746835,5.70379746835443,5.66329113924051,5.62278481012658,5.58227848101266,5.54177215189873,5.50126582278481,5.46075949367089,5.42025316455696,5.37974683544304,5.33924050632911,5.29873417721519,5.25822784810127,5.21772151898734,5.17721518987342,5.13670886075949,5.09620253164557,5.05569620253165,5.01518987341772,4.9746835443038,4.93417721518987,4.89367088607595,4.85316455696203,4.8126582278481,4.77215189873418,4.73164556962025,4.69113924050633,4.6506329113924,4.61012658227848,4.56962025316456,4.52911392405063,4.48860759493671,4.44810126582278,4.40759493670886,4.36708860759494,4.32658227848101,4.28607594936709,4.24556962025316,4.20506329113924,4.16455696202532,4.12405063291139,4.08354430379747,4.04303797468354,4.00253164556962,3.9620253164557,3.92151898734177,3.88101265822785,3.84050632911392,3.8,3.8],"y":[21.8559446323667,22.1466872899014,22.2576225652334,22.2139028437971,22.0499124300863,21.8017172020777,21.51818239057,21.2429981139712,20.992128722917,20.7691032289844,20.569876359856,20.385814032288,20.2057625929655,20.0179377053075,19.8120596358511,19.5817081478243,19.3263051917625,19.0518578251736,18.7700281980222,18.4959465844098,18.2475169518278,18.0610104261441,17.8723276199008,17.5704980542646,17.0850559200511,16.4215365085804,15.6358469195925,14.7960873937662,13.9657719654618,13.2014818172487,12.5544598407932,12.0722950543918,11.7999461745382,11.7800378768235,12.0521765559706,12.6499982783903,13.5899743126045,14.8142868864921,15.8359428770518,16.4144985350644,16.7982808037688,16.9861339750529,17.0824774798557,17.1286830444274,17.1397553248494,17.1421483360789,17.1826383704661,17.3185724125321,17.6228043068345,18.063750471998,18.5540372644123,19.0134422276107,19.388550729189,19.6667049201551,19.8668157840806,20.0210016398164,20.1690867182365,20.3130910202123,20.4522333614122,20.5854216618021,20.7112443049046,20.8279569851451,20.9334702210245,21.0253439156151,21.100796681173,21.1567384632079,21.1898343315789,21.1966040699842,21.1735557664717,21.1173426533067,21.024923484481,20.8937016208205,20.7216199592073,20.5071982057109,20.2495123607591,19.9481283582293,19.6030084625193,19.2144093045789,18.78278615577,18.3087120530234,18.3087120530234,30.1934041025012,29.8878092072691,29.5999225876504,29.3302930382885,29.0793515882579,28.8473306262213,28.6341681742888,28.4394059240507,28.2620956336473,28.1007327668607,27.9532359782858,27.8169843864612,27.6889125030911,27.5656493181535,27.4436786774091,27.3194961222686,27.1897424803038,27.0513034547371,26.9013734155371,26.7374880234888,26.5575335548059,26.3597414616262,26.1426758851851,25.9052205031611,25.6465698889352,25.3635703875311,25.0297309813956,24.6814094740432,24.3691753352845,24.1120292023662,23.8882149291228,23.6491685453264,23.3391748936057,22.981251045253,22.6536867069152,22.3486155069055,22.0472123942688,21.7103300406568,21.2873717588455,20.7541079317797,20.243882303488,20.4032904198203,21.8825374333324,23.9886778637527,25.6597515422538,26.8536853163484,27.6026950741927,27.9561615018313,27.9694356136215,27.7008867047885,27.2112181114598,26.5637634715662,25.825510296408,25.0687843881889,24.3728444009029,23.8215351948633,23.486508489444,23.3890441955991,23.4744211237785,23.6474134147829,23.8368268657072,24.0287692422047,24.2348119527837,24.4660847490077,24.7302492583028,25.0293120156388,25.3586944490128,25.7079757991147,26.0628758099434,26.4076096223795,26.7270230605702,27.008481518733,27.2439392020127,27.4329245994478,27.587401539136,27.7566699574988,27.9979703252184,28.3436662004297,28.8243970216031,29.4615703081494,21.8559446323667],"text":["~drv: r<br />~displ: 3.800000<br />~hwy: 25.65876","~drv: r<br />~displ: 3.840506<br />~hwy: 25.48554","~drv: r<br />~displ: 3.881013<br />~hwy: 25.30064","~drv: r<br />~displ: 3.921519<br />~hwy: 25.10594","~drv: r<br />~displ: 3.962025<br />~hwy: 24.90329","~drv: r<br />~displ: 4.002532<br />~hwy: 24.69456","~drv: r<br />~displ: 4.043038<br />~hwy: 24.47555","~drv: r<br />~displ: 4.083544<br />~hwy: 24.24347","~drv: r<br />~displ: 4.124051<br />~hwy: 24.00031","~drv: r<br />~displ: 4.164557<br />~hwy: 23.74806","~drv: r<br />~displ: 4.205063<br />~hwy: 23.48874","~drv: r<br />~displ: 4.245570<br />~hwy: 23.22434","~drv: r<br />~displ: 4.286076<br />~hwy: 22.95687","~drv: r<br />~displ: 4.326582<br />~hwy: 22.68832","~drv: r<br />~displ: 4.367089<br />~hwy: 22.42069","~drv: r<br />~displ: 4.407595<br />~hwy: 22.15598","~drv: r<br />~displ: 4.448101<br />~hwy: 21.89619","~drv: r<br />~displ: 4.488608<br />~hwy: 21.64333","~drv: r<br />~displ: 4.529114<br />~hwy: 21.39940","~drv: r<br />~displ: 4.569620<br />~hwy: 21.16639","~drv: r<br />~displ: 4.610127<br />~hwy: 20.94747","~drv: r<br />~displ: 4.650633<br />~hwy: 20.76772","~drv: r<br />~displ: 4.691139<br />~hwy: 20.63069","~drv: r<br />~displ: 4.731646<br />~hwy: 20.52850","~drv: r<br />~displ: 4.772152<br />~hwy: 20.45330","~drv: r<br />~displ: 4.812658<br />~hwy: 20.39719","~drv: r<br />~displ: 4.853165<br />~hwy: 20.35232","~drv: r<br />~displ: 4.893671<br />~hwy: 20.31080","~drv: r<br />~displ: 4.934177<br />~hwy: 20.26477","~drv: r<br />~displ: 4.974684<br />~hwy: 20.20635","~drv: r<br />~displ: 5.015190<br />~hwy: 20.12767","~drv: r<br />~displ: 5.055696<br />~hwy: 20.02087","~drv: r<br />~displ: 5.096203<br />~hwy: 19.87805","~drv: r<br />~displ: 5.136709<br />~hwy: 19.69137","~drv: r<br />~displ: 5.177215<br />~hwy: 19.45293","~drv: r<br />~displ: 5.217722<br />~hwy: 19.15487","~drv: r<br />~displ: 5.258228<br />~hwy: 18.78933","~drv: r<br />~displ: 5.298734<br />~hwy: 18.34841","~drv: r<br />~displ: 5.339241<br />~hwy: 18.11962","~drv: r<br />~displ: 5.379747<br />~hwy: 18.32919","~drv: r<br />~displ: 5.420253<br />~hwy: 18.77619","~drv: r<br />~displ: 5.460759<br />~hwy: 19.13675","~drv: r<br />~displ: 5.501266<br />~hwy: 19.39640","~drv: r<br />~displ: 5.541772<br />~hwy: 19.58795","~drv: r<br />~displ: 5.582278<br />~hwy: 19.74419","~drv: r<br />~displ: 5.622785<br />~hwy: 19.89792","~drv: r<br />~displ: 5.663291<br />~hwy: 20.08194","~drv: r<br />~displ: 5.703797<br />~hwy: 20.32887","~drv: r<br />~displ: 5.744304<br />~hwy: 20.63599","~drv: r<br />~displ: 5.784810<br />~hwy: 20.97598","~drv: r<br />~displ: 5.825316<br />~hwy: 21.33303","~drv: r<br />~displ: 5.865823<br />~hwy: 21.69131","~drv: r<br />~displ: 5.906329<br />~hwy: 22.03498","~drv: r<br />~displ: 5.946835<br />~hwy: 22.34822","~drv: r<br />~displ: 5.987342<br />~hwy: 22.61519","~drv: r<br />~displ: 6.027848<br />~hwy: 22.83379","~drv: r<br />~displ: 6.068354<br />~hwy: 23.03715","~drv: r<br />~displ: 6.108861<br />~hwy: 23.22788","~drv: r<br />~displ: 6.149367<br />~hwy: 23.40599","~drv: r<br />~displ: 6.189873<br />~hwy: 23.57148","~drv: r<br />~displ: 6.230380<br />~hwy: 23.72437","~drv: r<br />~displ: 6.270886<br />~hwy: 23.86467","~drv: r<br />~displ: 6.311392<br />~hwy: 23.99239","~drv: r<br />~displ: 6.351899<br />~hwy: 24.10754","~drv: r<br />~displ: 6.392405<br />~hwy: 24.21015","~drv: r<br />~displ: 6.432911<br />~hwy: 24.30021","~drv: r<br />~displ: 6.473418<br />~hwy: 24.37774","~drv: r<br />~displ: 6.513924<br />~hwy: 24.44276","~drv: r<br />~displ: 6.554430<br />~hwy: 24.49527","~drv: r<br />~displ: 6.594937<br />~hwy: 24.53529","~drv: r<br />~displ: 6.635443<br />~hwy: 24.56283","~drv: r<br />~displ: 6.675949<br />~hwy: 24.57790","~drv: r<br />~displ: 6.716456<br />~hwy: 24.58051","~drv: r<br />~displ: 6.756962<br />~hwy: 24.57068","~drv: r<br />~displ: 6.797468<br />~hwy: 24.54842","~drv: r<br />~displ: 6.837975<br />~hwy: 24.51374","~drv: r<br />~displ: 6.878481<br />~hwy: 24.46665","~drv: r<br />~displ: 6.918987<br />~hwy: 24.40717","~drv: r<br />~displ: 6.959494<br />~hwy: 24.33530","~drv: r<br />~displ: 7.000000<br />~hwy: 24.25106","~drv: r<br />~displ: 7.000000<br />~hwy: 24.25106","~drv: r<br />~displ: 7.000000<br />~hwy: 24.25106","~drv: r<br />~displ: 6.959494<br />~hwy: 24.33530","~drv: r<br />~displ: 6.918987<br />~hwy: 24.40717","~drv: r<br />~displ: 6.878481<br />~hwy: 24.46665","~drv: r<br />~displ: 6.837975<br />~hwy: 24.51374","~drv: r<br />~displ: 6.797468<br />~hwy: 24.54842","~drv: r<br />~displ: 6.756962<br />~hwy: 24.57068","~drv: r<br />~displ: 6.716456<br />~hwy: 24.58051","~drv: r<br />~displ: 6.675949<br />~hwy: 24.57790","~drv: r<br />~displ: 6.635443<br />~hwy: 24.56283","~drv: r<br />~displ: 6.594937<br />~hwy: 24.53529","~drv: r<br />~displ: 6.554430<br />~hwy: 24.49527","~drv: r<br />~displ: 6.513924<br />~hwy: 24.44276","~drv: r<br />~displ: 6.473418<br />~hwy: 24.37774","~drv: r<br />~displ: 6.432911<br />~hwy: 24.30021","~drv: r<br />~displ: 6.392405<br />~hwy: 24.21015","~drv: r<br />~displ: 6.351899<br />~hwy: 24.10754","~drv: r<br />~displ: 6.311392<br />~hwy: 23.99239","~drv: r<br />~displ: 6.270886<br />~hwy: 23.86467","~drv: r<br />~displ: 6.230380<br />~hwy: 23.72437","~drv: r<br />~displ: 6.189873<br />~hwy: 23.57148","~drv: r<br />~displ: 6.149367<br />~hwy: 23.40599","~drv: r<br />~displ: 6.108861<br />~hwy: 23.22788","~drv: r<br />~displ: 6.068354<br />~hwy: 23.03715","~drv: r<br />~displ: 6.027848<br />~hwy: 22.83379","~drv: r<br />~displ: 5.987342<br />~hwy: 22.61519","~drv: r<br />~displ: 5.946835<br />~hwy: 22.34822","~drv: r<br />~displ: 5.906329<br />~hwy: 22.03498","~drv: r<br />~displ: 5.865823<br />~hwy: 21.69131","~drv: r<br />~displ: 5.825316<br />~hwy: 21.33303","~drv: r<br />~displ: 5.784810<br />~hwy: 20.97598","~drv: r<br />~displ: 5.744304<br />~hwy: 20.63599","~drv: r<br />~displ: 5.703797<br />~hwy: 20.32887","~drv: r<br />~displ: 5.663291<br />~hwy: 20.08194","~drv: r<br />~displ: 5.622785<br />~hwy: 19.89792","~drv: r<br />~displ: 5.582278<br />~hwy: 19.74419","~drv: r<br />~displ: 5.541772<br />~hwy: 19.58795","~drv: r<br />~displ: 5.501266<br />~hwy: 19.39640","~drv: r<br />~displ: 5.460759<br />~hwy: 19.13675","~drv: r<br />~displ: 5.420253<br />~hwy: 18.77619","~drv: r<br />~displ: 5.379747<br />~hwy: 18.32919","~drv: r<br />~displ: 5.339241<br />~hwy: 18.11962","~drv: r<br />~displ: 5.298734<br />~hwy: 18.34841","~drv: r<br />~displ: 5.258228<br />~hwy: 18.78933","~drv: r<br />~displ: 5.217722<br />~hwy: 19.15487","~drv: r<br />~displ: 5.177215<br />~hwy: 19.45293","~drv: r<br />~displ: 5.136709<br />~hwy: 19.69137","~drv: r<br />~displ: 5.096203<br />~hwy: 19.87805","~drv: r<br />~displ: 5.055696<br />~hwy: 20.02087","~drv: r<br />~displ: 5.015190<br />~hwy: 20.12767","~drv: r<br />~displ: 4.974684<br />~hwy: 20.20635","~drv: r<br />~displ: 4.934177<br />~hwy: 20.26477","~drv: r<br />~displ: 4.893671<br />~hwy: 20.31080","~drv: r<br />~displ: 4.853165<br />~hwy: 20.35232","~drv: r<br />~displ: 4.812658<br />~hwy: 20.39719","~drv: r<br />~displ: 4.772152<br />~hwy: 20.45330","~drv: r<br />~displ: 4.731646<br />~hwy: 20.52850","~drv: r<br />~displ: 4.691139<br />~hwy: 20.63069","~drv: r<br />~displ: 4.650633<br />~hwy: 20.76772","~drv: r<br />~displ: 4.610127<br />~hwy: 20.94747","~drv: r<br />~displ: 4.569620<br />~hwy: 21.16639","~drv: r<br />~displ: 4.529114<br />~hwy: 21.39940","~drv: r<br />~displ: 4.488608<br />~hwy: 21.64333","~drv: r<br />~displ: 4.448101<br />~hwy: 21.89619","~drv: r<br />~displ: 4.407595<br />~hwy: 22.15598","~drv: r<br />~displ: 4.367089<br />~hwy: 22.42069","~drv: r<br />~displ: 4.326582<br />~hwy: 22.68832","~drv: r<br />~displ: 4.286076<br />~hwy: 22.95687","~drv: r<br />~displ: 4.245570<br />~hwy: 23.22434","~drv: r<br />~displ: 4.205063<br />~hwy: 23.48874","~drv: r<br />~displ: 4.164557<br />~hwy: 23.74806","~drv: r<br />~displ: 4.124051<br />~hwy: 24.00031","~drv: r<br />~displ: 4.083544<br />~hwy: 24.24347","~drv: r<br />~displ: 4.043038<br />~hwy: 24.47555","~drv: r<br />~displ: 4.002532<br />~hwy: 24.69456","~drv: r<br />~displ: 3.962025<br />~hwy: 24.90329","~drv: r<br />~displ: 3.921519<br />~hwy: 25.10594","~drv: r<br />~displ: 3.881013<br />~hwy: 25.30064","~drv: r<br />~displ: 3.840506<br />~hwy: 25.48554","~drv: r<br />~displ: 3.800000<br />~hwy: 25.65876","~drv: r<br />~displ: 3.800000<br />~hwy: 25.65876"],"type":"scatter","mode":"lines","line":{"width":3.77952755905512,"color":"transparent","dash":"dot"},"fill":"toself","fillcolor":"rgba(153,153,153,0.4)","hoveron":"points","hoverinfo":"x+y","name":"(r,1)","legendgroup":"(r,1)","showlegend":false,"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":37.2602739726027},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"type":"linear","autorange":false,"range":[1.33,7.27],"tickmode":"array","ticktext":["2","3","4","5","6","7"],"tickvals":[2,3,4,5,6,7],"categoryorder":"array","categoryarray":["2","3","4","5","6","7"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":"displ","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"type":"linear","autorange":false,"range":[10.1690397706646,45.6109981061588],"tickmode":"array","ticktext":["20","30","40"],"tickvals":[20,30,40],"categoryorder":"array","categoryarray":["20","30","40"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":"hwy","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"y":0.913385826771654},"annotations":[{"text":"drv","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"source":"A","attrs":{"186ce7accb6":{"colour":{},"x":{},"y":{},"type":"scatter"},"186c922de32":{"linetype":{},"x":{},"y":{}}},"cur_data":"186ce7accb6","visdat":{"186ce7accb6":["function (y) ","x"],"186c922de32":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1}},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":{"render":[{"code":"function(el, x) { var ctConfig = crosstalk.var('plotlyCrosstalkOpts').set({\"on\":\"plotly_click\",\"persistent\":false,\"dynamic\":false,\"selectize\":false,\"opacityDim\":0.2,\"selected\":{\"opacity\":1}}); }","data":null}]}}</script>
+</div>
+<div id="datatable" class="section level2">
+<h2>datatable</h2>
+<pre class="r"><code>library(readxl)
+spi &lt;- read_excel(&quot;C:/Users/PBS FAISALABAD/Desktop/spi.xls&quot;)
+DT::datatable(spi,fillContainer = TRUE, editable = TRUE)</code></pre>
+</div>
+
+
+      <meta itemprop="wordCount" content="9489">
+      <meta itemprop="datePublished" content="2018-03-25">
+      <meta itemprop="url" content="https://myaseen208.com/blogs/2018-r-maldives/">
+
+<div class='sans' style="background: #dddddd; padding: 2em;">
+<div style="padding-bottom: 1em" >
+<div class="share-box">
+  <ul class="share">
+    <li>
+      <a class="facebook" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmyaseen208.com%2fblogs%2f2018-r-maldives%2f" target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter" href="https://twitter.com/intent/tweet?text=Data%20Analysis%20with%20R%3a%20Introduction%20of%20R%20Language. https%3a%2f%2fmyaseen208.com%2fblogs%2f2018-r-maldives%2f from @robjhyndman" target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fmyaseen208.com%2fblogs%2f2018-r-maldives%2f&amp;title=Data%20Analysis%20with%20R%3a%20Introduction%20of%20R%20Language" target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo" href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fmyaseen208.com%2fblogs%2f2018-r-maldives%2f&amp;title=Data%20Analysis%20with%20R%3a%20Introduction%20of%20R%20Language" target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email" href="mailto:?subject=Data%20Analysis%20with%20R%3a%20Introduction%20of%20R%20Language&amp;body=https%3a%2f%2fmyaseen208.com%2fblogs%2f2018-r-maldives%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+</div>
+
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      
+      
+      <li class="arrow" aria-disabled="true"><a href="https://myaseen208.com/blogs/about/"><em>Next<span class="show-for-sr"> page</span></em>: About myaseen208&nbsp;&raquo;</a></li>
+      
+    </ul>
+    <a href="https://myaseen208.com/blogs/">All posts by date</a>
+</div>
+
+<span style='font-family: Carlito'>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+              return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'researchtips';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</span>
+
+  </div>
+  </div></div>
+
+    </main>
+    <footer class="whatisthis">
+  <hr class='separator'/>
+  <span style="font-family: Carlito, sans; font-size: 0.9em; line-height: 1.05em;">
+  <div class="row">
+    <div class="column small-12 medium-4">
+      <figure class='image-left'>
+      <a href="https://myaseen208.com/" style="border-bottom: none;">
+      	<img src="https://myaseen208.com/img/myaseen208.png" alt="Portrait of the author" class='avatar' style="max-width: 100%;">
+      </a>
+      </figure>
+      <p>Muhammad&nbsp;Yaseen (PhD Statistics, UNL-USA) is a Freelance Statistician based in Islamabad, Pakistan.</p>
+    </div>
+    <div class="column small-12 medium-4">
+      
+      <h4 id="contact">Contact</h4>
+      <ul class="fa-ul">
+	
+	<li><i class="fa-li fa fa-university" style="color:#03396c;font-size:80%;padding-top:6px;"></i><a href="">Evacuee Trust Complex, Adjacent to Marriot Hotel, Sector F-5/1, Agha Khan Rd, Islamabad, Pakistan.</a></li>
+	
+	<li><i class="fa-li fa fa-envelope" style="color:#03396c;font-size:80%;padding-top:6px;"></i><a href="mailto:myaseen208@gmail.com">myaseen208@gmail.com</a></li>
+	
+	<li><i class="fa-li fa fa-twitter" style="color:#03396c;font-size:80%;padding-top:6px;"></i><a href="https://twitter.com/myaseen208">@myaseen208</a> on Twitter</li>
+	
+	<li><i class="fa-li fa fa-github-alt" style="color:#03396c;font-size:80%;padding-top:6px;"></i><a href="https://github.com/myaseen208/">myaseen208</a> on GitHub</li>
+	
+	<li><i class="fa-li ai ai-google-scholar" style="color:#03396c;font-size:80%;padding-top:6px;"></i><a href="https://scholar.google.com/citations?user=mHkR-7cAAAAJ&amp;hl=en">Google Scholar</a></li>
+	
+      </ul>
+    </div>
+
+  <div class="column small-12 medium-4">
+  <h4>Search</h4>
+  <a id="searchsite">
+  	<form method="get" action="https://duckduckgo.com/">
+	  <label for="search-field" class="show-for-sr">Search the site</label>
+	  <input type="search" name="q" maxlength="255" placeholder="Search the site" id="search-field">
+	  <input type="hidden" name="sites" value="https://myaseen208.com"/>
+	  <input type="hidden" name="k7" value="#faf8f8"/>
+	  <input type="hidden" name="kj" value="#b33"/>
+	  <input type="hidden" name="ky" value="#fafafa"/>
+	  <input type="hidden" name="kx" value="b"/>
+	  <input type="hidden" name="ko" value="-1"/>
+	  <input type="hidden" name="k1" value="-1"/>
+	</form>
+  </a>
+
+  <h4>Get new posts by email</h4>
+<div class="ml-form-embed"
+  data-account="3217732:q9y4a1d8i3"
+  data-form="4240669:y9j1r8">
+</div>
+  </div>
+  </div>
+  </span>
+</footer>
+
+    <div class="endofpage">
+    <footer id="footer">
+    <section class="wrapper small">Powered by <a href="http://gohugo.io">Hugo</a>
+    and <a href="https://github.com/rstudio/blogdown">Blogdown</a>.
+     &copy; <a href="https://myaseen208.com">Muhammad&nbsp;Yaseen</a> 2008&ndash;2022.
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://myaseen208.com/index.xml"><img src="https://myaseen208.com/img/rss2.png" width=12 align="bottom" alt="RSS icon"  style="padding-top: 0.7ex"></a>
+    </section>
+    </footer>
+    </div>
+
+    <script src="https://myaseen208.com/js/jquery.js"></script>
+    <script src="https://myaseen208.com/js/what-input.js"></script>
+    <script src="https://myaseen208.com/js/foundation.min.js"></script>
+    <script src="https://myaseen208.com/js/finite.js"></script>
+
+    
+    <script src="//cdn.bootcss.com/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="//cdn.bootcss.com/highlight.js/11.3.1/languages/r.min.js"></script>
+
+    <script>
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+    </script>
+
+    
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+    
+    <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-5004894-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+ </body>
+</html>

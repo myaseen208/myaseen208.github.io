@@ -1,0 +1,2889 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>An Introduction to Statistics using SPSS | Muhammad Yaseen</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="https://myaseen208.com/fonts/academicons.ttf?v=1.7.0" as="font">
+    <link rel="preload" href="https://myaseen208.com/fonts/fontawesome-webfont.woff2?v=4.6.34Cas" as="font">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/foundation.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/stackoverflow-light.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/academicons.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/finite.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/kube.min.css">
+    <link rel="stylesheet" href="https://myaseen208.com/css/robjhyndman.min.css">
+    
+<script>
+(function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+_.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+var ml_account = ml('accounts', '3217732', 'q9y4a1d8i3', 'load');
+</script>
+
+</head>
+  <body>
+    <header>
+      <nav class="nav-bar">
+	
+	  <div class="title-bar" data-responsive-toggle="site-menu" data-hide-for="medium">
+	    <button class="site-hamburger" type="button" data-toggle>
+	      <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+	    </button>
+	    <div class="title-bar-title site-title">
+	      <a href="https://myaseen208.com/"  style="color: #b3cde0">Muhammad Yaseen</a>
+	    </div>
+	    <div class="title-bar-right pull-right">
+	      
+
+
+	    </div>
+	  </div>
+
+	  
+	    <div class="top-bar" id="site-menu" >
+	      <div class="top-bar-title show-for-medium site-title">
+		<a href="https://myaseen208.com/"  style="color: #b3cde0;">Muhammad Yaseen</a>
+	      </div>
+	      <div class="top-bar-left">
+		<ul class="menu vertical medium-horizontal">
+		  
+		  
+		  <li><a href="https://myaseen208.com/blogs/">Blogs</a></li>
+		  
+		  <li><a href="https://myaseen208.com/publications/">Publications</a></li>
+		  
+		  <li><a href="https://myaseen208.com/software/">Software</a></li>
+		  
+		  <li><a href="https://myaseen208.com/seminars/">Seminars</a></li>
+		  
+		  <li><a href="https://myaseen208.com/teaching/">Teaching</a></li>
+		  
+		  <li><a href="https://myaseen208.com/about/">About</a></li>
+		  
+		</ul>
+	      </div>
+	      <div class="top-bar-right show-for-medium">
+		
+
+
+	      </div>
+	    </div>
+	  
+	</nav>
+    </header>
+    <main>
+      
+
+<div class="wrapper">
+<div class="units-row" style='margin-bottom: 0px;'>
+<div class="unit-20">&nbsp;</div>
+<div class="unit-60"><h1>An Introduction to Statistics using SPSS</h1></div>
+</div>
+<div class="units-row">
+  <div class="unit-20 dateblock" style='text-align: right;'><h4 style='padding: .8ex 0px .8ex 0px;'><a href="https://myaseen208.com/blogs">Blogs</a></h4>
+      <div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2018-08-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">16 August 2018</time>
+  </span>
+  
+  
+  
+  <span class="post-tags">
+    <p><i class="fa fa-tags"></i>
+    
+    <a class="post-tag" href="https://myaseen208.com/categories/data-science">Data Science</a>,
+     
+    
+    
+    <a class="post-tag" href="https://myaseen208.com/categories/statistics">Statistics</a>, 
+    
+    
+    <a class="post-tag" href="https://myaseen208.com/categories/research">Research</a>, 
+    
+    
+    <a class="post-tag" href="https://myaseen208.com/categories/spss">SPSS</a>
+    
+  </span>
+  
+  
+</div>
+
+    </div>
+<div class="unit-60">
+
+  
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#statistics">Statistics</a></li>
+<li><a href="#variable">Variable</a></li>
+<li><a href="#measurement">Measurement</a></li>
+<li><a href="#measurement-scales">Measurement Scales</a></li>
+<li><a href="#descriptive-statistics">Descriptive Statistics</a><ul>
+<li><a href="#example">Example</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
+<li><a href="#boxwhisker-diagram">Boxwhisker Diagram</a><ul>
+<li><a href="#example-1">Example</a></li>
+<li><a href="#reference-1">Reference</a></li>
+</ul></li>
+<li><a href="#scatter-plot">Scatter Plot</a><ul>
+<li><a href="#example-2">Example</a></li>
+<li><a href="#reference-2">Reference</a></li>
+</ul></li>
+<li><a href="#regression-analysis">Regression Analysis</a></li>
+<li><a href="#simple-linear-regression">Simple Linear Regression</a><ul>
+<li><a href="#example-3">Example</a></li>
+<li><a href="#reference-3">Reference</a></li>
+</ul></li>
+<li><a href="#multiple-linear-regression">Multiple Linear Regression</a><ul>
+<li><a href="#example-4">Example</a></li>
+<li><a href="#reference-4">Reference</a></li>
+</ul></li>
+<li><a href="#polynomial-regression-analysis">Polynomial Regression Analysis</a><ul>
+<li><a href="#example-5">Example</a></li>
+<li><a href="#reference-5">Reference</a></li>
+</ul></li>
+<li><a href="#analysis-of-variance-anova">Analysis of Variance (ANOVA)</a><ul>
+<li><a href="#example-6">Example</a></li>
+<li><a href="#reference-6">Reference</a></li>
+<li><a href="#example-7">Example</a></li>
+<li><a href="#reference-7">Reference</a></li>
+</ul></li>
+<li><a href="#analysis-of-covariance-ancova">Analysis of Covariance (ANCOVA)</a><ul>
+<li><a href="#example-8">Example</a></li>
+<li><a href="#reference-8">Reference</a></li>
+<li><a href="#same-slopes-but-different-intercepts">Same Slopes but different Intercepts</a></li>
+<li><a href="#different-intercepts-and-different-slopes">Different Intercepts and different Slopes</a></li>
+</ul></li>
+<li><a href="#factorial-experiments">Factorial Experiments</a><ul>
+<li><a href="#example-9">Example</a></li>
+<li><a href="#reference-9">Reference</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<div class="figure">
+<img src="https://myaseen208.com/static/img/2018-08-16_PASTIC-NTU/2018-08-16_PASTIC-NTU.png" alt="" />
+<p class="caption">alt text</p>
+</div>
+<p> </p>
+</div>
+<div id="statistics" class="section level2">
+<h2>Statistics</h2>
+<blockquote>
+<ul>
+<li>Statistics is the science of uncertainty &amp; variability</li>
+<li>Statistics turns data into information</li>
+<li>Data -&gt; Information -&gt; Knowledge -&gt; Wisdom</li>
+<li>Statistics is the interpretation of Science</li>
+<li>Statistics is the Art &amp; Science of learning from data</li>
+</ul>
+</blockquote>
+<p> </p>
+</div>
+<div id="variable" class="section level2">
+<h2>Variable</h2>
+<blockquote>
+<ul>
+<li>Characteristic that may vary from individual to individual</li>
+</ul>
+</blockquote>
+<p> </p>
+</div>
+<div id="measurement" class="section level2">
+<h2>Measurement</h2>
+<blockquote>
+<ul>
+<li>Process of assigning numbers or labels to objects or states in accordance with logically accepted rules</li>
+</ul>
+</blockquote>
+<p> </p>
+</div>
+<div id="measurement-scales" class="section level2">
+<h2>Measurement Scales</h2>
+<blockquote>
+<ul>
+<li><strong>Nominal Scale:</strong> Obersvations may be classified into mutually exclusive &amp; exhaustive categories</li>
+<li><strong>Ordinal Scale:</strong> Obersvations may be ranked</li>
+<li><strong>Interval Scale:</strong> Difference between obersvations is meaningful</li>
+<li><strong>Ratio Scale:</strong> Ratio between obersvations is meaningful &amp; true zero point</li>
+</ul>
+</blockquote>
+<p> </p>
+</div>
+<div id="descriptive-statistics" class="section level2">
+<h2>Descriptive Statistics</h2>
+<blockquote>
+<ul>
+<li>No of observations</li>
+<li>Measures of Central Tendency</li>
+<li>Measures of Dispersion</li>
+<li>Measures of Skewness</li>
+<li>Measures of Kurtosis</li>
+</ul>
+</blockquote>
+<p> </p>
+<div id="example" class="section level3">
+<h3>Example</h3>
+<blockquote>
+<p>Following data presents a subset of Yarn strength and Elongation percentage from an experiment to test yarn strength and extension of blue jeans designed under Conducted in Sudan Textile Factory Method.</p>
+</blockquote>
+<p> </p>
+<table>
+<thead>
+<tr class="header">
+<th>Single Strength</th>
+<th>Elongation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>419.7</td>
+<td>3.22</td>
+</tr>
+<tr class="even">
+<td>442.7</td>
+<td>2.78</td>
+</tr>
+<tr class="odd">
+<td>457.4</td>
+<td>1.60</td>
+</tr>
+<tr class="even">
+<td>435.2</td>
+<td>1.88</td>
+</tr>
+<tr class="odd">
+<td>404.1</td>
+<td>1.88</td>
+</tr>
+<tr class="even">
+<td>479.1</td>
+<td>2.34</td>
+</tr>
+<tr class="odd">
+<td>450.8</td>
+<td>2.44</td>
+</tr>
+<tr class="even">
+<td>432.7</td>
+<td>2.12</td>
+</tr>
+<tr class="odd">
+<td>378.1</td>
+<td>2.88</td>
+</tr>
+<tr class="even">
+<td>413.3</td>
+<td>2.37</td>
+</tr>
+<tr class="odd">
+<td>365.1</td>
+<td>1.40</td>
+</tr>
+<tr class="even">
+<td>492.0</td>
+<td>2.02</td>
+</tr>
+<tr class="odd">
+<td>389.5</td>
+<td>2.02</td>
+</tr>
+<tr class="even">
+<td>467.8</td>
+<td>1.92</td>
+</tr>
+<tr class="odd">
+<td>442.3</td>
+<td>2.44</td>
+</tr>
+<tr class="even">
+<td>444.3</td>
+<td>1.74</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="reference" class="section level3">
+<h3>Reference</h3>
+<blockquote>
+<p>Mousa, A.H.N. (1978). Analysis of the Effect of Size Formulation Variations on Yarn Tenacity and Elongation. <em>Textile Research Journal</em>, <strong>48</strong>, 713-717.</p>
+</blockquote>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/01-DesStat/01Descriptive.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+<p><em><strong>Analyze &gt; Descriptive Statistics &gt; Descriptives …</strong></em></p>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/01-DesStat/02Descriptive.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/01-DesStat/03Descriptive.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/01-DesStat/04Descriptive.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/01-DesStat/05Descriptive.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/01-DesStat/06Descriptive.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/01-DesStat/07Descriptive.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+</div>
+<div id="boxwhisker-diagram" class="section level2">
+<h2>Boxwhisker Diagram</h2>
+<blockquote>
+<ul>
+<li>Pictorial display of five number summary (Minimum, Q1, Q2, Q3 and Maximum)</li>
+</ul>
+</blockquote>
+<p> </p>
+<div id="example-1" class="section level3">
+<h3>Example</h3>
+<blockquote>
+<p>Effact of Two drying methods (Line Dry and Tumble Dry) are to be compared for some kind of shrinkage of some particular brand of fabric. Following data was observed from an experiment:</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Drying Method</th>
+<th>Length Shrinkage</th>
+<th>Drying Method</th>
+<th>Length Shrinkage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Line Dry</td>
+<td>1.0</td>
+<td>Tumble Dry</td>
+<td>2.8</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>1.5</td>
+<td>Tumble Dry</td>
+<td>3.0</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>2.1</td>
+<td>Tumble Dry</td>
+<td>3.0</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>2.1</td>
+<td>Tumble Dry</td>
+<td>2.9</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>5.4</td>
+<td>Tumble Dry</td>
+<td>6.8</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>5.4</td>
+<td>Tumble Dry</td>
+<td>6.5</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>2.8</td>
+<td>Tumble Dry</td>
+<td>2.9</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>3.0</td>
+<td>Tumble Dry</td>
+<td>3.6</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>1.4</td>
+<td>Tumble Dry</td>
+<td>3.5</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>1.8</td>
+<td>Tumble Dry</td>
+<td>3.7</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>2.3</td>
+<td>Tumble Dry</td>
+<td>3.5</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>2.2</td>
+<td>Tumble Dry</td>
+<td>3.5</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>7.0</td>
+<td>Tumble Dry</td>
+<td>7.9</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>7.2</td>
+<td>Tumble Dry</td>
+<td>8.0</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>4.2</td>
+<td>Tumble Dry</td>
+<td>4.0</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>4.5</td>
+<td>Tumble Dry</td>
+<td>4.8</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>1.8</td>
+<td>Tumble Dry</td>
+<td>4.0</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>1.9</td>
+<td>Tumble Dry</td>
+<td>4.2</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>2.5</td>
+<td>Tumble Dry</td>
+<td>3.9</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>2.2</td>
+<td>Tumble Dry</td>
+<td>3.7</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>7.5</td>
+<td>Tumble Dry</td>
+<td>8.6</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>7.9</td>
+<td>Tumble Dry</td>
+<td>8.8</td>
+</tr>
+<tr class="odd">
+<td>Line Dry</td>
+<td>4.8</td>
+<td>Tumble Dry</td>
+<td>4.7</td>
+</tr>
+<tr class="even">
+<td>Line Dry</td>
+<td>5.2</td>
+<td>Tumble Dry</td>
+<td>5.3</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="reference-1" class="section level3">
+<h3>Reference</h3>
+<blockquote>
+<p>Higgins, L., Anand, S.C., Holmes, D.A., Hall, M.E., and Underly, K. (2003). Effects of Various Home Laundering on the Dimensional Stability, Wrinkling, and Other Properties of Plain Woven Cotton Fabrics: Part II: Effect of Rinse Cycle Softener and Drying Method and of Tumble Sheet Softener and Tumble Drying Time. <em>Textile Research Journal</em>, <strong>73</strong>, 407-420.</p>
+</blockquote>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/03-BoxPlot/01Boxplot.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+<p><em><strong>Graphs &gt; Legacy Dialogs &gt; Boxplot …</strong></em></p>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/03-BoxPlot/02Boxplot.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/03-BoxPlot/03Boxplot.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/03-BoxPlot/04Boxplot.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/03-BoxPlot/05Boxplot.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+</div>
+<div id="scatter-plot" class="section level2">
+<h2>Scatter Plot</h2>
+<blockquote>
+<ul>
+<li>Two dimensional graph to show the relationship among two variables</li>
+</ul>
+</blockquote>
+<p> </p>
+<div id="example-2" class="section level3">
+<h3>Example</h3>
+<blockquote>
+<p>An Experiment was conducted to test ballistic tests for some fabric. To test the effect, bullet volicity and depth of trauma was observed. Some obser vations as example are given in the following table. Each measurement is based on 6 replicates.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Bullet Velocity</th>
+<th>Trauma Depth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>372.83</td>
+<td>3.87</td>
+</tr>
+<tr class="even">
+<td>370.67</td>
+<td>5.20</td>
+</tr>
+<tr class="odd">
+<td>370.50</td>
+<td>4.85</td>
+</tr>
+<tr class="even">
+<td>369.33</td>
+<td>7.12</td>
+</tr>
+<tr class="odd">
+<td>371.67</td>
+<td>2.73</td>
+</tr>
+<tr class="even">
+<td>370.50</td>
+<td>5.75</td>
+</tr>
+<tr class="odd">
+<td>369.67</td>
+<td>5.32</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="reference-2" class="section level3">
+<h3>Reference</h3>
+<blockquote>
+<p>Karahan, M. (2008). Comparison of Ballistic Performance and Energy Absorption Capabilities of Woven and Unidirectional Aramid Fabrics. <em>Textile Research Journal</em>, <strong>78</strong>, 718-730.</p>
+</blockquote>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/04-ScatterPlot/01Scatterplot.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+<p><em><strong>Graphs &gt; Legacy Dialogs &gt; Scatter/Dot …</strong></em></p>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/04-ScatterPlot/02Scatterplot.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/04-ScatterPlot/03Scatterplot.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/04-ScatterPlot/04Scatterplot.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/04-ScatterPlot/05Scatterplot.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+</div>
+<div id="regression-analysis" class="section level2">
+<h2>Regression Analysis</h2>
+<blockquote>
+<ul>
+<li>Quantifying dependency of a normal response on quantitative explanatory variable(s)</li>
+</ul>
+</blockquote>
+<p> </p>
+<div class="figure">
+<img src="https://myaseen208.com/img/PopRegFn.png" alt="" />
+<p class="caption">alt text</p>
+</div>
+<p> </p>
+</div>
+<div id="simple-linear-regression" class="section level2">
+<h2>Simple Linear Regression</h2>
+<blockquote>
+<ul>
+<li>Quantifying dependency of a normal response on a quantitative explanatory variable</li>
+</ul>
+</blockquote>
+<p> </p>
+<div id="example-3" class="section level3">
+<h3>Example</h3>
+<blockquote>
+<p>An Experiment was conducted to test ballistic tests for some fabric. To test the effect, bullet volicity and depth of trauma was observed. Some obser vations as example are given in the following table. Each measurement is based on 6 replicates.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Bullet Velocity</th>
+<th>Trauma Depth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>372.83</td>
+<td>3.87</td>
+</tr>
+<tr class="even">
+<td>370.67</td>
+<td>5.20</td>
+</tr>
+<tr class="odd">
+<td>370.50</td>
+<td>4.85</td>
+</tr>
+<tr class="even">
+<td>369.33</td>
+<td>7.12</td>
+</tr>
+<tr class="odd">
+<td>371.67</td>
+<td>2.73</td>
+</tr>
+<tr class="even">
+<td>370.50</td>
+<td>5.75</td>
+</tr>
+<tr class="odd">
+<td>369.67</td>
+<td>5.32</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="reference-3" class="section level3">
+<h3>Reference</h3>
+<blockquote>
+<p>Karahan, M. (2008). Comparison of Ballistic Performance and Energy Absorption Capabilities of Woven and Unidirectional Aramid Fabrics. <em>Textile Research Journal</em>, <strong>78</strong>, 718-730.</p>
+</blockquote>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/05-SLR/01SLR.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+<p><em><strong>Analyze &gt; Regression &gt; Linear …</strong></em></p>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/05-SLR/02SLR.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/05-SLR/03SLR.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/05-SLR/04SLR.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/05-SLR/05SLR.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+</div>
+<div id="multiple-linear-regression" class="section level2">
+<h2>Multiple Linear Regression</h2>
+<blockquote>
+<ul>
+<li>Quantifying dependency of a normal response on two or more quantitative explanatory variables</li>
+</ul>
+</blockquote>
+<p> </p>
+<div id="example-4" class="section level3">
+<h3>Example</h3>
+<blockquote>
+<p>Following data presents a Factorial experiment relating yarn strength and elongation to 3 factors: Corn Starch, Nordux, and Fats. Conducted in Sudan Textile Factory Method.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Corn Starch</th>
+<th>Nordux</th>
+<th>Fats</th>
+<th>Single Strength</th>
+<th>Enolgation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>85</td>
+<td>50</td>
+<td>30.25</td>
+<td>419.7</td>
+<td>3.22</td>
+</tr>
+<tr class="even">
+<td>140</td>
+<td>50</td>
+<td>30.25</td>
+<td>442.7</td>
+<td>2.78</td>
+</tr>
+<tr class="odd">
+<td>85</td>
+<td>100</td>
+<td>30.25</td>
+<td>457.4</td>
+<td>1.60</td>
+</tr>
+<tr class="even">
+<td>140</td>
+<td>100</td>
+<td>30.25</td>
+<td>435.2</td>
+<td>1.88</td>
+</tr>
+<tr class="odd">
+<td>85</td>
+<td>50</td>
+<td>30.00</td>
+<td>404.1</td>
+<td>1.88</td>
+</tr>
+<tr class="even">
+<td>140</td>
+<td>50</td>
+<td>30.00</td>
+<td>479.1</td>
+<td>2.34</td>
+</tr>
+<tr class="odd">
+<td>85</td>
+<td>100</td>
+<td>30.00</td>
+<td>450.8</td>
+<td>2.44</td>
+</tr>
+<tr class="even">
+<td>140</td>
+<td>100</td>
+<td>30.00</td>
+<td>432.7</td>
+<td>2.12</td>
+</tr>
+<tr class="odd">
+<td>85</td>
+<td>50</td>
+<td>30.25</td>
+<td>378.1</td>
+<td>2.88</td>
+</tr>
+<tr class="even">
+<td>140</td>
+<td>50</td>
+<td>30.25</td>
+<td>413.3</td>
+<td>2.37</td>
+</tr>
+<tr class="odd">
+<td>85</td>
+<td>100</td>
+<td>30.25</td>
+<td>365.1</td>
+<td>1.40</td>
+</tr>
+<tr class="even">
+<td>140</td>
+<td>100</td>
+<td>30.25</td>
+<td>492.0</td>
+<td>2.02</td>
+</tr>
+<tr class="odd">
+<td>85</td>
+<td>50</td>
+<td>30.00</td>
+<td>389.5</td>
+<td>2.02</td>
+</tr>
+<tr class="even">
+<td>140</td>
+<td>50</td>
+<td>30.00</td>
+<td>467.8</td>
+<td>1.92</td>
+</tr>
+<tr class="odd">
+<td>85</td>
+<td>100</td>
+<td>30.00</td>
+<td>442.3</td>
+<td>2.44</td>
+</tr>
+<tr class="even">
+<td>140</td>
+<td>100</td>
+<td>30.00</td>
+<td>444.3</td>
+<td>1.74</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="reference-4" class="section level3">
+<h3>Reference</h3>
+<blockquote>
+<p>Mousa, A.H.N. (1978). Analysis of the Effect of Size Formulation Variations on Yarn Tenacity and Elongation. <em>Textile Research Journal</em>, <strong>48</strong>, 713-717.</p>
+</blockquote>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/06-MLR/01MLR.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+<p><em><strong>Analyze &gt; Regression &gt; Linear …</strong></em></p>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/06-MLR/02MLR.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/06-MLR/03MLR.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/06-MLR/04MLR.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+</div>
+<div id="polynomial-regression-analysis" class="section level2">
+<h2>Polynomial Regression Analysis</h2>
+<blockquote>
+<ul>
+<li>Quantifying non-linear dependency of a normal response on quantitative explanatory variable(s)</li>
+</ul>
+</blockquote>
+<div id="example-5" class="section level3">
+<h3>Example</h3>
+<blockquote>
+<p>The Relationship Between Air Layers and Evaporative Resistance of Male Chinese Clothing is to be observed from Measurements of total air volume and total evaporative resistance of 39 Chinese clothing ensembles the following data.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Air Volume</th>
+<th>Evaporative Resistance</th>
+<th>Air Volume</th>
+<th>Evaporative Resistance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>22.99</td>
+<td>13.7</td>
+<td>32.29</td>
+<td>21.2</td>
+</tr>
+<tr class="even">
+<td>27.98</td>
+<td>16.8</td>
+<td>33.60</td>
+<td>21.1</td>
+</tr>
+<tr class="odd">
+<td>24.41</td>
+<td>16.5</td>
+<td>34.83</td>
+<td>21.0</td>
+</tr>
+<tr class="even">
+<td>33.21</td>
+<td>17.3</td>
+<td>36.37</td>
+<td>22.9</td>
+</tr>
+<tr class="odd">
+<td>42.07</td>
+<td>18.5</td>
+<td>38.52</td>
+<td>21.2</td>
+</tr>
+<tr class="even">
+<td>44.30</td>
+<td>19.0</td>
+<td>30.02</td>
+<td>19.3</td>
+</tr>
+<tr class="odd">
+<td>46.00</td>
+<td>18.0</td>
+<td>50.18</td>
+<td>23.4</td>
+</tr>
+<tr class="even">
+<td>93.06</td>
+<td>23.2</td>
+<td>32.70</td>
+<td>20.5</td>
+</tr>
+<tr class="odd">
+<td>26.19</td>
+<td>18.8</td>
+<td>33.57</td>
+<td>20.2</td>
+</tr>
+<tr class="even">
+<td>30.76</td>
+<td>17.5</td>
+<td>64.02</td>
+<td>24.4</td>
+</tr>
+<tr class="odd">
+<td>28.76</td>
+<td>19.4</td>
+<td>60.16</td>
+<td>23.2</td>
+</tr>
+<tr class="even">
+<td>30.30</td>
+<td>21.2</td>
+<td>35.85</td>
+<td>22.3</td>
+</tr>
+<tr class="odd">
+<td>49.43</td>
+<td>20.5</td>
+<td>39.89</td>
+<td>22.7</td>
+</tr>
+<tr class="even">
+<td>28.06</td>
+<td>20.1</td>
+<td>47.83</td>
+<td>24.3</td>
+</tr>
+<tr class="odd">
+<td>33.61</td>
+<td>21.2</td>
+<td>30.60</td>
+<td>18.1</td>
+</tr>
+<tr class="even">
+<td>28.93</td>
+<td>19.5</td>
+<td>35.19</td>
+<td>23.0</td>
+</tr>
+<tr class="odd">
+<td>20.07</td>
+<td>18.5</td>
+<td>45.72</td>
+<td>23.6</td>
+</tr>
+<tr class="even">
+<td>84.67</td>
+<td>21.1</td>
+<td>74.20</td>
+<td>26.6</td>
+</tr>
+<tr class="odd">
+<td>27.95</td>
+<td>20.2</td>
+<td>65.07</td>
+<td>30.2</td>
+</tr>
+<tr class="even">
+<td>31.07</td>
+<td>22.4</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="reference-5" class="section level3">
+<h3>Reference</h3>
+<blockquote>
+<p>Wang, F., Peng, H., and Shi, W. (2016). The Relationship Between Air Layers and Evaporative Resistance of Male Chinese Clothing. <em>Applied Ergonomics</em>, <strong>56</strong>, 194-202.</p>
+</blockquote>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/07-PolyReg/01PolyReg.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/07-PolyReg/02PolyReg.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+<p><em><strong>Analyze &gt; Regression &gt; Curve Estimation …</strong></em></p>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/07-PolyReg/03PolyReg.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/07-PolyReg/04PolyReg.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/07-PolyReg/05PolyReg.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/07-PolyReg/06PolyReg.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+</div>
+<div id="analysis-of-variance-anova" class="section level2">
+<h2>Analysis of Variance (ANOVA)</h2>
+<blockquote>
+<ul>
+<li>Comparing means of Normal dependent variable for levels of
+different factor(s)</li>
+</ul>
+</blockquote>
+<p> </p>
+<div class="figure">
+<img src="https://myaseen208.com/img/ANOVANormalMeans.png" alt="" />
+<p class="caption">alt text</p>
+</div>
+<p> </p>
+<div id="example-6" class="section level3">
+<h3>Example</h3>
+<blockquote>
+<p>Experiment comparing tensile strength and extension of blue jeans that were designed manually and with laser beams. Data from 20 pairs of jeans per design method is presented in the table.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Jean ID</th>
+<th>Sample ID</th>
+<th>Strength</th>
+<th>Extension</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1266</td>
+<td>68.06</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>1099</td>
+<td>61.54</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>1068</td>
+<td>40.48</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>1266</td>
+<td>59.83</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>968</td>
+<td>55.89</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>6</td>
+<td>1</td>
+<td>1039</td>
+<td>54.12</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>7</td>
+<td>1</td>
+<td>1194</td>
+<td>77.09</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>8</td>
+<td>1</td>
+<td>926</td>
+<td>61.80</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>9</td>
+<td>1</td>
+<td>1009</td>
+<td>58.31</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>10</td>
+<td>1</td>
+<td>1048</td>
+<td>71.61</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>11</td>
+<td>1</td>
+<td>1203</td>
+<td>74.40</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>12</td>
+<td>1</td>
+<td>884</td>
+<td>63.38</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>1069</td>
+<td>59.08</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>14</td>
+<td>1</td>
+<td>1034</td>
+<td>73.21</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>15</td>
+<td>1</td>
+<td>1021</td>
+<td>78.60</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>1022</td>
+<td>57.44</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>17</td>
+<td>1</td>
+<td>1071</td>
+<td>88.92</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>18</td>
+<td>1</td>
+<td>1089</td>
+<td>76.77</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>19</td>
+<td>1</td>
+<td>1197</td>
+<td>74.78</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>20</td>
+<td>1</td>
+<td>1035</td>
+<td>71.11</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>21</td>
+<td>1</td>
+<td>1279</td>
+<td>75.52</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>22</td>
+<td>1</td>
+<td>1197</td>
+<td>71.44</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>23</td>
+<td>1</td>
+<td>1083</td>
+<td>44.16</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>24</td>
+<td>1</td>
+<td>1418</td>
+<td>70.56</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>25</td>
+<td>1</td>
+<td>1273</td>
+<td>69.13</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>26</td>
+<td>1</td>
+<td>1232</td>
+<td>62.52</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>27</td>
+<td>1</td>
+<td>1293</td>
+<td>72.62</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>28</td>
+<td>1</td>
+<td>1121</td>
+<td>68.96</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>29</td>
+<td>1</td>
+<td>1286</td>
+<td>71.03</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>30</td>
+<td>1</td>
+<td>1416</td>
+<td>69.34</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>31</td>
+<td>1</td>
+<td>1285</td>
+<td>81.79</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>32</td>
+<td>1</td>
+<td>1268</td>
+<td>69.29</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>33</td>
+<td>1</td>
+<td>1365</td>
+<td>73.73</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>34</td>
+<td>1</td>
+<td>1309</td>
+<td>75.01</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>35</td>
+<td>1</td>
+<td>1343</td>
+<td>75.95</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>36</td>
+<td>1</td>
+<td>1292</td>
+<td>72.64</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>37</td>
+<td>1</td>
+<td>1234</td>
+<td>73.73</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>38</td>
+<td>1</td>
+<td>1226</td>
+<td>75.97</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>39</td>
+<td>1</td>
+<td>1229</td>
+<td>71.60</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>40</td>
+<td>1</td>
+<td>1254</td>
+<td>70.48</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>1140</td>
+<td>63.04</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>1104</td>
+<td>65.20</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>1051</td>
+<td>50.62</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>4</td>
+<td>2</td>
+<td>1128</td>
+<td>56.21</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>5</td>
+<td>2</td>
+<td>1044</td>
+<td>53.51</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>6</td>
+<td>2</td>
+<td>1303</td>
+<td>59.53</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>7</td>
+<td>2</td>
+<td>1081</td>
+<td>60.75</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>8</td>
+<td>2</td>
+<td>958</td>
+<td>60.60</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>9</td>
+<td>2</td>
+<td>1058</td>
+<td>69.80</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>10</td>
+<td>2</td>
+<td>1077</td>
+<td>62.05</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>11</td>
+<td>2</td>
+<td>956</td>
+<td>72.87</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>12</td>
+<td>2</td>
+<td>1010</td>
+<td>59.41</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>13</td>
+<td>2</td>
+<td>1062</td>
+<td>61.71</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>14</td>
+<td>2</td>
+<td>1073</td>
+<td>71.51</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>15</td>
+<td>2</td>
+<td>1027</td>
+<td>68.16</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>16</td>
+<td>2</td>
+<td>1048</td>
+<td>60.76</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>17</td>
+<td>2</td>
+<td>1101</td>
+<td>63.70</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>18</td>
+<td>2</td>
+<td>1076</td>
+<td>80.69</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>19</td>
+<td>2</td>
+<td>1081</td>
+<td>69.65</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>20</td>
+<td>2</td>
+<td>1084</td>
+<td>68.45</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>21</td>
+<td>2</td>
+<td>1205</td>
+<td>71.44</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>22</td>
+<td>2</td>
+<td>1214</td>
+<td>69.00</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>23</td>
+<td>2</td>
+<td>1055</td>
+<td>47.05</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>24</td>
+<td>2</td>
+<td>1402</td>
+<td>74.50</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>25</td>
+<td>2</td>
+<td>1310</td>
+<td>72.76</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>26</td>
+<td>2</td>
+<td>1324</td>
+<td>73.01</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>27</td>
+<td>2</td>
+<td>1303</td>
+<td>79.82</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>28</td>
+<td>2</td>
+<td>1083</td>
+<td>65.43</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>29</td>
+<td>2</td>
+<td>1391</td>
+<td>69.84</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>30</td>
+<td>2</td>
+<td>1225</td>
+<td>74.16</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>31</td>
+<td>2</td>
+<td>1396</td>
+<td>79.49</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>32</td>
+<td>2</td>
+<td>1273</td>
+<td>75.30</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>33</td>
+<td>2</td>
+<td>1326</td>
+<td>66.65</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>34</td>
+<td>2</td>
+<td>1393</td>
+<td>79.21</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>35</td>
+<td>2</td>
+<td>1172</td>
+<td>73.57</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>36</td>
+<td>2</td>
+<td>1241</td>
+<td>71.80</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>37</td>
+<td>2</td>
+<td>1292</td>
+<td>77.70</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>38</td>
+<td>2</td>
+<td>1354</td>
+<td>73.83</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>39</td>
+<td>2</td>
+<td>1299</td>
+<td>73.59</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>40</td>
+<td>2</td>
+<td>1202</td>
+<td>68.45</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>1104</td>
+<td>61.40</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>1113</td>
+<td>63.44</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+<td>3</td>
+<td>1063</td>
+<td>50.48</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>1200</td>
+<td>63.08</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>5</td>
+<td>3</td>
+<td>1006</td>
+<td>66.70</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>6</td>
+<td>3</td>
+<td>860</td>
+<td>46.39</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>7</td>
+<td>3</td>
+<td>936</td>
+<td>62.76</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>8</td>
+<td>3</td>
+<td>967</td>
+<td>64.72</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>9</td>
+<td>3</td>
+<td>1018</td>
+<td>61.55</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>10</td>
+<td>3</td>
+<td>1191</td>
+<td>69.50</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>11</td>
+<td>3</td>
+<td>987</td>
+<td>73.45</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>12</td>
+<td>3</td>
+<td>1155</td>
+<td>79.59</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>13</td>
+<td>3</td>
+<td>982</td>
+<td>57.91</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>14</td>
+<td>3</td>
+<td>1064</td>
+<td>70.86</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>15</td>
+<td>3</td>
+<td>1112</td>
+<td>68.17</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>16</td>
+<td>3</td>
+<td>1040</td>
+<td>63.46</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>17</td>
+<td>3</td>
+<td>1075</td>
+<td>61.44</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>18</td>
+<td>3</td>
+<td>1081</td>
+<td>73.51</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>19</td>
+<td>3</td>
+<td>1045</td>
+<td>71.19</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>20</td>
+<td>3</td>
+<td>1077</td>
+<td>69.33</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>21</td>
+<td>3</td>
+<td>1283</td>
+<td>78.62</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>22</td>
+<td>3</td>
+<td>1154</td>
+<td>63.06</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>23</td>
+<td>3</td>
+<td>1117</td>
+<td>42.43</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>24</td>
+<td>3</td>
+<td>1335</td>
+<td>71.45</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>25</td>
+<td>3</td>
+<td>1277</td>
+<td>73.41</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>26</td>
+<td>3</td>
+<td>1313</td>
+<td>71.44</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>27</td>
+<td>3</td>
+<td>1361</td>
+<td>74.27</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>28</td>
+<td>3</td>
+<td>1104</td>
+<td>70.42</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>29</td>
+<td>3</td>
+<td>1450</td>
+<td>72.40</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>30</td>
+<td>3</td>
+<td>1323</td>
+<td>75.00</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>31</td>
+<td>3</td>
+<td>1315</td>
+<td>74.82</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>32</td>
+<td>3</td>
+<td>1321</td>
+<td>77.76</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>33</td>
+<td>3</td>
+<td>1315</td>
+<td>66.90</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>34</td>
+<td>3</td>
+<td>1386</td>
+<td>77.64</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>35</td>
+<td>3</td>
+<td>1165</td>
+<td>75.60</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>36</td>
+<td>3</td>
+<td>1198</td>
+<td>69.73</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>37</td>
+<td>3</td>
+<td>1223</td>
+<td>69.42</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>38</td>
+<td>3</td>
+<td>1289</td>
+<td>80.39</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>39</td>
+<td>3</td>
+<td>1339</td>
+<td>71.40</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>40</td>
+<td>3</td>
+<td>1266</td>
+<td>72.36</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="reference-6" class="section level3">
+<h3>Reference</h3>
+<blockquote>
+<p>Ondogan, Z., Pamuk, O., Ondogan, E.N., and Ozguney, A. (2005). Improving the Appearance of All Textile Products from Clothing to Home Textile Using Laser Technology. <em>Optics and Laser Technology</em>, <strong>37</strong>, 631-637.</p>
+</blockquote>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/08-ANOVA/01ANOVA.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+<p><em><strong>Analyze &gt; General Linear Model &gt; Univariate …</strong></em></p>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/08-ANOVA/02ANOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/08-ANOVA/03ANOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/08-ANOVA/04ANOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/08-ANOVA/05ANOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/08-ANOVA/06ANOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/08-ANOVA/07ANOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/08-ANOVA/08ANOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/08-ANOVA/09ANOVA.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+<div id="example-7" class="section level3">
+<h3>Example</h3>
+<blockquote>
+<p>The analysis of variance of cotton yarn fineness is customer satisfaction with quality textile product. The purpose of this study is to minimize the faults of finished cotton fabric by maintaining actual yarn count during producing in ring frame. If the analysis shows the mean count difference due to shift and machine number then action should be taken to maintain required count of yarn. This action may be taken by setting of actual draft, uniform linear density of finisher draw frame sliver and maintaining proper atmospheric condition in ring and back section. The 210 data for yarn count of 30 KH (30 carded Hosiery) was summarized as follows:</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Machine Number</th>
+<th>Shift</th>
+<th>YarnCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A</td>
+<td>29.52</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>A</td>
+<td>29.58</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>A</td>
+<td>28.62</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>A</td>
+<td>30.50</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>A</td>
+<td>29.03</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>A</td>
+<td>29.75</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>A</td>
+<td>31.28</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>B</td>
+<td>30.91</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>B</td>
+<td>29.33</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>B</td>
+<td>29.32</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>B</td>
+<td>30.04</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>B</td>
+<td>30.33</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>B</td>
+<td>30.91</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>B</td>
+<td>29.95</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>C</td>
+<td>30.14</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>C</td>
+<td>30.00</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>C</td>
+<td>29.98</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>C</td>
+<td>28.99</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>C</td>
+<td>29.82</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>C</td>
+<td>29.85</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>C</td>
+<td>30.05</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="reference-7" class="section level3">
+<h3>Reference</h3>
+<blockquote>
+<p>Hossen, J., Haque, E., Khan, S.K., and Saha, S. (2012). Analysis of cotton yarn count variation by two way ANOVA. Conference: Annals of the University of Oradea, Fascicle of Textiles, Leatherwork. <em>At Annals of the University of Oradea</em>, <strong>XIII-02</strong>.</p>
+</blockquote>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/01RCBD.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+<p><em><strong>Analyze &gt; General Linear Model &gt; Univariate …</strong></em></p>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/02RCBD.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/03RCBD.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/04RCBD.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/05RCBD.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/06RCBD.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/07RCBD.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/08RCBD.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/09RCBD.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/10RCBD.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/09-ANOVA2/11RCBD.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+</div>
+<div id="analysis-of-covariance-ancova" class="section level2">
+<h2>Analysis of Covariance (ANCOVA)</h2>
+<blockquote>
+<ul>
+<li>Quantifying dependency of a normal response on quantitative explanatory variable(s)</li>
+<li>Comparing means of Normal dependent variable for levels of
+different factor(s)</li>
+</ul>
+</blockquote>
+<p> </p>
+<div class="figure">
+<img src="https://myaseen208.com/img/ANCOVA.png" alt="" />
+<p class="caption">alt text</p>
+</div>
+<p> </p>
+<div id="example-8" class="section level3">
+<h3>Example</h3>
+<blockquote>
+<p>Results of Experiment measuring top shrinkage under 3 treatments (untreated, ether-extracted, ether/alcohol extracted), measured at 3 levels of pH (2, 6, 10) is given in the following table.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Treatment</th>
+<th>pH</th>
+<th>Shrinkage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Untreated</td>
+<td>2</td>
+<td>42.8</td>
+</tr>
+<tr class="even">
+<td>Untreated</td>
+<td>6</td>
+<td>46.2</td>
+</tr>
+<tr class="odd">
+<td>Untreated</td>
+<td>10</td>
+<td>45.6</td>
+</tr>
+<tr class="even">
+<td>Untreated</td>
+<td>2</td>
+<td>43.0</td>
+</tr>
+<tr class="odd">
+<td>Untreated</td>
+<td>6</td>
+<td>47.0</td>
+</tr>
+<tr class="even">
+<td>Untreated</td>
+<td>10</td>
+<td>43.8</td>
+</tr>
+<tr class="odd">
+<td>Untreated</td>
+<td>2</td>
+<td>43.5</td>
+</tr>
+<tr class="even">
+<td>Untreated</td>
+<td>6</td>
+<td>45.2</td>
+</tr>
+<tr class="odd">
+<td>Untreated</td>
+<td>10</td>
+<td>45.7</td>
+</tr>
+<tr class="even">
+<td>Ether Extract</td>
+<td>2</td>
+<td>33.6</td>
+</tr>
+<tr class="odd">
+<td>Ether Extract</td>
+<td>6</td>
+<td>40.4</td>
+</tr>
+<tr class="even">
+<td>Ether Extract</td>
+<td>10</td>
+<td>40.1</td>
+</tr>
+<tr class="odd">
+<td>Ether Extract</td>
+<td>2</td>
+<td>35.0</td>
+</tr>
+<tr class="even">
+<td>Ether Extract</td>
+<td>6</td>
+<td>39.4</td>
+</tr>
+<tr class="odd">
+<td>Ether Extract</td>
+<td>10</td>
+<td>39.5</td>
+</tr>
+<tr class="even">
+<td>Ether Extract</td>
+<td>2</td>
+<td>36.2</td>
+</tr>
+<tr class="odd">
+<td>Ether Extract</td>
+<td>6</td>
+<td>37.9</td>
+</tr>
+<tr class="even">
+<td>Ether Extract</td>
+<td>10</td>
+<td>39.2</td>
+</tr>
+<tr class="odd">
+<td>ether/alcohol extracted</td>
+<td>2</td>
+<td>35.6</td>
+</tr>
+<tr class="even">
+<td>ether/alcohol extracted</td>
+<td>6</td>
+<td>35.2</td>
+</tr>
+<tr class="odd">
+<td>ether/alcohol extracted</td>
+<td>10</td>
+<td>36.6</td>
+</tr>
+<tr class="even">
+<td>ether/alcohol extracted</td>
+<td>2</td>
+<td>34.8</td>
+</tr>
+<tr class="odd">
+<td>ether/alcohol extracted</td>
+<td>6</td>
+<td>33.0</td>
+</tr>
+<tr class="even">
+<td>ether/alcohol extracted</td>
+<td>10</td>
+<td>32.3</td>
+</tr>
+<tr class="odd">
+<td>ether/alcohol extracted</td>
+<td>2</td>
+<td>34.8</td>
+</tr>
+<tr class="even">
+<td>ether/alcohol extracted</td>
+<td>6</td>
+<td>32.3</td>
+</tr>
+<tr class="odd">
+<td>ether/alcohol extracted</td>
+<td>10</td>
+<td>35.6</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="reference-8" class="section level3">
+<h3>Reference</h3>
+<blockquote>
+<p>Lindberg, J. (1953). Relationship Between Various Surface Properties of Wool Fibers: Part II: Frictional Properties. <em>Textile Research Journal</em>, <strong>23</strong>, 225-237.</p>
+</blockquote>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/01ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+<div id="same-slopes-but-different-intercepts" class="section level3">
+<h3>Same Slopes but different Intercepts</h3>
+<p><em><strong>Analyze &gt; General Linear Model &gt; Univariate …</strong></em></p>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/02ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/03ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/04ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/05ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/06ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/07ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/08ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+<div id="different-intercepts-and-different-slopes" class="section level3">
+<h3>Different Intercepts and different Slopes</h3>
+<p><em><strong>Analyze &gt; General Linear Model &gt; Univariate …</strong></em></p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/09ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/10ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/11ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/10-ANCOVA/12ANCOVA.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+</div>
+</div>
+<div id="factorial-experiments" class="section level2">
+<h2>Factorial Experiments</h2>
+<blockquote>
+<ul>
+<li>Treatments are the combinations of the levels of different factors</li>
+</ul>
+</blockquote>
+<p> </p>
+<div id="example-9" class="section level3">
+<h3>Example</h3>
+<blockquote>
+<p>Following data presents the number of warp breaks per loom, where a loom corresponds to a fixed length of yarn for two factors, Wool Type with Two levels (A,B) and Tension with three levels.(Low, Medium, High). Analyze the data with interaction.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>WoolType</th>
+<th>Tension</th>
+<th>Yarn Breaks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>L</td>
+<td>26</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>L</td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>L</td>
+<td>54</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>L</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>L</td>
+<td>70</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>L</td>
+<td>52</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>L</td>
+<td>51</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>L</td>
+<td>26</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>L</td>
+<td>67</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>M</td>
+<td>18</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>M</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>M</td>
+<td>29</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>M</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>M</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>M</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>M</td>
+<td>35</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>M</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>M</td>
+<td>36</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>H</td>
+<td>36</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>H</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>H</td>
+<td>24</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>H</td>
+<td>18</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>H</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>H</td>
+<td>43</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>H</td>
+<td>28</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>H</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>H</td>
+<td>26</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>L</td>
+<td>27</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>L</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>L</td>
+<td>29</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>L</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>L</td>
+<td>29</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>L</td>
+<td>31</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>L</td>
+<td>41</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>L</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>L</td>
+<td>44</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>M</td>
+<td>42</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>M</td>
+<td>26</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>M</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>M</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>M</td>
+<td>39</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>M</td>
+<td>28</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>M</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>M</td>
+<td>39</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>M</td>
+<td>29</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>H</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>H</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>H</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>H</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>H</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>H</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>H</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>H</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>H</td>
+<td>28</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="reference-9" class="section level3">
+<h3>Reference</h3>
+<blockquote>
+<p>Tippett, L. H. C. (1950). Technological Applications of Statistics. John Wiley &amp; Sons, New York, USA.</p>
+</blockquote>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/01Factorial.png" title="fig:" alt="alt text" />
+</center>
+<p> </p>
+<p><em><strong>Analyze &gt; General Linear Model &gt; Univariate …</strong></em></p>
+<p> </p>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/02Factorial.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/03Factorial.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/04Factorial.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/05Factorial.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/06Factorial.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/07Factorial.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/08Factorial.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/09Factorial.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/10Factorial.png" title="fig:" alt="alt text" />
+</center>
+<center>
+<img src="https://myaseen208.com/img/2018-08-16_PASTIC-NTU/11-Factorial/11Factorial.png" title="fig:" alt="alt text" />
+</center>
+</div>
+</div>
+
+
+      <meta itemprop="wordCount" content="2455">
+      <meta itemprop="datePublished" content="2018-08-16">
+      <meta itemprop="url" content="https://myaseen208.com/blogs/2018-08-16-pastic-ntu/">
+
+<div class='sans' style="background: #dddddd; padding: 2em;">
+<div style="padding-bottom: 1em" >
+<div class="share-box">
+  <ul class="share">
+    <li>
+      <a class="facebook" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmyaseen208.com%2fblogs%2f2018-08-16-pastic-ntu%2f" target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter" href="https://twitter.com/intent/tweet?text=An%20Introduction%20to%20Statistics%20using%20SPSS. https%3a%2f%2fmyaseen208.com%2fblogs%2f2018-08-16-pastic-ntu%2f from @robjhyndman" target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fmyaseen208.com%2fblogs%2f2018-08-16-pastic-ntu%2f&amp;title=An%20Introduction%20to%20Statistics%20using%20SPSS" target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo" href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fmyaseen208.com%2fblogs%2f2018-08-16-pastic-ntu%2f&amp;title=An%20Introduction%20to%20Statistics%20using%20SPSS" target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email" href="mailto:?subject=An%20Introduction%20to%20Statistics%20using%20SPSS&amp;body=https%3a%2f%2fmyaseen208.com%2fblogs%2f2018-08-16-pastic-ntu%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+</div>
+
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      
+      <li class="arrow" aria-disabled="true"><a href="https://myaseen208.com/blogs/2018-05-15-pastic-fsd/">&laquo; <em>Previous<span class="show-for-sr"> page</span></em>: Emerging Technologies in Research: Google Apps and SPSS</a></li>
+      
+      
+      <li class="arrow" aria-disabled="true"><a href="https://myaseen208.com/blogs/2018-regpython/"><em>Next<span class="show-for-sr"> page</span></em>: Regression Analysis with Python&nbsp;&raquo;</a></li>
+      
+    </ul>
+    <a href="https://myaseen208.com/blogs/">All posts by date</a>
+</div>
+
+<span style='font-family: Carlito'>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+              return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'researchtips';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</span>
+
+  </div>
+  </div></div>
+
+    </main>
+    <footer class="whatisthis">
+  <hr class='separator'/>
+  <span style="font-family: Carlito, sans; font-size: 0.9em; line-height: 1.05em;">
+  <div class="row">
+    <div class="column small-12 medium-4">
+      <figure class='image-left'>
+      <a href="https://myaseen208.com/" style="border-bottom: none;">
+      	<img src="https://myaseen208.com/img/myaseen208.png" alt="Portrait of the author" class='avatar' style="max-width: 100%;">
+      </a>
+      </figure>
+      <p>Muhammad&nbsp;Yaseen (PhD Statistics, UNL-USA) is a Freelance Statistician based in Islamabad, Pakistan.</p>
+    </div>
+    <div class="column small-12 medium-4">
+      
+      <h4 id="contact">Contact</h4>
+      <ul class="fa-ul">
+	
+	<li><i class="fa-li fa fa-university" style="color:#03396c;font-size:80%;padding-top:6px;"></i><a href="">Evacuee Trust Complex, Adjacent to Marriot Hotel, Sector F-5/1, Agha Khan Rd, Islamabad, Pakistan.</a></li>
+	
+	<li><i class="fa-li fa fa-envelope" style="color:#03396c;font-size:80%;padding-top:6px;"></i><a href="mailto:myaseen208@gmail.com">myaseen208@gmail.com</a></li>
+	
+	<li><i class="fa-li fa fa-twitter" style="color:#03396c;font-size:80%;padding-top:6px;"></i><a href="https://twitter.com/myaseen208">@myaseen208</a> on Twitter</li>
+	
+	<li><i class="fa-li fa fa-github-alt" style="color:#03396c;font-size:80%;padding-top:6px;"></i><a href="https://github.com/myaseen208/">myaseen208</a> on GitHub</li>
+	
+	<li><i class="fa-li ai ai-google-scholar" style="color:#03396c;font-size:80%;padding-top:6px;"></i><a href="https://scholar.google.com/citations?user=mHkR-7cAAAAJ&amp;hl=en">Google Scholar</a></li>
+	
+      </ul>
+    </div>
+
+  <div class="column small-12 medium-4">
+  <h4>Search</h4>
+  <a id="searchsite">
+  	<form method="get" action="https://duckduckgo.com/">
+	  <label for="search-field" class="show-for-sr">Search the site</label>
+	  <input type="search" name="q" maxlength="255" placeholder="Search the site" id="search-field">
+	  <input type="hidden" name="sites" value="https://myaseen208.com"/>
+	  <input type="hidden" name="k7" value="#faf8f8"/>
+	  <input type="hidden" name="kj" value="#b33"/>
+	  <input type="hidden" name="ky" value="#fafafa"/>
+	  <input type="hidden" name="kx" value="b"/>
+	  <input type="hidden" name="ko" value="-1"/>
+	  <input type="hidden" name="k1" value="-1"/>
+	</form>
+  </a>
+
+  <h4>Get new posts by email</h4>
+<div class="ml-form-embed"
+  data-account="3217732:q9y4a1d8i3"
+  data-form="4240669:y9j1r8">
+</div>
+  </div>
+  </div>
+  </span>
+</footer>
+
+    <div class="endofpage">
+    <footer id="footer">
+    <section class="wrapper small">Powered by <a href="http://gohugo.io">Hugo</a>
+    and <a href="https://github.com/rstudio/blogdown">Blogdown</a>.
+     &copy; <a href="https://myaseen208.com">Muhammad&nbsp;Yaseen</a> 2008&ndash;2022.
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://myaseen208.com/index.xml"><img src="https://myaseen208.com/img/rss2.png" width=12 align="bottom" alt="RSS icon"  style="padding-top: 0.7ex"></a>
+    </section>
+    </footer>
+    </div>
+
+    <script src="https://myaseen208.com/js/jquery.js"></script>
+    <script src="https://myaseen208.com/js/what-input.js"></script>
+    <script src="https://myaseen208.com/js/foundation.min.js"></script>
+    <script src="https://myaseen208.com/js/finite.js"></script>
+
+    
+    <script src="//cdn.bootcss.com/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="//cdn.bootcss.com/highlight.js/11.3.1/languages/r.min.js"></script>
+
+    <script>
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+    </script>
+
+    
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+    
+    <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-5004894-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+ </body>
+</html>
