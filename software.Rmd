@@ -1,0 +1,204 @@
+---
+title: "Software I've written"
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: false
+---
+
+```{r, label = setup, include = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(
+              #  fig.path   = 'figure/'
+                cache.path = 'cache/'
+               , cache      = FALSE
+               , dev        = c("svg", "tikz", "pdf", "png")[1]
+               , fig.align  = 'center'
+              # , fig.show   = 'asis'
+              # , fig.width  = 6
+              # , fig.height = 6
+              # , out.width  = '0.9\\linewidth'
+               , par        = TRUE
+               , echo       = TRUE
+               , results    = 'markup'
+               , warning    = FALSE
+               , message    = FALSE
+               , comment    = NA
+               )
+options(
+          replace.assign = TRUE
+        , width          = 80
+        , knitr.kable.NA = ''
+        )
+
+knit_hooks$set(par = function(before, options, envir){
+if (before && options$fig.show!='none')
+ par(mar=c(4, 4, 0.1, 0.1), cex.lab = 0.95, cex.axis =0.9, mgp = c(2, 0.7, 0), tcl = -0.3)
+}, crop = hook_pdfcrop)
+
+# Suppressing Error Messages in knitr
+muffleError <- function(x,options) {}
+knit_hooks$set(error=muffleError)
+```
+
+&nbsp;
+
+This page provides links to R & LaTeX packages I have (co)authored. The most recent versions of most packages are on [github](https://github.com/myaseen208/). Most R packages are also available on [CRAN](http://cran.rstudio.com).
+
+&nbsp;
+
+# R Packages/Software
+
+## agriTutorial
+
+> [**agriTutorial**](https://cran.r-project.org/web/packages/agriTutorial/index.html) :  **Tutorial Analysis of Some Agricultural Experiments** [[Website](https://myaseen208.github.io/agriTutorial)].  *Example software for the analysis of data from designed experiments, especially agricultural crop experiments. The basics of the analysis of designed experiments are discussed using real examples from agricultural field trials. A range of statistical methods using a range of R statistical packages are exemplified . The experimental data is made available as separate data sets for each example and the R analysis code is made available as example code. The example code can be readily extended, as required.*
+
+## bayesammi
+
+> [**bayesammi**](https://cran.r-project.org/web/packages/bayesammi/index.html) :  **Bayesian Estimation of the Additive Main Effects and Multiplicative Interaction Model** [[Website](https://myaseen208.github.io/bayesammi)]. *Performs Bayesian estimation of the additive main effects and multiplicative interaction (AMMI) model. The method is explained in Crossa, J., Perez-Elizalde, S., Jarquin, D., Cotes, J.M., Viele, K., Liu, G. and Cornelius, P.L. (2011) (<doi:10.2135/cropsci2010.06.0343>).*
+
+&nbsp;
+
+## baystability
+> [**baystability**](https://cran.r-project.org/web/packages/baystability/index.html) :  **Bayesian Stability Analysis of Genotype by Environment Interaction (GEI)** [[Website](https://myaseen208.github.io/baystability)]. *Performs general Bayesian estimation method of linear–bilinear models for genotype × environment interaction. The method is explained in Perez-Elizalde, S., Jarquin, D., and Crossa, J. (2011) (<doi:10.1007/s13253-011-0063-9>).*
+
+&nbsp;
+
+## DiallelAnalysisR
+> [**DiallelAnalysisR**](https://cran.r-project.org/web/packages/DiallelAnalysisR/index.html) :  **Diallel Analysis with R** [[Website](https://myaseen208.github.io/DiallelAnalysisR)]. *Performs Diallel Analysis with R using Griffing's and Hayman's approaches. Four different Methods (1: Method-I (Parents + F1's + reciprocals); 2: Method-II (Parents and one set of F1's); 3: Method-III (One set of F1's and reciprocals); 4: Method-IV (One set of F1's only)) and two Models (1: Fixed Effects Model; 2: Random Effects Model) can be applied using Griffing's approach.*
+
+&nbsp;
+
+## dmai
+> [**dmai**](https://cran.r-project.org/web/packages/dmai/index.html) :  **Divisia Monetary Aggregates Index** [[Website](https://myaseen208.github.io/dmai)]. *Functions to calculate Divisia monetary aggregates index as given in Barnett, W. A. (1980) (<doi:10.1016/0304-4076(80)90070-6>).*
+
+&nbsp;
+
+
+## eda4treeR
+> [**eda4treeR**](https://cran.r-project.org/web/packages/eda4treeR/index.html) :  **Experimental Design and Analysis for Tree Improvement** [[Website](https://myaseen208.github.io/eda4treeR)]. *Provides data sets and R Codes for Williams, E.R., Matheson, A.C. and Harwood, C.E. (2002). Experimental Design and Analysis for Tree Improvement, CSIRO Publishing.*
+
+&nbsp;
+
+## gvcR
+> [**gvcR**](https://cran.r-project.org/web/packages/gvcR/index.html) :  **Genotypic Variance Components** [[Website](https://myaseen208.github.io/gvcR)]. *Functionalities to compute model based genetic components i.e. genotypic variance, phenotypic variance and heritability for given traits of different genotypes from replicated data using methodology explained by Burton, G. W. & Devane, E. H. (1953) (<doi:10.2134/agronj1953.00021962004500100005x>) and Allard, R.W. (2010, ISBN:8126524154).*
+
+&nbsp;
+
+## PakPC2017
+> [**PakPC2017**](https://cran.r-project.org/web/packages/PakPC2017/index.html) :  **Pakistan Population Census 2017** [[Website](https://myaseen208.github.io/PakPC2017)]. *Provides data sets and functions for exploration of Pakistan Population Census 2017 (<http://www.pbscensus.gov.pk/>).*
+
+&nbsp;
+
+## PakPMICS2014Ch
+> [**PakPMICS2014Ch**](https://cran.r-project.org/web/packages/PakPMICS2014Ch/index.html) :  **Multiple Indicator Cluster Survey (MICS) 2014 Child Questionnaire Data for Punjab, Pakistan** [[Website](https://myaseen208.github.io/PakPMICS2014Ch)]. *Provides data set and functions for exploration of Multiple Indicator Cluster Survey (MICS) 2014 Child questionnaire data for Punjab, Pakistan (<http://www.mics.unicef.org/surveys>).*
+
+&nbsp;
+
+## PakPMICS2014HH
+> [**PakPMICS2014HH**](https://cran.r-project.org/web/packages/PakPMICS2014HH/index.html) :  **Multiple Indicator Cluster Survey (MICS) 2014 Household Questionnaire Data for Punjab, Pakistan** [[Website](https://myaseen208.github.io/PakPMICS2014HH)]. *Provides data set and function for exploration of Multiple Indicator Cluster Survey (MICS) 2014 Household questionnaire data for Punjab, Pakistan (<http://www.mics.unicef.org/surveys>).*
+
+&nbsp;
+
+## PakPMICS2014HL
+> [**PakPMICS2014HL**](https://cran.r-project.org/web/packages/PakPMICS2014HL/index.html) :  **Multiple Indicator Cluster Survey (MICS) 2014 Household Listing Questionnaire Data for Punjab, Pakistan** [[Website](https://myaseen208.github.io/PakPMICS2014HL)]. *Provides data set and function for exploration of Multiple Indicator Cluster Survey 2014 Household Listing questionnaire data for Punjab, Pakistan.*
+
+&nbsp;
+
+## PakPMICS2014Wm
+> [**PakPMICS2014Wm**](https://cran.r-project.org/web/packages/PakPMICS2014Wm/index.html) :  **Multiple Indicator Cluster Survey (MICS) 2014 Women Questionnaire Data for Punjab, Pakistan** [[Website](https://myaseen208.github.io/PakPMICS2014Wm)]. *Provides data set and function for exploration of Multiple Indicator Cluster Survey 2014 Women (age 15-49 years) questionnaire data for Punjab, Pakistan.*
+
+&nbsp;
+
+
+## PakPMICS2018
+> [**PakPMICS2018**](https://cran.r-project.org/web/packages/PakPMICS2018/index.html) :  **Multiple Indicator Cluster Survey (MICS) 2017-18 Data for Punjab, Pakistan** [[Website](https://myaseen208.github.io/PakPMICS2018)]. *Provides data set and function for exploration of Multiple Indicator Cluster Survey (MICS) 2017-18 data for Punjab, Pakistan. The results of the present survey are critically important for the purposes of SDG monitoring, as the survey produces information on 32 global SDG indicators. The data was collected from 53,840 households selected at the second stage with systematic random sampling out of a sample of 2,692 clusters selected using Probability Proportional to size sampling. Six questionnaires were used in the survey: (1) a household questionnaire to collect basic demographic information on all de jure household members (usual residents), the household, and the dwelling; (2) a water quality testing questionnaire administered in three households in each cluster of the sample; (3) a questionnaire for individual women administered in each household to all women age 15-49 years; (4) a questionnaire for individual men administered in every second household to all men age 15-49 years; (5) an under-5 questionnaire, administered to mothers (or caretakers) of all children under 5 living in the household; and (6) a questionnaire for children age 5-17 years, administered to the mother (or caretaker) of one randomly selected child age 5-17 years living in the household (<http://www.mics.unicef.org/surveys>).*
+
+&nbsp;
+
+## PakPMICS2018bh
+> [**PakPMICS2018bh**](https://cran.r-project.org/web/packages/PakPMICS2018bh/index.html) :  **Multiple Indicator Cluster Survey (MICS) 2017-18 Birth History of Children Questionnaire Data for Punjab, Pakistan** [[Website](https://myaseen208.github.io/PakPMICS2018bh)]. *Provides data set and function for exploration of Multiple Indicator Cluster Survey (MICS) 2017-18 Household questionnaire data for Punjab, Pakistan. The results of the present survey are critically important for the purposes of SDG monitoring, as the survey produces information on 32 global SDG indicators. The data was collected from 53,840 households selected at the second stage with systematic random sampling out of a sample of 2,692 clusters selected using Probability Proportional to size sampling. Six questionnaires were used in the survey: (1) a household questionnaire to collect basic demographic information on all de jure household members (usual residents), the household, and the dwelling; (2) a water quality testing questionnaire administered in three households in each cluster of the sample; (3) a questionnaire for individual women administered in each household to all women age 15-49 years; (4) a questionnaire for individual men administered in every second household to all men age 15-49 years; (5) an under-5 questionnaire, administered to mothers (or caretakers) of all children under 5 living in the household; and (6) a questionnaire for children age 5-17 years, administered to the mother (or caretaker) of one randomly selected child age 5-17 years living in the household (<http://www.mics.unicef.org/surveys>).*
+
+&nbsp;
+
+
+## PakPMICS2018fs
+> [**PakPMICS2018fs**](https://cran.r-project.org/web/packages/PakPMICS2018fs/index.html) :  **Multiple Indicator Cluster Survey (MICS) 2017-18 Children Age 5-17 Questionnaire Data for Punjab, Pakistan** [[Website](https://myaseen208.github.io/PakPMICS2018fs)]. *Provides data set and function for exploration of Multiple Indicator Cluster Survey (MICS) 2017-18 Children Age 5-17 questionnaire data for Punjab, Pakistan. The results of the present survey are critically important for the purposes of Sustainable Development Goals (SDGs) monitoring, as the survey produces information on 32 global Sustainable Development Goals (SDGs) indicators. The data was collected from 53,840 households selected at the second stage with systematic random sampling out of a sample of 2,692 clusters selected using probability proportional to size sampling. Six questionnaires were used in the survey: (1) a household questionnaire to collect basic demographic information on all de jure household members (usual residents), the household, and the dwelling; (2) a water quality testing questionnaire administered in three households in each cluster of the sample; (3) a questionnaire for individual women administered in each household to all women age 15-49 years; (4) a questionnaire for individual men administered in every second household to all men age 15-49 years; (5) an under-5 questionnaire, administered to mothers (or caretakers) of all children under 5 living in the household; and (6) a questionnaire for children age 5-17 years, administered to the mother (or caretaker) of one randomly selected child age 5-17 years living in the household (<http://www.mics.unicef.org/surveys>).*
+
+&nbsp;
+
+## PakPMICS2018hh
+> [**PakPMICS2018hh**](https://cran.r-project.org/web/packages/PakPMICS2018hh/index.html) :  **Multiple Indicator Cluster Survey (MICS) 2017-18 Household Questionnaire Data for Punjab, Pakistan** [[Website](https://myaseen208.github.io/PakPMICS2018hh)]. *Provides data set and function for exploration of Multiple Indicator Cluster Survey (MICS) 2017-18 Household questionnaire data for Punjab, Pakistan. The results of the present survey are critically important for the purposes of Sustainable Development Goals (SDGs) monitoring, as the survey produces information on 32 global Sustainable Development Goals (SDGs) indicators. The data was collected from 53,840 households selected at the second stage with systematic random sampling out of a sample of 2,692 clusters selected using probability proportional to size sampling. Six questionnaires were used in the survey: (1) a household questionnaire to collect basic demographic information on all de jure household members (usual residents), the household, and the dwelling; (2) a water quality testing questionnaire administered in three households in each cluster of the sample; (3) a questionnaire for individual women administered in each household to all women age 15-49 years; (4) a questionnaire for individual men administered in every second household to all men age 15-49 years; (5) an under-5 questionnaire, administered to mothers (or caretakers) of all children under 5 living in the household; and (6) a questionnaire for children age 5-17 years, administered to the mother (or caretaker) of one randomly selected child age 5-17 years living in the household (<http://www.mics.unicef.org/surveys>).*
+
+&nbsp;
+
+## PakPMICS2018mm
+> [**PakPMICS2018mm**](https://cran.r-project.org/web/packages/PakPMICS2018mm/index.html) :  **Multiple Indicator Cluster Survey (MICS) 2017-18 Maternal Mortality Questionnaire Data for Punjab, Pakistan** [[Website](https://myaseen208.github.io/PakPMICS2018mm)]. *Provides data set and function for exploration of Multiple Indicator Cluster Survey (MICS) 2017-18 Maternal Mortality questionnaire data for Punjab, Pakistan. The results of the present survey are critically important for the purposes of Sustainable Development Goals (SDGs) monitoring, as the survey produces information on 32 global Sustainable Development Goals (SDGs) indicators. The data was collected from 53,840 households selected at the second stage with systematic random sampling out of a sample of 2,692 clusters selected using probability proportional to size sampling. Six questionnaires were used in the survey: (1) a household questionnaire to collect basic demographic information on all de jure household members (usual residents), the household, and the dwelling; (2) a water quality testing questionnaire administered in three households in each cluster of the sample; (3) a questionnaire for individual women administered in each household to all women age 15-49 years; (4) a questionnaire for individual men administered in every second household to all men age 15-49 years; (5) an under-5 questionnaire, administered to mothers (or caretakers) of all children under 5 living in the household; and (6) a questionnaire for children age 5-17 years, administered to the mother (or caretaker) of one randomly selected child age 5-17 years living in the household (<http://www.mics.unicef.org/surveys>).*
+
+&nbsp;
+
+
+## PakPMICS2018mn
+> [**PakPMICS2018mn**](https://cran.r-project.org/web/packages/PakPMICS2018mn/index.html) :  **Multiple Indicator Cluster Survey (MICS) 2017-18 Men Questionnaire Data for Punjab, Pakistan** [[Website](https://myaseen208.github.io/PakPMICS2018mn)]. *Provides data set and function for exploration of Multiple Indicator Cluster Survey (MICS) 2017-18 Men questionnaire data for Punjab, Pakistan. The results of the present survey are critically important for the purposes of Sustainable Development Goals (SDGs) monitoring, as the survey produces information on 32 global Sustainable Development Goals (SDGs) indicators. The data was collected from 53,840 households selected at the second stage with systematic random sampling out of a sample of 2,692 clusters selected using probability proportional to size sampling. Six questionnaires were used in the survey: (1) a household questionnaire to collect basic demographic information on all de jure household members (usual residents), the household, and the dwelling; (2) a water quality testing questionnaire administered in three households in each cluster of the sample; (3) a questionnaire for individual women administered in each household to all women age 15-49 years; (4) a questionnaire for individual men administered in every second household to all men age 15-49 years; (5) an under-5 questionnaire, administered to mothers (or caretakers) of all children under 5 living in the household; and (6) a questionnaire for children age 5-17 years, administered to the mother (or caretaker) of one randomly selected child age 5-17 years living in the household (<http://www.mics.unicef.org/surveys>).*
+
+&nbsp;
+
+
+## ppcSpatial
+> [**ppcSpatial**](https://cran.r-project.org/web/packages/ppcSpatial/index.html) :  **Spatial Analysis of Pakistan Population Census** [[Website](https://myaseen208.github.io/ppcSpatial)]. *Spatial Analysis for exploration of Pakistan Population Census 2017 (<http://www.pbscensus.gov.pk/>). It uses data from R package 'PakPC2017'.*
+
+&nbsp;
+
+## PSLM2015
+> [**PSLM2015**](https://cran.r-project.org/web/packages/PSLM2015/index.html) :  **Pakistan Social and Living Standards Measurement Survey 2014-15** [[Website](https://myaseen208.github.io/PSLM2015)]. *Data and statistics of Pakistan Social and Living Standards Measurement (PSLM) survey 2014-15 from Pakistan Bureau of Statistics (<http://www.pbs.gov.pk/>).*
+
+&nbsp;
+
+## qccrs
+> [**qccrs**](https://cran.r-project.org/web/packages/qccrs/index.html) :  **Quality Control Charts under Repetitive Sampling** [[Website](https://myaseen208.github.io/qccrs)]. *Functions to calculate Average Sample Numbers (ASN), Average Run Length (ARL1) and value of k, k1 and k2 for quality control charts under repetitive sampling as given in Aslam et al. (2014) (<doi:10.7232/iems.2014.13.1.101>).*
+
+&nbsp;
+
+
+## rgsp
+> [**rgsp**](https://cran.r-project.org/web/packages/rgsp/index.html) :  **Repetitive Group Sampling Plan Based on Cpk** [[Website](https://myaseen208.github.io/rgsp)]. *Functions to calculate Sample Number and Average Sample Number for Repetitive Group Sampling Plan Based on Cpk as given in Aslam et al. (2013) (<doi:10.1080/00949655.2012.663374>).*
+
+&nbsp;
+
+## stability
+> [**stability**](https://cran.r-project.org/web/packages/stability/index.html) :  **Stability Analysis of Genotype by Environment Interaction (GEI)** [[Website](https://myaseen208.github.io/stability)]. *Functionalities to perform Stability Analysis of Genotype by Environment Interaction (GEI) to identify superior and stable genotypes under diverse environments. It performs Eberhart & Russel's ANOVA (1966) (<doi:10.2135/cropsci1966.0011183X000600010011x>), Finlay and Wilkinson (1963) Joint Linear Regression (<doi:10.1071/AR9630742>), Wricke (1962, 1964) Ecovalence, Shukla's stability variance parameter (1972) (<doi:10.1038/hdy.1972.87>) and Kang's (1991) (<doi:10.2134/agronj1991.00021962008300010037x>) simultaneous selection for high yielding and stable parameter.*
+
+&nbsp;
+
+## StroupGLMM
+> [**StroupGLMM**](https://cran.r-project.org/web/packages/StroupGLMM/index.html) :  **R Codes and Datasets for Generalized Linear Mixed Models: Modern Concepts, Methods and Applications by Walter W. Stroup** [[github](https://myaseen208.github.io/StroupGLMM)]. *R Codes and Datasets for Stroup, W. W. (2012). Generalized Linear Mixed Models: Modern Concepts, Methods and Applications, CRC Press.*
+
+&nbsp;
+
+## SupMZ
+> [**SupMZ**](https://cran.r-project.org/web/packages/SupMZ/index.html) :  **Detecting Structural Change with Heteroskedasticity** [[Website](https://myaseen208.github.io/SupMZ)]. *Calculates the sup MZ value to detect the unknown structural break points under Heteroskedasticity as given in Ahmed et al. (2017) (<doi:10.1080/03610926.2016.1235200>).*
+
+&nbsp;
+
+
+## VetResearchLMM
+> [**VetResearchLMM**](https://cran.r-project.org/web/packages/VetResearchLMM/index.html) :  **Linear Mixed Models: An Introduction with Applications in Veterinary Research** [[Website](https://myaseen208.github.io/VetResearchLMM)]. *R Codes and Datasets for Duchateau, L. and Janssen, P. and Rowlands, G. J. (1998). Linear Mixed Models. An Introduction with applications in Veterinary Research. International Livestock Research Institute.*
+
+
+&nbsp;
+
+# LaTeX Packages/Software
+
+## UAFSynopsis
+> [**UAFSynopsis**](https://github.com/myaseen208/UAFSynopsis) :  *LaTeX class for the Synopsis of the University of Agriculture, Faisalabad-Pakistan* [[github](https://github.com/myaseen208/UAFSynopsis)]
+
+&nbsp;
+
+## UAFThesis
+> [**UAFThesis**](https://github.com/myaseen208/UAFThesis) :  *LaTeX class for the Thesis of the University of Agriculture, Faisalabad-Pakistan* [[github](https://github.com/myaseen208/UAFThesis)]
+
+
+&nbsp;
+
+## PakJAS
+> [**PakJAS**](https://github.com/myaseen208/PakJAS) :  *LaTeX class for Pakistan Journal of Agricultural Sciences* [[github](https://github.com/myaseen208/PakJAS)]

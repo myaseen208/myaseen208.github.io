@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Autoregressive on Muhammad Yaseen</title>
+    <link>https://myaseen208.com/tags/autoregressive/</link>
+    <description>Recent content in Autoregressive on Muhammad Yaseen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://myaseen208.com/tags/autoregressive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>High resolution Bayesain Spatio-Temporal precipitation modelling in Pakistan for the appraisal of trends</title>
+      <link>https://myaseen208.com/publications/2020_maqsood/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://myaseen208.com/publications/2020_maqsood/</guid>
+      <description>Appraisal of spatio-temporal variability of precipitation is important for studying climate change and managing water resources. In this article, data on monsoon precipitation of Pakistan are analyzed for spatio-temporal interpolation using two hierarchical Bayesian spatio-temporal methods which are DLM and AR models. The precipitation records along with three meteorological covariates (temperature, wind speed and humidity) are collected from 53 stations for the years 2000-2008. Initially, we simulated four data sets using AR model with four levels of autoregressive parameter = (0.</description>
+    </item>
+    
+  </channel>
+</rss>

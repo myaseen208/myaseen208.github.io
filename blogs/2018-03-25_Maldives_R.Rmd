@@ -1,0 +1,498 @@
+---
+title: 'Data Analysis with R: Introduction of R Language'
+author: "Muhammad Arfan Dilber"
+date: "2018-03-25"
+comments: false
+slug: 2018-R-Maldives
+categories:
+- R
+- Statistics
+- Research
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## The Workspace 
+
+The workspace is your current R working environment and includes any user-defined objects (vectors, matrices, data frames, lists, functions). At the end of an R session, the user can save an image of the current workspace that is automatically reloaded the next time R is started.
+
+
+```{r wd, cache=FALSE}
+getwd()
+#setwd("C:/Users/PBS FAISALABAD/Documents/R/Training")#use forward slash instead of back slash in windows.
+save.image() # To save workspace image.
+x<-c(1:4)
+x
+save(x, file = "mydat.RData")
+rm(list = ls())
+load("mydat.RData")
+x
+```
+
+## Data types
+
+```{r dataType, cache=FALSE}
+x<-2.56
+class(x)
+x
+y<-as.integer(x)
+class(y)
+y
+z<-as.integer(2.56)
+z
+is.integer(z)
+as.integer(is.integer(z))
+as.integer(!is.integer(z))
+as.integer(is.integer(x))
+x<-round(x,digits = 1)
+x
+y<-"Male"
+class(y)
+```
+
+## Vectors
+
+A vector is a sequence of data elements of the same basic type. A combine function c() is used to form the vector. Here are examples of each type of vector:
+
+```{r vector, cache=FALSE}
+x<-c(1,2,3,4)
+x
+y<-c("a","b","c","d")
+y
+c(x,y)
+length(y)
+y[c(2,4)]
+y[c(2:4)]
+y[-3]
+names(x)<-c("first","second","third","fourth")
+x
+x[c("second","fourth")]
+x[2]<-5
+x
+x<-x*2
+x
+seq(from = 1, to = 10, by = 2)
+rep(5, time = 10)
+rep(c("Male","Female"),time = 10)
+rep(c("Male","Female"), each = 10)
+rep(seq(from = 2, to = 9, by = .25), time = 5)
+```
+
+## Matrices
+
+A matrix is a collection of data elements arranged in a two dimensional rectangular layout. Matrices are created with the matrix function.
+
+```{r matrix,cache=FALSE}
+A <- matrix(
+  c(1,2,3,4),
+  nrow = 2,
+  ncol = 2,
+  byrow = TRUE)
+B <- matrix(
+  c(1,2,3,4,5,6,7,8,9),
+  nrow = 3,
+  ncol = 3,
+  byrow = FALSE)
+B
+A
+A[2,]
+A[,2]
+A[2,2]
+t(A)
+det(A)
+diag(A)
+B<-A + A
+B
+Asquared<- A %*% A
+Asquared
+Ainv<- solve(A)
+Ainv
+Aev<- eigen(A)
+Aev
+Aev$values
+Aev$vectors
+```
+
+## Lists
+
+Lists are the most complex of the R data types. Basically, a list is an ordered collection of objects (components). A list allows you to gather a variety of (possibly unrelated) objects under one name. For example, a list may contain a combination of vectors, matrices, data frames, and even other lists. A list is created with the list() function.
+
+```{r list,cache=FALSE}
+g<-"My First List"
+h<-c(25,26,18,39)
+j<-matrix(1:10, nrow = 5)
+k<-c("one", "two", "three")
+mylist<-list(title = g, ages = h, j,k)
+mylist
+```
+
+
+## Data Frames
+
+A Data Frame is used for storing data tables. It is a list of vectors of equal length. Different columns can contain different type of data (numeric,character, etc.). A data frame is created with the data.frame() function:
+
+```{r dataFrame,cache=FALSE}
+df<-data.frame(x,y)
+df
+nrow(df)
+ncol(df)
+df1<-df[df$y %in% c("a","d"),]
+df1
+df1<-df[df[,2] %in% c("b","c"),]
+df1
+library(PakPC2017)
+data(PakPC2017Tehsil)
+head(PakPC2017Tehsil)
+```
+
+## Reading/writing data from/to files (Import/Export Data)
+
+```{r readData, cache=FALSE, eval=FALSE}
+library(readxl)
+spi <- read_excel("C:/Users/PBS FAISALABAD/Desktop/spi.xls")
+DT::datatable(spi,fillContainer = TRUE, editable = TRUE)
+write.csv(PakPC2017Tehsil,"Population.csv")
+```
+
+## Connecting to the database
+
+```{r database, cache=FALSE, eval=FALSE}
+library(dplyr)
+con <- DBI::dbConnect(odbc::odbc(),
+                      dsn = "mydata")
+table13<-tbl(con, "RPI")
+table13
+#tehsil<-PakPC2017::PakPC2017Tehsil
+#copy_to(con,tehsil,"tehsil",
+#        temporary = FALSE
+#      )
+DBI::dbDisconnect(con)
+```
+
+
+## Numerical or Graphical Summaries of data.
+
+```{r summary1, cache=FALSE}
+library(PakPC2017)
+summary(PakPC2017Tehsil)
+pairs(PakPC2017Tehsil[,5:6])
+cor(PakPC2017Tehsil[,5:6], use = "complete")
+popLm<-lm(formula = Pop2017 ~ Pop1998, data = PakPC2017Tehsil)
+popLm
+head(resid(popLm),10)
+head(fitted(popLm),10)
+summary(popLm)
+par(mfrow = c(2,2))
+plot(popLm)
+
+```
+
+## Summarize Data
+
+```{r summary,cache=FALSE}
+library(PakPC2017)
+library(dplyr)
+```
+
+
+## Bar charts and Dot charts
+
+```{r dataFrame1,cache=FALSE}
+library(PakPC2017)
+data("PakPC2017Tehsil")
+head(PakPC2017Tehsil)
+province<-tapply(PakPC2017Tehsil$Pop2017,PakPC2017Tehsil$Province,sum,na.rm=TRUE)
+par(mfrow = c(3,2))
+dotchart(province)
+barplot(province)
+boxplot(Pop2017~Province,data = PakPC2017Tehsil)
+pie(province, col = rainbow(length(province)))
+plot(province, type = "o")
+pop<-PakPC2017Tehsil$Pop2017
+hist(pop)
+hist(pop, breaks = seq(min(pop,na.rm = TRUE),max(pop,na.rm = TRUE), length.out = 31))
+```
+
+### ggplot2 package
+## The mpg Data Frame
+
+A data frame is a rectangular collection of variables (in the columns) and observations (in the rows). mpg contains observations collected by the US Environment Protection Agency on 38 models of cars;
+To learn more about mpg, open its help page by running ?mpg.
+
+```{r mpg, cache=FALSE}
+library(ggplot2)
+ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+```{r mpg1, cache=FALSE}
+ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy, color = class))
+```
+
+```{r mpg2, cache=FALSE}
+ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy, size = class))
+```
+
+```{r mpg3, cache=FALSE, warning=FALSE}
+ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy, shape = class))
+```
+
+```{r mpg4, cache=FALSE, warning=FALSE}
+ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
+```
+
+```{r mpg5, cache=FALSE, warning=FALSE}
+ggplot(data = mpg)+
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+```
+
+```{r mpg6, cache=FALSE, warning=FALSE}
+ggplot(data = mpg)+
+  geom_smooth(mapping = aes(x = displ, y = hwy, linetype = drv))
+```
+
+```{r mpg7, cache=FALSE, warning=FALSE}
+ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ, y = hwy, color = drv))+
+  geom_smooth(mapping = aes(x = displ, y = hwy, linetype = drv))
+```
+
+```{r mpg8, cache=FALSE, warning=FALSE}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv))+
+  geom_point()+
+  geom_smooth()
+```
+
+```{r mpg9, cache=FALSE, warning=FALSE}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy))+
+  geom_point(mapping = aes(color = drv))+
+  geom_smooth(mapping = aes(linetype = drv))
+```
+
+## Data Transformation
+
+To explore the basic data manipulation we'll use PakPC2017::PakPC2017Tehsil. This data frame contains the popualtion of all 543 tehsils of Pakistan. The data comes from Pakistan Bureau of Statistics, Population Census 2017, and is documented in ?PakPc2017Tehsil.
+
+```{r summary0,cache=FALSE}
+library(PakPC2017)
+library(dplyr)
+tehsil<-as_tibble(PakPC2017Tehsil)
+tehsil
+```
+
+## Filter Rows with filter()
+
+filter() allows you to subset observations based on their vaues.
+The first argument is the name of the data frame. The second and subsequent arguments are the expressions that filter the data frame. 
+For example, we can select all tehsils of Division Faisalabad:
+
+```{r summary2,cache=FALSE}
+filter(tehsil, Division == "Faisalabad")
+newD<-filter(tehsil, grepl("F", tehsil$Division))
+newd2<-filter(tehsil, grepl("abad", tehsil$Division))
+```
+
+If you want to save the result, you'll need to use the assignment operator, <-:
+fsdDivision<-filter(tehsil, Division == "Faisalabad")
+
+## Comparisons
+
+To use filtering effectively, you have to know how to select the observations that you want using the comparison operators. R provides the standard suite: >, >=, <, <=, != (not equal), and == (equal).
+```{r summary3,cache=FALSE}
+filter(tehsil, Pop2017 >= 1000000)
+```
+
+## Logical Operators
+
+Multiple arguments to filter() are combined with "and": every experessio must be true in order for a row to be included in the output. For other types of combinations, you'll need to use Boolean operators yourself: & is "and", | is "or", and ! is "not".
+```{r summary4,cache=FALSE}
+filter(tehsil, Pop2017 >= 2000000 | Pop1998 >= 1000000)
+filter(tehsil, Pop2017 >= 1000000 & Pop1998 >= 1000000)
+filter(tehsil, Pop2017 >= 2000000 & !Pop1998 >= 1000000)
+```
+
+## Missing Values
+
+One important feature of R that can make comparison tricky is missing values, or NAs ("not available"). NA represents an unknown value so missing values are "contagious"; almost any operation involving an unknown value will also be unknown:
+is.na() is used to determine the missing value.
+
+```{r summary5,cache=FALSE}
+NA + 5
+NA/2
+NA*5
+x<-c(NA,5,10)
+is.na(x)
+```
+
+## Arrange Rows with arrange()
+The vale of x is `r sum(x)`
+arrange() works similarly to filter() except that instead of selecting rows, it changes their order. It takes a data frame and a set of column names to order by. 
+
+```{r summary6,cache=FALSE}
+arrange(tehsil, Pop2017)
+```
+
+Use desc() to reorder by a column in descending order.
+
+## Select Columns with select()
+
+It's not uncommon to get datasets with hundreds or even thousands of variables. In this case, the first challenge is often narrowing in on the variables you're actually interested in. select() allows you to rapidly zoom in on a useful subset using operations based on the names of the variables.
+
+```{r summary7,cache=FALSE}
+select(tehsil,Province, Tehsil, Pop2017)
+select(tehsil,-Province, -Tehsil, -Pop2017)
+select(tehsil,Pop2017, everything())
+```
+
+## Add New Variables with mutate()
+
+Besides selecting sets of existing columns, it's often useful to add new columns that are functions of existing columns. That's the job of mutate().
+mutate() always adds new columns at the end of your dataset. When you're in RStudio use View() to see all columns.
+
+```{r summary8,cache=FALSE}
+dplyr::mutate(tehsil, diff = Pop2017-Pop1998)
+dplyr::mutate(tehsil, diff = Pop2017-Pop1998, add = Pop2017+Pop1998)
+newData<-dplyr::mutate(tehsil, new = ifelse(Province == "Punjab", 1,
+                            ifelse(Province == "Sindh",2,3)))
+newData
+```
+
+
+## PakPC2017Tehsil Data Frame
+
+```{r PakPC2017, cache=FALSE,message=FALSE}
+plotUnit <-
+  PakPC2017Tehsil %>%
+  dplyr::group_by(Province, Division) %>%
+  dplyr::summarize(
+    Pop2017 = sum(Pop2017, na.rm = TRUE)
+    , Pop1998 = sum(Pop1998, na.rm = TRUE)
+  ) %>%
+  dplyr::filter(Division %in% c("Faisalabad","Lahore")) %>%
+  tidyr::gather(
+    key   = "Census"
+    , value = "Population"
+    , c("Pop2017","Pop1998")
+  )
+
+head(plotUnit)
+g<-ggplot(data = plotUnit, mapping = aes(x = Division, y = Population))
+g
+g<-ggplot(data = plotUnit, mapping = aes(x = Division, y = Population))+
+  geom_col()
+g
+g<-ggplot(data = plotUnit, mapping = aes(x = Division, y = Population))+
+  geom_col()+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))
+g
+g<-ggplot(data = plotUnit, mapping = aes(x = Division, y = Population))+
+  geom_bar(stat = "identity", position = position_dodge(width = .9))+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))
+g
+g<-ggplot(data = plotUnit,
+          mapping = aes(x = Division, y = Population, fill = Census))+
+  geom_bar(stat = "identity", position = position_dodge(width = .9))+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))
+g
+g<-ggplot(data = plotUnit,
+          mapping = aes(x = Division, y = Population, fill = Census))+
+  geom_bar(stat = "identity", position = position_dodge(width = .9))+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))+
+  geom_text(aes(label=scales::comma(Population)),
+            position=position_dodge(width = 0.9), vjust = 0.8)
+g
+g<-ggplot(data = plotUnit,
+          mapping = aes(x = Division, y = Population, fill = Census))+
+  geom_bar(stat = "identity", position = position_dodge(width = .9))+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))+
+  geom_text(aes(label=scales::comma(Population)),
+            position=position_dodge(width = 0.9), vjust = 0.8)+
+  facet_wrap(~Province, scales = "free_x")
+g
+plotUnit <-
+  PakPC2017Tehsil %>%
+  dplyr::group_by(Province, Division) %>%
+  dplyr::summarize(
+    Pop2017 = sum(Pop2017, na.rm = TRUE)
+    , Pop1998 = sum(Pop1998, na.rm = TRUE)
+  ) %>%
+  dplyr::filter(Division %in% c("Faisalabad","Lahore", "Karachi", "Quetta")) %>%
+  tidyr::gather(
+    key   = "Census"
+    , value = "Population"
+    , -Province, - Division
+  )
+
+g<-ggplot(data = plotUnit,
+          mapping = aes(x = Division, y = Population, fill = Census))+
+  geom_bar(stat = "identity", position = position_dodge(width = .9))+
+  scale_y_continuous(labels= scales::comma, expand =  c(0, 0))+
+  geom_text(aes(label=scales::comma(Population)),
+            position=position_dodge(width = 0.9), vjust = 0.8)+
+  facet_wrap(~Province, scales = "free_x")
+g
+g<-ggplot(data = PakPC2017Pakistan, mapping = aes(x = Province, y = Pop2017))
+g+geom_point(aes(color = ResStatus))+theme(legend.position = "top")
+      
+```
+
+
+## Scatter Plot
+
+```{r scatter, cache=FALSE}
+ggplot(PakPC2017Tehsil, aes(Pop1998,Pop2017))+geom_point()+geom_smooth(method = lm)
+```
+
+## dygraphs
+
+The dygraphs package is an R interface to the dygraphs JavaScript charting library. It provides rich facilities for charting time-series data in R
+```{r dygraphs, fig.width=6, fig.height=4}
+library(dygraphs)
+dygraph(nhtemp, main = "New Haven Temperatures", ylab = "Temp (F)")
+
+lungDeaths <- cbind(mdeaths, fdeaths)
+dygraph(lungDeaths)
+
+dygraph(lungDeaths) %>% dyRangeSelector()
+
+dygraph(lungDeaths) %>%
+  dySeries("mdeaths", label = "Male") %>%
+  dySeries("fdeaths", label = "Female") %>%
+  dyOptions(stackedGraph = TRUE) %>%
+  dyRangeSelector(height = 10)
+
+Year<-seq(from = as.Date("1990/1/1"), to = as.Date("2018/1/1"), by = "years")
+prod<-rnorm(29,0,1)
+timeSeries<-xts::xts(prod,Year)
+dygraph(timeSeries)
+```
+
+## plotly
+
+```{r plotly, message=FALSE}
+library(ggplot2)
+library(plotly)
+myPlot<-ggplot(data = mpg, mapping = aes(x = displ, y = hwy))+
+  geom_point(mapping = aes(color = drv))+
+  geom_smooth(mapping = aes(linetype = drv))
+ggplotly(myPlot)
+```
+
+## datatable
+
+```{r DT, eval=FALSE}
+library(readxl)
+spi <- read_excel("C:/Users/PBS FAISALABAD/Desktop/spi.xls")
+DT::datatable(spi,fillContainer = TRUE, editable = TRUE)
+
+```
