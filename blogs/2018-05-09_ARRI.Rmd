@@ -1,0 +1,602 @@
+---
+title: "An introduction to R for Agricultural Research"
+author: "Muhammad Yaseen"
+date: 2018-05-09
+comments: false
+slug: 2018-R-AARI
+categories:
+- R
+- Statistics
+- Research
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+```{r, label = setup, include = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(
+              #  fig.path   = 'figure/'
+                cache.path = 'cache/'
+               , cache      = FALSE
+               , dev        = c("svg", "tikz", "pdf", "png")[1]
+               , fig.align  = 'center'
+              # , fig.show   = 'asis'
+              # , fig.width  = 6
+              # , fig.height = 6
+              # , out.width  = '0.9\\linewidth'
+               , par        = TRUE
+               , echo       = TRUE
+               , results    = 'markup'
+               , warning    = FALSE
+               , message    = FALSE
+               , comment    = NA
+               )
+options(
+          replace.assign = TRUE
+        , width          = 80
+        , knitr.kable.NA = ''
+        )
+
+knit_hooks$set(par = function(before, options, envir){
+if (before && options$fig.show!='none')
+ par(mar=c(4, 4, 0.1, 0.1), cex.lab = 0.95, cex.axis =0.9, mgp = c(2, 0.7, 0), tcl = -0.3)
+}, crop = hook_pdfcrop)
+
+# Suppressing Error Messages in knitr
+muffleError <- function(x,options) {}
+knit_hooks$set(error=muffleError)
+```
+
+
+```{r label = ARRI, echo = FALSE}
+knitr::read_chunk("2018-05-09_ARRI.R")
+```
+
+## Introduction
+
+>**R** is a free, open-source programming language and software environment for statistical computing, bioinformatics, visualization and general computing. **R** provides a wide variety of statistical and graphical techniques, and is highly extensible. The latest version of **R** is 3.5.0 which can be obtained from [https://cran.r-project.org/bin/windows/base/](https://cran.r-project.org/bin/windows/base/).
+
+&nbsp;
+
+
+<h4><a href="https://cran.r-project.org/bin/windows/base/" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;R</a> <a href="https://cran.r-project.org/bin/windows/base/">R-3.5.0 for Windows (32/64 bit)</a> &nbsp; </h4>
+
+&nbsp;
+
+<h4><a href="https://www.rstudio.com/products/rstudio/download/" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;RStudio</a> <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a> &nbsp; </h4>
+
+
+&nbsp;
+
+<h4><a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Manual</a> <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf">An Introduction to R</a> &nbsp; </h4>
+
+&nbsp;
+
+<h4><a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Ref Card</a> <a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">R Reference Card</a> &nbsp; </h4>
+
+
+&nbsp;
+
+<h4><a href="https://github.com/myaseen208/R-Workshop/raw/master/2009NewYorkTimes.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;New York Times</a> <a href="https://github.com/myaseen208/R-Workshop/raw/master/2009NewYorkTimes.pdf">New York Times</a> &nbsp; </h4>
+
+&nbsp;
+
+<h4><a href="https://github.com/myaseen208/R-Workshop/raw/master/2015NatureArticle.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Nature Article</a> <a href="https://github.com/myaseen208/R-Workshop/raw/master/2015NatureArticle.pdf">Nature Article</a> &nbsp; </h4>
+
+&nbsp;
+
+
+## Regression Analysis
+> * Quantifying dependency of a normal response on quantitative explanatory variable(s)
+
+&nbsp;
+
+```{r label = PopRegFn, echo = FALSE, fig.cap = "Population Regression Function", out.width = '100%'}
+knitr::include_graphics("/img/PopRegFn.png")
+```
+
+
+&nbsp;
+
+
+## Simple Linear Regression
+> * Quantifying dependency of a normal response on a quantitative explanatory variable
+
+&nbsp;
+
+### Example
+
+  Fertilizer (Kg/acre)  | Production (Bushels/acre)
+  ------------| -------------
+       100    |  70
+       200    |  70
+       400    |  80
+       500    | 100
+  
+
+```{r, label = reg.df1}
+```
+
+```{r, label = reg.p1}
+```
+
+```{r, label = reg.fm1}
+```
+
+
+```{r, label = reg.fm1anova}
+```
+&nbsp;
+
+### Example
+
+  Fertilizer  | Yield
+  ------------| -------------
+       0.3    |  10
+       0.6    |  15
+       0.9    |  30
+       1.2    |  35
+       1.5    |  25
+       1.8    |  30
+       2.1    |  50
+       2.4    |  45  
+    
+
+```{r, label = reg.df2}
+```
+
+
+```{r, label = reg.p2}
+```
+
+```{r, label = reg.fm2}
+```
+
+
+```{r, label = reg.fm2anova}
+```
+
+&nbsp;
+
+### Example
+
+  Weekly Income (\$)  | Weekly Expenditures (\$)
+  ------------| -------------
+        80    |  70
+       100    |  65
+       120    |  90
+       140    |  95
+       160    | 110
+       180    | 115
+       200    | 120
+       220    | 140
+       240    | 155
+       260    | 150
+    
+
+```{r, label = reg.df3}
+```
+
+
+```{r, label = reg.p3}
+```
+
+```{r, label = reg.fm3}
+```
+
+
+```{r, label = reg.fm3anova}
+```
+
+&nbsp;
+
+
+## Multiple Linear Regression
+> * Quantifying dependency of a normal response on two or more quantitative explanatory variables
+
+&nbsp;
+
+### Example
+
+Fertilizer (Kg)  | Rainfall (mm) | Yield (Kg)
+  ------------| -------------| -------------
+       100    |  10   |  40
+       200    |  20   |  50
+       300    |  10   |  50
+       400    |  30   |  70
+       500    |  20   |  65
+       600    |  20   |  65
+       700    |  30   |  80
+
+```{r, label = reg.df4}
+```
+
+
+```{r, label = reg.p4}
+```
+
+```{r, label = reg.fm4}
+```
+
+
+```{r, label = reg.fm4anova}
+```
+
+
+```{r, label = reg.fm4sbeta}
+```
+
+
+&nbsp;
+
+## Polynomial Regression Analysis
+> * Quantifying non-linear dependency of a normal response on quantitative explanatory variable(s)
+
+### Example
+> An experiment was conducted to evaluate the effects of different
+levels of nitrogen. Three levels of nitrogen: 0, 10 and 20 grams per
+plot were used in the experiment. Each treatment was replicated
+twice and data is given below:
+  
+  Nitrogen    | Yield
+  ------------| -------------
+        0     |   5
+        0     |   7
+       10     |  15
+       10     |  17
+       20     |   9
+       20     |  11
+
+
+```{r, label = reg.df5}
+```
+
+
+```{r, label = reg.p5}
+```
+
+```{r, label = reg.fm5}
+```
+
+
+```{r, label = reg.fm5anova}
+```
+
+&nbsp;
+  
+## Analysis of Variance (ANOVA)
+> * Comparing means of Normal dependent variable for levels of
+different factor(s)
+
+&nbsp;
+
+```{r label = ANOVANormalMeans, echo = FALSE, fig.cap = "Analysis of Variance", out.width = '100%'}
+knitr::include_graphics("/img/ANOVANormalMeans.png")
+```
+
+&nbsp;
+  
+
+### Example
+
+  Yield       | Variety
+  ------------| -------------
+       5      |  V1
+       6      |  V1
+       7      |  V1
+       15     |  V2
+       16     |  V2
+       17     |  V2
+       
+    
+
+```{r, label = anova.df6}
+```
+
+
+```{r, label = anova.p6}
+```
+
+```{r, label = anova.fm6}
+```
+
+
+```{r, label = anova.fm6anova}
+```
+
+&nbsp;
+
+### Example
+
+  Yield       | Variety
+  ------------| -------------
+       5      |  V1
+       7      |  V1
+       15     |  V2
+       17     |  V2
+       17     |  V3
+       19     |  V3
+       
+    
+
+```{r, label = anova.df7}
+```
+
+
+```{r, label = anova.p7}
+```
+
+```{r, label = anova.fm7}
+```
+
+
+```{r, label = anova.fm7anova}
+```
+
+
+
+&nbsp;
+  
+## Analysis of Covariance (ANCOVA)
+> * Quantifying dependency of a normal response on quantitative explanatory variable(s)
+* Comparing means of Normal dependent variable for levels of
+different factor(s)
+
+&nbsp;
+
+```{r label = ANCOVA, echo = FALSE, fig.cap = "Analysis of Covariance", out.width = '100%'}
+knitr::include_graphics("/img/ANCOVA.png")
+```
+  
+&nbsp;
+
+### Example
+
+   Yield      | Fert   | Variety
+  ------------| -------|-----------
+    51        |  80    | V1
+    52        |  80    | V1
+    53        |  90    | V1
+    54        |  90    | V1
+    56        | 100    | V1
+    57        | 100    | V1
+    55        |  80    | V2
+    56        |  80    | V2
+    58        |  90    | V2
+    59        |  90    | V2
+    62        | 100    | V2
+    63        | 100    | V2
+          
+
+&nbsp;
+
+
+```{r, label = ancova.df8}
+```
+
+### Same intercepts but different slopes    
+
+```{r, label = ancova.fm8}
+```
+
+
+```{r, label = ancova.fm8anova}
+```
+
+
+```{r, label = ancova.p8}
+```
+
+&nbsp;
+
+### Different intercepts and different slopes    
+
+```{r, label = ancova.fm9}
+```
+
+
+```{r, label = ancova.fm9anova}
+```
+
+
+```{r, label = ancova.p9}
+```
+
+
+## Correlation Analysis
+> * Linear Relationship between Quantitative Variables
+
+&nbsp;
+
+
+## Simple Correlation Analysis
+> * Linear Relationship between Two Quantitative Variables
+  *  $\left(X_{1},X_{2}\right)$
+
+  
+&nbsp;
+
+
+### Example
+
+  Sparrow Wing length (cm) | Sparrow Tail length (cm)
+  --------------------|------------------------------
+        10.4          |         7.4
+        10.8          |         7.6
+        11.1          |         7.9
+        10.2          |         7.2
+        10.3          |         7.4
+        10.2          |         7.1
+        10.7          |         7.4
+        10.5          |         7.2
+        10.8          |         7.8
+        11.2          |         7.7
+        10.6          |         7.8
+        11.4          |         8.3
+
+
+
+&nbsp;
+
+```{r, label = corr.df10}
+```
+
+
+```{r, label = corr.p10}
+```
+
+
+```{r, label = corr.fm10}
+```
+
+&nbsp;
+
+## Partial Correlation Analysis
+> *  Linear Relationship between Quantitative Variables while holding/keeping all other constants
+ * $\left(X_{1},X_{2}\right)|X_{3}$
+  
+&nbsp;
+
+### Example
+
+  Leaf Area (cm^2) | Leaf Moisture (%) | Total Shoot Length (cm)
+  -----------------|-------------------|------------------------
+    72             |  80               | 307  
+    174            |  75               | 529 
+    116            |  81               | 632
+    78             |  83               | 527 
+    134            |  79               | 442 
+    95             |  81               | 525 
+    113            |  80               | 481
+    98             |  81               | 710 
+    148            |  74               | 422
+    42             |  78               | 345
+    
+
+&nbsp;
+
+```{r, label = corr.df11}
+```
+
+
+
+```{r, label = corr.fm11}
+```
+
+&nbsp;
+
+
+
+## Multiple Correlation Analysis
+> * Linear Relationship between a Quantitative Variable and set of other Quantitative Variables
+* $\left(X_{1},\left[X_{2},X_{3}\right]\right)$ 
+  
+
+&nbsp;
+
+### Example
+
+  Leaf Area (cm^2) | Leaf Moisture (%) | Total Shoot Length (cm)
+  -----------------|-------------------|------------------------
+    72             |  80               | 307  
+    174            |  75               | 529 
+    116            |  81               | 632
+    78             |  83               | 527 
+    134            |  79               | 442 
+    95             |  81               | 525 
+    113            |  80               | 481
+    98             |  81               | 710 
+    148            |  74               | 422
+    42             |  78               | 345
+    
+
+&nbsp;
+
+
+```{r, label = corr.fm12}
+```
+
+
+&nbsp;
+  
+## Completely Randomized Design (CRD)
+> * Used when experimental material is homogeneous
+
+&nbsp;
+
+
+### Example
+> The following table shows some of the results of an experiment on the effects of applications of sulphur in reducing scab disease of potatoes. The object in applying sulphur is to increase the acidity of the soil, since scab does not thrive in very acid soil. In addition to untreated plots which serve as a control, 3 amounts of dressing were compared—300, 600, and 900 lb. per acre. Both a fall and a spring application of each amount was tested, so that in
+all there were seven distinct treatments. The sulphur was spread by hand on the surface of the soil, and then diced into a depth of about 4 inches. The quantity to be analyzed is the “scab index”. That is roughly speaking, the percentage of the surface area of the potato that is infected with scab. It is obtained by examining 100 potatoes at random from each plot, grading each potato on a scale from 0 to 100% infected, and taking the average.
+
+  
+```{r, label = crd.df13}
+```
+
+
+```{r, label = crd.p13}
+```
+
+```{r, label = crd.fm13}
+```
+
+
+```{r, label = crd.fm13anova}
+```
+
+&nbsp;
+
+
+## Randomized Complete Block Design (RCBD)
+> * Used when experimental material is heterogenous in one direction
+
+&nbsp;
+
+
+### Example
+> Yield    : Yield of barley, SoilType : Soil Type, and  Trt      : 5 sources and a control
+  
+  
+```{r, label = rcbd.df14}
+```
+
+
+```{r, label = rcbd.p14}
+```
+
+```{r, label = rcbd.fm14}
+```
+
+
+```{r, label = rcbd.fm14anova}
+```
+
+
+&nbsp;
+
+
+## Latin Square Design
+> * Used when experimental material is heterogenous in two perpendicular directions
+
+&nbsp;
+
+
+### Example
+> The following table shows the field layout and yield of a 5×5 Latin square experiment on the effect of spacing on yield of millet plants. Five levels of spacing were used. The data on yield (grams/plot) was recorded and is given below:
+
+  
+```{r, label = latin.df15}
+```
+
+
+```{r, label = latin.p15}
+```
+
+```{r, label = latin.fm15}
+```
+
+
+```{r, label = latin.fm15anova}
+```

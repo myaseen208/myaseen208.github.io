@@ -1,0 +1,456 @@
+---
+title: "Regression Analysis with Python"
+description: |
+  Regression Analysis with Python.
+author:
+  - name: Muhammad Yaseen 
+    url: http://myaseen208.netlify.com/
+    affiliation: Dept of Math & Stat, Univ of Agriculture, Faisalabad Pakistan
+    affiliation_url: http://uaf.edu.pk/
+date: 2018-09-20
+comments: false
+slug: 2018-RegPython
+categories:
+- Python
+- Statistics
+- Regression Analysis
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: true
+header-includes: 
+  - \usepackage{tikz}
+  - \usepackage{pgfplots}    
+---
+
+```{r, label = setup, include = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(
+              #  fig.path   = 'figure/'
+                cache.path = 'cache/'
+               , cache      = FALSE
+               , dev        = c("svg", "tikz", "pdf", "png")[1]
+               , fig.align  = 'center'
+              # , fig.show   = 'asis'
+              # , fig.width  = 6
+              # , fig.height = 6
+              # , out.width  = '0.9\\linewidth'
+               , par        = TRUE
+               , echo       = TRUE
+               , results    = 'markup'
+               , warning    = FALSE
+               , message    = FALSE
+               , comment    = NA
+               )
+options(
+          replace.assign = TRUE
+        , width          = 80
+        , knitr.kable.NA = ''
+        )
+
+knit_hooks$set(par = function(before, options, envir){
+if (before && options$fig.show!='none')
+ par(mar=c(4, 4, 0.1, 0.1), cex.lab = 0.95, cex.axis =0.9, mgp = c(2, 0.7, 0), tcl = -0.3)
+}, crop = hook_pdfcrop)
+
+# Suppressing Error Messages in knitr
+muffleError <- function(x,options) {}
+knit_hooks$set(error=muffleError)
+```
+
+```{r, echo = FALSE}
+library(reticulate)
+reticulate::use_python(python = Sys.which("python3"), required = TRUE)
+# reticulate::repl_python()
+```
+
+```{python, echo = FALSE}
+import sys
+import warnings
+
+if not sys.warnoptions:
+    warnings.simplefilter("ignore")
+```
+
+# Introduction
+> * In God we trust, all others must bring data. (W. Edwards Deming)
+  * In Data we trust, all others must bring data.
+
+&nbsp;
+
+
+# Statistics
+> * Statistics is the science of uncertainty & variability
+  * Statistics turns data into information
+  * Data -> Information -> Knowledge -> Wisdom
+  * Data Driven Decisions (3Ds)
+  * Statistics is the interpretation of Science
+  * Statistics is the Art & Science of learning from data
+
+&nbsp;
+
+# Variable
+> * Characteristic that may vary from individual to individual
+  * Height, Weight, CGPA etc
+
+
+&nbsp;
+
+# Measurement
+> * Process of assigning numbers or labels to objects or states in accordance with logically accepted rules
+
+&nbsp;
+
+# Measurement Scales
+> * **Nominal Scale:** Obersvations may be classified into mutually exclusive & exhaustive classes or categories
+* **Ordinal Scale:** Obersvations may be ranked
+* **Interval Scale:** Difference between obersvations is meaningful
+* **Ratio Scale:** Ratio between obersvations is meaningful & true zero point
+
+&nbsp;
+
+# Regression Analysis
+> * Quantifying dependency of a normal response on quantitative explanatory variable(s)
+
+&nbsp;
+
+```{r label = PopRegFn, echo = FALSE, fig.cap = "Population Regression Function", out.width = '100%'}
+knitr::include_graphics("/img/PopRegFn.png")
+```
+
+
+&nbsp;
+
+
+# Simple Linear Regression
+> * Quantifying dependency of a normal response on a quantitative explanatory variable
+
+&nbsp;
+
+
+## Example
+
+  Weekly Income (\$)  | Weekly Expenditures (\$)
+  ------------| -------------
+        80    |  70
+       100    |  65
+       120    |  90
+       140    |  95
+       160    | 110
+       180    | 115
+       200    | 120
+       220    | 140
+       240    | 155
+       260    | 150
+
+```{python}
+Income = [80, 100, 120, 140, 160, 180, 200, 220, 240, 260]
+Expend = [70, 65, 90, 95, 110, 115, 120, 140, 155, 150]
+```
+
+```{python}
+import pandas as pd
+df1 = pd.DataFrame(
+ {
+   "Income": Income
+ , "Expend": Expend
+ }
+ )
+
+print(df1)
+```
+
+```{python}
+from matplotlib import pyplot as plt
+fig = plt.figure()
+plt.scatter(
+  df1["Income"]
+, df1["Expend"]
+, color = "green"
+, marker = "o"
+)
+plt.title("Scatter plot of Weekly Income (\$) and Weekly Expenditures (\$)")
+plt.xlabel("Weekly Income (\$)")
+plt.ylabel("Weekly Expenditures (\$)")
+plt.show()
+```
+    
+```{python}
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg1 = ols(formula = "Expend ~ Income", data = df1)
+Fit1 = Reg1.fit()
+print(Fit1.summary())
+```
+
+```{python}
+print(Fit1.params)
+```
+
+```{python}
+print(Fit1.fittedvalues)
+```
+
+
+```{python}
+print(Fit1.resid)
+```
+
+```{python}
+print(Fit1.bse)
+```
+    
+```{python}
+print(Fit1.centered_tss)
+```
+    
+```{python}
+print(anova_lm(Fit1))
+```
+    
+```{python}
+fig = plt.figure()
+plt.scatter(
+  df1["Income"]
+, df1["Expend"]
+, color = "green"
+, marker = "o"
+)
+plt.plot(df1["Income"], Fit1.fittedvalues)
+plt.title("Regression plot of Weekly Income (\$) and Weekly Expenditures (\$)")
+plt.xlabel("Weekly Income (\$)")
+plt.ylabel("Weekly Expenditures (\$)")
+plt.show()
+```
+    
+
+# Multiple Linear Regression
+> * Quantifying dependency of a normal response on two or more quantitative explanatory variables
+
+&nbsp;
+
+## Example
+
+Fertilizer (Kg)  | Rainfall (mm) | Yield (Kg)
+  ------------| -------------| -------------
+       100    |  10   |  40
+       200    |  20   |  50
+       300    |  10   |  50
+       400    |  30   |  70
+       500    |  20   |  65
+       600    |  20   |  65
+       700    |  30   |  80
+
+  
+```{python}
+import numpy as np
+Fertilizer = np.arange(100, 800, 100)
+Rainfall   = [10, 20, 10, 30, 20, 20, 30]
+Yield      = [40, 50, 50, 70, 65, 65, 80]
+```
+
+
+```{python}
+import pandas as pd
+df2 = pd.DataFrame(
+ {
+   "Fertilizer": Fertilizer
+ , "Rainfall": Rainfall
+ , "Yield": Yield
+ }
+ )
+
+print(df2)
+```
+
+```{python}
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import pyplot as plt
+fig = plt.figure()
+ax = fig.add_subplot(111, projection = "3d")
+ax.scatter(
+  df2["Fertilizer"]
+, df2["Rainfall"]
+, df2["Yield"]
+, color = "green"
+, marker = "o"
+, alpha  = 1
+)
+ax.set_xlabel("Fertilizer")
+ax.set_ylabel("Rainfall")
+ax.set_zlabel("Yield")
+plt.show()
+```
+    
+```{python}
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg2 = ols(formula = "Yield ~ Fertilizer + Rainfall", data = df2)
+Fit2 = Reg2.fit()
+print(Fit2.summary())
+```
+
+```{python}
+print(Fit2.params)
+```
+
+```{python}
+print(Fit2.fittedvalues)
+```
+
+
+```{python}
+print(Fit2.resid)
+```
+
+```{python}
+print(Fit2.bse)
+```
+    
+```{python}
+print(Fit2.centered_tss)
+```
+    
+```{python}
+print(anova_lm(Fit2))
+```
+
+```{python}
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import pyplot as plt
+import numpy as np
+import pandas as pd
+from matplotlib import cm
+fig = plt.figure()
+ax = fig.add_subplot(111, projection = "3d")
+ax.scatter(
+  df2["Fertilizer"]
+, df2["Rainfall"]
+, df2["Yield"]
+, color = "green"
+, marker = "o"
+, alpha  = 1
+)
+ax.set_xlabel("Fertilizer")
+ax.set_ylabel("Rainfall")
+ax.set_zlabel("Yield")
+x_surf = np.arange(100, 720, 20)                
+y_surf = np.arange(10, 32, 2)
+x_surf, y_surf = np.meshgrid(x_surf, y_surf)
+
+exog = pd.core.frame.DataFrame({
+   "Fertilizer": x_surf.ravel()
+ , "Rainfall": y_surf.ravel()
+ })
+out = Fit2.predict(exog = exog)
+ax.plot_surface(
+           x_surf
+         , y_surf
+         , out.reshape(x_surf.shape)
+         , rstride=1
+         , cstride=1
+         , color="None"
+         , alpha = 0.4
+         )
+plt.show()
+```
+
+# Polynomial Regression Analysis
+> * Quantifying non-linear dependency of a normal response on quantitative explanatory variable(s)
+
+## Example
+> An experiment was conducted to evaluate the effects of different
+levels of nitrogen. Three levels of nitrogen: 0, 10 and 20 grams per
+plot were used in the experiment. Each treatment was replicated
+twice and data is given below:
+  
+  Nitrogen    | Yield
+  ------------| -------------
+        0     |   5
+        0     |   7
+       10     |  15
+       10     |  17
+       20     |   9
+       20     |  11
+
+
+```{python}
+Nitrogen = [0, 0, 10, 10, 20, 20]
+Yield    = [5, 7, 15, 17,  9, 11]
+```
+
+```{python}
+import pandas as pd
+df3 = pd.DataFrame(
+ {
+   "Nitrogen": Nitrogen
+ , "Yield": Yield
+ }
+ )
+
+print(df3)
+```
+
+```{python}
+from matplotlib import pyplot as plt
+fig = plt.figure()
+plt.scatter(
+  df3["Nitrogen"]
+, df3["Yield"]
+, color = "green"
+, marker = "o"
+)
+plt.title("Scatter plot of Nitrogen and Yield")
+plt.xlabel("Nitrogen")
+plt.ylabel("Yield")
+plt.show()
+```
+    
+```{python}
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg3 = ols(formula = "Yield ~ Nitrogen + I(Nitrogen**2)", data = df3)
+Fit3 = Reg3.fit()
+print(Fit3.summary())
+```
+
+```{python}
+print(Fit3.params)
+```
+
+```{python}
+print(Fit3.fittedvalues)
+```
+
+
+```{python}
+print(Fit3.resid)
+```
+
+```{python}
+print(Fit3.bse)
+```
+    
+```{python}
+print(Fit3.centered_tss)
+```
+    
+```{python}
+print(anova_lm(Fit3))
+```
+    
+```{python}
+fig = plt.figure()
+plt.scatter(
+  df3["Nitrogen"]
+, df3["Yield"]
+, color = "green"
+, marker = "o"
+)
+plt.plot(df3["Nitrogen"], Fit3.fittedvalues)
+plt.title("Regression plot of Nitrogen and Yield")
+plt.xlabel("Nitrogen")
+plt.ylabel("Yield")
+plt.show()
+```
+    

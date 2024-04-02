@@ -1,0 +1,70 @@
+---
+title: "Improving Quality in Textile Industry using Six Sigma with R"
+author: "Muhammad Yaseen"
+date: 2019-01-12
+comments: false
+slug: 2019-SixSigmaR
+categories:
+  - Six Sigma
+  - Quality Control
+  - DMAIC
+  - R
+  - Statistics
+  - Data Science
+
+tags: []
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+```{r, label = setup, include = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(
+              #  fig.path   = 'figure/'
+                cache.path = 'cache/'
+               , cache      = FALSE
+               , dev        = c("svg", "tikz", "pdf", "png")[1]
+               , fig.align  = 'center'
+              # , fig.show   = 'asis'
+              # , fig.width  = 6
+              # , fig.height = 6
+              # , out.width  = '0.9\\linewidth'
+               , par        = TRUE
+               , echo       = TRUE
+               , results    = 'markup'
+               , warning    = FALSE
+               , message    = FALSE
+               , comment    = NA
+               )
+options(
+          replace.assign = TRUE
+        , width          = 80
+        , knitr.kable.NA = ''
+        )
+
+knit_hooks$set(par = function(before, options, envir){
+if (before && options$fig.show!='none')
+ par(mar=c(4, 4, 0.1, 0.1), cex.lab = 0.95, cex.axis =0.9, mgp = c(2, 0.7, 0), tcl = -0.3)
+}, crop = hook_pdfcrop)
+
+# Suppressing Error Messages in knitr
+muffleError <- function(x,options) {}
+knit_hooks$set(error=muffleError)
+```
+
+
+```{r label = ARRI, echo = FALSE, eval = FALSE}
+knitr::read_chunk("2019-SixSigmawithR.R")
+```
+
+![](/img/2019-SixSigmaR/SixSigmaR3.png)
+
+&nbsp;
+
+
+![](/img/2019-SixSigmaR/2019-SixSigmaR.png)
+
+
+

@@ -1,0 +1,337 @@
+---
+title: "Statistics: The Art & Science of Learning from Data"
+description: |
+  "Statistics: The Art & Science of Learning from Data"
+author:
+  - name: Muhammad Yaseen 
+    url: http://myaseen208.com/
+    affiliation: 
+    affiliation_url: http://myaseen208.com/
+date: 2022-05-20
+comments: false
+slug: 2022-TUF
+categories:
+- Data Science
+- Statistics
+- Biostatistics
+- Bioinformatics
+- Research
+- R
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 2
+    toc_collapsed: true
+    number_sections: true
+---
+
+```{r, label = setup, include = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(
+              #  fig.path   = 'figure/'
+                cache.path = 'cache/'
+               , cache      = FALSE
+               , dev        = c("svg", "tikz", "pdf", "png")[1]
+               , fig.align  = 'center'
+              # , fig.show   = 'asis'
+              # , fig.width  = 6
+              # , fig.height = 6
+              # , out.width  = '0.9\\linewidth'
+               , par        = TRUE
+               , echo       = TRUE
+               , results    = 'markup'
+               , warning    = FALSE
+               , message    = FALSE
+               , comment    = NA
+               )
+options(
+          replace.assign = TRUE
+        , width          = 80
+        , knitr.kable.NA = ''
+        )
+
+knit_hooks$set(par = function(before, options, envir){
+if (before && options$fig.show!='none')
+ par(mar=c(4, 4, 0.1, 0.1), cex.lab = 0.95, cex.axis =0.9, mgp = c(2, 0.7, 0), tcl = -0.3)
+}, crop = hook_pdfcrop)
+
+# Suppressing Error Messages in knitr
+muffleError <- function(x,options) {}
+knit_hooks$set(error=muffleError)
+```
+
+```{r klippy, echo=FALSE, include=TRUE}
+library(klippy)
+klippy::klippy(c('r', 'python'))
+```
+
+```{r label = TUF2022, echo = FALSE}
+knitr::read_chunk("2022-05-20_TUF.R")
+```
+
+# Introduction
+## Statistics
+> * Statistics is the science of uncertainty & variability
+  * Statistics turns data into information
+  * Data -> Information -> Knowledge -> Wisdom
+  * Data Driven Decisions (3Ds)
+  * Statistics is the interpretation of Science
+  * Statistics is the Art & Science of learning from data
+
+&nbsp;
+
+## Variable
+> * Characteristic that may vary from individual to individual
+  * Height, Weight, CGPA etc
+
+
+&nbsp;
+
+## Measurement
+> * Process of assigning numbers or labels to objects or states in accordance with logically accepted rules
+
+
+```{r, label = TrafficSignals, echo = FALSE, fig.cap = "Measurement", out.width = "100%"}
+knitr::include_graphics("https://github.com/myaseen208/material/raw/main/TrafficSignals.jpg")
+```
+
+&nbsp;
+
+## Measurement Scales
+> * **Nominal Scale:** Obersvations may be classified into mutually exclusive & exhaustive classes or categories
+* **Ordinal Scale:** Obersvations may be ranked
+* **Interval Scale:** Difference between obersvations is meaningful
+* **Ratio Scale:** Ratio between obersvations is meaningful & true zero point
+
+```{r, label = MS, echo = FALSE, fig.cap = "Measurement Scales", out.width = "100%"}
+knitr::include_graphics("https://github.com/myaseen208/material/raw/main/TypesofMeasurementScales.png")
+```
+
+
+&nbsp;
+
+# Exploring Data with Graphs & Numerical Summaries
+## Graphs
+## Numerical Summaries
+
+###  Example
+> The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: [https://www.cdc.gov/nchs/nhanes.htm](https://www.cdc.gov/nchs/nhanes.htm) . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.
+
+
+```{r, label = Data}
+```
+
+```{r, label = Out1}
+```
+
+```{r, label = Plot1}
+```
+
+
+```{r, label = Out2}
+```
+
+
+```{r, label = Plot2}
+```
+
+```{r, label = Out3}
+```
+
+
+```{r, label = Plot3}
+```
+
+
+```{r, label = Out4}
+```
+
+
+```{r, label = Plot4}
+```
+
+
+```{r, label = Out5}
+```
+
+
+```{r, label = Plot5}
+```
+
+# Descriptive Statistics
+> * Number of Observations
+* Measures of Central Tendency
+* Measures of Central Dispersion
+* Measures of Skewness
+* Measures of Kurtosis
+
+&nbsp;
+
+###  Example
+> The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: [https://www.cdc.gov/nchs/nhanes.htm](https://www.cdc.gov/nchs/nhanes.htm) . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.
+
+```{r, label = Plot6}
+```
+
+```{r, label = Plot7}
+```
+
+
+```{r, label = Out6}
+```
+
+```{r, label = Out7}
+```
+
+```{r, label = Out8}
+```
+
+
+```{r, label = Out9}
+```
+
+# Correlation Analysis
+
+###  Example
+> The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: [https://www.cdc.gov/nchs/nhanes.htm](https://www.cdc.gov/nchs/nhanes.htm) . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.
+
+
+
+```{r, label = Out10}
+```
+
+```{r, label = Out11}
+```
+
+```{r, label = Out12}
+```
+
+```{r, label = Out13}
+```
+
+```{r, label = Out14}
+```
+
+&nbsp;
+
+# An Introduction to Linear Models
+
+## Regression Analysis
+> * Quantifying dependency of a normal response on quantitative explanatory variable(s)
+
+
+&nbsp;
+
+
+```{r, label = PopRegFn, echo = FALSE, fig.cap = "Population Regression Function", out.width = "100%"}
+knitr::include_graphics("https://github.com/myaseen208/material/raw/main/PopRegFn.png")
+```
+
+&nbsp;
+
+
+###  Example
+> The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: [https://www.cdc.gov/nchs/nhanes.htm](https://www.cdc.gov/nchs/nhanes.htm) . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.
+
+
+```{r, label = fm1Plot1}
+```
+
+
+```{r, label = fm1}
+```
+
+
+```{r, label = fm1Plot2}
+```
+
+
+```{r, label = fm1Plot3}
+```
+
+## Analysis of Variance (ANOVA)
+> * Comparing means of Normal dependent variable for levels of different factor(s)
+
+
+&nbsp;
+
+
+```{r, label = ANOVANormalMeans, echo = FALSE, fig.cap = "Analysis of Variance", out.width = "100%"}
+knitr::include_graphics("https://github.com/myaseen208/material/raw/main/ANOVANormalMeans.png")
+```
+
+&nbsp;
+
+
+###  Example
+> The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: [https://www.cdc.gov/nchs/nhanes.htm](https://www.cdc.gov/nchs/nhanes.htm) . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.
+
+
+
+```{r, label = fm2}
+```
+
+
+```{r, label = fm2Plot1}
+```
+
+
+## Analysis of Covariance (ANCOVA)
+> * Quantifying dependency of a normal response on quantitative explanatory variable(s)
+* Comparing means of Normal dependent variable for levels of different factor(s)
+
+
+
+&nbsp;
+
+
+```{r, label = ANCOVA, echo = FALSE, fig.cap = "Analysis of Covariance", out.width = "100%"}
+knitr::include_graphics("https://github.com/myaseen208/material/raw/main/ANCOVA.png")
+```
+
+&nbsp;
+
+
+###  Example
+> The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: [https://www.cdc.gov/nchs/nhanes.htm](https://www.cdc.gov/nchs/nhanes.htm) . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.
+
+
+
+```{r, label = fm3}
+```
+
+
+```{r, label = fm3Plot1}
+```
+
+# An Introduction to R
+
+>**R** is a free, open-source programming language and software environment for statistical computing, bioinformatics, visualization and general computing. **R** provides a wide variety of statistical and graphical techniques, and is highly extensible. The latest version of **R**  can be obtained from [https://cran.r-project.org/bin/windows/base/](https://cran.r-project.org/bin/windows/base/).
+
+&nbsp;
+
+
+<h4><a href="https://cran.r-project.org/bin/windows/base/" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;R</a> <a href="https://cran.r-project.org/bin/windows/base/">R for Windows (32/64 bit)</a> &nbsp; </h4>
+
+&nbsp;
+
+<h4><a href="https://www.rstudio.com/products/rstudio/download/" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;RStudio</a> <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a> &nbsp; </h4>
+
+
+&nbsp;
+
+<h4><a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Manual</a> <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf">An Introduction to R</a> &nbsp; </h4>
+
+&nbsp;
+
+<h4><a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Ref Card</a> <a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">R Reference Card</a> &nbsp; </h4>
+
+
+&nbsp;
+
+<h4><a href="https://github.com/myaseen208/R-Workshop/raw/master/2009NewYorkTimes.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;New York Times</a> <a href="https://github.com/myaseen208/R-Workshop/raw/master/2009NewYorkTimes.pdf">New York Times</a> &nbsp; </h4>
+
+&nbsp;
+
+<h4><a href="https://github.com/myaseen208/R-Workshop/raw/master/2015NatureArticle.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Nature Article</a> <a href="https://github.com/myaseen208/R-Workshop/raw/master/2015NatureArticle.pdf">Nature Article</a> &nbsp; </h4>

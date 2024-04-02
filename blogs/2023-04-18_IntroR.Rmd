@@ -1,0 +1,115 @@
+---
+title: "An Introduction to R Programming Language"
+author: "Muhammad Yaseen"
+date: 2023-04-18
+comments: false
+slug: 2023-04-18-IntroR
+categories:
+- R
+- Statistics
+- Research
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: false
+---
+
+```{r, label = setup, include = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(
+              #  fig.path   = 'figure/'
+                cache.path = 'cache/'
+               , cache      = FALSE
+               , dev        = c("svg", "tikz", "pdf", "png")[1]
+               , fig.align  = 'center'
+              # , fig.show   = 'asis'
+              # , fig.width  = 6
+              # , fig.height = 6
+              # , out.width  = '0.9\\linewidth'
+               , par        = TRUE
+               , echo       = TRUE
+               , results    = 'markup'
+               , warning    = FALSE
+               , message    = FALSE
+               , comment    = NA
+               )
+options(
+          replace.assign = TRUE
+        , width          = 80
+        , knitr.kable.NA = ''
+        )
+
+knit_hooks$set(par = function(before, options, envir){
+if (before && options$fig.show!='none')
+ par(mar=c(4, 4, 0.1, 0.1), cex.lab = 0.95, cex.axis =0.9, mgp = c(2, 0.7, 0), tcl = -0.3)
+}, crop = hook_pdfcrop)
+
+# Suppressing Error Messages in knitr
+muffleError <- function(x,options) {}
+knit_hooks$set(error=muffleError)
+```
+
+
+## Introduction
+
+>**R** is a free, open-source programming language and software environment for statistical computing, bioinformatics, visualization and general computing. **R** provides a wide variety of statistical and graphical techniques, and is highly extensible. The latest version of **R**  can be obtained from [https://cran.r-project.org/bin/windows/base/](https://cran.r-project.org/bin/windows/base/).
+
+&nbsp;
+
+
+<h4><a href="https://cran.r-project.org/bin/windows/base/" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;R</a> <a href="https://cran.r-project.org/bin/windows/base/">R for Windows (32/64 bit)</a> &nbsp; </h4>
+
+&nbsp;
+
+<h4><a href="https://www.rstudio.com/products/rstudio/download/" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;RStudio</a> <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a> &nbsp; </h4>
+
+
+&nbsp;
+
+<h4><a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Manual</a> <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf">An Introduction to R</a> &nbsp; </h4>
+
+&nbsp;
+
+
+```{=html}
+<iframe width = "100%" height = "900" src = "https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf" title = "https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf"></iframe>
+```
+
+&nbsp;
+
+
+<h4><a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Ref Card</a> <a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">R Reference Card</a> &nbsp; </h4>
+
+
+&nbsp;
+
+
+```{=html}
+<iframe width = "100%" height = "900" src = "https://cran.r-project.org/doc/contrib/Short-refcard.pdf" title = "https://cran.r-project.org/doc/contrib/Short-refcard.pdf"></iframe>
+```
+
+
+&nbsp;
+
+<h4><a href="https://github.com/myaseen208/R-Workshop/raw/master/2009NewYorkTimes.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;New York Times</a> <a href="https://github.com/myaseen208/R-Workshop/raw/master/2009NewYorkTimes.pdf">New York Times</a> &nbsp; </h4>
+
+
+
+
+&nbsp;
+
+<h4><a href="https://github.com/myaseen208/R-Workshop/raw/master/2015NatureArticle.pdf" class="badge badge-small"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Nature Article</a> <a href="https://github.com/myaseen208/R-Workshop/raw/master/2015NatureArticle.pdf">Nature Article</a> &nbsp; </h4>
+
+
+&nbsp;
+&nbsp;
+
+## Slides
+
+The Slides may be accessed from [Slides](https://myaseen208.com/slides/2023-04-17_IntroR/IntroR.html#/title-slide).
+
+Press f for Fullscreen view.
+
+```{=html}
+<iframe width = "780" height = "500" src = "https://myaseen208.com/slides/2023-04-17_IntroR/IntroR.html#/title-slide" title = "https://myaseen208.com/slides/2023-04-17_IntroR/IntroR.html#/title-slide"></iframe>
+```

@@ -1,0 +1,934 @@
+---
+title: "Bioinformatics with R"
+description: |
+  Bioinformatics with R.
+author:
+  - name: Muhammad Yaseen 
+    url: http://myaseen208.netlify.com/
+    affiliation: Dept of Math & Stat, Univ of Agriculture, Faisalabad Pakistan
+    affiliation_url: http://uaf.edu.pk/
+date: 2018-09-20
+comments: false
+slug: 2018-BioInfoR
+categories:
+- R
+- Statistics
+- Bioinformatics
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+```{r, label = setup, include = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(
+              #  fig.path   = 'figure/'
+                cache.path = 'cache/'
+               , cache      = FALSE
+               , dev        = c("svg", "tikz", "pdf", "png")[1]
+               , fig.align  = 'center'
+              # , fig.show   = 'asis'
+              # , fig.width  = 6
+              # , fig.height = 6
+              # , out.width  = '0.9\\linewidth'
+               , par        = TRUE
+               , echo       = TRUE
+               , results    = 'markup'
+               , warning    = FALSE
+               , message    = FALSE
+               , comment    = NA
+               )
+options(
+          replace.assign = TRUE
+        , width          = 80
+        , knitr.kable.NA = ''
+        )
+
+knit_hooks$set(par = function(before, options, envir){
+if (before && options$fig.show!='none')
+ par(mar=c(4, 4, 0.1, 0.1), cex.lab = 0.95, cex.axis =0.9, mgp = c(2, 0.7, 0), tcl = -0.3)
+}, crop = hook_pdfcrop)
+
+# Suppressing Error Messages in knitr
+muffleError <- function(x,options) {}
+knit_hooks$set(error=muffleError)
+```
+
+# Statistics
+> * Statistics is the science of uncertainty & variability
+  * Statistics turns data into information
+  * Data -> Information -> Knowledge -> Wisdom
+  * Data Driven Decisions (3Ds)
+  * Statistics is the interpretation of Science
+  * Statistics is the Art & Science of learning from data
+
+&nbsp;
+
+# Variable
+> * Characteristic that may vary from individual to individual
+  * Height, Weight, CGPA etc
+
+
+&nbsp;
+
+# Measurement
+> * Process of assigning numbers or labels to objects or states in accordance with logically accepted rules
+
+&nbsp;
+
+# Measurement Scales
+> * **Nominal Scale:** Obersvations may be classified into mutually exclusive & exhaustive classes or categories
+* **Ordinal Scale:** Obersvations may be ranked
+* **Interval Scale:** Difference between obersvations is meaningful
+* **Ratio Scale:** Ratio between obersvations is meaningful & true zero point
+
+&nbsp;
+
+## Nominal Data
+
+### Example
+> The following data shows the gender of a sample of twenty students from the University of Agriculture, Faisalabad.
+
+&nbsp;
+
+  Student  | Gender
+  ---------|--------
+     	1    |  Male
+     	2    |  Male
+     	3    |  Female
+     	4    |  Female
+     	5    |  Female
+     	6    |  Female
+     	7    |  Male
+     	8    |  Male
+     	9    |  Male
+     10    |  Male
+     11    |  Female
+     12    |  Female
+     13    |  Male
+     14    |  Male
+     15    |  Female
+     16    |  Female
+     17    |  Male
+     18    |  Male
+     19    |  Male
+     20    |  Male
+
+&nbsp;
+
+```{r}
+if (!require("tidyverse")) install.packages("tidyverse")
+# library(tidyverse)
+df1 <- tibble::tibble(
+    Student = seq(from = 1, to = 20, by = 1)
+  , Gender  = rep(x = c("Male", "Female", "Male", "Female", "Male", "Female", "Male"), c(2, 4, 4, 2, 2, 2, 4))
+  )
+df1
+```
+
+#### Frequency Table
+
+```{r}
+df1Freq <- 
+      df1 %>%
+      dplyr::count(Gender) %>%
+      dplyr::rename(f = n) %>%
+      dplyr::mutate(
+        rf = f/sum(f)
+      , pf = rf*100  
+      )
+df1Freq
+```
+
+#### Simple Bar Chart
+
+```{r}
+ggplot(
+       data = df1
+    ,  mapping = aes(x = Gender)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Simple Bar Chart", x = "Gender", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+&nbsp;
+
+### Example
+> Following data presents the number of nucleotides of gene sequence (A, C, G, T). This is illustrated by the Zyxin gene which plays an important role in cell adhesion (Golub et al, 1999). The accession number (X94991.1) of one of its variants can be found in a data base like NCBI (UniGene). Given data will be used to illustrate the construction of pie chart from the frequency table of four nucleotides.
+
+   A   |  C  | G   |T
+ ------|-----|-----|------
+  410  | 789 | 573 | 394 
+
+
+> Data from the GenBank can also be imported directly by the following code.
+
+```{r}
+# install.packages(pkgs = "ape", repo = "http://cran.r-project.org", dependencies =TRUE)
+# library(ape)
+# df2 <- table(read.GenBank(c("X94991.1"),as.character=TRUE))
+# df2
+```
+
+#### Frequency Table
+```{r}
+df3 <- tibble(
+    G.Sequence   = c("A", "C", "G", "T")
+  , Nucleotides  = c(410, 789, 573, 394)
+  )
+df3
+```
+
+#### Simple Bar Chart
+```{r}
+ggplot(
+        data = df3
+      , mapping = aes(x = G.Sequence, y = Nucleotides)) +
+  geom_bar(stat = "identity") +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Simple Bar Chart", x = "Gene Sequence", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+## Ordinal Data
+
+### Example
+> The following data shows the grades of a sample of twenty students from the University of Agriculture, Faisalabad.
+
+&nbsp;
+
+  Student  | Grade
+  ---------|--------
+     	1    |  A
+     	2    |  B
+     	3    |  B
+     	4    |  C
+     	5    |  A
+     	6    |  D
+     	7    |  F
+     	8    |  C
+     	9    |  B
+     10    |  D
+     11    |  F
+     12    |  A
+     13    |  B
+     14    |  B
+     15    |  C
+     16    |  D
+     17    |  C
+     18    |  B
+     19    |  C
+     20    |  D
+
+&nbsp;
+
+```{r}
+df4 <- tibble::tibble(
+    Student = seq(from = 1, to = 20, by = 1)
+  , Grade  = c("A", "B", "B", "C", "A", "D", "F", "C", "B", "D", "F", "A", "B", "B", "C", "D", "C",  "B", "C", "D")
+  )
+df4
+```
+
+
+
+#### Frequency Table
+
+```{r}
+df4Freq <- 
+      df4 %>%
+      dplyr::count(Grade) %>%
+      dplyr::rename(f = n) %>%
+      dplyr::mutate(
+        rf = f/sum(f)
+      , pf = rf*100
+      , cf = cumsum(f)
+      )
+df4Freq
+```
+
+#### Simple Bar Chart
+
+```{r}
+ggplot(
+       data = df4
+    ,  mapping = aes(x = Grade)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Simple Bar Chart", x = "Grades", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+&nbsp;
+
+## Two Way Contingency Table
+### Example
+> The following data shows the gender and residental status of a sample of twenty students from the University of Agriculture, Faisalabad.
+
+&nbsp;
+
+  Student  | Gender  | RS
+  ---------|---------|--------------
+     	1    |  Male   | Boarding
+     	2    |  Male   | Non-Boarding
+     	3    |  Female | Non-Boarding
+     	4    |  Female | Boarding
+     	5    |  Female | Boarding
+     	6    |  Female | Non-Boarding
+     	7    |  Male   | Non-Boarding
+     	8    |  Male   | Boarding
+     	9    |  Male   | Non-Boarding
+     10    |  Male   | Non-Boarding
+     11    |  Female | Non-Boarding
+     12    |  Female | Boarding
+     13    |  Male   | Non-Boarding
+     14    |  Male   | Non-Boarding
+     15    |  Female | Non-Boarding
+     16    |  Female | Non-Boarding  
+     17    |  Male   | Non-Boarding
+     18    |  Male   | Non-Boarding
+     19    |  Male   | Non-Boarding
+     20    |  Male   | Boarding
+
+&nbsp;
+
+```{r}
+df5 <- tibble::tibble(
+    Student = seq(from = 1, to = 20, by = 1)
+  , Gender  = rep(x = c("Male", "Female", "Male", "Female", "Male", "Female", "Male"), c(2, 4, 4, 2, 2, 2, 4))
+  , RS      = c("B", "NB", "NB", "B", "B", "NB", "NB", "B", "NB", "NB", "NB", "B", "NB", "NB", "NB", "NB", "NB", "NB", "NB", "B")
+  )
+df5
+```
+
+#### Cross Tables
+
+```{r}
+df5 %>%
+  dplyr::count(Gender) %>%
+  dplyr::rename(f = n)
+```
+
+
+```{r}
+df5 %>%
+  dplyr::count(RS) %>%
+  dplyr::rename(f = n)
+```
+
+```{r}
+df5 %>%
+  dplyr::count(Gender, RS) %>%
+  dplyr::rename(f = n)
+```
+
+
+```{r}
+if (!require("janitor")) install.packages("janitor")
+# library(janitor)
+df5CrossTab <- 
+      df5 %>%
+      janitor::tabyl(dat = ., var1 = Gender, var2 = RS) %>%
+      janitor::adorn_totals(dat = ., where = c("row", "col"))
+df5CrossTab
+```
+
+#### Simple Bar Charts
+```{r}
+ggplot(
+       data = df5
+    ,  mapping = aes(x = Gender)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Simple Bar Chart", x = "Gender", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+```{r}
+ggplot(
+       data = df5
+    ,  mapping = aes(x = RS)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Simple Bar Chart", x = "Residental Status", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+#### Multiple Bar Charts
+```{r}
+ggplot(
+       data = df5
+    ,  mapping = aes(x = Gender, fill = RS)) +
+  geom_bar(position = "dodge") +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Multiple Bar Chart", x = "Gender", fill = "Residental Status", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+ggplot(
+       data = df5
+    ,  mapping = aes(x = RS, fill = Gender)) +
+  geom_bar(position = "dodge") +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Multiple Bar Chart", x = "Residental Status", fill = "Gender", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+#### Component Bar Charts
+```{r}
+ggplot(
+       data = df5
+    ,  mapping = aes(x = Gender, fill = RS)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Component Bar Chart", x = "Gender", fill = "Residental Status", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+ggplot(
+       data = df5
+    ,  mapping = aes(x = RS, fill = Gender)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Component Bar Chart", x = "Residental Status", fill = "Gender", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+### Example
+> Source: OMB Statistical Policy Working Paper 22. https://www.hhs.gov/sites/default/files/spwp22.pdf
+Following data set consists of information concerning delinquent children. Recorded variables are Number of Delinquent Children by County and Education Level of Household Head.
+
+#### Cross Tables
+```{r}
+df6 <- tibble(
+  Delinquent = gl(n = 4, k = 4, length = 16, labels = c("Alpha", "Beta", "Gamma", "Delta"))
+, EduLevel   = gl(n = 4, k = 1, length = 16, labels = c("Low", "Medium", "High", "Very High"))
+, Freq       = c(15, 0, 5, 0, 20, 10, 10, 15, 5, 10, 10, 0, 10, 15, 5, 5)
+)
+
+df6
+```
+
+```{r}
+df6 %>%
+  xtabs(data = ., Freq ~ Delinquent)
+```
+
+```{r}
+df6 %>%
+  xtabs(data = ., Freq ~ EduLevel)
+```
+
+
+```{r}
+df6 %>%
+  xtabs(data = ., Freq ~ Delinquent + EduLevel)
+```
+
+#### Multiple Bar Charts
+```{r}
+ggplot(
+       data = df6
+    ,  mapping = aes(x = Delinquent, y = Freq, fill = EduLevel)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Multiple Bar Chart", x = "Delinquent", fill = "Education Level", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+ggplot(
+       data = df6
+    ,  mapping = aes(x = EduLevel, y = Freq, fill = Delinquent)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Multiple Bar Chart", x = "Education Level", fill = "Delinquent", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+#### Component Bar Charts
+```{r}
+ggplot(
+       data = df6
+    ,  mapping = aes(x = Delinquent, y = Freq, fill = EduLevel)) +
+  geom_bar(stat = "identity") +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Component Bar Chart", x = "Delinquent", fill = "Education Level", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+ggplot(
+       data = df6
+    ,  mapping = aes(x = EduLevel, y = Freq, fill = Delinquent)) +
+  geom_bar(stat = "identity") +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Component Bar Chart", x = "Education Level", fill = "Delinquent", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+## Count Data
+### Example
+> The following data shows the number of notebook a sample of twenty students keeping.
+
+&nbsp;
+
+  Student  | Notebook
+  ---------|---------
+     	1    |  3
+     	2    |  1
+     	3    |  0
+     	4    |  2
+     	5    |  2
+     	6    |  4
+     	7    |  5
+     	8    |  1
+     	9    |  1
+     10    |  2
+     11    |  3
+     12    |  4
+     13    |  2
+     14    |  5
+     15    |  1
+     16    |  5
+     17    |  4
+     18    |  2
+     19    |  2
+     20    |  3
+
+&nbsp;
+
+```{r}
+df7 <- tibble::tibble(
+    Student  = seq(from = 1, to = 20, by = 1)
+  , Notebook = c(3, 1, 0, 2, 2, 4, 5, 1, 1, 2, 3, 4, 2, 5, 1, 5, 4, 2, 2, 3)
+  )
+df7
+```
+
+
+
+#### Frequency Table
+
+```{r}
+df7Freq <- 
+      df7 %>%
+      dplyr::count(Notebook) %>%
+      dplyr::rename(f = n) %>%
+      dplyr::mutate(
+        rf = f/sum(f)
+      , pf = rf*100
+      , cf = cumsum(f)
+      )
+df7Freq
+```
+
+#### Simple Bar Chart
+
+```{r}
+ggplot(
+       data = df7
+    ,  mapping = aes(x = Notebook)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = "Simple Bar Chart", x = "Notebooks", y = "Frequency") + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+&nbsp;
+
+## Continuous Data
+### Example
+> The following data is the final plant height (cm) of thirty plants of wheat. 
+87	91	89	88	89	91	87	92	90	98	95	97	96	100	101
+96	98	99	98	100	102	99	101	105	103	107	105	106	107	112
+
+```{r}
+df8 <- tibble::tibble(
+  PlantHeight = c(
+  87,	91,	89,	88,	89,	91,	87,	92,	90,	98,	95,	97,	96,	100,	101,
+  96,	98,	99,	98,	100,	102,	99,	101,	105,	103,	107,	105,	106,	107,	112
+  )
+)
+df8
+```
+
+#### Frequency Distribution
+
+```{r}
+df9 <- df8 %>% 
+  summarize(
+    R = max(PlantHeight) - min(PlantHeight)
+  , k = floor(1 + 3.3*log10(length(PlantHeight)))
+  , h = R/k
+    )
+
+df8Freq <- df8 %>% 
+  mutate(
+          Classes = cut(
+                         x              = PlantHeight
+                       , breaks         = df9$k
+                       , include.lowest = TRUE
+                       , right          = FALSE
+                       )
+          ) %>%
+  count(Classes) %>% 
+  tidyr::separate(col = Classes, into = c("LB", "UB"), sep = ",", remove = FALSE) %>%
+  rename(f = n) %>%
+  mutate(
+    LB = readr::parse_number(x = LB)
+  , UB = readr::parse_number(x = UB)
+  , rf = f/sum(f)
+  , pf = f/sum(f)*100
+  , cf = cumsum(f)
+  , MidPoint = (LB + UB)/2
+  ) 
+  
+df8Freq
+```
+
+#### Histogram
+
+```{r}
+ggplot(
+       data = df8
+     , mapping = aes(x = PlantHeight)) + 
+  geom_histogram() +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = "Histogram for Plant Height", x = "Plant Height", y = "Frequency") + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+
+```{r}
+ggplot(data = df8Freq, mapping = aes(x = MidPoint, y = f))  + 
+  geom_point() + 
+  geom_line() + 
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = "Frequency for Plant Height", x = "Mid Point", y = "Frequency") + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+ggplot(data = df8Freq, mapping = aes(x = MidPoint, y = cf)) + 
+  geom_point()+ 
+  geom_line() +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = "Cummulative Frequency Polygon", x = "Mid Point", y = "Cummulative Frequency") + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+#### Stem and Leaf Plot
+
+```{r}
+stem(x = df8$PlantHeight, scale = 1, width = 80, atom = 1e-08)
+```
+
+#### Box Plot
+
+```{r}
+ggplot(data = df8 , aes( y = PlantHeight)) + 
+  geom_boxplot()+
+  theme_bw()
+```
+
+
+&nbsp;
+
+### Example
+> The golub table contains gene expression values from 3051 genes taken from 38 Leukemia patients. Twenty seven patients are diagnosed as acute lymphoblastic leukemia (ALL) and eleven as acute myeloid leukemia (AML). The golub.gnames table contains information on the gene, including gene index, manufacturing ID, and biological name. Following table presents the gene expression value by their tumor type.
+
+tumortype|genevalue|tumortype|genevalue
+-------- |-------- |--------- |--------
+ALL | 2.10892 | ALL  | 1.78352 
+ALL | 1.52405 | ALL  | 0.45827 
+ALL | 1.96403 | ALL  | 2.18119 
+ALL | 2.33597 | ALL  | 2.31428 
+ALL | 1.85111 | ALL  | 1.99927 
+ALL | 1.99391 | ALL  | 1.36844 
+ALL | 2.06597 | ALL  | 2.37351 
+ALL | 1.81649 | ALL  | 1.83485 
+ALL | 2.17622 | AML  | 0.88941 
+ALL | 1.80861 | AML  | 1.45014 
+ALL | 2.44562 | AML  | 0.42904 
+ALL | 1.90496 | AML  | 0.82667 
+ALL | 2.76610 | AML  | 0.63637 
+ALL | 1.32551 | AML  | 1.02250
+ALL | 2.59385 | AML  | 0.12758 
+ALL | 1.92776 | AML  | -0.74333 
+ALL | 1.10546 | AML  | 0.73784 
+ALL | 1.27645 | AML  | 0.49470 
+ALL | 1.83051 | AML  | 1.12058
+
+```{r}
+df10 <- tibble(
+   genevalue = c(
+              2.10892, 1.52405, 1.96403, 2.33597, 1.85111, 1.99391
+            , 2.06597, 1.81649, 2.17622, 1.80861, 2.44562, 1.90496
+            , 2.76610, 1.32551, 2.59385, 1.92776, 1.10546, 1.27645
+            , 1.83051, 1.78352, 0.45827, 2.18119, 2.31428, 1.99927
+            , 1.36844, 2.37351, 1.83485, 0.88941, 1.45014, 0.42904
+            , 0.82667, 0.63637, 1.02250, 0.12758, -0.74333, 0.73784
+            , 0.49470, 1.12058
+            )
+  , tumortype = rep(c("ALL","AML"), c(27, 11))
+)
+
+df10
+```
+
+#### Frequency Distribution
+
+```{r}
+df11 <- df10 %>% 
+  summarize(
+    R = max(genevalue) - min(genevalue)
+  , k = floor(1 + 3.3*log10(length(genevalue)))
+  , h = R/k
+    )
+
+df10Freq <- df10 %>% 
+  mutate(
+          Classes = cut(
+                         x              = genevalue
+                       , breaks         = df11$k
+                       , include.lowest = TRUE
+                       , right          = FALSE
+                       )
+          ) %>%
+  count(Classes) %>% 
+  tidyr::separate(col = Classes, into = c("LB", "UB"), sep = ",", remove = FALSE) %>%
+  rename(f = n) %>%
+  mutate(
+    LB = readr::parse_number(x = LB)
+  , UB = readr::parse_number(x = UB)
+  , rf = f/sum(f)
+  , pf = f/sum(f)*100
+  , cf = cumsum(f)
+  , MidPoint = (LB + UB)/2
+  ) 
+  
+df10Freq
+```
+
+#### Histogram
+
+```{r}
+ggplot(
+       data = df10
+     , mapping = aes(x = genevalue)) + 
+  geom_histogram() +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = "Histogram for Gene Value", x = "Gene Value", y = "Frequency") + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+
+```{r}
+ggplot(data = df10Freq, mapping = aes(x = MidPoint, y = f))  + 
+  geom_point() + 
+  geom_line() + 
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = "Frequency for Gene Value", x = "Mid Point", y = "Frequency") + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+ggplot(data = df10Freq, mapping = aes(x = MidPoint, y = cf)) + 
+  geom_point()+ 
+  geom_line() +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = "Cummulative Frequency Polygon", x = "Mid Point", y = "Cummulative Frequency") + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+#### Stem and Leaf Plot
+
+```{r}
+stem(x = df10$genevalue, scale = 1, width = 80, atom = 1e-08)
+```
+
+#### Box Plot
+
+```{r}
+ggplot(data = df10 , aes(x = tumortype, y = genevalue)) + 
+  geom_boxplot()+
+  theme_bw()
+```
+
+
+&nbsp;
+
+# Measures of Centeral Tendency
+
+```{r}
+df7 %>%
+  summarize(
+            n       = length(Notebook)
+          , Mean    = mean(Notebook)
+          , Median  = median(Notebook)
+          , Minimum = min(Notebook) 
+          , Maximum = max(Notebook) 
+          , Q1      = quantile(x = Notebook, probs = 0.25)
+          , Q2      = quantile(x = Notebook, probs = 0.50)
+          , Q3      = quantile(x = Notebook, probs = 0.75)
+  )
+```
+
+
+```{r}
+df8 %>%
+  summarize(
+            n       = length(PlantHeight)
+          , Mean    = mean(PlantHeight)
+          , Median  = median(PlantHeight)
+          , Minimum = min(PlantHeight) 
+          , Maximum = max(PlantHeight) 
+          , Q1      = quantile(x = PlantHeight, probs = 0.25)
+          , Q2      = quantile(x = PlantHeight, probs = 0.50)
+          , Q3      = quantile(x = PlantHeight, probs = 0.75)
+  )
+```
+
+
+```{r}
+df10 %>%
+  group_by(tumortype) %>%
+  summarize(
+            n       = length(genevalue)
+          , Mean    = mean(genevalue)
+          , Median  = median(genevalue)
+          , Minimum = min(genevalue) 
+          , Maximum = max(genevalue) 
+          , Q1      = quantile(x = genevalue, probs = 0.25)
+          , Q2      = quantile(x = genevalue, probs = 0.50)
+          , Q3      = quantile(x = genevalue, probs = 0.75)
+  )
+```
+
+&nbsp;
+
+# Measures of Dispersion
+
+```{r}
+df7 %>%
+  summarize(
+            IQR      = IQR(Notebook)
+          , Variance = var(Notebook)
+          ,  SD      = sd(Notebook)
+          )
+```
+
+
+
+```{r}
+df8 %>%
+  summarize(
+            IQR      = IQR(PlantHeight)
+          , Variance = var(PlantHeight)
+          ,  SD      = sd(PlantHeight)
+          )
+```
+
+```{r}
+df10 %>%
+  group_by(tumortype) %>%
+  summarize(
+            IQR      = IQR(genevalue)
+          , Variance = var(genevalue)
+          ,  SD      = sd(genevalue)
+          )
+```
+
+&nbsp;
+
+# Measures of Skewness
+
+```{r}
+df7 %>% 
+  summarize(
+           SK = sum((Notebook - mean(Notebook))^3)/(n()*(sd(Notebook))^3)
+          )
+```
+
+
+
+```{r}
+df8 %>% 
+  summarize(
+           SK = sum((PlantHeight - mean(PlantHeight))^3)/(n()*(sd(PlantHeight))^3)
+          )
+```
+
+
+```{r}
+df10 %>% 
+  group_by(tumortype) %>%
+  summarize(
+           SK = sum((genevalue - mean(genevalue))^3)/(n()*(sd(genevalue))^3)
+          )
+```
+
+&nbsp;
+
+# Measures of Skewness
+
+
+```{r}
+df7 %>%
+  summarize(
+            K = sum((Notebook - mean(Notebook))^4)/(n()*(sd(Notebook))^4) - 3
+          )
+```
+
+
+
+```{r}
+df8 %>%
+  summarize(
+            K = sum((PlantHeight - mean(PlantHeight))^4)/(n()*(sd(PlantHeight))^4) - 3
+          )
+```
+
+
+```{r}
+df10 %>% 
+  group_by(tumortype) %>%
+  summarize(
+            K = sum((genevalue - mean(genevalue))^4)/(n()*(sd(genevalue))^4) - 3
+          )
+```

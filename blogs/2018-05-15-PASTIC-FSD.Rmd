@@ -1,0 +1,749 @@
+---
+title: "Emerging Technologies in Research: Google Apps and SPSS"
+author: "Muhammad Yaseen"
+date: 2018-05-15
+comments: false
+slug: 2018-05-15-PASTIC-FSD
+categories:
+  - Data Science
+  - Statistics
+  - Research
+  - Google Apps
+  - SPSS
+tags: []
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+```{r, label = setup, include = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(
+              #  fig.path   = 'figure/'
+                cache.path = 'cache/'
+               , cache      = FALSE
+               , dev        = c("svg", "tikz", "pdf", "png")[1]
+               , fig.align  = 'center'
+              # , fig.show   = 'asis'
+              # , fig.width  = 6
+              # , fig.height = 6
+              # , out.width  = '0.9\\linewidth'
+               , par        = TRUE
+               , echo       = TRUE
+               , results    = 'markup'
+               , warning    = FALSE
+               , message    = FALSE
+               , comment    = NA
+               )
+options(
+          replace.assign = TRUE
+        , width          = 80
+        , knitr.kable.NA = ''
+        )
+
+knit_hooks$set(par = function(before, options, envir){
+if (before && options$fig.show!='none')
+ par(mar=c(4, 4, 0.1, 0.1), cex.lab = 0.95, cex.axis =0.9, mgp = c(2, 0.7, 0), tcl = -0.3)
+}, crop = hook_pdfcrop)
+
+# Suppressing Error Messages in knitr
+muffleError <- function(x,options) {}
+knit_hooks$set(error=muffleError)
+```
+
+
+```{r label = ARRI, echo = FALSE, eval = FALSE}
+knitr::read_chunk("2018-05-15-PASTIC-FSD.R")
+```
+
+## Introduction
+
+
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/2018-05-15_PASTIC-FSD_SPSS.png)
+
+
+&nbsp;
+
+
+## Statistics
+> * Statistics deals with uncertainty & variability
+* Statistics turns data into information
+ * Data -> Information -> Knowledge -> Wisdom
+* Statistics is the interpretation of Science
+* Statistics is the Art & Science of learning from data
+
+&nbsp;
+<center>
+![alt text](/img/DataGeneralStore.png)
+</center>
+
+&nbsp;
+
+## Variable
+> * Characteristic that may vary from individual to individual
+
+
+&nbsp;
+
+## Measurement
+> * Process of assigning numbers or labels to objects or states in accordance with logically accepted rules
+
+&nbsp;
+
+## Measurement Scales
+> * **Nominal Scale:** Obersvations may be classified into mutually exclusive & exhaustive categories
+* **Ordinal Scale:** Obersvations may be ranked
+* **Interval Scale:** Difference between obersvations is meaningful
+* **Ratio Scale:** Ratio between obersvations is meaningful & true zero point
+
+&nbsp;
+
+## Descriptive Statistics
+> * No of observations
+* Measures of Central Tendency
+* Measures of Dispersion
+* Measures of Skewness
+* Measures of Kurtosis
+
+&nbsp;
+
+### Example
+
+  Fertilizer (Kg/acre)  | Production (Bushels/acre)
+  ------------| -------------
+       100    |  70
+       200    |  70
+       400    |  80
+       500    | 100
+  
+
+
+&nbsp;
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/02-DesStat/DS2.jpg)
+</center>
+
+
+&nbsp;
+
+*__Analyze > Descriptive Statistics > Descriptives ...__*
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/02-DesStat/DS2.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/02-DesStat/DS3.jpg)
+</center>
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/02-DesStat/DS4.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/02-DesStat/DS5.jpg)
+</center>
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/02-DesStat/DS6.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/02-DesStat/DS7.jpg)
+</center>
+
+&nbsp;
+
+## Boxwhisker Diagram
+> * Pictorial display of five number summary (Minimum, Q1, Q2, Q3 and Maximum)
+
+&nbsp;
+
+### Example
+
+  Yield       | Variety
+  ------------| -------------
+       5      |  V1
+       6      |  V1
+       7      |  V1
+       15     |  V2
+       16     |  V2
+       17     |  V2
+       
+  
+
+
+&nbsp;
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/03-BoxPlot/BoxPlot2.jpg)
+</center>
+
+
+&nbsp;
+
+*__Graphs > Legacy Dialogs > Scatter/Boxplot ...__*
+
+&nbsp;
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/03-BoxPlot/BoxPlot2.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/03-BoxPlot/BoxPlot3.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/03-BoxPlot/BoxPlot4.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/03-BoxPlot/BoxPlot5.jpg)
+</center>
+
+&nbsp;
+
+## Regression Analysis
+> * Quantifying dependency of a normal response on quantitative explanatory variable(s)
+
+&nbsp;
+
+![alt text](/img/PopRegFn.png)
+
+
+
+&nbsp;
+
+
+## Simple Linear Regression
+> * Quantifying dependency of a normal response on a quantitative explanatory variable
+
+&nbsp;
+
+### Example
+
+  Fertilizer (Kg/acre)  | Production (Bushels/acre)
+  ------------| -------------
+       100    |  70
+       200    |  70
+       400    |  80
+       500    | 100
+  
+
+
+&nbsp;
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/05-SLR/SLR1.jpg)
+</center>
+
+
+&nbsp;
+
+*__Graphs > Legacy Dialogs > Scatter/Dot ...__*
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/04-ScatterPlot/ScatterPlot1.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/04-ScatterPlot/ScatterPlot2.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/04-ScatterPlot/ScatterPlot3.jpg)
+</center>
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/04-ScatterPlot/ScatterPlot4.jpg)
+</center>
+
+
+&nbsp;
+
+*__Analyze > Regression > Linear ...__*
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/05-SLR/SLR2.jpg)
+</center>
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/05-SLR/SLR3.jpg)
+</center>
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/05-SLR/SLR4.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/05-SLR/SLR5.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/05-SLR/SLR6.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/05-SLR/SLR7.jpg)
+</center>
+
+&nbsp;
+
+### Exercise
+
+  Fertilizer  | Yield
+  ------------| -------------
+       0.3    |  10
+       0.6    |  15
+       0.9    |  30
+       1.2    |  35
+       1.5    |  25
+       1.8    |  30
+       2.1    |  50
+       2.4    |  45  
+    
+
+
+&nbsp;
+
+
+
+### Exercise
+
+  Weekly Income (\$)  | Weekly Expenditures (\$)
+  ------------| -------------
+        80    |  70
+       100    |  65
+       120    |  90
+       140    |  95
+       160    | 110
+       180    | 115
+       200    | 120
+       220    | 140
+       240    | 155
+       260    | 150
+    
+
+
+
+&nbsp;
+
+
+## Multiple Linear Regression
+> * Quantifying dependency of a normal response on two or more quantitative explanatory variables
+
+&nbsp;
+
+### Example
+
+Fertilizer (Kg)  | Rainfall (mm) | Yield (Kg)
+  ------------| -------------| -------------
+       100    |  10   |  40
+       200    |  20   |  50
+       300    |  10   |  50
+       400    |  30   |  70
+       500    |  20   |  65
+       600    |  20   |  65
+       700    |  30   |  80
+
+
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/06-MLR/MLR1.jpg)
+</center>
+
+
+&nbsp;
+
+*__Analyze > Regression > Linear ...__*
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/06-MLR/MLR2.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/06-MLR/MLR3.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/06-MLR/MLR4.jpg)
+</center>
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/06-MLR/MLR5.jpg)
+</center>
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/06-MLR/MLR6.jpg)
+</center>
+
+&nbsp;
+
+
+## Polynomial Regression Analysis
+> * Quantifying non-linear dependency of a normal response on quantitative explanatory variable(s)
+
+### Example
+> An experiment was conducted to evaluate the effects of different
+levels of nitrogen. Three levels of nitrogen: 0, 10 and 20 grams per
+plot were used in the experiment. Each treatment was replicated
+twice and data is given below:
+  
+  Nitrogen    | Yield
+  ------------| -------------
+        0     |   5
+        0     |   7
+       10     |  15
+       10     |  17
+       20     |   9
+       20     |  11
+
+
+
+
+&nbsp;
+  
+## Analysis of Variance (ANOVA)
+> * Comparing means of Normal dependent variable for levels of
+different factor(s)
+
+&nbsp;
+
+![alt text](/img/ANOVANormalMeans.png)
+
+
+&nbsp;
+  
+
+### Example
+
+  Yield       | Variety
+  ------------| -------------
+       5      |  V1
+       6      |  V1
+       7      |  V1
+       15     |  V2
+       16     |  V2
+       17     |  V2
+       
+    
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/07-ANOVA/ANOVA1.jpg)
+</center>
+
+
+&nbsp;
+
+*__General Linear Model > Univariate ...__*
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/07-ANOVA/ANOVA2.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/07-ANOVA/ANOVA3.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/07-ANOVA/ANOVA4.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/07-ANOVA/ANOVA5.jpg)
+</center>
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/07-ANOVA/ANOVA6.jpg)
+</center>
+
+
+&nbsp;
+
+### Exercise
+
+  Yield       | Variety
+  ------------| -------------
+       5      |  V1
+       7      |  V1
+       15     |  V2
+       17     |  V2
+       17     |  V3
+       19     |  V3
+       
+    
+
+
+
+&nbsp;
+  
+## Analysis of Covariance (ANCOVA)
+> * Quantifying dependency of a normal response on quantitative explanatory variable(s)
+* Comparing means of Normal dependent variable for levels of
+different factor(s)
+
+&nbsp;
+
+![alt text](/img/ANCOVA.png)
+
+
+  
+&nbsp;
+
+### Example
+
+   Yield      | Fert   | Variety
+  ------------| -------|-----------
+    51        |  80    | V1
+    52        |  80    | V1
+    53        |  90    | V1
+    54        |  90    | V1
+    56        | 100    | V1
+    57        | 100    | V1
+    55        |  80    | V2
+    56        |  80    | V2
+    58        |  90    | V2
+    59        |  90    | V2
+    62        | 100    | V2
+    63        | 100    | V2
+          
+
+&nbsp;
+
+
+
+### Same intercepts but different slopes    
+
+
+&nbsp;
+
+### Different intercepts and different slopes    
+
+
+
+
+## Correlation Analysis
+> * Linear Relationship between Quantitative Variables
+
+&nbsp;
+
+
+## Simple Correlation Analysis
+> * Linear Relationship between Two Quantitative Variables
+  *  $\left(X_{1},X_{2}\right)$
+
+  
+&nbsp;
+
+
+### Example
+
+  Sparrow Wing length (cm) | Sparrow Tail length (cm)
+  --------------------|------------------------------
+        10.4          |         7.4
+        10.8          |         7.6
+        11.1          |         7.9
+        10.2          |         7.2
+        10.3          |         7.4
+        10.2          |         7.1
+        10.7          |         7.4
+        10.5          |         7.2
+        10.8          |         7.8
+        11.2          |         7.7
+        10.6          |         7.8
+        11.4          |         8.3
+
+
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/09-Corr/Corr1.jpg)
+</center>
+
+
+&nbsp;
+
+*__Analyze > Correlate > Bivariate ...__*
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/09-Corr/Corr2.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/09-Corr/Corr3.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/09-Corr/Corr4.jpg)
+</center>
+
+
+
+&nbsp;
+
+## Partial Correlation Analysis
+> *  Linear Relationship between Quantitative Variables while holding/keeping all other constants
+ * $\left(X_{1},X_{2}\right)|X_{3}$
+  
+&nbsp;
+
+### Example
+
+  Leaf Area (cm^2) | Leaf Moisture (%) | Total Shoot Length (cm)
+  -----------------|-------------------|------------------------
+    72             |  80               | 307  
+    174            |  75               | 529 
+    116            |  81               | 632
+    78             |  83               | 527 
+    134            |  79               | 442 
+    95             |  81               | 525 
+    113            |  80               | 481
+    98             |  81               | 710 
+    148            |  74               | 422
+    42             |  78               | 345
+    
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/10-PartCorr/PartCorr1.jpg)
+</center>
+
+
+&nbsp;
+
+*__Analyze > Correlate > Partial ...__*
+
+&nbsp;
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/10-PartCorr/PartCorr2.jpg)
+</center>
+
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/10-PartCorr/PartCorr3.jpg)
+</center>
+
+<center>
+![alt text](/img/2018-05-15_PASTIC-FSD_SPSS/10-PartCorr/PartCorr4.jpg)
+</center>
+
+
+
+
+&nbsp;
+
+
+
+## Multiple Correlation Analysis
+> * Linear Relationship between a Quantitative Variable and set of other Quantitative Variables
+* $\left(X_{1},\left[X_{2},X_{3}\right]\right)$ 
+  
+
+&nbsp;
+
+### Example
+
+  Leaf Area (cm^2) | Leaf Moisture (%) | Total Shoot Length (cm)
+  -----------------|-------------------|------------------------
+    72             |  80               | 307  
+    174            |  75               | 529 
+    116            |  81               | 632
+    78             |  83               | 527 
+    134            |  79               | 442 
+    95             |  81               | 525 
+    113            |  80               | 481
+    98             |  81               | 710 
+    148            |  74               | 422
+    42             |  78               | 345
+    
+
+&nbsp;
+
+
+
+
+&nbsp;
+  
+## Completely Randomized Design (CRD)
+> * Used when experimental material is homogeneous
+
+&nbsp;
+
+
+### Example
+> The following table shows some of the results of an experiment on the effects of applications of sulphur in reducing scab disease of potatoes. The object in applying sulphur is to increase the acidity of the soil, since scab does not thrive in very acid soil. In addition to untreated plots which serve as a control, 3 amounts of dressing were compared—300, 600, and 900 lb. per acre. Both a fall and a spring application of each amount was tested, so that in
+all there were seven distinct treatments. The sulphur was spread by hand on the surface of the soil, and then diced into a depth of about 4 inches. The quantity to be analyzed is the “scab index”. That is roughly speaking, the percentage of the surface area of the potato that is infected with scab. It is obtained by examining 100 potatoes at random from each plot, grading each potato on a scale from 0 to 100% infected, and taking the average.
+
+  
+
+&nbsp;
+
+
+## Randomized Complete Block Design (RCBD)
+> * Used when experimental material is heterogenous in one direction
+
+&nbsp;
+
+
+### Example
+> Yield    : Yield of barley, SoilType : Soil Type, and  Trt      : 5 sources and a control
+  
+  
+
+
+&nbsp;
+
+
+## Latin Square Design
+> * Used when experimental material is heterogenous in two perpendicular directions
+
+&nbsp;
+
+
+### Example
+> The following table shows the field layout and yield of a 5×5 Latin square experiment on the effect of spacing on yield of millet plants. Five levels of spacing were used. The data on yield (grams/plot) was recorded and is given below:
+

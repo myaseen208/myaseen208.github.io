@@ -1,0 +1,622 @@
+---
+title: "Linear Model using Python"
+description: |
+  Linear Model using Python.
+author:
+  - name: Muhammad Yaseen 
+    url: http://myaseen208.netlify.com/
+    affiliation: Dept of Math & Stat, Univ of Agriculture, Faisalabad Pakistan
+    affiliation_url: http://uaf.edu.pk/
+date: 2019-02-18
+comments: false
+slug: 2019-PythonLMBZU
+categories:
+- Python
+- Statistics
+- Linear Model
+- Regression Analysis
+- ANOVA
+- ANCOVA
+mathjax: true
+output:
+  blogdown::html_page:
+    toc: true
+header-includes: 
+  - \usepackage{tikz}
+  - \usepackage{pgfplots}    
+---
+
+```{r, label = setup, include = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(
+              #  fig.path   = 'figure/'
+                cache.path = 'cache/'
+               , cache      = FALSE
+               , dev        = c("svg", "tikz", "pdf", "png")[1]
+               , fig.align  = 'center'
+              # , fig.show   = 'asis'
+              # , fig.width  = 6
+              # , fig.height = 6
+              # , out.width  = '0.9\\linewidth'
+               , par        = TRUE
+               , echo       = TRUE
+               , results    = 'markup'
+               , warning    = FALSE
+               , message    = FALSE
+               , comment    = NA
+               )
+options(
+          replace.assign = TRUE
+        , width          = 80
+        , knitr.kable.NA = ''
+        )
+
+knit_hooks$set(par = function(before, options, envir){
+if (before && options$fig.show!='none')
+ par(mar=c(4, 4, 0.1, 0.1), cex.lab = 0.95, cex.axis =0.9, mgp = c(2, 0.7, 0), tcl = -0.3)
+}, crop = hook_pdfcrop)
+
+# Suppressing Error Messages in knitr
+muffleError <- function(x,options) {}
+knit_hooks$set(error=muffleError)
+```
+
+```{r, echo = FALSE}
+library(reticulate)
+reticulate::use_python(python = Sys.which("python3"), required = TRUE)
+# reticulate::repl_python()
+```
+
+```{python, echo = FALSE}
+import sys
+import warnings
+
+if not sys.warnoptions:
+    warnings.simplefilter("ignore")
+```
+
+# Python Basics{#Basics}
+
+## Variables and Data Types
+
+### Variable Assignment
+
+```{python}
+x = 5
+x
+# dir(x)
+```
+
+
+### Calculations With Variables 
+
+```{python}
+x + 2      # Sum of two variables
+x - 2      # Subtraction of two variables
+x*2        # Multiplication of two variables
+x**2       # Exponentiation of a variable
+x%2        # Remainder of a variable
+x/float(2) # Division of a variable
+```
+
+### Types and Type Conversion
+
+```{python}
+type(5)        # Integer
+type(5.)       # Float
+type('5')      # Strings
+type(5 + 3j)   # Complex Number
+type(True)     # Boolean
+```
+
+## Logical Operators
+
+```{python}
+a1 = True
+print(a1)
+type(a1)
+
+b1 = False
+print(b1)
+type(b1)
+
+True  and True
+True  and False
+False and True
+False and False
+
+True or False
+not True
+not False
+
+True and not False
+```
+
+
+## Comparison
+
+```{python}
+x1 = 30
+x1 > 30
+x1 == 30
+x1 >= 30
+x1 > 15
+
+not x1 == 42
+x1 != 42
+```
+
+## If-Else
+
+```{python}
+x2 = 30                # assign 30 to x2
+if x2 > 30:            # predicate: is x2 > 30
+    print("Yes")       # if True, do this
+else:
+    print("No")        # if False, do this
+```
+
+## Function
+
+```{python}
+def slength1(s):
+    """Returns a string describing the
+    length of the sequences"""
+    if len(s) > 10:
+        ans = 'very long'
+    else:
+        ans = 'normal'
+    return ans
+
+
+help(slength1)
+
+slength1("Hello")
+slength1("HelloHello")
+slength1("Hello again")
+help(dir)
+dir(slength1)
+
+def slength2(s):
+    """Returns a string describing the
+    length of the sequences into 
+    empty, very long, normal and short"""
+    if len(s) == 0:
+        ans = 'empty'
+    elif len(s) > 10:
+        ans = 'very long'
+    elif len(s) > 7:
+        ans = 'normal'
+    else:
+        ans = 'short'
+    return ans
+
+
+help(slength2)
+slength2("")
+slength2("Good Morning")
+slength2("Greetings")
+slength2("Hi")
+```
+
+## Help
+
+```{python, eval = FALSE}
+# help(str)
+# dir(str) 
+# help(str.__add__)
+# help(str.capitalize)
+# dir(str.capitalize)
+```
+
+
+# Simple Linear Regression{#SLR}
+
+```{python}
+Income = [80, 100, 120, 140, 160, 180, 200, 220, 240, 260]
+Expend = [70, 65, 90, 95, 110, 115, 120, 140, 155, 150]
+
+import pandas as pd
+# dir(pd)
+# help(pd)
+# help(pd.DataFrame)
+# dir(pd.DataFrame)
+
+df1 = pd.DataFrame(
+ {
+   "Income": Income
+ , "Expend": Expend
+ }
+ )
+
+print(df1)
+# dir(df1)
+# df1.to_html()
+# df1.to_latex()
+# help(df1.kurt)
+# df1.kurt()
+# help(df1.kurtosis)
+# df1.kurtosis()
+# help(df1.mean)
+# df1.mean()
+```
+
+```{python}
+from matplotlib import pyplot as plt
+fig = plt.figure()
+plt.scatter(
+  x      = "Income"
+, y      = "Expend"
+, color  = "green"
+, marker = "o"
+, data   = df1
+)
+plt.title("Scatter plot of Weekly Income (\$) and Weekly Expenditures (\$)")
+plt.xlabel("Weekly Income (\$)")
+plt.ylabel("Weekly Expenditures (\$)")
+plt.show()
+```
+
+
+```{python}
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg1 = ols(formula = "Expend ~ Income", data = df1)
+Fit1 = Reg1.fit()
+
+print(Fit1.summary())
+print(Fit1.params)
+print(Fit1.fittedvalues)
+print(Fit1.resid)
+print(Fit1.bse)
+print(Fit1.centered_tss)
+print(anova_lm(Fit1))
+```
+
+```{python}
+fig = plt.figure()
+plt.scatter(
+  x      = "Income"
+, y      = "Expend"
+, color  = "green"
+, marker = "o" 
+, data   = df1
+)
+plt.plot(df1["Income"], Fit1.fittedvalues)
+plt.title("Regression plot of Weekly Income (\$) and Weekly Expenditures (\$)")
+plt.xlabel("Weekly Income (\$)")
+plt.ylabel("Weekly Expenditures (\$)")
+plt.show()
+```
+
+
+# Multiple Linear Regression{#MLR}
+
+```{python}
+import numpy as np
+Fertilizer = np.arange(100, 800, 100)
+Rainfall   = [10, 20, 10, 30, 20, 20, 30]
+Yield      = [40, 50, 50, 70, 65, 65, 80]
+
+import pandas as pd
+
+df2 = pd.DataFrame(
+ {
+   "Fertilizer": Fertilizer
+ , "Rainfall": Rainfall
+ , "Yield": Yield
+ }
+ )
+
+print(df2)
+```
+
+```{python, eval = TRUE}
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import pyplot as plt
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection = "3d")
+ax.scatter(
+  df2["Fertilizer"]
+, df2["Rainfall"]
+, df2["Yield"]
+, color = "green"
+, marker = "o"
+, alpha  = 1
+)
+ax.set_xlabel("Fertilizer")
+ax.set_ylabel("Rainfall")
+ax.set_zlabel("Yield")
+plt.show()
+```
+
+
+```{python}
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg2 = ols(formula = "Yield ~ Fertilizer + Rainfall", data = df2)
+Fit2 = Reg2.fit()
+print(Fit2.summary())
+print(Fit2.params)
+print(Fit2.fittedvalues)
+print(Fit2.resid)
+print(Fit2.bse)
+print(Fit2.centered_tss)
+print(anova_lm(Fit2))
+```
+
+```{python, eval = TRUE}
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import pyplot as plt
+import numpy as np
+import pandas as pd
+from matplotlib import cm
+fig = plt.figure()
+ax = fig.add_subplot(111, projection = "3d")
+ax.scatter(
+  df2["Fertilizer"]
+, df2["Rainfall"]
+, df2["Yield"]
+, color = "green"
+, marker = "o"
+, alpha  = 1
+)
+ax.set_xlabel("Fertilizer")
+ax.set_ylabel("Rainfall")
+ax.set_zlabel("Yield")
+x_surf = np.arange(100, 720, 20)
+y_surf = np.arange(10, 32, 2)
+x_surf, y_surf = np.meshgrid(x_surf, y_surf)
+
+exog = pd.core.frame.DataFrame({
+   "Fertilizer": x_surf.ravel()
+ , "Rainfall": y_surf.ravel()
+ })
+out = Fit2.predict(exog = exog)
+ax.plot_surface(
+           x_surf
+         , y_surf
+         , out.values.reshape(x_surf.shape)
+         , rstride=1
+         , cstride=1
+         , color="None"
+         , alpha = 0.4
+         )
+plt.show()
+```
+
+# Polynomial Regression{#PolyReg}
+
+```{python}
+Nitrogen = [0, 0, 10, 10, 20, 20]
+Yield    = [5, 7, 15, 17,  9, 11]
+
+import pandas as pd
+df3 = pd.DataFrame(
+ {
+   "Nitrogen": Nitrogen
+ , "Yield": Yield
+ }
+ )
+
+print(df3)
+```
+
+```{python, eval = TRUE}
+from matplotlib import pyplot as plt
+fig = plt.figure()
+plt.scatter(
+  df3["Nitrogen"]
+, df3["Yield"]
+, color = "green"
+, marker = "o"
+)
+plt.title("Scatter plot of Nitrogen and Yield")
+plt.xlabel("Nitrogen")
+plt.ylabel("Yield")
+plt.show()
+```
+
+
+```{python}
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg3 = ols(formula = "Yield ~ Nitrogen + I(Nitrogen**2)", data = df3)
+Fit3 = Reg3.fit()
+print(Fit3.summary())
+print(Fit3.params)
+print(Fit3.fittedvalues)
+print(Fit3.resid)
+print(Fit3.bse)
+print(Fit3.centered_tss)
+print(anova_lm(Fit3))
+```
+
+```{python, eval = TRUE}
+fig = plt.figure()
+plt.scatter(
+  df3["Nitrogen"]
+, df3["Yield"]
+, color = "green"
+, marker = "o"
+)
+plt.plot(df3["Nitrogen"], Fit3.fittedvalues)
+plt.title("Regression plot of Nitrogen and Yield")
+plt.xlabel("Nitrogen")
+plt.ylabel("Yield")
+plt.show()
+```
+
+# Regression with Dummy Variables {#RegDummy}
+
+## Example 1
+
+```{python}
+Consumption = [5, 6, 7, 15, 16, 17]
+Gender = ["Male", "Male","Male", "Female", "Female", "Female"]
+
+import pandas as pd
+df4 = pd.DataFrame(
+ {
+   "Consumption": Consumption
+ , "Gender": Gender
+ }
+ )
+
+print(df4)
+```
+
+```{python, eval = TRUE}
+import pandas as pd
+fig = plt.figure()
+df4.boxplot(
+    "Consumption"
+  , by = "Gender"
+  )
+plt.title("Boxplot")
+plt.xlabel("Gender")
+plt.ylabel("Consumption")
+plt.show()
+```
+
+
+```{python}
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+fm4 = ols(formula = "Consumption ~ Gender", data = df4)
+Fit4 = fm4.fit()
+
+print(dir(Fit4))
+
+print(Fit4.summary())
+print(Fit4.params)
+print(Fit4.centered_tss)
+print(anova_lm(Fit4))
+```
+
+
+## Example 2
+
+```{python}
+Consumption = [5, 7, 15, 17, 17, 19]
+EduGroup = ["NoEdu", "NoEdu", "SchoolEdu", "SchoolEdu", "CollegeEdu", "CollegeEdu"]
+
+import pandas as pd
+df5 = pd.DataFrame(
+ {
+   "Consumption": Consumption
+ , "EduGroup": EduGroup
+ }
+ )
+
+print(df5)
+```
+
+```{python, eval = TRUE}
+fig = plt.figure()
+df5.boxplot(
+    "Consumption"
+  , by = "EduGroup"
+  )
+plt.title("Boxplot")
+plt.xlabel("EduGroup")
+plt.ylabel("Consumption")
+plt.show()
+```
+
+
+```{python}
+fm5 = ols(formula = "Consumption ~ EduGroup", data = df5)
+Fit5 = fm5.fit()
+
+print(Fit5.summary())
+print(Fit5.params)
+print(Fit5.centered_tss)
+print(anova_lm(Fit5))
+```
+
+
+## Example 3
+
+```{python}
+Consumption = [51, 52, 53, 54, 56, 57, 55, 56, 58, 59, 62, 63]
+Gender  = ["Male", "Male", "Male", "Male", "Male", "Male", "Female", "Female", "Female", "Female", "Female", "Female"]
+Income = [80, 80, 90, 90, 100, 100, 80, 80, 90, 90, 100, 100]
+
+import pandas as pd
+df6 = pd.DataFrame(
+ {
+   "Consumption": Consumption
+ , "Gender": Gender
+ , "Income": Income
+ }
+ )
+
+print(df6)
+```
+
+### Regression with same slopes and different intercepts
+
+```{python}
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg6 = ols(formula = "Consumption ~ Gender + Income", data = df6)
+Fit6 = Reg6.fit()
+
+print(Fit6.summary())
+print(Fit6.params)
+print(Fit6.fittedvalues)
+print(Fit6.resid)
+print(Fit6.bse)
+print(Fit6.centered_tss)
+print(anova_lm(Fit6))
+```
+
+```{python}
+import matplotlib.pyplot as plt
+from statsmodels.graphics.factorplots import interaction_plot
+fig = plt.figure()
+fig = interaction_plot(
+    x        = Income
+  , trace    = Gender
+  , response = Fit6.fittedvalues
+  , colors   = ['red','blue']
+  , markers  = ['D','^']
+  , xlabel   ='Income'
+  , ylabel   = 'Consumption'
+  )
+plt.show()
+```
+
+### Regression with different slopes and different intercepts
+```{python}
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+Reg7 = ols(formula = "Consumption ~ Gender*Income", data = df6)
+Fit7 = Reg7.fit()
+
+print(Fit7.summary())
+print(Fit7.params)
+print(Fit7.fittedvalues)
+print(Fit7.resid)
+print(Fit7.bse)
+print(Fit7.centered_tss)
+print(anova_lm(Fit7))
+```
+
+```{python}
+import matplotlib.pyplot as plt
+from statsmodels.graphics.factorplots import interaction_plot
+fig = plt.figure()
+fig = interaction_plot(
+    x        = Income
+  , trace    = Gender
+  , response = Fit7.fittedvalues
+  , colors   = ['red','blue']
+  , markers  = ['D','^']
+  , xlabel   ='Income'
+  , ylabel   = 'Consumption'
+  )
+plt.show()
+```

@@ -1,0 +1,57 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diallel Analysis on Muhammad Yaseen</title>
+    <link>https://myaseen208.com/categories/diallel-analysis/</link>
+    <description>Recent content in Diallel Analysis on Muhammad Yaseen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 21 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://myaseen208.com/categories/diallel-analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Diallel Analysis with R</title>
+      <link>https://myaseen208.com/blogs/diallelanalysisr/</link>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://myaseen208.com/blogs/diallelanalysisr/</guid>
+      <description>
+
+
+&lt;p&gt;The latest versin 0.1.1 of &lt;a href=&#34;https://cran.r-project.org/web/packages/DiallelAnalysisR/index.html&#34;&gt;DiallelAnalysisR&lt;/a&gt; is aviable on &lt;a href=&#34;https://cran.r-project.org/web/packages/DiallelAnalysisR/index.html&#34;&gt;CRAN&lt;/a&gt;. It performs Diallel Analysis with R using Griffing’s and Hayman’s approaches. Four different methods (1: Method-I (Parents + F1’s + reciprocals); 2: Method-II (Parents and one set of F1’s); 3: Method-III (One set of F1’s and reciprocals); 4: Method-IV (One set of F1’s only)) and two methods (1: Fixed Effects Model; 2: Random Effects Model) can be applied using Griffing’s approach.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DiallelAnalysisR&lt;/strong&gt; has functions to perform Diallel Analysis with R using Griffing’s and Hayman’s approaches. Four different Methods:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Method-I (Parents + F1’s + reciprocals)&lt;/li&gt;
+&lt;li&gt;Method-II (Parents and one set of F1’s)&lt;/li&gt;
+&lt;li&gt;Method-III (One set of F1’s and reciprocals)&lt;/li&gt;
+&lt;li&gt;Method-IV (One set of F1’s only))&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;and two Models:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Fixed Effects Model&lt;/li&gt;
+&lt;li&gt;Random Effects Model&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;can be applied using Griffing’s approach.&lt;/p&gt;
+&lt;div id=&#34;installation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stable-version&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stable Version&lt;/h2&gt;
+&lt;p&gt;Stable version of the package avialabe on &lt;a href=&#34;https://cran.r-project.org/web/packages/DiallelAnalysisR/index.html&#34;&gt;CRAN&lt;/a&gt; can be installed using:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;#39;DiallelAnalysisR&amp;#39;, dependencies = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;development-version&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Development Version&lt;/h2&gt;
+&lt;p&gt;Development version of the package avialabe on &lt;a href=&#34;https://github.com/myaseen208/DiallelAnalysisR&#34;&gt;Github&lt;/a&gt; can be installed using:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if(!require(&amp;quot;devtools&amp;quot;)) install.packages(&amp;quot;devtools&amp;quot;)
+devtools::install_github(&amp;#39;myaseen208/DiallelAnalysisR&amp;#39;, build_vignettes = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;license&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;License&lt;/h2&gt;
+&lt;p&gt;This package is free and open source software, licensed under GPL.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
