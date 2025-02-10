@@ -1,0 +1,2217 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bioinformatics on Muhammad Yaseen</title>
+    <link>https://myaseen208.com/categories/bioinformatics/</link>
+    <description>Recent content in Bioinformatics on Muhammad Yaseen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 20 May 2022 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://myaseen208.com/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Statistics: The Art &amp; Science of Learning from Data</title>
+      <link>https://myaseen208.com/blogs/2022-tuf/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://myaseen208.com/blogs/2022-tuf/</guid>
+      <description>
+&lt;script src=&#34;https://myaseen208.com/rmarkdown-libs/clipboard/clipboard.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://myaseen208.com/rmarkdown-libs/primer-tooltips/build.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;link href=&#34;https://myaseen208.com/rmarkdown-libs/klippy/css/klippy.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://myaseen208.com/rmarkdown-libs/klippy/js/klippy.min.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;1&lt;/span&gt; Introduction&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#statistics&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;1.1&lt;/span&gt; Statistics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#variable&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;1.2&lt;/span&gt; Variable&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#measurement&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;1.3&lt;/span&gt; Measurement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#measurement-scales&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;1.4&lt;/span&gt; Measurement Scales&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#exploring-data-with-graphs-numerical-summaries&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;2&lt;/span&gt; Exploring Data with Graphs &amp;amp; Numerical Summaries&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#graphs&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;2.1&lt;/span&gt; Graphs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#numerical-summaries&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;2.2&lt;/span&gt; Numerical Summaries&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#descriptive-statistics&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;3&lt;/span&gt; Descriptive Statistics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#correlation-analysis&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;4&lt;/span&gt; Correlation Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#an-introduction-to-linear-models&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;5&lt;/span&gt; An Introduction to Linear Models&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#regression-analysis&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;5.1&lt;/span&gt; Regression Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#analysis-of-variance-anova&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;5.2&lt;/span&gt; Analysis of Variance (ANOVA)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#analysis-of-covariance-ancova&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;5.3&lt;/span&gt; Analysis of Covariance (ANCOVA)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#an-introduction-to-r&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;6&lt;/span&gt; An Introduction to R&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  addClassKlippyTo(&#34;pre.r, pre.python&#34;);
+  addKlippy(&#39;left&#39;, &#39;top&#39;, &#39;auto&#39;, &#39;1&#39;, &#39;Copy code&#39;, &#39;Copied!&#39;);
+&lt;/script&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34; number=&#34;1&#34;&gt;
+&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;1&lt;/span&gt; Introduction&lt;/h1&gt;
+&lt;div id=&#34;statistics&#34; class=&#34;section level2&#34; number=&#34;1.1&#34;&gt;
+&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;1.1&lt;/span&gt; Statistics&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Statistics is the science of uncertainty &amp;amp; variability&lt;/li&gt;
+&lt;li&gt;Statistics turns data into information&lt;/li&gt;
+&lt;li&gt;Data -&amp;gt; Information -&amp;gt; Knowledge -&amp;gt; Wisdom&lt;/li&gt;
+&lt;li&gt;Data Driven Decisions (3Ds)&lt;/li&gt;
+&lt;li&gt;Statistics is the interpretation of Science&lt;/li&gt;
+&lt;li&gt;Statistics is the Art &amp;amp; Science of learning from data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;variable&#34; class=&#34;section level2&#34; number=&#34;1.2&#34;&gt;
+&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;1.2&lt;/span&gt; Variable&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Characteristic that may vary from individual to individual&lt;/li&gt;
+&lt;li&gt;Height, Weight, CGPA etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measurement&#34; class=&#34;section level2&#34; number=&#34;1.3&#34;&gt;
+&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;1.3&lt;/span&gt; Measurement&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Process of assigning numbers or labels to objects or states in accordance with logically accepted rules&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:TrafficSignals&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://github.com/myaseen208/material/raw/main/TrafficSignals.jpg&#34; alt=&#34;Measurement&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1.1: Measurement
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measurement-scales&#34; class=&#34;section level2&#34; number=&#34;1.4&#34;&gt;
+&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;1.4&lt;/span&gt; Measurement Scales&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nominal Scale:&lt;/strong&gt; Obersvations may be classified into mutually exclusive &amp;amp; exhaustive classes or categories&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ordinal Scale:&lt;/strong&gt; Obersvations may be ranked&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interval Scale:&lt;/strong&gt; Difference between obersvations is meaningful&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ratio Scale:&lt;/strong&gt; Ratio between obersvations is meaningful &amp;amp; true zero point&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:MS&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://github.com/myaseen208/material/raw/main/TypesofMeasurementScales.png&#34; alt=&#34;Measurement Scales&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1.2: Measurement Scales
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exploring-data-with-graphs-numerical-summaries&#34; class=&#34;section level1&#34; number=&#34;2&#34;&gt;
+&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;2&lt;/span&gt; Exploring Data with Graphs &amp;amp; Numerical Summaries&lt;/h1&gt;
+&lt;div id=&#34;graphs&#34; class=&#34;section level2&#34; number=&#34;2.1&#34;&gt;
+&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;2.1&lt;/span&gt; Graphs&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;numerical-summaries&#34; class=&#34;section level2&#34; number=&#34;2.2&#34;&gt;
+&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;2.2&lt;/span&gt; Numerical Summaries&lt;/h2&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level3&#34; number=&#34;2.2.1&#34;&gt;
+&lt;h3&gt;&lt;span class=&#34;header-section-number&#34;&gt;2.2.1&lt;/span&gt; Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: &lt;a href=&#34;https://www.cdc.gov/nchs/nhanes.htm&#34;&gt;https://www.cdc.gov/nchs/nhanes.htm&lt;/a&gt; . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(readxl)
+library(tidyverse)
+Data &amp;lt;-
+  read_excel(path = &amp;quot;NHANES1.xlsx&amp;quot;) |&amp;gt;
+  mutate(
+    Gender  = fct_relevel(Gender, &amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;)
+  , BMI.Cat = fct_relevel(BMI.Cat, &amp;quot;Under Weight&amp;quot;, &amp;quot;Normal Weight&amp;quot;, &amp;quot;Over Weight&amp;quot;, &amp;quot;Obese&amp;quot;)
+    )
+Data&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 8,819 × 6
+      ID Gender   Age Race                 BMI BMI.Cat      
+   &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;  &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;              &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;        
+ 1 31128 Female    11 Non-Hispanic Black  17.4 Under Weight 
+ 2 31129 Male      15 Non-Hispanic Black  26.5 Over Weight  
+ 3 31131 Female    44 Non-Hispanic Black  30.9 Obese        
+ 4 31132 Male      70 Non-Hispanic White  24.7 Normal Weight
+ 5 31133 Female    16 Non-Hispanic Black  16.8 Under Weight 
+ 6 31134 Male      73 Non-Hispanic White  30.6 Obese        
+ 7 31137 Female    14 Non-Hispanic Black  27.8 Over Weight  
+ 8 31138 Male       3 Mexican American    16.1 Under Weight 
+ 9 31139 Female    18 Other Hispanic      29.4 Over Weight  
+10 31140 Female    11 Non-Hispanic White  18.2 Under Weight 
+# … with 8,809 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(janitor)
+Out1 &amp;lt;-
+  Data |&amp;gt;
+  tabyl(Gender) |&amp;gt;
+  adorn_totals(c(&amp;quot;row&amp;quot;)) |&amp;gt;
+  adorn_pct_formatting(digits = 2)
+
+Out1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt; Gender    n percent
+   Male 4305  48.82%
+ Female 4514  51.18%
+  Total 8819 100.00%&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(scales)
+Plot1 &amp;lt;-
+  ggplot(data = Data, mapping = aes(x = Gender)) +
+  geom_bar(stat = &amp;quot;count&amp;quot;, width = 0.4) +
+  geom_text(stat = &amp;quot;count&amp;quot;, mapping = aes(label = comma(stat(count))), vjust = -0.2) +
+  scale_y_continuous(
+      expand = c(0, NA)
+    , limits = c(0, 4700)
+    , labels = scales::comma
+    , breaks = pretty_breaks(12)
+    ) +
+  labs(
+    x = &amp;quot;Gender&amp;quot;
+  , y = &amp;quot;Frequency&amp;quot;
+  ) +
+  theme_classic() +
+  theme(aspect.ratio = 2/1)
+
+Plot1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/Plot1-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out2 &amp;lt;-
+  Data |&amp;gt;
+  tabyl(Gender)
+Out2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt; Gender    n   percent
+   Male 4305 0.4881506
+ Female 4514 0.5118494&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggchicklet)
+Plot2 &amp;lt;-
+  ggplot(data = Out2, mapping = aes(x = Gender, y = n)) +
+  geom_chicklet(radius = grid::unit(3, &amp;quot;mm&amp;quot;), width = 0.5) +
+  geom_text(mapping = aes(label = scales::comma(n)), vjust = -0.2) +
+  scale_y_continuous(
+      expand = c(0, NA)
+    , limits = c(0, 4700)
+    , labels = scales::comma
+    , breaks = pretty_breaks(12)
+    ) +
+  labs(
+    x = &amp;quot;Gender&amp;quot;
+  , y = &amp;quot;Frequency&amp;quot;
+  ) +
+  theme_classic() +
+  theme(aspect.ratio = 2/1)
+
+Plot2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/Plot2-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out3 &amp;lt;-
+  Data |&amp;gt;
+  tabyl(Race) |&amp;gt;
+  adorn_totals(c(&amp;quot;row&amp;quot;)) |&amp;gt;
+  adorn_pct_formatting(digits = 2)
+Out3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;               Race    n percent
+   Mexican American 2360  26.76%
+ Non-Hispanic Black 2392  27.12%
+ Non-Hispanic White 3350  37.99%
+     Other Hispanic  291   3.30%
+        Other/Mixed  426   4.83%
+              Total 8819 100.00%&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Plot3 &amp;lt;-
+  ggplot(data = Data, mapping = aes(x = Race)) +
+  geom_bar(stat = &amp;quot;count&amp;quot;) +
+  geom_text(stat = &amp;quot;count&amp;quot;, mapping = aes(label = comma(stat(count))), vjust = -0.2) +
+  scale_y_continuous(
+      expand = c(0, NA)
+    , limits = c(0, 3500)
+    , labels = scales::comma
+    , breaks = pretty_breaks(12)
+    ) +
+  labs(
+    x = &amp;quot;Race&amp;quot;
+  , y = &amp;quot;Frequency&amp;quot;
+  ) +
+  theme_classic()
+
+Plot3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/Plot3-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out4 &amp;lt;-
+  Data |&amp;gt;
+  tabyl(BMI.Cat) |&amp;gt;
+  adorn_totals(c(&amp;quot;row&amp;quot;)) |&amp;gt;
+  adorn_pct_formatting(digits = 2)
+
+Out4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;       BMI.Cat    n percent
+  Under Weight 1921  21.78%
+ Normal Weight 2770  31.41%
+   Over Weight 2059  23.35%
+         Obese 2069  23.46%
+         Total 8819 100.00%&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Plot4 &amp;lt;-
+  ggplot(data = Data, mapping = aes(x = BMI.Cat)) +
+  geom_bar(stat = &amp;quot;count&amp;quot;) +
+  geom_text(stat = &amp;quot;count&amp;quot;, mapping = aes(label = comma(stat(count))), vjust = -0.2) +
+  scale_y_continuous(
+      expand = c(0, NA)
+    , limits = c(0, 3000)
+    , labels = scales::comma
+    , breaks = pretty_breaks(12)
+    ) +
+  labs(
+    x = &amp;quot;BMI&amp;quot;
+  , y = &amp;quot;Frequency&amp;quot;
+  ) +
+  theme_classic()
+
+Plot4&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/Plot4-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out5 &amp;lt;-
+  Data |&amp;gt;
+  tabyl(Gender, BMI.Cat) |&amp;gt;
+  adorn_totals(c(&amp;quot;row&amp;quot;, &amp;quot;col&amp;quot;)) |&amp;gt;
+  adorn_percentages(&amp;quot;row&amp;quot;) |&amp;gt;
+  adorn_pct_formatting(digits = 2) |&amp;gt;
+  adorn_ns(position = &amp;quot;front&amp;quot;) |&amp;gt;
+  adorn_title(&amp;quot;combined&amp;quot;)
+
+Out5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt; Gender/BMI.Cat  Under Weight Normal Weight   Over Weight         Obese
+           Male  985 (22.88%) 1299 (30.17%) 1115 (25.90%)  906 (21.05%)
+         Female  936 (20.74%) 1471 (32.59%)  944 (20.91%) 1163 (25.76%)
+          Total 1921 (21.78%) 2770 (31.41%) 2059 (23.35%) 2069 (23.46%)
+          Total
+ 4305 (100.00%)
+ 4514 (100.00%)
+ 8819 (100.00%)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Plot5 &amp;lt;-
+  ggplot(data = Data, mapping = aes(x = BMI.Cat, fill = Gender)) +
+  geom_bar(stat = &amp;quot;count&amp;quot;) +
+  geom_text(stat = &amp;quot;count&amp;quot;, mapping = aes(label = comma(stat(count))), vjust = -0.2) +
+  facet_grid(cols = vars(Gender)) +
+  scale_y_continuous(
+      expand = c(0, NA)
+    , limits = c(0, 1600)
+    , labels = scales::comma
+    , breaks = pretty_breaks(12)
+    ) +
+  labs(
+    x = &amp;quot;BMI&amp;quot;
+  , y = &amp;quot;Frequency&amp;quot;
+  ) +
+  theme_classic()
+
+Plot5&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/Plot5-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;descriptive-statistics&#34; class=&#34;section level1&#34; number=&#34;3&#34;&gt;
+&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;3&lt;/span&gt; Descriptive Statistics&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Number of Observations&lt;/li&gt;
+&lt;li&gt;Measures of Central Tendency&lt;/li&gt;
+&lt;li&gt;Measures of Central Dispersion&lt;/li&gt;
+&lt;li&gt;Measures of Skewness&lt;/li&gt;
+&lt;li&gt;Measures of Kurtosis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div id=&#34;example-1&#34; class=&#34;section level3&#34; number=&#34;3.0.1&#34;&gt;
+&lt;h3&gt;&lt;span class=&#34;header-section-number&#34;&gt;3.0.1&lt;/span&gt; Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: &lt;a href=&#34;https://www.cdc.gov/nchs/nhanes.htm&#34;&gt;https://www.cdc.gov/nchs/nhanes.htm&lt;/a&gt; . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Plot6 &amp;lt;-
+  ggplot(data = Data, mapping = aes(y = BMI)) +
+  geom_boxplot(stat = &amp;quot;boxplot&amp;quot;, outlier.colour = &amp;quot;red&amp;quot;) +
+  scale_x_discrete() +
+  scale_y_continuous(
+      expand = c(0, NA)
+    , limits = c(0, NA)
+    , labels = scales::comma
+    , breaks = pretty_breaks(12)
+    ) +
+  labs(
+    x = &amp;quot;&amp;quot;
+  , y = &amp;quot;BMI&amp;quot;
+  ) +
+  theme_classic()
+
+Plot6&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/Plot6-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Plot7 &amp;lt;-
+  ggplot(data = Data, mapping = aes(y = BMI)) +
+  geom_boxplot(stat = &amp;quot;boxplot&amp;quot;, outlier.colour = &amp;quot;red&amp;quot;) +
+  facet_grid(cols = vars(Gender)) +
+  scale_x_discrete() +
+  scale_y_continuous(
+      expand = c(0, NA)
+    , limits = c(0, NA)
+    , labels = scales::comma
+    , breaks = pretty_breaks(12)
+    ) +
+  labs(
+    x = &amp;quot;&amp;quot;
+  , y = &amp;quot;BMI&amp;quot;
+  ) +
+  theme_classic()
+
+Plot7&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/Plot7-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(moments)
+Out6 &amp;lt;-
+  Data |&amp;gt;
+  summarise(
+    n        = length(BMI)
+  , Mean     = mean(BMI)
+  , Variance = var(BMI)
+  , SD       = sd(BMI)
+  , SK       = skewness(BMI)
+  , K        = kurtosis(BMI)
+  )
+
+Out6&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 1 × 6
+      n  Mean Variance    SD    SK     K
+  &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1  8819  25.1     57.6  7.59  1.20  8.51&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out7 &amp;lt;-
+  Data |&amp;gt;
+  filter(BMI &amp;lt; 70) |&amp;gt;
+  summarise(
+    n        = length(BMI)
+  , Mean     = mean(BMI)
+  , Variance = var(BMI)
+  , SD       = sd(BMI)
+  , SK       = skewness(BMI)
+  , K        = kurtosis(BMI)
+  )
+Out7&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 1 × 6
+      n  Mean Variance    SD    SK     K
+  &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1  8816  25.1     55.8  7.47 0.885  4.19&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out8 &amp;lt;-
+  Data |&amp;gt;
+  group_by(Gender) |&amp;gt;
+    summarise(
+    n        = length(BMI)
+  , Mean     = mean(BMI)
+  , Variance = var(BMI)
+  , SD       = sd(BMI)
+  , SK       = skewness(BMI)
+  , K        = kurtosis(BMI)
+  )
+Out8&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 × 7
+  Gender     n  Mean Variance    SD    SK     K
+  &amp;lt;fct&amp;gt;  &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1 Male    4305  24.7     50.9  7.14 1.46  14.8 
+2 Female  4514  25.4     63.6  7.98 0.994  4.55&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out9 &amp;lt;-
+  Data |&amp;gt;
+  filter(BMI &amp;lt; 70) |&amp;gt;
+  group_by(Gender) |&amp;gt;
+    summarise(
+    n        = length(BMI)
+  , Mean     = mean(BMI)
+  , Variance = var(BMI)
+  , SD       = sd(BMI)
+  , SK       = skewness(BMI)
+  , K        = kurtosis(BMI)
+  )
+
+Out9&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 × 7
+  Gender     n  Mean Variance    SD    SK     K
+  &amp;lt;fct&amp;gt;  &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1 Male    4304  24.7     48.3  6.95 0.773  4.11
+2 Female  4512  25.4     62.6  7.91 0.923  4.07&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;correlation-analysis&#34; class=&#34;section level1&#34; number=&#34;4&#34;&gt;
+&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;4&lt;/span&gt; Correlation Analysis&lt;/h1&gt;
+&lt;div id=&#34;example-2&#34; class=&#34;section level3&#34; number=&#34;4.0.1&#34;&gt;
+&lt;h3&gt;&lt;span class=&#34;header-section-number&#34;&gt;4.0.1&lt;/span&gt; Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: &lt;a href=&#34;https://www.cdc.gov/nchs/nhanes.htm&#34;&gt;https://www.cdc.gov/nchs/nhanes.htm&lt;/a&gt; . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out10 &amp;lt;-
+  Data |&amp;gt;
+  select(BMI, Age) |&amp;gt;
+  var()
+
+Out10&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         BMI       Age
+BMI 57.55196  81.74215
+Age 81.74215 504.62626&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out11 &amp;lt;-
+  Data |&amp;gt;
+  select(BMI, Age) |&amp;gt;
+  cor()
+Out11&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;          BMI       Age
+BMI 1.0000000 0.4796573
+Age 0.4796573 1.0000000&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out12 &amp;lt;-
+  Data |&amp;gt;
+  filter(BMI &amp;lt; 70) |&amp;gt;
+  select(BMI, Age) |&amp;gt;
+  var()
+Out12&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         BMI      Age
+BMI 55.76963  81.6055
+Age 81.60550 504.7595&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Out13 &amp;lt;-
+  Data |&amp;gt;
+  filter(BMI &amp;lt; 70) |&amp;gt;
+  select(BMI, Age) |&amp;gt;
+  cor()
+Out13&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;          BMI       Age
+BMI 1.0000000 0.4863829
+Age 0.4863829 1.0000000&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Data |&amp;gt;
+  filter(Gender == &amp;quot;Male&amp;quot;) |&amp;gt;
+  select(BMI, Age) |&amp;gt;
+  var()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         BMI       Age
+BMI 50.91307  82.28081
+Age 82.28081 531.44024&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Data |&amp;gt;
+  filter(Gender == &amp;quot;Male&amp;quot;) |&amp;gt;
+  select(BMI, Age) |&amp;gt;
+  cor()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         BMI      Age
+BMI 1.000000 0.500215
+Age 0.500215 1.000000&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Data |&amp;gt;
+  filter(Gender == &amp;quot;Female&amp;quot;) |&amp;gt;
+  select(BMI, Age) |&amp;gt;
+  var()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         BMI      Age
+BMI 63.63634  81.5858
+Age 81.58580 478.7229&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Data |&amp;gt;
+  filter(Gender == &amp;quot;Female&amp;quot;) |&amp;gt;
+  select(BMI, Age) |&amp;gt;
+  cor()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;          BMI       Age
+BMI 1.0000000 0.4674336
+Age 0.4674336 1.0000000&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;an-introduction-to-linear-models&#34; class=&#34;section level1&#34; number=&#34;5&#34;&gt;
+&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;5&lt;/span&gt; An Introduction to Linear Models&lt;/h1&gt;
+&lt;div id=&#34;regression-analysis&#34; class=&#34;section level2&#34; number=&#34;5.1&#34;&gt;
+&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;5.1&lt;/span&gt; Regression Analysis&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Quantifying dependency of a normal response on quantitative explanatory variable(s)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:PopRegFn&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://github.com/myaseen208/material/raw/main/PopRegFn.png&#34; alt=&#34;Population Regression Function&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 5.1: Population Regression Function
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div id=&#34;example-3&#34; class=&#34;section level3&#34; number=&#34;5.1.1&#34;&gt;
+&lt;h3&gt;&lt;span class=&#34;header-section-number&#34;&gt;5.1.1&lt;/span&gt; Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: &lt;a href=&#34;https://www.cdc.gov/nchs/nhanes.htm&#34;&gt;https://www.cdc.gov/nchs/nhanes.htm&lt;/a&gt; . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fm1Plot1 &amp;lt;-
+  ggplot(data = Data, mapping = aes(x = Age, y = BMI)) +
+  geom_point() +
+  theme_classic()
+
+fm1Plot1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/fm1Plot1-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fm1 &amp;lt;- lm(formula = BMI ~ Age, data = Data)
+summary(fm1)$coef&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;              Estimate  Std. Error  t value Pr(&amp;gt;|t|)
+(Intercept) 20.3072818 0.116956424 173.6312        0
+Age          0.1619855 0.003155804  51.3294        0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;anova(fm1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Analysis of Variance Table
+
+Response: BMI
+            Df Sum Sq Mean Sq F value    Pr(&amp;gt;F)    
+Age          1 116760  116760  2634.7 &amp;lt; 2.2e-16 ***
+Residuals 8817 390734      44                      
+---
+Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(emmeans)
+fm1Plot2 &amp;lt;-
+  emmip(
+      object     = fm1
+    , formula    =  ~ Age
+    , cov.reduce = range
+    ) +
+  scale_x_continuous(breaks = pretty_breaks(12)) +
+  scale_y_continuous(breaks = pretty_breaks(12)) +
+  labs(x = &amp;quot;Age&amp;quot;, y = &amp;quot;BMI&amp;quot;) +
+  theme_classic()
+fm1Plot2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/fm1Plot2-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggpmisc)
+fm1Plot3 &amp;lt;-
+  ggplot(data = Data, mapping = aes(x = Age, y = BMI)) +
+  geom_point() +
+  geom_smooth(method = &amp;quot;lm&amp;quot;, se = FALSE, color = &amp;quot;black&amp;quot;, formula = y ~ x) +
+  stat_poly_eq(
+      formula = y ~ x
+    , eq.with.lhs = FALSE
+    , mapping = aes(
+                   label = paste(&amp;quot;widehat(italic(BMI))&amp;quot;, &amp;quot;~`=`~&amp;quot;, gsub(&amp;quot;italic(x)&amp;quot;,&amp;quot;Age&amp;quot;,..eq.label..,fixed = TRUE),  &amp;quot;~~~&amp;quot;, ..rr.label..,  &amp;quot;~~~&amp;quot;,  ..adj.rr.label.., &amp;quot;~~~&amp;quot;,  ..p.value.label.. ,  sep = &amp;quot;&amp;quot;)
+                  )
+    , size  = 4.5
+    , parse = TRUE
+    ) +
+  theme_classic()
+
+fm1Plot3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/fm1Plot3-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;analysis-of-variance-anova&#34; class=&#34;section level2&#34; number=&#34;5.2&#34;&gt;
+&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;5.2&lt;/span&gt; Analysis of Variance (ANOVA)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Comparing means of Normal dependent variable for levels of different factor(s)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:ANOVANormalMeans&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://github.com/myaseen208/material/raw/main/ANOVANormalMeans.png&#34; alt=&#34;Analysis of Variance&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 5.2: Analysis of Variance
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div id=&#34;example-4&#34; class=&#34;section level3&#34; number=&#34;5.2.1&#34;&gt;
+&lt;h3&gt;&lt;span class=&#34;header-section-number&#34;&gt;5.2.1&lt;/span&gt; Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: &lt;a href=&#34;https://www.cdc.gov/nchs/nhanes.htm&#34;&gt;https://www.cdc.gov/nchs/nhanes.htm&lt;/a&gt; . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fm2 &amp;lt;- lm(formula = BMI ~ Gender, data = Data)
+anova(fm2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Analysis of Variance Table
+
+Response: BMI
+            Df Sum Sq Mean Sq F value    Pr(&amp;gt;F)    
+Gender       1   1173 1172.53  20.418 6.304e-06 ***
+Residuals 8817 506321   57.43                      
+---
+Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fm2Plot1 &amp;lt;-
+  emmip(
+      object     = fm2
+    , formula    =  ~ Gender
+    ) +
+  scale_y_continuous(breaks = pretty_breaks(12)) +
+  labs(x = &amp;quot;Gender&amp;quot;, y = &amp;quot;BMI&amp;quot;) +
+  theme_classic()
+fm2Plot1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/fm2Plot1-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;analysis-of-covariance-ancova&#34; class=&#34;section level2&#34; number=&#34;5.3&#34;&gt;
+&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;5.3&lt;/span&gt; Analysis of Covariance (ANCOVA)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Quantifying dependency of a normal response on quantitative explanatory variable(s)&lt;/li&gt;
+&lt;li&gt;Comparing means of Normal dependent variable for levels of different factor(s)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:ANCOVA&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://github.com/myaseen208/material/raw/main/ANCOVA.png&#34; alt=&#34;Analysis of Covariance&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 5.3: Analysis of Covariance
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div id=&#34;example-5&#34; class=&#34;section level3&#34; number=&#34;5.3.1&#34;&gt;
+&lt;h3&gt;&lt;span class=&#34;header-section-number&#34;&gt;5.3.1&lt;/span&gt; Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data shows the ID, Gender (Male, Female), Age, Race (Mexican American, Non-Hispanic Black, Non-Hispanic White, Other Hispanic, Other/Mixed), BMI, and BMI.Cat (Under Weight, Normal Weight, Over Weight, Obese) from the National Health and Nutrition Examination Survey (NHANES). The survey is conducted by the National Center for Health Statistics (NCHS), and data are publicly available at: &lt;a href=&#34;https://www.cdc.gov/nchs/nhanes.htm&#34;&gt;https://www.cdc.gov/nchs/nhanes.htm&lt;/a&gt; . NHANES data are reported in well over one thousand peer-reviewed journal publications every year.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fm3 &amp;lt;- lm(formula = BMI ~ Age*Gender, data = Data)
+anova(fm3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Analysis of Variance Table
+
+Response: BMI
+             Df Sum Sq Mean Sq   F value    Pr(&amp;gt;F)    
+Age           1 116760  116760 2647.6079 &amp;lt; 2.2e-16 ***
+Gender        1   1722    1722   39.0430 4.338e-10 ***
+Age:Gender    1    270     270    6.1294   0.01331 *  
+Residuals  8815 388742      44                        
+---
+Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(fm3)$coef&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                    Estimate  Std. Error    t value      Pr(&amp;gt;|t|)
+(Intercept)      20.06946217 0.165999451 120.900775  0.000000e+00
+Age               0.15482609 0.004390925  35.260475 6.652534e-255
+GenderFemale      0.42441011 0.233467368   1.817856  6.912004e-02
+Age:GenderFemale  0.01559778 0.006300190   2.475763  1.331382e-02&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fm3Plot1 &amp;lt;-
+  emmip(
+      object     = fm3
+    , formula    = Gender ~ Age
+    , cov.reduce = range
+    ) +
+  scale_x_continuous(breaks = pretty_breaks(12)) +
+  scale_y_continuous(breaks = pretty_breaks(12)) +
+  labs(x = &amp;quot;Age&amp;quot;, y = &amp;quot;BMI&amp;quot;) +
+  theme_classic()
+fm3Plot1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/blogs/2022-05-20_TUF_files/figure-html/fm3Plot1-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;an-introduction-to-r&#34; class=&#34;section level1&#34; number=&#34;6&#34;&gt;
+&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;6&lt;/span&gt; An Introduction to R&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt; is a free, open-source programming language and software environment for statistical computing, bioinformatics, visualization and general computing. &lt;strong&gt;R&lt;/strong&gt; provides a wide variety of statistical and graphical techniques, and is highly extensible. The latest version of &lt;strong&gt;R&lt;/strong&gt; can be obtained from &lt;a href=&#34;https://cran.r-project.org/bin/windows/base/&#34;&gt;https://cran.r-project.org/bin/windows/base/&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h4&gt;
+&lt;a href=&#34;https://cran.r-project.org/bin/windows/base/&#34; class=&#34;badge badge-small&#34;&gt;&lt;i class=&#34;fa fa-file-pdf-o&#34;&gt;&lt;/i&gt;  R&lt;/a&gt; &lt;a href=&#34;https://cran.r-project.org/bin/windows/base/&#34;&gt;R for Windows (32/64 bit)&lt;/a&gt;  
+&lt;/h4&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h4&gt;
+&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34; class=&#34;badge badge-small&#34;&gt;&lt;i class=&#34;fa fa-file-pdf-o&#34;&gt;&lt;/i&gt;  RStudio&lt;/a&gt; &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34;&gt;RStudio&lt;/a&gt;  
+&lt;/h4&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h4&gt;
+&lt;a href=&#34;https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf&#34; class=&#34;badge badge-small&#34;&gt;&lt;i class=&#34;fa fa-file-pdf-o&#34;&gt;&lt;/i&gt;  Manual&lt;/a&gt; &lt;a href=&#34;https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf&#34;&gt;An Introduction to R&lt;/a&gt;  
+&lt;/h4&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h4&gt;
+&lt;a href=&#34;https://cran.r-project.org/doc/contrib/Short-refcard.pdf&#34; class=&#34;badge badge-small&#34;&gt;&lt;i class=&#34;fa fa-file-pdf-o&#34;&gt;&lt;/i&gt;  Ref Card&lt;/a&gt; &lt;a href=&#34;https://cran.r-project.org/doc/contrib/Short-refcard.pdf&#34;&gt;R Reference Card&lt;/a&gt;  
+&lt;/h4&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h4&gt;
+&lt;a href=&#34;https://github.com/myaseen208/R-Workshop/raw/master/2009NewYorkTimes.pdf&#34; class=&#34;badge badge-small&#34;&gt;&lt;i class=&#34;fa fa-file-pdf-o&#34;&gt;&lt;/i&gt;  New York Times&lt;/a&gt; &lt;a href=&#34;https://github.com/myaseen208/R-Workshop/raw/master/2009NewYorkTimes.pdf&#34;&gt;New York Times&lt;/a&gt;  
+&lt;/h4&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h4&gt;
+&lt;a href=&#34;https://github.com/myaseen208/R-Workshop/raw/master/2015NatureArticle.pdf&#34; class=&#34;badge badge-small&#34;&gt;&lt;i class=&#34;fa fa-file-pdf-o&#34;&gt;&lt;/i&gt;  Nature Article&lt;/a&gt; &lt;a href=&#34;https://github.com/myaseen208/R-Workshop/raw/master/2015NatureArticle.pdf&#34;&gt;Nature Article&lt;/a&gt;  
+&lt;/h4&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bioinformatics with R</title>
+      <link>https://myaseen208.com/blogs/2018-bioinfor/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://myaseen208.com/blogs/2018-bioinfor/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#statistics&#34;&gt;Statistics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#variable&#34;&gt;Variable&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#measurement&#34;&gt;Measurement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#measurement-scales&#34;&gt;Measurement Scales&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#nominal-data&#34;&gt;Nominal Data&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#example&#34;&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#example-1&#34;&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ordinal-data&#34;&gt;Ordinal Data&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#example-2&#34;&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#two-way-contingency-table&#34;&gt;Two Way Contingency Table&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#example-3&#34;&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#example-4&#34;&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#count-data&#34;&gt;Count Data&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#example-5&#34;&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#continuous-data&#34;&gt;Continuous Data&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#example-6&#34;&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#example-7&#34;&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#measures-of-centeral-tendency&#34;&gt;Measures of Centeral Tendency&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#measures-of-dispersion&#34;&gt;Measures of Dispersion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#measures-of-skewness&#34;&gt;Measures of Skewness&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#measures-of-skewness-1&#34;&gt;Measures of Skewness&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;statistics&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Statistics&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Statistics is the science of uncertainty &amp;amp; variability&lt;/li&gt;
+&lt;li&gt;Statistics turns data into information&lt;/li&gt;
+&lt;li&gt;Data -&amp;gt; Information -&amp;gt; Knowledge -&amp;gt; Wisdom&lt;/li&gt;
+&lt;li&gt;Data Driven Decisions (3Ds)&lt;/li&gt;
+&lt;li&gt;Statistics is the interpretation of Science&lt;/li&gt;
+&lt;li&gt;Statistics is the Art &amp;amp; Science of learning from data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;variable&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Variable&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Characteristic that may vary from individual to individual&lt;/li&gt;
+&lt;li&gt;Height, Weight, CGPA etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measurement&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Measurement&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Process of assigning numbers or labels to objects or states in accordance with logically accepted rules&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measurement-scales&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Measurement Scales&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nominal Scale:&lt;/strong&gt; Obersvations may be classified into mutually exclusive &amp;amp; exhaustive classes or categories&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ordinal Scale:&lt;/strong&gt; Obersvations may be ranked&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interval Scale:&lt;/strong&gt; Difference between obersvations is meaningful&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ratio Scale:&lt;/strong&gt; Ratio between obersvations is meaningful &amp;amp; true zero point&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div id=&#34;nominal-data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Nominal Data&lt;/h2&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data shows the gender of a sample of twenty students from the University of Agriculture, Faisalabad.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Student&lt;/th&gt;
+&lt;th&gt;Gender&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!require(&amp;quot;tidyverse&amp;quot;)) install.packages(&amp;quot;tidyverse&amp;quot;)
+# library(tidyverse)
+df1 &amp;lt;- tibble::tibble(
+    Student = seq(from = 1, to = 20, by = 1)
+  , Gender  = rep(x = c(&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Male&amp;quot;), c(2, 4, 4, 2, 2, 2, 4))
+  )
+df1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 20 x 2
+   Student Gender
+     &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; 
+ 1       1 Male  
+ 2       2 Male  
+ 3       3 Female
+ 4       4 Female
+ 5       5 Female
+ 6       6 Female
+ 7       7 Male  
+ 8       8 Male  
+ 9       9 Male  
+10      10 Male  
+11      11 Female
+12      12 Female
+13      13 Male  
+14      14 Male  
+15      15 Female
+16      16 Female
+17      17 Male  
+18      18 Male  
+19      19 Male  
+20      20 Male  &lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;frequency-table&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Frequency Table&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df1Freq &amp;lt;- 
+      df1 %&amp;gt;%
+      dplyr::count(Gender) %&amp;gt;%
+      dplyr::rename(f = n) %&amp;gt;%
+      dplyr::mutate(
+        rf = f/sum(f)
+      , pf = rf*100  
+      )
+df1Freq&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 x 4
+  Gender     f    rf    pf
+  &amp;lt;chr&amp;gt;  &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1 Female     8   0.4    40
+2 Male      12   0.6    60&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-bar-chart&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Simple Bar Chart&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df1
+    ,  mapping = aes(x = Gender)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Simple Bar Chart&amp;quot;, x = &amp;quot;Gender&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-3-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example-1&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Following data presents the number of nucleotides of gene sequence (A, C, G, T). This is illustrated by the Zyxin gene which plays an important role in cell adhesion (Golub et al, 1999). The accession number (X94991.1) of one of its variants can be found in a data base like NCBI (UniGene). Given data will be used to illustrate the construction of pie chart from the frequency table of four nucleotides.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;A&lt;/th&gt;
+&lt;th&gt;C&lt;/th&gt;
+&lt;th&gt;G&lt;/th&gt;
+&lt;th&gt;T&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;410&lt;/td&gt;
+&lt;td&gt;789&lt;/td&gt;
+&lt;td&gt;573&lt;/td&gt;
+&lt;td&gt;394&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Data from the GenBank can also be imported directly by the following code.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# install.packages(pkgs = &amp;quot;ape&amp;quot;, repo = &amp;quot;http://cran.r-project.org&amp;quot;, dependencies =TRUE)
+# library(ape)
+# df2 &amp;lt;- table(read.GenBank(c(&amp;quot;X94991.1&amp;quot;),as.character=TRUE))
+# df2&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;frequency-table-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Frequency Table&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df3 &amp;lt;- tibble(
+    G.Sequence   = c(&amp;quot;A&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;G&amp;quot;, &amp;quot;T&amp;quot;)
+  , Nucleotides  = c(410, 789, 573, 394)
+  )
+df3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 4 x 2
+  G.Sequence Nucleotides
+  &amp;lt;chr&amp;gt;            &amp;lt;dbl&amp;gt;
+1 A                  410
+2 C                  789
+3 G                  573
+4 T                  394&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-bar-chart-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Simple Bar Chart&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+        data = df3
+      , mapping = aes(x = G.Sequence, y = Nucleotides)) +
+  geom_bar(stat = &amp;quot;identity&amp;quot;) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Simple Bar Chart&amp;quot;, x = &amp;quot;Gene Sequence&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-6-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ordinal-data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Ordinal Data&lt;/h2&gt;
+&lt;div id=&#34;example-2&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data shows the grades of a sample of twenty students from the University of Agriculture, Faisalabad.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Student&lt;/th&gt;
+&lt;th&gt;Grade&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df4 &amp;lt;- tibble::tibble(
+    Student = seq(from = 1, to = 20, by = 1)
+  , Grade  = c(&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;D&amp;quot;, &amp;quot;F&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;D&amp;quot;, &amp;quot;F&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;D&amp;quot;, &amp;quot;C&amp;quot;,  &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;D&amp;quot;)
+  )
+df4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 20 x 2
+   Student Grade
+     &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;
+ 1       1 A    
+ 2       2 B    
+ 3       3 B    
+ 4       4 C    
+ 5       5 A    
+ 6       6 D    
+ 7       7 F    
+ 8       8 C    
+ 9       9 B    
+10      10 D    
+11      11 F    
+12      12 A    
+13      13 B    
+14      14 B    
+15      15 C    
+16      16 D    
+17      17 C    
+18      18 B    
+19      19 C    
+20      20 D    &lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;frequency-table-2&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Frequency Table&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df4Freq &amp;lt;- 
+      df4 %&amp;gt;%
+      dplyr::count(Grade) %&amp;gt;%
+      dplyr::rename(f = n) %&amp;gt;%
+      dplyr::mutate(
+        rf = f/sum(f)
+      , pf = rf*100
+      , cf = cumsum(f)
+      )
+df4Freq&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 5 x 5
+  Grade     f    rf    pf    cf
+  &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;
+1 A         3  0.15    15     3
+2 B         6  0.3     30     9
+3 C         5  0.25    25    14
+4 D         4  0.2     20    18
+5 F         2  0.1     10    20&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-bar-chart-2&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Simple Bar Chart&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df4
+    ,  mapping = aes(x = Grade)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Simple Bar Chart&amp;quot;, x = &amp;quot;Grades&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-9-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;two-way-contingency-table&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Two Way Contingency Table&lt;/h2&gt;
+&lt;div id=&#34;example-3&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data shows the gender and residental status of a sample of twenty students from the University of Agriculture, Faisalabad.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Student&lt;/th&gt;
+&lt;th&gt;Gender&lt;/th&gt;
+&lt;th&gt;RS&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Non-Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;Boarding&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df5 &amp;lt;- tibble::tibble(
+    Student = seq(from = 1, to = 20, by = 1)
+  , Gender  = rep(x = c(&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;, &amp;quot;Male&amp;quot;), c(2, 4, 4, 2, 2, 2, 4))
+  , RS      = c(&amp;quot;B&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;NB&amp;quot;, &amp;quot;B&amp;quot;)
+  )
+df5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 20 x 3
+   Student Gender RS   
+     &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt;
+ 1       1 Male   B    
+ 2       2 Male   NB   
+ 3       3 Female NB   
+ 4       4 Female B    
+ 5       5 Female B    
+ 6       6 Female NB   
+ 7       7 Male   NB   
+ 8       8 Male   B    
+ 9       9 Male   NB   
+10      10 Male   NB   
+11      11 Female NB   
+12      12 Female B    
+13      13 Male   NB   
+14      14 Male   NB   
+15      15 Female NB   
+16      16 Female NB   
+17      17 Male   NB   
+18      18 Male   NB   
+19      19 Male   NB   
+20      20 Male   B    &lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;cross-tables&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Cross Tables&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df5 %&amp;gt;%
+  dplyr::count(Gender) %&amp;gt;%
+  dplyr::rename(f = n)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 x 2
+  Gender     f
+  &amp;lt;chr&amp;gt;  &amp;lt;int&amp;gt;
+1 Female     8
+2 Male      12&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df5 %&amp;gt;%
+  dplyr::count(RS) %&amp;gt;%
+  dplyr::rename(f = n)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 x 2
+  RS        f
+  &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt;
+1 B         6
+2 NB       14&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df5 %&amp;gt;%
+  dplyr::count(Gender, RS) %&amp;gt;%
+  dplyr::rename(f = n)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 4 x 3
+  Gender RS        f
+  &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt;
+1 Female B         3
+2 Female NB        5
+3 Male   B         3
+4 Male   NB        9&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!require(&amp;quot;janitor&amp;quot;)) install.packages(&amp;quot;janitor&amp;quot;)
+# library(janitor)
+df5CrossTab &amp;lt;- 
+      df5 %&amp;gt;%
+      janitor::tabyl(dat = ., var1 = Gender, var2 = RS) %&amp;gt;%
+      janitor::adorn_totals(dat = ., where = c(&amp;quot;row&amp;quot;, &amp;quot;col&amp;quot;))
+df5CrossTab&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt; Gender B NB Total
+ Female 3  5     8
+   Male 3  9    12
+  Total 6 14    20&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-bar-charts&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Simple Bar Charts&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df5
+    ,  mapping = aes(x = Gender)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Simple Bar Chart&amp;quot;, x = &amp;quot;Gender&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-15-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df5
+    ,  mapping = aes(x = RS)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Simple Bar Chart&amp;quot;, x = &amp;quot;Residental Status&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-16-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;multiple-bar-charts&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Multiple Bar Charts&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df5
+    ,  mapping = aes(x = Gender, fill = RS)) +
+  geom_bar(position = &amp;quot;dodge&amp;quot;) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Multiple Bar Chart&amp;quot;, x = &amp;quot;Gender&amp;quot;, fill = &amp;quot;Residental Status&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-17-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df5
+    ,  mapping = aes(x = RS, fill = Gender)) +
+  geom_bar(position = &amp;quot;dodge&amp;quot;) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Multiple Bar Chart&amp;quot;, x = &amp;quot;Residental Status&amp;quot;, fill = &amp;quot;Gender&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-18-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;component-bar-charts&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Component Bar Charts&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df5
+    ,  mapping = aes(x = Gender, fill = RS)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Component Bar Chart&amp;quot;, x = &amp;quot;Gender&amp;quot;, fill = &amp;quot;Residental Status&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-19-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df5
+    ,  mapping = aes(x = RS, fill = Gender)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Component Bar Chart&amp;quot;, x = &amp;quot;Residental Status&amp;quot;, fill = &amp;quot;Gender&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-20-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example-4&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Source: OMB Statistical Policy Working Paper 22. &lt;a href=&#34;https://www.hhs.gov/sites/default/files/spwp22.pdf&#34; class=&#34;uri&#34;&gt;https://www.hhs.gov/sites/default/files/spwp22.pdf&lt;/a&gt;
+Following data set consists of information concerning delinquent children. Recorded variables are Number of Delinquent Children by County and Education Level of Household Head.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div id=&#34;cross-tables-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Cross Tables&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df6 &amp;lt;- tibble(
+  Delinquent = gl(n = 4, k = 4, length = 16, labels = c(&amp;quot;Alpha&amp;quot;, &amp;quot;Beta&amp;quot;, &amp;quot;Gamma&amp;quot;, &amp;quot;Delta&amp;quot;))
+, EduLevel   = gl(n = 4, k = 1, length = 16, labels = c(&amp;quot;Low&amp;quot;, &amp;quot;Medium&amp;quot;, &amp;quot;High&amp;quot;, &amp;quot;Very High&amp;quot;))
+, Freq       = c(15, 0, 5, 0, 20, 10, 10, 15, 5, 10, 10, 0, 10, 15, 5, 5)
+)
+
+df6&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 16 x 3
+   Delinquent EduLevel   Freq
+   &amp;lt;fct&amp;gt;      &amp;lt;fct&amp;gt;     &amp;lt;dbl&amp;gt;
+ 1 Alpha      Low          15
+ 2 Alpha      Medium        0
+ 3 Alpha      High          5
+ 4 Alpha      Very High     0
+ 5 Beta       Low          20
+ 6 Beta       Medium       10
+ 7 Beta       High         10
+ 8 Beta       Very High    15
+ 9 Gamma      Low           5
+10 Gamma      Medium       10
+11 Gamma      High         10
+12 Gamma      Very High     0
+13 Delta      Low          10
+14 Delta      Medium       15
+15 Delta      High          5
+16 Delta      Very High     5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df6 %&amp;gt;%
+  xtabs(data = ., Freq ~ Delinquent)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Delinquent
+Alpha  Beta Gamma Delta 
+   20    55    25    35 &lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df6 %&amp;gt;%
+  xtabs(data = ., Freq ~ EduLevel)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;EduLevel
+      Low    Medium      High Very High 
+       50        35        30        20 &lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df6 %&amp;gt;%
+  xtabs(data = ., Freq ~ Delinquent + EduLevel)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;          EduLevel
+Delinquent Low Medium High Very High
+     Alpha  15      0    5         0
+     Beta   20     10   10        15
+     Gamma   5     10   10         0
+     Delta  10     15    5         5&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;multiple-bar-charts-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Multiple Bar Charts&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df6
+    ,  mapping = aes(x = Delinquent, y = Freq, fill = EduLevel)) +
+  geom_bar(stat = &amp;quot;identity&amp;quot;, position = &amp;quot;dodge&amp;quot;) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Multiple Bar Chart&amp;quot;, x = &amp;quot;Delinquent&amp;quot;, fill = &amp;quot;Education Level&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-25-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df6
+    ,  mapping = aes(x = EduLevel, y = Freq, fill = Delinquent)) +
+  geom_bar(stat = &amp;quot;identity&amp;quot;, position = &amp;quot;dodge&amp;quot;) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Multiple Bar Chart&amp;quot;, x = &amp;quot;Education Level&amp;quot;, fill = &amp;quot;Delinquent&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-26-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;component-bar-charts-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Component Bar Charts&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df6
+    ,  mapping = aes(x = Delinquent, y = Freq, fill = EduLevel)) +
+  geom_bar(stat = &amp;quot;identity&amp;quot;) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Component Bar Chart&amp;quot;, x = &amp;quot;Delinquent&amp;quot;, fill = &amp;quot;Education Level&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-27-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df6
+    ,  mapping = aes(x = EduLevel, y = Freq, fill = Delinquent)) +
+  geom_bar(stat = &amp;quot;identity&amp;quot;) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Component Bar Chart&amp;quot;, x = &amp;quot;Education Level&amp;quot;, fill = &amp;quot;Delinquent&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-28-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;count-data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Count Data&lt;/h2&gt;
+&lt;div id=&#34;example-5&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data shows the number of notebook a sample of twenty students keeping.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Student&lt;/th&gt;
+&lt;th&gt;Notebook&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df7 &amp;lt;- tibble::tibble(
+    Student  = seq(from = 1, to = 20, by = 1)
+  , Notebook = c(3, 1, 0, 2, 2, 4, 5, 1, 1, 2, 3, 4, 2, 5, 1, 5, 4, 2, 2, 3)
+  )
+df7&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 20 x 2
+   Student Notebook
+     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+ 1       1        3
+ 2       2        1
+ 3       3        0
+ 4       4        2
+ 5       5        2
+ 6       6        4
+ 7       7        5
+ 8       8        1
+ 9       9        1
+10      10        2
+11      11        3
+12      12        4
+13      13        2
+14      14        5
+15      15        1
+16      16        5
+17      17        4
+18      18        2
+19      19        2
+20      20        3&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;frequency-table-3&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Frequency Table&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df7Freq &amp;lt;- 
+      df7 %&amp;gt;%
+      dplyr::count(Notebook) %&amp;gt;%
+      dplyr::rename(f = n) %&amp;gt;%
+      dplyr::mutate(
+        rf = f/sum(f)
+      , pf = rf*100
+      , cf = cumsum(f)
+      )
+df7Freq&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 6 x 5
+  Notebook     f    rf    pf    cf
+     &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;
+1        0     1  0.05     5     1
+2        1     4  0.2     20     5
+3        2     6  0.3     30    11
+4        3     3  0.15    15    14
+5        4     3  0.15    15    17
+6        5     3  0.15    15    20&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-bar-chart-3&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Simple Bar Chart&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df7
+    ,  mapping = aes(x = Notebook)) +
+  geom_bar() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = &amp;quot;Simple Bar Chart&amp;quot;, x = &amp;quot;Notebooks&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-31-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;continuous-data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Continuous Data&lt;/h2&gt;
+&lt;div id=&#34;example-6&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following data is the final plant height (cm) of thirty plants of wheat.
+87 91 89 88 89 91 87 92 90 98 95 97 96 100 101
+96 98 99 98 100 102 99 101 105 103 107 105 106 107 112&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df8 &amp;lt;- tibble::tibble(
+  PlantHeight = c(
+  87,   91, 89, 88, 89, 91, 87, 92, 90, 98, 95, 97, 96, 100,    101,
+  96,   98, 99, 98, 100,    102,    99, 101,    105,    103,    107,    105,    106,    107,    112
+  )
+)
+df8&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 30 x 1
+   PlantHeight
+         &amp;lt;dbl&amp;gt;
+ 1          87
+ 2          91
+ 3          89
+ 4          88
+ 5          89
+ 6          91
+ 7          87
+ 8          92
+ 9          90
+10          98
+# ... with 20 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;frequency-distribution&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Frequency Distribution&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df9 &amp;lt;- df8 %&amp;gt;% 
+  summarize(
+    R = max(PlantHeight) - min(PlantHeight)
+  , k = floor(1 + 3.3*log10(length(PlantHeight)))
+  , h = R/k
+    )
+
+df8Freq &amp;lt;- df8 %&amp;gt;% 
+  mutate(
+          Classes = cut(
+                         x              = PlantHeight
+                       , breaks         = df9$k
+                       , include.lowest = TRUE
+                       , right          = FALSE
+                       )
+          ) %&amp;gt;%
+  count(Classes) %&amp;gt;% 
+  tidyr::separate(col = Classes, into = c(&amp;quot;LB&amp;quot;, &amp;quot;UB&amp;quot;), sep = &amp;quot;,&amp;quot;, remove = FALSE) %&amp;gt;%
+  rename(f = n) %&amp;gt;%
+  mutate(
+    LB = readr::parse_number(x = LB)
+  , UB = readr::parse_number(x = UB)
+  , rf = f/sum(f)
+  , pf = f/sum(f)*100
+  , cf = cumsum(f)
+  , MidPoint = (LB + UB)/2
+  ) 
+  
+df8Freq&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 5 x 8
+  Classes      LB    UB     f    rf    pf    cf MidPoint
+  &amp;lt;fct&amp;gt;     &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;dbl&amp;gt;
+1 [87,92)      87    92     8 0.267  26.7     8     89.5
+2 [92,97)      92    97     4 0.133  13.3    12     94.5
+3 [97,102)     97   102    10 0.333  33.3    22     99.5
+4 [102,107)   102   107     5 0.167  16.7    27    104. 
+5 [107,112]   107   112     3 0.1    10      30    110. &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;histogram&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Histogram&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df8
+     , mapping = aes(x = PlantHeight)) + 
+  geom_histogram() +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = &amp;quot;Histogram for Plant Height&amp;quot;, x = &amp;quot;Plant Height&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-34-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data = df8Freq, mapping = aes(x = MidPoint, y = f))  + 
+  geom_point() + 
+  geom_line() + 
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = &amp;quot;Frequency for Plant Height&amp;quot;, x = &amp;quot;Mid Point&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-35-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data = df8Freq, mapping = aes(x = MidPoint, y = cf)) + 
+  geom_point()+ 
+  geom_line() +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = &amp;quot;Cummulative Frequency Polygon&amp;quot;, x = &amp;quot;Mid Point&amp;quot;, y = &amp;quot;Cummulative Frequency&amp;quot;) + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-36-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stem-and-leaf-plot&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Stem and Leaf Plot&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;stem(x = df8$PlantHeight, scale = 1, width = 80, atom = 1e-08)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;
+  The decimal point is 1 digit(s) to the right of the |
+
+   8 | 77899
+   9 | 0112
+   9 | 566788899
+  10 | 001123
+  10 | 55677
+  11 | 2&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;box-plot&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Box Plot&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data = df8 , aes( y = PlantHeight)) + 
+  geom_boxplot()+
+  theme_bw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-38-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example-7&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The golub table contains gene expression values from 3051 genes taken from 38 Leukemia patients. Twenty seven patients are diagnosed as acute lymphoblastic leukemia (ALL) and eleven as acute myeloid leukemia (AML). The golub.gnames table contains information on the gene, including gene index, manufacturing ID, and biological name. Following table presents the gene expression value by their tumor type.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;tumortype&lt;/th&gt;
+&lt;th&gt;genevalue&lt;/th&gt;
+&lt;th&gt;tumortype&lt;/th&gt;
+&lt;th&gt;genevalue&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;2.10892&lt;/td&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.78352&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.52405&lt;/td&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;0.45827&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.96403&lt;/td&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;2.18119&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;2.33597&lt;/td&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;2.31428&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.85111&lt;/td&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.99927&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.99391&lt;/td&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.36844&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;2.06597&lt;/td&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;2.37351&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.81649&lt;/td&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.83485&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;2.17622&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;0.88941&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.80861&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;1.45014&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;2.44562&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;0.42904&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.90496&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;0.82667&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;2.76610&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;0.63637&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.32551&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;1.02250&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;2.59385&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;0.12758&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.92776&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;-0.74333&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.10546&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;0.73784&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.27645&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;0.49470&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;ALL&lt;/td&gt;
+&lt;td&gt;1.83051&lt;/td&gt;
+&lt;td&gt;AML&lt;/td&gt;
+&lt;td&gt;1.12058&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df10 &amp;lt;- tibble(
+   genevalue = c(
+              2.10892, 1.52405, 1.96403, 2.33597, 1.85111, 1.99391
+            , 2.06597, 1.81649, 2.17622, 1.80861, 2.44562, 1.90496
+            , 2.76610, 1.32551, 2.59385, 1.92776, 1.10546, 1.27645
+            , 1.83051, 1.78352, 0.45827, 2.18119, 2.31428, 1.99927
+            , 1.36844, 2.37351, 1.83485, 0.88941, 1.45014, 0.42904
+            , 0.82667, 0.63637, 1.02250, 0.12758, -0.74333, 0.73784
+            , 0.49470, 1.12058
+            )
+  , tumortype = rep(c(&amp;quot;ALL&amp;quot;,&amp;quot;AML&amp;quot;), c(27, 11))
+)
+
+df10&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 38 x 2
+   genevalue tumortype
+       &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;    
+ 1      2.11 ALL      
+ 2      1.52 ALL      
+ 3      1.96 ALL      
+ 4      2.34 ALL      
+ 5      1.85 ALL      
+ 6      1.99 ALL      
+ 7      2.07 ALL      
+ 8      1.82 ALL      
+ 9      2.18 ALL      
+10      1.81 ALL      
+# ... with 28 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;frequency-distribution-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Frequency Distribution&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df11 &amp;lt;- df10 %&amp;gt;% 
+  summarize(
+    R = max(genevalue) - min(genevalue)
+  , k = floor(1 + 3.3*log10(length(genevalue)))
+  , h = R/k
+    )
+
+df10Freq &amp;lt;- df10 %&amp;gt;% 
+  mutate(
+          Classes = cut(
+                         x              = genevalue
+                       , breaks         = df11$k
+                       , include.lowest = TRUE
+                       , right          = FALSE
+                       )
+          ) %&amp;gt;%
+  count(Classes) %&amp;gt;% 
+  tidyr::separate(col = Classes, into = c(&amp;quot;LB&amp;quot;, &amp;quot;UB&amp;quot;), sep = &amp;quot;,&amp;quot;, remove = FALSE) %&amp;gt;%
+  rename(f = n) %&amp;gt;%
+  mutate(
+    LB = readr::parse_number(x = LB)
+  , UB = readr::parse_number(x = UB)
+  , rf = f/sum(f)
+  , pf = f/sum(f)*100
+  , cf = cumsum(f)
+  , MidPoint = (LB + UB)/2
+  ) 
+  
+df10Freq&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 6 x 8
+  Classes             LB     UB     f     rf    pf    cf MidPoint
+  &amp;lt;fct&amp;gt;            &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;  &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;dbl&amp;gt;
+1 [-0.747,-0.158) -0.747 -0.158     1 0.0263  2.63     1   -0.452
+2 [-0.158,0.426)  -0.158  0.426     1 0.0263  2.63     2    0.134
+3 [0.426,1.01)     0.426  1.01      7 0.184  18.4      9    0.718
+4 [1.01,1.6)       1.01   1.6       8 0.211  21.1     17    1.31 
+5 [1.6,2.18)       1.6    2.18     15 0.395  39.5     32    1.89 
+6 [2.18,2.77]      2.18   2.77      6 0.158  15.8     38    2.48 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;histogram-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Histogram&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
+       data = df10
+     , mapping = aes(x = genevalue)) + 
+  geom_histogram() +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = &amp;quot;Histogram for Gene Value&amp;quot;, x = &amp;quot;Gene Value&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-41-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data = df10Freq, mapping = aes(x = MidPoint, y = f))  + 
+  geom_point() + 
+  geom_line() + 
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = &amp;quot;Frequency for Gene Value&amp;quot;, x = &amp;quot;Mid Point&amp;quot;, y = &amp;quot;Frequency&amp;quot;) + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-42-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data = df10Freq, mapping = aes(x = MidPoint, y = cf)) + 
+  geom_point()+ 
+  geom_line() +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw()+
+    labs(title = &amp;quot;Cummulative Frequency Polygon&amp;quot;, x = &amp;quot;Mid Point&amp;quot;, y = &amp;quot;Cummulative Frequency&amp;quot;) + 
+  theme(plot.title = element_text(hjust = 0.5))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-43-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stem-and-leaf-plot-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Stem and Leaf Plot&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;stem(x = df10$genevalue, scale = 1, width = 80, atom = 1e-08)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;
+  The decimal point is at the |
+
+  -0 | 7
+  -0 | 
+   0 | 14
+   0 | 556789
+   1 | 011334
+   1 | 5588888999
+   2 | 00011223344
+   2 | 68&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;box-plot-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Box Plot&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data = df10 , aes(x = tumortype, y = genevalue)) + 
+  geom_boxplot()+
+  theme_bw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://myaseen208.com/myaseen208/2018-09-20_BioInfoR_files/figure-html/unnamed-chunk-45-1.svg&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measures-of-centeral-tendency&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Measures of Centeral Tendency&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df7 %&amp;gt;%
+  summarize(
+            n       = length(Notebook)
+          , Mean    = mean(Notebook)
+          , Median  = median(Notebook)
+          , Minimum = min(Notebook) 
+          , Maximum = max(Notebook) 
+          , Q1      = quantile(x = Notebook, probs = 0.25)
+          , Q2      = quantile(x = Notebook, probs = 0.50)
+          , Q3      = quantile(x = Notebook, probs = 0.75)
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 1 x 8
+      n  Mean Median Minimum Maximum    Q1    Q2    Q3
+  &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1    20   2.6      2       0       5  1.75     2     4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df8 %&amp;gt;%
+  summarize(
+            n       = length(PlantHeight)
+          , Mean    = mean(PlantHeight)
+          , Median  = median(PlantHeight)
+          , Minimum = min(PlantHeight) 
+          , Maximum = max(PlantHeight) 
+          , Q1      = quantile(x = PlantHeight, probs = 0.25)
+          , Q2      = quantile(x = PlantHeight, probs = 0.50)
+          , Q3      = quantile(x = PlantHeight, probs = 0.75)
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 1 x 8
+      n  Mean Median Minimum Maximum    Q1    Q2    Q3
+  &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1    30  97.6     98      87     112  91.2    98  102.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df10 %&amp;gt;%
+  group_by(tumortype) %&amp;gt;%
+  summarize(
+            n       = length(genevalue)
+          , Mean    = mean(genevalue)
+          , Median  = median(genevalue)
+          , Minimum = min(genevalue) 
+          , Maximum = max(genevalue) 
+          , Q1      = quantile(x = genevalue, probs = 0.25)
+          , Q2      = quantile(x = genevalue, probs = 0.50)
+          , Q3      = quantile(x = genevalue, probs = 0.75)
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 x 9
+  tumortype     n  Mean Median Minimum Maximum    Q1    Q2    Q3
+  &amp;lt;chr&amp;gt;     &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1 ALL          27 1.89   1.93    0.458    2.77 1.80  1.93  2.18 
+2 AML          11 0.636  0.738  -0.743    1.45 0.462 0.738 0.956&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measures-of-dispersion&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Measures of Dispersion&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df7 %&amp;gt;%
+  summarize(
+            IQR      = IQR(Notebook)
+          , Variance = var(Notebook)
+          ,  SD      = sd(Notebook)
+          )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 1 x 3
+    IQR Variance    SD
+  &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1  2.25     2.25  1.50&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df8 %&amp;gt;%
+  summarize(
+            IQR      = IQR(PlantHeight)
+          , Variance = var(PlantHeight)
+          ,  SD      = sd(PlantHeight)
+          )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 1 x 3
+    IQR Variance    SD
+  &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1  10.5     45.0  6.71&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df10 %&amp;gt;%
+  group_by(tumortype) %&amp;gt;%
+  summarize(
+            IQR      = IQR(genevalue)
+          , Variance = var(genevalue)
+          ,  SD      = sd(genevalue)
+          )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 x 4
+  tumortype   IQR Variance    SD
+  &amp;lt;chr&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1 ALL       0.383    0.241 0.491
+2 AML       0.494    0.338 0.582&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measures-of-skewness&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Measures of Skewness&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df7 %&amp;gt;% 
+  summarize(
+           SK = sum((Notebook - mean(Notebook))^3)/(n()*(sd(Notebook))^3)
+          )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 1 x 1
+     SK
+  &amp;lt;dbl&amp;gt;
+1 0.217&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df8 %&amp;gt;% 
+  summarize(
+           SK = sum((PlantHeight - mean(PlantHeight))^3)/(n()*(sd(PlantHeight))^3)
+          )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 1 x 1
+      SK
+   &amp;lt;dbl&amp;gt;
+1 0.0574&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df10 %&amp;gt;% 
+  group_by(tumortype) %&amp;gt;%
+  summarize(
+           SK = sum((genevalue - mean(genevalue))^3)/(n()*(sd(genevalue))^3)
+          )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 x 2
+  tumortype     SK
+  &amp;lt;chr&amp;gt;      &amp;lt;dbl&amp;gt;
+1 ALL       -0.802
+2 AML       -0.937&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measures-of-skewness-1&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Measures of Skewness&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df7 %&amp;gt;%
+  summarize(
+            K = sum((Notebook - mean(Notebook))^4)/(n()*(sd(Notebook))^4) - 3
+          )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 1 x 1
+      K
+  &amp;lt;dbl&amp;gt;
+1 -1.19&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df8 %&amp;gt;%
+  summarize(
+            K = sum((PlantHeight - mean(PlantHeight))^4)/(n()*(sd(PlantHeight))^4) - 3
+          )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 1 x 1
+       K
+   &amp;lt;dbl&amp;gt;
+1 -0.960&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df10 %&amp;gt;% 
+  group_by(tumortype) %&amp;gt;%
+  summarize(
+            K = sum((genevalue - mean(genevalue))^4)/(n()*(sd(genevalue))^4) - 3
+          )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 x 2
+  tumortype     K
+  &amp;lt;chr&amp;gt;     &amp;lt;dbl&amp;gt;
+1 ALL       0.855
+2 AML       0.345&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

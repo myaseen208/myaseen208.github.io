@@ -1,0 +1,42 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ppcSpatial on Muhammad Yaseen</title>
+    <link>https://myaseen208.com/categories/ppcspatial/</link>
+    <description>Recent content in ppcSpatial on Muhammad Yaseen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 13 May 2018 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://myaseen208.com/categories/ppcspatial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spatial Analysis of Pakistan Population Census 2017</title>
+      <link>https://myaseen208.com/blogs/2018-05-13_ppcspatial/</link>
+      <pubDate>Sun, 13 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://myaseen208.com/blogs/2018-05-13_ppcspatial/</guid>
+      <description>&lt;p&gt;The latest version of the ppcSpatial package for R is now on &lt;a href=&#34;https://cran.r-project.org/package=ppcSpatial&#34;&gt;CRAN&lt;/a&gt;. It performs spatial analysis for exploration of Pakistan Population Census 2017 (&lt;a href=&#34;http://www.pbscensus.gov.pk/&#34;&gt;http://www.pbscensus.gov.pk/&lt;/a&gt;). It uses data from R package &lt;a href=&#34;https://cran.r-project.org/package=PakPC2017&#34;&gt;PakPC2017&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;The Spatial map is&lt;/p&gt;
+&lt;iframe src=&#34;https://myaseen208.com/PakPopCensus2017/PakPopCensus2017Districts.html&#34; width=&#34;600&#34; height=&#34;500&#34; frameborder=&#34;0&#34; style=&#34;border:0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;and full view is &lt;a href=&#34;https://myaseen208.com/PakPopCensus2017/PakPopCensus2017Districts.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;A video showing some functionality of the package is&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=385nQNgcVgI&#34; title=&#34;ppcSpatial&#34;&gt;&lt;img src=&#34;http://img.youtube.com/vi/385nQNgcVgI/0.jpg&#34; alt=&#34;ppcSpatial&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ppcSpatial: Spatial Analysis of Pakistan Population Census</title>
+      <link>https://myaseen208.com/blogs/ppcspatialblog/</link>
+      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://myaseen208.com/blogs/ppcspatialblog/</guid>
+      <description>&lt;p&gt;The latest version of the ppcSpatial package for R is now on &lt;a href=&#34;https://cran.r-project.org/package=ppcSpatial&#34;&gt;CRAN&lt;/a&gt;. It performs spatial analysis for exploration of Pakistan Population Census 2017 (&lt;a href=&#34;http://www.pbscensus.gov.pk/&#34;&gt;http://www.pbscensus.gov.pk/&lt;/a&gt;). It uses data from R package &lt;a href=&#34;https://cran.r-project.org/package=PakPC2017&#34;&gt;PakPC2017&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A video showing some functionality of the package is&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=385nQNgcVgI&#34; title=&#34;ppcSpatial&#34;&gt;&lt;img src=&#34;http://img.youtube.com/vi/385nQNgcVgI/0.jpg&#34; alt=&#34;ppcSpatial&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
