@@ -1,0 +1,15 @@
+{
+  "hash": "bb695d26e6cc6410978be95a390fcd61",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Improving Quality in Textile Industry using Six Sigma with R\"\nauthor: \"Muhammad Yaseen\"\ndate: 2019-01-12\nformat: \n  html:\n    page-layout: full\ncomments: false\nslug: 2019-SixSigmaR\ncategories:\n  - Six Sigma\n  - Quality Control\n  - DMAIC\n  - R\n  - Statistics\n  - Data Science\n---\n\n\n\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n![](./fig/SixSigmaR3.png)\n\n&nbsp;\n\n\n![](./fig/2019-SixSigmaR.png)\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
