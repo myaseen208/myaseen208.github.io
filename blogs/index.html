@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.14">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Muhammad Yaseen">
+<meta name="description" content="Thoughts on Statistics, Data Science, Machine Learning, Research, <code>R</code>, <code>Python</code>, <code>LaTeX</code>, and other distractions">
+
+<title>MYaseen208 | MYaseen208 – MYaseen208</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/img/MYaseen208.webp" rel="icon">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1211d512dcdb83640ac2cf42b06d51c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cd4991372bcb0c310c0e779edf4bdc45.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-1.0.8/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-date','listing-image','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 10,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LEVV3VZT0E"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LEVV3VZT0E', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="alternate" type="application/rss+xml" title="MYaseen208" href="index.xml" data-external="1"><meta property="og:title" content="MYaseen208 | MYaseen208">
+<meta property="og:description" content="R code, environmental data science, and cats.">
+<meta property="og:image" content="https://myaseen208.com/blogs/assets/img/MYaseen208.webp">
+<meta property="og:site_name" content="MYaseen208">
+<meta property="og:locale" content="en_EN">
+<meta name="twitter:title" content="MYaseen208 | MYaseen208">
+<meta name="twitter:description" content="R code, environmental data science, and cats.">
+<meta name="twitter:image" content="https://myaseen208.com/blogs/assets/img/MYaseen208.webp">
+<meta name="twitter:creator" content="@myaseen208">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MYaseen208</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cv/index.html"> <i class="bi bi-file-earmark-text-fill" role="img">
+</i> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../publications/index.html"> <i class="bi bi-book" role="img">
+</i> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../software/index.html"> <i class="bi bi-puzzle-fill" role="img">
+</i> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../blogs/index.html" aria-current="page"> <i class="bi bi-pen-fill" role="img">
+</i> 
+<span class="menu-text">Blogs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../seminars/index.html"> <i class="bi bi-mic-fill" role="img">
+</i> 
+<span class="menu-text">Seminars</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../teaching/index.html"> <i class="bi bi-bag-heart-fill" role="img">
+</i> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../blog.xml"> <i class="bi bi-rss" role="img" aria-label="rss">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/myaseen208"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/muhammad-yaseen-247800b4/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://ko-fi.com/MYaseen208"> 
+<span class="menu-text"><iconify-icon inline="" icon="simple-icons:kofi" style="font-size: 1.15em;" support="" me=""></iconify-icon></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(19)</span></div><div class="category" data-category="QmlvaW5mb3JtYXRpY3M=">Bioinformatics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Qmlvc3RhdGlzdGljcw==">Biostatistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGF0YSUyMFNjaWVuY2U=">Data Science <span class="quarto-category-count">(5)</span></div><div class="category" data-category="RGlhbGxlbCUyMEFuYWx5c2lz">Diallel Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RE1BSUM=">DMAIC <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R29vZ2xlJTIwQXBwcw==">Google Apps <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGluZWFyJTIwTWl4ZWQlMjBNb2RlbHM=">Linear Mixed Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGFraXN0YW4lMjBQb3B1bGF0aW9uJTIwQ2Vuc3VzJTIwMjAxNw==">Pakistan Population Census 2017 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cHBjU3BhdGlhbA==">ppcSpatial <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UXVhbGl0eSUyMENvbnRyb2w=">Quality Control <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(13)</span></div><div class="category" data-category="UmVncmVzc2lvbiUyMEFuYWx5c2lz">Regression Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVzZWFyY2g=">Research <span class="quarto-category-count">(10)</span></div><div class="category" data-category="U2l4JTIwU2lnbWE=">Six Sigma <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U1BTUw==">SPSS <span class="quarto-category-count">(3)</span></div><div class="category" data-category="U3RhdGlzdGljcw==">Statistics <span class="quarto-category-count">(14)</span></div><div class="category" data-category="VmV0ZXJpbmFyeSUyMFJlc2VhcmNo">Veterinary Research <span class="quarto-category-count">(1)</span></div></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">MYaseen208</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Muhammad Yaseen </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Welcome to my blog! I’m so happy you’re here to learn with me. I’ll be using this space to write about what I’m learning, working on, and am curious about. I will share my thoughts on Statistics, Data Science, Machine Learning, Research, <code>R</code>, <code>Python</code>, <code>LaTex</code>, and other distractions.</p>
+<hr>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-left" data-index="0" data-listing-date-sort="1751083200000" data-listing-file-modified-sort="1751143442001" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="59">
+<div class="thumbnail"><a href="../blogs/2025-06-28_Quran/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2025-06-28_Quran/index.html" class="no-external">Semantic Analysis of Quran</a>
+</h3>
+<div class="delink listing-description"><a href="../blogs/2025-06-28_Quran/index.html" class="no-external">
+<br><br>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2025-06-28_Quran/index.html" class="no-external">
+<div class="listing-date">
+Jun 28, 2025
+</div>
+<div class="listing-reading-time">1 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="1" data-listing-date-sort="1743739200000" data-listing-file-modified-sort="1744526445325" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="259">
+<div class="thumbnail"><a href="../blogs/2025-04-04_Cricket/index.html" class="no-external">
+
+<p class="card-img-top"><img src="2025-04-04_Cricket/fig/BabarAzam.jpg"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2025-04-04_Cricket/index.html" class="no-external">Batting Performance of Babar Azam and Virat Kohli</a>
+</h3>
+<div class="delink listing-description"><a href="../blogs/2025-04-04_Cricket/index.html" class="no-external">
+<strong>Mat:</strong> Number of Matches played
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2025-04-04_Cricket/index.html" class="no-external">
+<div class="listing-date">
+Apr 4, 2025
+</div>
+<div class="listing-reading-time">2 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="2" data-categories="UiUyQ1N0YXRpc3RpY3MlMkNSZXNlYXJjaA==" data-listing-date-sort="1692072000000" data-listing-file-modified-sort="1744526473206" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1047">
+<div class="thumbnail"><a href="../blogs/2025-04-04_PakPC/index.html" class="no-external">
+
+<p class="card-img-top"><img src="2025-04-04_PakPC/fig/Plot1.webp"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2025-04-04_PakPC/index.html" class="no-external">Pakistan Population Census</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2025-04-04_PakPC/index.html" class="no-external">
+The Pakistan Bureau of Statistics (PBS) holds the pivotal responsibility of orchestrating, collating, and disseminating the outcomes of the population census within the…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2025-04-04_PakPC/index.html" class="no-external">
+<div class="listing-date">
+Aug 15, 2023
+</div>
+<div class="listing-reading-time">6 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="3" data-categories="UiUyQ1N0YXRpc3RpY3MlMkNSZXNlYXJjaA==" data-listing-date-sort="1681790400000" data-listing-file-modified-sort="1744526429420" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
+<div class="thumbnail"><a href="../blogs/2023-04-18_IntroR/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2023-04-18_IntroR/index.html" class="no-external">An Introduction to R Programming Language</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2023-04-18_IntroR/index.html" class="no-external">
+<strong>R</strong> is a free, open-source programming language and software environment for statistical computing, bioinformatics, visualization and general computing. <strong>R</strong> provides a wide…<strong></strong>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2023-04-18_IntroR/index.html" class="no-external">
+<div class="listing-date">
+Apr 18, 2023
+</div>
+<div class="listing-reading-time">3 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="4" data-categories="RGF0YSUyMFNjaWVuY2UlMkNTdGF0aXN0aWNzJTJDQmlvc3RhdGlzdGljcyUyQ0Jpb2luZm9ybWF0aWNzJTJDUmVzZWFyY2glMkNS" data-listing-date-sort="1653019200000" data-listing-file-modified-sort="1744526416800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1284">
+<div class="thumbnail"><a href="../blogs/2022-05-20_TUF/index.html" class="no-external">
+
+<p class="card-img-top"><img src="2022-05-20_TUF/fig/TrafficSignals.webp"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2022-05-20_TUF/index.html" class="no-external">Statistics: The Art &amp; Science of Learning from Data</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFNjaWVuY2U='); return false;">Data Science</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Qmlvc3RhdGlzdGljcw=='); return false;">Biostatistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmlvaW5mb3JtYXRpY3M='); return false;">Bioinformatics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2022-05-20_TUF/index.html" class="no-external">
+&nbsp;
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2022-05-20_TUF/index.html" class="no-external">
+<div class="listing-date">
+May 20, 2022
+</div>
+<div class="listing-reading-time">7 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="5" data-categories="UiUyQ1N0YXRpc3RpY3MlMkNSZXNlYXJjaA==" data-listing-date-sort="1583470800000" data-listing-file-modified-sort="1744526384931" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4098">
+<div class="thumbnail"><a href="../blogs/2020-02-06_UAF/index.html" class="no-external">
+
+<p class="card-img-top"><img src="2020-02-06_UAF/fig/PopRegFn.webp"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2020-02-06_UAF/index.html" class="no-external">Design &amp; Analysis of Field Experiments using R</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2020-02-06_UAF/index.html" class="no-external">
+<strong>R</strong> is a free, open-source programming language and software environment for statistical computing, bioinformatics, visualization and general computing. <strong>R</strong> provides a wide…<strong></strong>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2020-02-06_UAF/index.html" class="no-external">
+<div class="listing-date">
+Mar 6, 2020
+</div>
+<div class="listing-reading-time">21 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="6" data-categories="UiUyQ1N0YXRpc3RpY3MlMkNSZXNlYXJjaA==" data-listing-date-sort="1574658000000" data-listing-file-modified-sort="1744526349197" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4096">
+<div class="thumbnail"><a href="../blogs/2019-11-25_NARC/index.html" class="no-external">
+
+<p class="card-img-top"><img src="2019-11-25_NARC/fig/PopRegFn.webp"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2019-11-25_NARC/index.html" class="no-external">Training Course on Capacity Building of NARS Scientists in Advance Analytical Techniques</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2019-11-25_NARC/index.html" class="no-external">
+<strong>R</strong> is a free, open-source programming language and software environment for statistical computing, bioinformatics, visualization and general computing. <strong>R</strong> provides a wide…<strong></strong>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2019-11-25_NARC/index.html" class="no-external">
+<div class="listing-date">
+Nov 25, 2019
+</div>
+<div class="listing-reading-time">21 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="7" data-categories="RGF0YSUyMFNjaWVuY2UlMkNTdGF0aXN0aWNzJTJDUmVzZWFyY2glMkNTUFNT" data-listing-date-sort="1555560000000" data-listing-file-modified-sort="1744526324836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1612">
+<div class="thumbnail"><a href="../blogs/2019-04-18-UOL/index.html" class="no-external">
+
+<p class="card-img-top"><img src="2019-04-18-UOL/fig/DS2.webp"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2019-04-18-UOL/index.html" class="no-external">How to write a Research Paper and Hands on Training of SPSS - A Statistical Tool</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFNjaWVuY2U='); return false;">Data Science</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U1BTUw=='); return false;">SPSS</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2019-04-18-UOL/index.html" class="no-external">
+&nbsp;
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2019-04-18-UOL/index.html" class="no-external">
+<div class="listing-date">
+Apr 18, 2019
+</div>
+<div class="listing-reading-time">9 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="8" data-categories="U2l4JTIwU2lnbWElMkNRdWFsaXR5JTIwQ29udHJvbCUyQ0RNQUlDJTJDUiUyQ1N0YXRpc3RpY3MlMkNEYXRhJTIwU2NpZW5jZQ==" data-listing-date-sort="1547269200000" data-listing-file-modified-sort="1744526371754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="432">
+<div class="thumbnail"><a href="../blogs/2019-SixSigmawithR/index.html" class="no-external">
+
+<p class="card-img-top"><img src="2019-SixSigmawithR/fig/SixSigmaR3.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2019-SixSigmawithR/index.html" class="no-external">Improving Quality in Textile Industry using Six Sigma with R</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('U2l4JTIwU2lnbWE='); return false;">Six Sigma</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UXVhbGl0eSUyMENvbnRyb2w='); return false;">Quality Control</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RE1BSUM='); return false;">DMAIC</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFNjaWVuY2U='); return false;">Data Science</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2019-SixSigmawithR/index.html" class="no-external">
+&nbsp;
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2019-SixSigmawithR/index.html" class="no-external">
+<div class="listing-date">
+Jan 12, 2019
+</div>
+<div class="listing-reading-time">3 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="9" data-categories="UiUyQ1N0YXRpc3RpY3MlMkNCaW9pbmZvcm1hdGljcw==" data-listing-date-sort="1537416000000" data-listing-file-modified-sort="1744526267046" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="28" data-listing-word-count-sort="5408">
+<div class="thumbnail"><a href="../blogs/2018-09-20_BioInfoR/index.html" class="no-external">
+
+<p class="card-img-top"><img src="2018-09-20_BioInfoR/index_files/figure-html/unnamed-chunk-3-1.svg"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2018-09-20_BioInfoR/index.html" class="no-external">Bioinformatics with R</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmlvaW5mb3JtYXRpY3M='); return false;">Bioinformatics</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2018-09-20_BioInfoR/index.html" class="no-external">
+&nbsp;
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2018-09-20_BioInfoR/index.html" class="no-external">
+<div class="listing-date">
+Sep 20, 2018
+</div>
+<div class="listing-reading-time">28 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="10" data-categories="UHl0aG9uJTJDU3RhdGlzdGljcyUyQ1JlZ3Jlc3Npb24lMjBBbmFseXNpcw==" data-listing-date-sort="1537416000000" data-listing-file-modified-sort="1744526000187" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1540">
+<div class="thumbnail"><a href="../blogs/2018-09-20_RegPython/index.html" class="no-external">
+
+<p class="card-img-top"><img data-src="2018-09-20_RegPython/fig/PopRegFn.webp" alt="Population Regression Function"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2018-09-20_RegPython/index.html" class="no-external">Regression Analysis with Python</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVncmVzc2lvbiUyMEFuYWx5c2lz'); return false;">Regression Analysis</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2018-09-20_RegPython/index.html" class="no-external">
+<p>Regression Analysis with Python.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2018-09-20_RegPython/index.html" class="no-external">
+<div class="listing-date">
+Sep 20, 2018
+</div>
+<div class="listing-reading-time">8 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="11" data-categories="RGF0YSUyMFNjaWVuY2UlMkNTdGF0aXN0aWNzJTJDUmVzZWFyY2glMkNTUFNT" data-listing-date-sort="1534392000000" data-listing-file-modified-sort="1744526254490" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="35" data-listing-word-count-sort="6877">
+<div class="thumbnail"><a href="../blogs/2018-08-16-PASTIC-NTU/index.html" class="no-external">
+
+<p class="card-img-top"><img data-src="2018-08-16-PASTIC-NTU/fig/2018-08-16_PASTIC-NTU.webp"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2018-08-16-PASTIC-NTU/index.html" class="no-external">An Introduction to Statistics using SPSS</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFNjaWVuY2U='); return false;">Data Science</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U1BTUw=='); return false;">SPSS</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2018-08-16-PASTIC-NTU/index.html" class="no-external">
+&nbsp;
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2018-08-16-PASTIC-NTU/index.html" class="no-external">
+<div class="listing-date">
+Aug 16, 2018
+</div>
+<div class="listing-reading-time">35 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="12" data-categories="RGF0YSUyMFNjaWVuY2UlMkNTdGF0aXN0aWNzJTJDUmVzZWFyY2glMkNHb29nbGUlMjBBcHBzJTJDU1BTUw==" data-listing-date-sort="1526356800000" data-listing-file-modified-sort="1744526241041" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2986">
+<div class="thumbnail"><a href="../blogs/2018-05-15-PASTIC-FSD/index.html" class="no-external">
+
+<p class="card-img-top"><img data-src="2018-05-15-PASTIC-FSD/fig/2018-05-15_PASTIC-FSD_SPSS.webp"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2018-05-15-PASTIC-FSD/index.html" class="no-external">Emerging Technologies in Research: Google Apps and SPSS</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFNjaWVuY2U='); return false;">Data Science</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('R29vZ2xlJTIwQXBwcw=='); return false;">Google Apps</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U1BTUw=='); return false;">SPSS</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2018-05-15-PASTIC-FSD/index.html" class="no-external">
+&nbsp;
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2018-05-15-PASTIC-FSD/index.html" class="no-external">
+<div class="listing-date">
+May 15, 2018
+</div>
+<div class="listing-reading-time">15 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="13" data-categories="UiUyQ3BwY1NwYXRpYWwlMkNQYWtpc3RhbiUyMFBvcHVsYXRpb24lMjBDZW5zdXMlMjAyMDE3" data-listing-date-sort="1526184000000" data-listing-file-modified-sort="1744526225744" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="56">
+<div class="thumbnail"><a href="../blogs/2018-05-13_ppcSpatial/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2018-05-13_ppcSpatial/index.html" class="no-external">Spatial Analysis of Pakistan Population Census 2017</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHBjU3BhdGlhbA=='); return false;">ppcSpatial</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UGFraXN0YW4lMjBQb3B1bGF0aW9uJTIwQ2Vuc3VzJTIwMjAxNw=='); return false;">Pakistan Population Census 2017</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2018-05-13_ppcSpatial/index.html" class="no-external">
+The latest version of the ppcSpatial package for R is now on CRAN. It performs spatial analysis for exploration of Pakistan Population Census 2017 (http://www.pbscensus.gov.p…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2018-05-13_ppcSpatial/index.html" class="no-external">
+<div class="listing-date">
+May 13, 2018
+</div>
+<div class="listing-reading-time">1 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="14" data-categories="UiUyQ1N0YXRpc3RpY3MlMkNSZXNlYXJjaA==" data-listing-date-sort="1525838400000" data-listing-file-modified-sort="1744526212848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3343">
+<div class="thumbnail"><a href="../blogs/2018-05-09_ARRI/index.html" class="no-external">
+
+<p class="card-img-top"><img data-src="2018-05-09_ARRI/fig/PopRegFn.webp"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2018-05-09_ARRI/index.html" class="no-external">An introduction to R for Agricultural Research</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2018-05-09_ARRI/index.html" class="no-external">
+<strong>R</strong> is a free, open-source programming language and software environment for statistical computing, bioinformatics, visualization and general computing. <strong>R</strong> provides a wide…<strong></strong>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2018-05-09_ARRI/index.html" class="no-external">
+<div class="listing-date">
+May 9, 2018
+</div>
+<div class="listing-reading-time">17 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="15" data-categories="UiUyQ3BwY1NwYXRpYWwlMkNQYWtpc3RhbiUyMFBvcHVsYXRpb24lMjBDZW5zdXMlMjAyMDE3" data-listing-date-sort="1525060800000" data-listing-file-modified-sort="1744526200495" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="43">
+<div class="thumbnail"><a href="../blogs/2018-04-30_ppcSpatial/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2018-04-30_ppcSpatial/index.html" class="no-external">ppcSpatial: Spatial Analysis of Pakistan Population Census</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHBjU3BhdGlhbA=='); return false;">ppcSpatial</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UGFraXN0YW4lMjBQb3B1bGF0aW9uJTIwQ2Vuc3VzJTIwMjAxNw=='); return false;">Pakistan Population Census 2017</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2018-04-30_ppcSpatial/index.html" class="no-external">
+The latest version of the ppcSpatial package for R is now on CRAN. It performs spatial analysis for exploration of Pakistan Population Census 2017 (http://www.pbscensus.gov.p…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2018-04-30_ppcSpatial/index.html" class="no-external">
+<div class="listing-date">
+Apr 30, 2018
+</div>
+<div class="listing-reading-time">1 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="16" data-categories="U3RhdGlzdGljcyUyQ1IlMkNMaW5lYXIlMjBNaXhlZCUyME1vZGVscyUyQ1ZldGVyaW5hcnklMjBSZXNlYXJjaA==" data-listing-date-sort="1524456000000" data-listing-file-modified-sort="1744526183811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="58">
+<div class="thumbnail"><a href="../blogs/2018-04-23_VetResearchLMM/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2018-04-23_VetResearchLMM/index.html" class="no-external">VetResearchLMM v1.0.0 on CRAN</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TGluZWFyJTIwTWl4ZWQlMjBNb2RlbHM='); return false;">Linear Mixed Models</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VmV0ZXJpbmFyeSUyMFJlc2VhcmNo'); return false;">Veterinary Research</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2018-04-23_VetResearchLMM/index.html" class="no-external">
+The latest version of the VetResearchLMM package for R is now on CRAN. This package provides R Codes and Datasets for Duchateau, L. and Janssen, P. and Rowlands, G. J.…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2018-04-23_VetResearchLMM/index.html" class="no-external">
+<div class="listing-date">
+Apr 23, 2018
+</div>
+<div class="listing-reading-time">1 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="17" data-categories="RGlhbGxlbCUyMEFuYWx5c2lzJTJDUg==" data-listing-date-sort="1524283200000" data-listing-file-modified-sort="1744526152674" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="178">
+<div class="thumbnail"><a href="../blogs/2018-04-21_DiallelAnalysisR/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2018-04-21_DiallelAnalysisR/index.html" class="no-external">Diallel Analysis with R</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGlhbGxlbCUyMEFuYWx5c2lz'); return false;">Diallel Analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2018-04-21_DiallelAnalysisR/index.html" class="no-external">
+The latest versin 0.1.1 of DiallelAnalysisR is aviable on CRAN. It performs Diallel Analysis with R using Griffing’s and Hayman’s approaches. Four different methods (1…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2018-04-21_DiallelAnalysisR/index.html" class="no-external">
+<div class="listing-date">
+Apr 21, 2018
+</div>
+<div class="listing-reading-time">1 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="18" data-categories="UiUyQ1N0YXRpc3RpY3MlMkNSZXNlYXJjaA==" data-listing-date-sort="1521950400000" data-listing-file-modified-sort="1744526124816" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1700">
+<div class="thumbnail"><a href="../blogs/2018-03-25_Maldives_R/index.html" class="no-external">
+
+<p class="card-img-top"><img data-src="2018-03-25_Maldives_R/index_files/figure-html/summary1-1.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/2018-03-25_Maldives_R/index.html" class="no-external">Data Analysis with R: Introduction of R Language</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+</div>
+<div class="delink listing-description"><a href="../blogs/2018-03-25_Maldives_R/index.html" class="no-external">
+The workspace is your current R working environment and includes any user-defined objects (vectors, matrices, data frames, lists, functions). At the end of an R session, the…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blogs/2018-03-25_Maldives_R/index.html" class="no-external">
+<div class="listing-date">
+Mar 25, 2018
+</div>
+<div class="listing-reading-time">9 min</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{yaseen,
+  author = {Yaseen, Muhammad},
+  title = {MYaseen208},
+  url = {https://myaseen208.com/blogs/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-yaseen" class="csl-entry quarto-appendix-citeas" role="listitem">
+Yaseen, Muhammad. n.d. <span>“MYaseen208.”</span> <a href="https://myaseen208.com/blogs/">https://myaseen208.com/blogs/</a>.
+</div></div></section></div></main> <!-- /main -->
+<script type="text/javascript" src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"></script>
+<script type="text/javascript">
+  kofiwidget2.init('Support me', '#0b7366', 'myaseen208');
+  kofiwidget2.draw();
+</script>
+<div class="subscribe">
+    <h5> Subscribe to get notified about new content. </h5>
+
+  <!--  <img id="subscribe-thumbnail" style="margin-bottom: 1em;border-radius: 10px;" width="70%" src="/assets/img/data-whiskeRs-thumbnail.webp" alt="Thumbnail for the data whiskeRs blog. Dark teal color with white text reading data whiskeRs: R code & data science content with a sprinkle of cute cats.">
+<iframe src="https://embeds.beehiiv.com/0465436a-cfcb-4124-bb7e-22cbb14ea3b4" data-test-id="beehiiv-embed" width="100%" height="320" frameborder="0" scrolling="no" style="border-radius: 4px; border: 2px solid #e5e7eb; margin: 0; background-color: transparent;"></iframe>
+  -->
+
+    <iframe id="subscribe-iframe" src="https://embeds.beehiiv.com/0465436a-cfcb-4124-bb7e-22cbb14ea3b4?slim=true" data-test-id="beehiiv-embed" height="80" width="70%" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/myaseen208\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="light">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "jadeynryan/jadey-website-giscus";
+    script.dataset.repoId = "R_kgDOKisUNQ";
+    script.dataset.category = "Announcements";
+    script.dataset.categoryId = "DIC_kwDOKisUNc4CaSRD";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "top";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© <strong>2012-2025</strong> <a href="https://myaseen208.com/"><strong>Muhammad Yaseen</strong></a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Developed in <a href="https://www.r-project.org/"><strong>R</strong></a>, powered by <a href="http://quarto.org/"><strong>Quarto</strong></a>, and made with <strong>love</strong> ♥️.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

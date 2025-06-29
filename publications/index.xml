@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Publications by Muhammad Yaseen</title>
+<link>https://myaseen208.com/publications/</link>
+<atom:link href="https://myaseen208.com/publications/index.xml" rel="self" type="application/rss+xml"/>
+<description>Working papers and published articles by Muhammad Yaseen</description>
+<image>
+<url>https://myaseen208.com/assets/img/MYaseen208.webp</url>
+<title>Publications by Muhammad Yaseen</title>
+<link>https://myaseen208.com/publications/</link>
+</image>
+<generator>quarto-1.8.14</generator>
+<lastBuildDate>Wed, 01 Jan 2025 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Global prevalence of Eimeria species in goats: a systematic review and meta-analysis</title>
+  <dc:creator>Ali, E. A. and Ghafar, A. and Angeles-Hernandez, J. C. and &lt;b&gt;Yaseen, M.&lt;/b&gt; and Gauci, C. G. and Beveridge, I. and Baxendell, S. and Jabbar, A.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2025_Ali.html</link>
+  <description><![CDATA[ 
+
+
+
+<p><strong>Background:</strong> Coccidiosis is a protozoal disease caused by Eimeria species, the main symptom of which is diarrhea. Eimeria spp. infection can cause weight loss and ill-thrift in goats, and in severe cases, it can lead to mortality in kids, resulting in economic losses for the goat industry. This study aimed to determine the global prevalence of Eimeria spp. in goats and to identify the possible predictors of heterogeneity among selected studies.</p>
+<p><strong>Methods:</strong> Data were retrieved from five databases of major global importance (PubMed, Web of Science, CAB Direct, Scopus, and Google Scholar), with 255 studies published between 1963 and 2022 being included. A random-effects model was used to calculate pooled prevalence estimates with 95% confidence intervals (CI), followed by subgroup meta-analysis and meta-regression analysis to identify factors contributing to high prevalence and explore sources of heterogeneity among studies.</p>
+<p><strong>Results:</strong> The estimated global prevalence of Eimeria spp. in goats was 62.9% (95% CI: 58.6–67.2). Our results indicated high inter-study variability (inconsistency index (I2) = 99.7%, p &lt; 0.01). Among the variables analyzed, regions and quality of studies were the most significant predictors of heterogeneity. According to the region-based subgroup meta-analysis, North America had the highest estimated prevalence of Eimeria spp. (92.2, 95% CI: 82.7–98.2), followed by Europe (86.6, 95% CI: 79.8–92.3), while Asia had the lowest prevalence (52.0, 95% CI: 45.9–58.1). Most countries (n = 42/56) had an estimated prevalence above the overall pooled estimate (&gt;62.9%). The subgroup of studies conducted in 2000 or later presented a lower prevalence of 59.6% (95% CI: 54.7–64.3). Studies with a score of 5–7 had a significantly higher prevalence (72.4, 95% CI: 66.2–78.2) than studies with low or medium scores (p &lt; 0.01). The prevalence of Eimeria spp. in goats detected with conventional and molecular methods was 67.3% (95% CI: 47.0–84.7). Only 47% (119/255) of the studies provided details on identifying Eimeria at the species level. Overall, more than 26 Eimeria spp. have been identified in goats globally. Among these, the most frequently reported and pathogenic species were E. arloingi (115/119), E. ninakohlyakimovae (108/119), E. christenseni (94/119), and E. caprina (71/119). Other valid species that were reported less frequently include E. alijevi, E. hirci, E. caprovina, E. aspheronica and E. jolchijevi.</p>
+<p><strong>Conclusion:</strong> These findings suggest that the pathogenic Eimeria spp. are widespread in goats globally. Given the high prevalence and the extensive distribution of pathogenic Eimeria spp. in goats, it is recommended that integrated parasite management approaches be implemented for the effective control of coccidiosis in goats.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2025_Ali.html</guid>
+  <pubDate>Wed, 01 Jan 2025 05:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>PakNAcc: ‘shiny’ App for National Accounts</title>
+  <dc:creator>&lt;b&gt;Yaseen, M.&lt;/b&gt;, and Asghar, Z.</dc:creator>
+  <link>https://myaseen208.com/publications/RPackages/PakNAcc.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Provides a comprehensive suite of tools for analyzing Pakistan’s Quarterly National Accounts data. Users can gain detailed insights into Pakistan’s economic performance, visualize quarterly trends, and detect patterns and anomalies in key economic indicators. Compare sector contributions—including agriculture, industry, and services—to understand their influence on economic growth or decline. Customize analyses by filtering and manipulating data to focus on specific areas of interest. Ideal for policymakers, researchers, and analysts aiming to make informed, data-driven decisions based on timely and detailed economic insights.</p>
+
+
+
+ ]]></description>
+  <category>R Packages</category>
+  <guid>https://myaseen208.com/publications/RPackages/PakNAcc.html</guid>
+  <pubDate>Mon, 11 Nov 2024 05:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>PakPC: ‘shiny’ App to Analyze Pakistan’s Population Census Data</title>
+  <dc:creator>&lt;b&gt;Yaseen, M.&lt;/b&gt;, Dilber, M. A., and Asghar, Z.</dc:creator>
+  <link>https://myaseen208.com/publications/RPackages/PakPC.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Provides tools for analyzing Pakistan’s Population Censuses data via the ‘PakPC2023’ and ‘PakPC2017’ R packages. Designed for researchers, policymakers, and professionals, the app enables in-depth numerical and graphical analysis, including detailed cross-tabulations and insights. With diverse statistical models and visualization options, it supports informed decision-making in social and economic policy. This tool enhances users’ ability to explore and interpret census data, providing valuable insights for effective planning and analysis across various fields.</p>
+
+
+
+ ]]></description>
+  <category>R Packages</category>
+  <guid>https://myaseen208.com/publications/RPackages/PakPC.html</guid>
+  <pubDate>Mon, 11 Nov 2024 05:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>StabilityApp: Stability Analysis App for GEI in Multi-Environment Trials</title>
+  <dc:creator>&lt;b&gt;Yaseen, M.&lt;/b&gt; and Eskridge, K. M.</dc:creator>
+  <link>https://myaseen208.com/publications/RPackages/StabilityApp.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Provides tools for Genotype by Environment Interaction (GEI) analysis, using statistical models and visualizations to assess genotype performance across environments. It helps researchers explore interaction effects, stability, and adaptability in multi-environment trials, identifying the best-performing genotypes in different conditions. Which Win Where!</p>
+
+
+
+ ]]></description>
+  <category>R Packages</category>
+  <guid>https://myaseen208.com/publications/RPackages/StabilityApp.html</guid>
+  <pubDate>Fri, 01 Nov 2024 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>PooledTesting: A Shiny App for Pooled Testing</title>
+  <dc:creator>Hitt, B., Bilder, C., Tebbs, J., McMahan, C., and &lt;b&gt;Yaseen, M.&lt;/b&gt;</dc:creator>
+  <link>https://myaseen208.com/publications/RPackages/PooledTesting.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Pooled testing is the process of testing amalgamations of specimens in a “pool” (or “group”) rather than testing specimens separately. This process is used in a wide variety of applications and is an indispensable tool for laboratories when testing high volumes of clinical specimens for infectious diseases. Choosing pool sizes is an important decision that needs to be made prior to any implementation of pooled testing. The purpose of our app is to help laboratories make this decision. We provide tools to calculate the expected number of tests and to choose the “best” set of pool sizes, known as the optimal testing configuration. This Shiny application allows the user to choose either hierarchical or array testing algorithms for pooled testing. For more information on these algorithms. Operating characteristics such as the expected number of tests and accuracy measures are calculated and the optimal testing configuration can be found given the overall probability of disease, the sensitivity and specificity of the assay, and other specifications.</p>
+
+
+
+ ]]></description>
+  <category>R Packages</category>
+  <guid>https://myaseen208.com/publications/RPackages/PooledTesting.html</guid>
+  <pubDate>Mon, 22 Jul 2024 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>PakPC2023: Pakistan Population Census 2023</title>
+  <dc:creator>&lt;b&gt;Yaseen, M.&lt;/b&gt; and Dilber, M. A.</dc:creator>
+  <link>https://myaseen208.com/publications/RPackages/PakPC2023.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Provides data sets and functions for exploration of Pakistan Population Census 2023 (<a href="https://www.pbs.gov.pk/" class="uri">https://www.pbs.gov.pk/</a>).</p>
+
+
+
+ ]]></description>
+  <category>R Packages</category>
+  <guid>https://myaseen208.com/publications/RPackages/PakPC2023.html</guid>
+  <pubDate>Thu, 07 Sep 2023 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Social Protection for Persons with Disabilities in Pakistan: Current Scenario and Contribution of BISP</title>
+  <dc:creator>Khalid, U.  and &lt;b&gt;Yaseen, M.&lt;/b&gt;</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2023_Khalid.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>The 2030 Agenda for Sustainable Development, which pledges to “leave no one behind,” emphasizes on promoting full and equal participation of all vulnerable and marginalized population segments in national development efforts, including persons with disabilities (PWDs). There is mounting evidence globally that differently abled people are disproportionately more vulnerable to both monetary and multi-dimensional poverty and require urgent support in terms of targeted social protection measures. The present paper presents a situation analysis and estimates of the population of PWDs across Pakistan, using different available data sources. It outlines the social protection framework for PWDs in Pakistan, with a special focus on support being extended to this population segment through the country’s largest social protection program the Benazir Income Support Programme (BISP) different BISP programs. It also provides recommendations for further increasing social protection coverage for this vulnerable population segment through developing synergies with other social protection programs for greater impact.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2023_Khalid.html</guid>
+  <pubDate>Thu, 30 Mar 2023 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Effect of Rain-Fed Conditions on Yield of Mash Bean Genepool by Using Augmented Design</title>
+  <dc:creator>&lt;b&gt;Yaseen, M.&lt;/b&gt;,  Kashif, M., Nazish, H. T., Munir, R., Iqbal, J., Usman, M., and Rabbani, G.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2022_Yaseen.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>The augmented block design (ABD) is commonly used in breeding programs to evaluate the performance of large number of genotypes using non-replicated new test treatments and replicated check treatments. The purpose of this design is to determine which test treatment performs better than check treatments. The objective of this study is to identifying better genotype of Mash been than check treatment under rain feed condition of Pakistan. For this purpose, the data of 125 mash been genotypes included 5 check entries were analyzed. The experiment was conducted in augmented block design using 6 blocks in rain feed condition of Pakistan and data of different attribute were recorded. The analysis showed that the treatment effects (adjusted) are significant for all attributes. However, for all attribute other than the number of seeds/pod, the adjusted block effects are non-significant, indicating that the evaluated blocks are homogeneous. Only three principal components were considered, first component explained 33.85% of variation and 21.85%, 17.51% explained by PC2 and PC3 respectively for the first season whereas in the second season 33.62%, 23.43%, and 16. 86% variation described with respect to the first, second, and third principal components. First PC designated as a component of productivity, second as component of pod appearance while third designed as a component of physical appearances. All attributes showed significant and positive association with other attributes, only significantly negative association was among number of pods/plant and100-seeds weight.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2022_Yaseen.html</guid>
+  <pubDate>Fri, 23 Sep 2022 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The impact of heat on kidney health: A PRISMA-compliant bibliometric analysis</title>
+  <dc:creator>Al-Bouwarthan, M., AlMulla, A. A., and &lt;b&gt;Yaseen, M.&lt;/b&gt;</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2022_Al-Bouwarthan.html</link>
+  <description><![CDATA[ 
+
+
+
+<p><b>Background:</b></p>
+<p>Exposure to excessive heat can impact kidney health. Climate change is projected to aggravate this impact. An analysis of articles published between 1958 and 2021 was conducted to explore the progress of the research on this issue.</p>
+<p><b>Methods:</b></p>
+<p>This study included a bibliometric analysis wherein Web of Science was used to generate a list of all published articles related to the impact of heat on kidney health. Basic information about the articles, such as titles, authors’ names, keywords, and citations, were recorded and analyzed.</p>
+<p><b>Results:</b></p>
+<p>A total of 226 published articles related to the impact of heat on kidney health were identified as of November 20, 2021. Most of these articles (93%) were published within the last decade. The United States was the most prominent country in terms of research productivity and collaboration. Researchers from the United States were well represented among the top 20 contributors of published articles on the study issue. The productivity of the top 20 authors varied between 6 and 32 articles each. A total of 25 common words used by the authors were identified. The most frequently used keywords were chronic kidney disease, heat stress, acute kidney injury, Mesoamerican nephropathy, and climate change. Keyword analysis revealed 3 distinct major research clusters in the existing scientific research on the impact of heat on kidney health: chronic kidney disease of unknown etiology, heat stress and renal physiology, and the effect of climate change on kidney health.</p>
+<p><b>Conclusions:</b></p>
+<p>Research on heat-related kidney injury has witnessed rapid development in recent decades, motivated by the emergence of chronic kidney disease of unknown etiology and climate change. Developing countries in hot regions must increase their productivity in this research area through international collaboration and partnerships.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2022_Al-Bouwarthan.html</guid>
+  <pubDate>Tue, 19 Jul 2022 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Exploiting the potential of weedy rice as value added silage under different nitrogen levels and cutting intervals</title>
+  <dc:creator>Mubeen, A., Tanveer, A., Khaliq, A., and &lt;b&gt;Yaseen, M.&lt;/b&gt;</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2022_Mubeen.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Weeds, often considered a “menace” are top-notch, adroit survivors having intrinsic value as source of biodiversity and various promising uses as bio-resource. Among other benefits, their use as feed/food source or raw material is still to be explored. Weedy rice (Oryza sativa f.&nbsp;spontanea) a conspecific of rice has rapid growth, ability to uptake more fertilizer and produce large biomass. Lot of efforts are done for its management but little is known about its nutritive value and utilization as feed source for livestock. Therefore, the present study was carried out at Agronomic Research Area, University of Agriculture, Faisalabad in 2017 and 2018 to optimize N level and harvesting time for improving growth and silage quality of weedy rice sown as sole crop. Treatments comprised of four N levels viz: 0, 100, 120 and 140 kg ha-1 and harvesting intervals viz.&nbsp;15, 25 and 35 days after heading (DAH). Weedy rice harvested at different intervals after onset of heading stage was used for making silage and analysed for nutritive value. Results depicted that, maximum plant height, fertile tillers, panicle length, kernels per panicle and LA were obtained with 120 kg ha-1 N and harvesting at 25 DAH during both years, while NDF, ADF, cellulose, and hemicellulose were highest with no fertilizer. Crude protein was highest with N application at 120 kg ha-1 and harvesting at 25 DAH. Highest nitrogen contents in plants, plant biomass, WSC, ash and DM in silage were recorded with 140 kg ha-1 N when harvested at 35 DAH. Weedy rice harvested at 25 DAH with N application at 120 kg ha-1 seems to be better combination for rational use of nutrients, better productivity and improving most of the nutritive traits of whole crop weedy rice silage.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2022_Mubeen.html</guid>
+  <pubDate>Fri, 18 Mar 2022 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Contributions of Open Biomass Burning and Crop Straw Burning to Air Quality: Current Research Paradigm and Future Outlooks</title>
+  <dc:creator>Mehmood, K., Bao, Y., Saifullah, Bibi, S., Dahlawi, S., &lt;b&gt;Yaseen, M.&lt;/b&gt;, Abrar, M. M., Srivastava, P., Fahad, S., and Faraj, T. K.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2022_Mehmood.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Since open biomass burning (OBB) and open crop straw burning (OCSB) could pose a great risk to human health via altering the air quality, these practices have grabbed considerable attention from the scientific community and policymakers in recent years. In order to have a greater and deeper understanding of the contributions of both OBB and OCSB on air quality, a bibliometric analysis was performed using the Web of Science core collection to understand the research developments and future perspectives of these issues between 1991 and 2021. VOSviewer software 1.6.15 and R version 4.0.3 were employed to determine the annual scientific production trend and the role of countries, institutions, authors, and journal metrics network analysis. The findings showed that the interest in the study of OBB and OCSB pollution related to air quality has increased significantly over the last decade. A total of 1,021 publications were retrieved, with English as the most preferably used language. Among all documents, research articles were the most commonly appearing document type, and the researchers mainly emphasized environmental science, meteorology, atmospheric sciences, energy fuels, and environmental engineering fields. In terms of article analysis, Atmospheric Chemistry Physics, followed by Atmospheric Environment, was found to be the leading journal in this research domain, whereas the most frequently utilized keywords in the documents were biomass, biomass burning, and PM2.5. In terms of countries, the United States emerged as the leader with the highest publication rate, followed by China and India. The Chinese Academy of Sciences was ranked first in the list of most productive institutions, followed by the University of Montana and the US Forest Service. Based on the analysis, the finer spatial and temporal resolution and the characterization and understanding of the complex processes that are occurring in the atmosphere, such as clustering, oxidation, surface chemistry, and their impact on air quality, need to be explored in depth. Our research analysis can provide a baseline for future studies in air quality.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2022_Mehmood.html</guid>
+  <pubDate>Tue, 25 Jan 2022 05:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Global research on the air quality status in response to the electrification of vehicles</title>
+  <dc:creator>Bao, Y., Mehmood, K., Saifullah, &lt;b&gt;Yaseen, M.&lt;/b&gt;, Dahlawi, S., Abrar, M. M., Khan, M. A., Saud, S., Dawar, K., Fahad, S., and Kh.Faraj, T.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2021_Bao.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Electric vehicles (EVs) can substantially decrease atmospheric pollutant emissions, thereby improving air quality, decreasing global warming, and improving human health. In this study, we performed a comprehensive bibliometric analysis using Web of Science to understand the research developments and future perspectives in EVs between 1974 and 2021. The analysis of indicators such as research trends, publication growth, and keywords revealed that most research in the selected timeframe was focused on applying and optimizing the existing technologies of different types of EVs to decrease air pollution and mortality. The changes in air quality owing to such electrification received special attention, with approximately 441 publications preferably in the English language. Among all the retrieved documents, research articles were most common (n = 295; 66.89% of the global output), dominated by the research domains of environmental sciences, followed by energy fuels and transportation science technology. Journal analysis revealed that Sustainability (n = 19, 4.30%) was the leading journal, followed by Journal of Cleaner Production and Science of the Total Environment. The most frequently used keywords were “electric vehicles,” “air quality,” and “air pollution.” The most highly impactful article was published by Jacobson et al.&nbsp;(2005) in Science, with 620 total citations and 38.82 average annual citations. Furthermore, the United States (n = 118; 26.75% of the global output) had the highest publication rate, followed by China and the United Kingdom. The leading institutions were Tsinghua University (n = 16; 3.62% of the global research output) in China, followed by the University of Michigan and Cornell University in the United States. The current analysis warrants more focus on comprehensive analysis employing transport and chemistry modeling and using the latest technology for long life and sustainable batteries. This study provides a basis for future studies on improving air quality through innovative work in the electrification of vehicles.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2021_Bao.html</guid>
+  <pubDate>Mon, 25 Oct 2021 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>A novel parent selection strategy for the development of drought-tolerant cotton cultivars</title>
+  <dc:creator>Chattha, W. S., Ahmad, H. B., Farooq, M. A., Shafqat, W., &lt;b&gt;Yaseen, M.&lt;/b&gt;, Ihsan, M. Z., Alghabari, F., and Alzamanan, S. M.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2021_Chattha.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Drought is a devastating factor for crop production worldwide. Therefore, an experiment was conducted to study genetics for some agro-physiological traits in cotton under drought stress. The 13 parental cotton genotypes along with their 30 F1 hybrids were planted under normal and drought conditions. The mean performance of the genotypes was assessed through principal component and heat map analyses. The principal component analyses revealed 53.99 and 53.15% in the first two principal components of variability for normal and drought conditions, respectively. Heat map analysis revealed that three cotton genotypes i.e.&nbsp;FH-207 x NS-131, FH-207 x KZ-191 and S-15 x AA-703 attained higher values for all the traits except for canopy temperature under drought conditions. These crosses may proliferate to further filial generations to identify transgressive segregates for drought tolerance. The heritable differences of F??1 and mid-parent showed dominance and non-additive gene action under drought conditions. Heritable differences between F??1 and P??1 showed over dominance and partial dominance under drought conditions. Heritable differences between F??1 and P??2 indicated negative over dominance and partial dominance for all traits under drought conditions. Proline contents and the bolls per plant showed high heritability and genetic advance through additive gene action. Therefore, these two traits can be used as a means of selection in future breeding programmes of drought tolerance.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2021_Chattha.html</guid>
+  <pubDate>Wed, 25 Aug 2021 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>A Study on Time Use of Nurses and Paramedical Staff, Working in Public Hospitals of District Rahim Yar Khan, Bahawalpur, Pakistan</title>
+  <dc:creator>Gul, H., Ghazali, S. S. A., &lt;b&gt;Yaseen, M.&lt;/b&gt;, and Qasim, H.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2021_Gul.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>The aim of the present study was to identify the drivers of inefficiencies existent in nurses’ and paramedics’ work and to detect the factors liable for decline in this profession, especially nursing. All the public sector hospitals of District Rahim Yar Khan were included in the study. A sample of size 118 was selected from the population of 1296 nurses and paramedics by the stratified random sampling technique. The analysis was done in R-programming. Comparisons made were made showing that female nurses/ paramedics go through a tough time routine and time poverty as compared to their male counterpart which seems to be the cause of deterioration in this profession in the perspective of Pakistani society.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2021_Gul.html</guid>
+  <pubDate>Wed, 25 Aug 2021 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Pensioners and their Time Use: A Case Study of District Rahimyar Khan, Pakistan</title>
+  <dc:creator>Qasim, H., Ghazali, S. S. A., &lt;b&gt;Yaseen, M.&lt;/b&gt;, and Gul, H.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2021_Qasim.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>The aim of the present study was to identify the drivers of inefficiencies existent in nurses’ and paramedics’ work and to detect the factors liable for decline in this profession, especially nursing. All the public sector hospitals of District Rahim Yar Khan were included in the study. A sample of size 118 was selected from the population of 1296 nurses and paramedics by the stratified random sampling technique. The analysis was done in R-programming. Comparisons made were made showing that female nurses/ paramedics go through a tough time routine and time poverty as compared to their male counterpart which seems to be the cause of deterioration in this profession in the perspective of Pakistani society.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2021_Qasim.html</guid>
+  <pubDate>Wed, 25 Aug 2021 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Nitrogen application accelerates the downy mildew disease severity with leaf age in canola plants</title>
+  <dc:creator>Haq, M. E. ul, Kamran, M., Sahib, A., &lt;b&gt;Yaseen, M.&lt;/b&gt;, Anwar, M. F., Abbas, H., Chand, S. A., Hameed, A., Rashid, A., Khan, Q. A. T., Shahbaz, M. U., Abbas, W., and Ali, S.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2021_Haq.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Downy mildew is a devastating disease of canola. Two years study was conducted to find the impact of different nitrogen levels on disease severity of downy mildew with respect to leaf age on canola plants in field conditions. Three nitrogen levels (11.50???Kg acre???1, 23???Kg acre???1 and 34.5???Kg acre???1) were applied in soil when plants were 40???days old. In control, 0???Kg acre???1 N was applied. The diseased leaves from the lower, middle and upper part of the plant were tagged and data were recorded after 10???days interval. Disease severity differed significantly between the two experimental years. A significant increase in disease severity was recorded with leaf age irrespective of the N concentration applied. Nitrogen concentrations significantly accelerated the disease severity with the increase of age. Maximum disease severity was recorded in 34.5???Kg acre???1 N applied 100???days old leaves in both experimental years.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2021_Haq.html</guid>
+  <pubDate>Thu, 06 May 2021 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The level of Cry1Ac endotoxin and its efficacy against H. armigera in Bt cotton at large scale in Pakistan</title>
+  <dc:creator>Jamil, S., Shahzad, R., Rahman, S. U., Iqbal, M. Z., &lt;b&gt;Yaseen, M.&lt;/b&gt;, Ahmad, S., and Fatima, R.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2021_Jamil.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>A biophysical survey was conducted in 15 cotton-growing districts of Pakistan. Four hundred cotton growers were approached and inquired about the production technology of Bt cotton. Further, 25 strip tests using combo strips (Cry1Ac, Cry2Ab, Vip3Aa and Cp4, EPSPS gene) were performed at each farmer’s field. Out of 10,000 total-tested samples, farmers claimed 9682 samples as Bt and 318 samples as non-Bt. After performing a strip test, 1009 and 87 samples were found false negative and false positive, respectively. Only 53 samples were found positive for Cry2Ab, 214 for EPSPS and none for Vip3Aa gene. Quantification of Cry endotoxin and bioassay studies were performed by taking leaves from upper, middle, and lower canopies, and fruiting parts at approximately 80 days after sowing from 89 varieties. Expression was highly variable among different canopies and fruiting parts. Moreover, Cry endotoxin expression and insect mortality varied significantly among varieties from 0.26 ?g g???1 to 3.54 ?g g???1 with mortality ranging from 28 to 97%, respectively. Highest Cry1Ac expression (3.54 ?g g???1) and insect mortality (97%) were observed for variety FH-142 from DG Khan. Cry endotoxin expression varied significantly across various plant parts, i.e., IUB-13 variety from upper canopy documented 0.34 ?g g???1 expression with 37% insect mortality in Layyah to 3.42 ?g g???1 expression and 96% insect mortality from DG Khan. Lethal dose, LD95 (2.20 ?g g???1) of Cry1Ac endotoxin was optimized for effective control of H. armigera. Our results provided evidence of practical resistance in H. armigera and way forward.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2021_Jamil.html</guid>
+  <pubDate>Thu, 06 May 2021 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>PakPMICS2014Wm: Multiple Indicator Cluster Survey (MICS) 2014 Women Questionnaire Data for Punjab, Pakistan</title>
+  <dc:creator>&lt;b&gt;Yaseen, M.&lt;/b&gt; and Usman, M.</dc:creator>
+  <link>https://myaseen208.com/publications/RPackages/PakPMICS2014Wm.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Provides data set and function for exploration of Multiple Indicator Cluster Survey 2014 Women (age 15-49 years) questionnaire data for Punjab, Pakistan.</p>
+
+
+
+ ]]></description>
+  <category>R Packages</category>
+  <guid>https://myaseen208.com/publications/RPackages/PakPMICS2014Wm.html</guid>
+  <pubDate>Fri, 09 Apr 2021 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Comparison of Fine and Coarse Rice Varieties for Nickel Accumulation and Growth Response at Different Levels of Nickel</title>
+  <dc:creator>Fatma, S., Sabir, M., Aziz, T., Ahmad, H. R., &lt;b&gt;Yaseen, M.&lt;/b&gt;, Rehman, M. Z. ur, and Hakeem, K. R.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2021_Fatma.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>The differential growth response and nickel (Ni) accumulation by two rice varieties grown in Ni-contaminated soil are investigated. Soil is contaminated with Ni at different levels viz.&nbsp;control (0), 7, 15, 22, 30, and 38 mg kg???1 soil. Two rice varieties viz.&nbsp;Basmati-2000 (fine variety) and KSK-133 (coarse variety) are grown in pots containing Ni-contaminated soil. The plants are harvested at four growth stages with an interval of 15 days. Harvested plants are washed with distilled water to remove aerial deposition. Harvested plants are oven-dried, weighed, grinded, and digested with di-acid mixture. The digested samples are analyzed for Ni, zinc (Zn), and manganese (Mn) concentration. The results indicate that the maximum level of Ni (38 mg kg???1) inhibits the shoot and root growth. The maximum shoot and root dry weights are observed at lower level of Ni, that is, 7 mg kg???1. The concentration of Ni in plants increases with increasing Ni levels compared to control while the concentration of Zn and Mn decreases with increasing Ni levels. The maximum concentrations of all elements are recorded at the first harvest which gradually decrease in the subsequent harvests. It is concluded that Basmati-2000 is tolerant to Ni toxicity compared to KSK-133.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2021_Fatma.html</guid>
+  <pubDate>Sat, 03 Apr 2021 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Effect of repeated pollination on tomato hybrid seed yield under field conditions</title>
+  <dc:creator>Chishti, S. A. S., Hassan, A., Ahmad, M., Nadeem, K., Shabbir, R. H., Iqbal, M., &lt;b&gt;Yaseen, M.&lt;/b&gt;, Najeebulla, M.</dc:creator>
+  <link>https://myaseen208.com/publications/Articles/2021_Chishti.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Hybrid seed yield in tomato is strongly influenced by temperature variations. In this regard a study was conducted to estimate the effect of repeated pollination on fruit setting percentage and number of seeds / fruit under variable natural temperature during the year 2017-18 at Vegetable Research Institute, Ayub Agricultural Research Institute (AARI), Faisalabad, Pakistan. The female parent of commercial indeterminate tomato hybrid (Saandal F1) was emasculated. Pollination was done once (T1), twice (T2) and thrice (T3) keeping the interval of 24 hours between each pollination on daily basis and continued for 22 days under field conditions. Analysis of data revealed that there were significant differences among treatments, temperatures and treatment ? temperature interaction for both traits. At the temperature range of 17?C - 28.6?C, there was considerable increase in fruit setting in T2 (30.2 %) and T3 (37.7 %) as compared to T1. Linear model was used to explain the behavior of T1. However, for T2 and T3, second degree polynomial model was used. Graphic representation also revealed increase in fruit setting percentage and number of seeds/fruit in to T2 and T3 treatments. However, at higher temperature range of 30?C - 33?C, T2 and T3 responded negatively with the reduction of -7.0 and -23.1% in fruit setting, respectively as compared to T1. For number of seeds/fruit, T2 and T3 showed 50.2 and 58.7% increase, respectively as compared to T1 at temperature range of 17?C - 28.6?C. However, at 30?C - 33?C temperature range, T2 exhibited 50.4% increase over T1 whereas; T3 showed decline in number of seeds/fruit (-14.0 %) in comparison with T1. It was concluded that at low temperature range (17?C-28.6?C) two times pollination (T2) could be more effective for traits that ultimately contribute in higher seed yield.</p>
+
+
+
+ ]]></description>
+  <category>Articles</category>
+  <guid>https://myaseen208.com/publications/Articles/2021_Chishti.html</guid>
+  <pubDate>Thu, 04 Mar 2021 05:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
